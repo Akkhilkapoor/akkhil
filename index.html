@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akkhil Kapoor | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for Dynamic Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -20,11 +17,11 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-    <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 w-full bg-red-600 shadow-md z-50 transition-all">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-white text-xl font-bold tracking-wide">Akkhil Portfolio</div>
-            <nav>
+            
+            <nav class="hidden md:block">
                 <ul class="flex space-x-6 text-sm font-semibold">
                     <li><a href="#home" class="text-white hover:text-black transition-colors duration-200">Home</a></li>
                     <li><a href="#about" class="text-white hover:text-black transition-colors duration-200">About</a></li>
@@ -33,10 +30,23 @@
                     <li><a href="#contact" class="text-white hover:text-black transition-colors duration-200">Contact</a></li>
                 </ul>
             </nav>
+
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none cursor-pointer p-1">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700 border-t border-red-500/30 transition-all duration-300">
+            <ul class="flex flex-col p-4 space-y-3 text-sm font-semibold text-center">
+                <li><a href="#home" class="block py-2 text-white hover:bg-red-800 rounded transition-colors">Home</a></li>
+                <li><a href="#about" class="block py-2 text-white hover:bg-red-800 rounded transition-colors">About</a></li>
+                <li><a href="#expertise" class="block py-2 text-white hover:bg-red-800 rounded transition-colors">Expertise</a></li>
+                <li><a href="#projects" class="block py-2 text-white hover:bg-red-800 rounded transition-colors">Projects</a></li>
+                <li><a href="#contact" class="block py-2 text-white hover:bg-red-800 rounded transition-colors">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- 1. Home Section -->
     <section id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Akkhil.png');">
         <div class="max-w-3xl animate-fade-in">
             <img src="akkhil.jpg" alt="Akkhil Kapoor" class="w-40 h-40 rounded-full border-4 border-red-600 mx-auto mb-6 object-cover shadow-xl transition-transform hover:scale-105 duration-300">
@@ -46,7 +56,6 @@
         </div>
     </section>
 
-    <!-- 2. About Section -->
     <section id="about" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -59,7 +68,6 @@
                 <p>I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners so that they can successfully apply their knowledge in real-world situations.</p>
                 <p>My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects.</p>
 
-                <!-- Teaching Experience Sub-section -->
                 <div class="mt-12 bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm">
                     <h3 class="text-xl font-bold text-slate-900 flex items-center mb-4"><i class="fa-solid fa-graduation-cap text-red-600 mr-3"></i>Teaching Experience</h3>
                     <p class="mb-4">I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City. Some of the prestigious institutes where I have served include:</p>
@@ -74,7 +82,6 @@
                     </div>
                 </div>
 
-                <!-- Corporate Experience Sub-section -->
                 <div class="mt-8 bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm">
                     <h3 class="text-xl font-bold text-slate-900 flex items-center mb-4"><i class="fa-solid fa-briefcase text-red-600 mr-3"></i>Corporate & Management Experience</h3>
                     <p class="mb-4">In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries.</p>
@@ -88,7 +95,6 @@
         </div>
     </section>
 
-    <!-- 3. Expertise Section -->
     <section id="expertise" class="py-24 bg-slate-100">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -96,7 +102,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
                     <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-calculator"></i>
@@ -105,7 +110,6 @@
                     <p class="text-sm text-slate-600 line-height-relaxed">Well versed with computer basics as well as professional accounts software like Tally, Busy, and Marg.</p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
                     <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-code"></i>
@@ -114,7 +118,6 @@
                     <p class="text-sm text-slate-600 line-height-relaxed">Have a good grasp of the basic and important core technologies of web development such as HTML, CSS, and JavaScript.</p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
                     <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-palette"></i>
@@ -123,7 +126,6 @@
                     <p class="text-sm text-slate-600 line-height-relaxed">In the field of graphic designing, students have a long experience of learning professional tools like Photoshop and Corel Draw.</p>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
                     <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-film"></i>
@@ -135,7 +137,6 @@
         </div>
     </section>
 
-    <!-- 4. Projects Section -->
     <section id="projects" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -143,7 +144,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
                 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div>
                         <div class="flex items-center space-x-3 mb-4">
@@ -164,7 +164,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div>
                         <div class="flex items-center space-x-3 mb-4">
@@ -184,7 +183,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div>
                         <div class="flex items-center space-x-3 mb-4">
@@ -204,7 +202,6 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
                 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div>
                         <div class="flex items-center space-x-3 mb-4">
@@ -227,7 +224,6 @@
         </div>
     </section>
 
-    <!-- 5. Contact Section -->
     <section id="contact" class="py-24 bg-slate-100">
         <div class="max-w-md mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block border-b-4 border-red-600 pb-3 mb-12">Contact Me</h2>
@@ -258,10 +254,32 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 text-center py-8 text-sm border-t border-slate-800">
         <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Toggle mobile menu visibility and icon
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        // Close mobile menu automatically when any link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+    </script>
 
 </body>
 </html>
