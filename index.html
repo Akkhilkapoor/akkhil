@@ -1,549 +1,266 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akkhil Portfolio</title>
+    <title>Akkhil Kapoor | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Dynamic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
         body {
-            background-color: #f4f7f6;
-            color: #333;
-        }
-        
-        /* Navigation Bar */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f71118;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        header .logo {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        header ul {
-            display: flex;
-            list-style: none;
-        }
-        header ul li {
-            margin-left: 20px;
-        }
-        header ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-        header ul li a:hover {
-            color: #000000;
-        }
-
-        /* Section Settings */
-       
-        section {
-            padding: 60px 50px;
-            min-height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* 1. Home Section */
-       #home {
-    margin-top: 60px;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-    ),
-    url('Akkhil.png') no-repeat center center / cover;
-    color: white;
-}
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid #f71118;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        #home h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-        #home p {
-            font-size: 20px;
-            color: #ccc;
-        }
-
-        /* 2. About Section */
-        #about {
-            background-color: #fff;
-        }
-        #about h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #f71118;
-        }
-        #about p {
-            max-width: 800px;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        }
-        .about-content{
-    font-size:18px;
-    line-height:1.8;
-    color:#444;
-    text-align: justify;
-     text-justify: inter-word;
-}
-
-.about-content h3{
-    color:#f71118;
-    margin-top:30px;
-    margin-bottom:15px;
-}
-
-.about-content h4{
-    color:#333;
-    margin-top:20px;
-}
-
-.about-content ul{
-    margin-left:25px;
-    margin-bottom:20px;
-}
-
-.about-content p{
-    margin-bottom:18px;
-}
-
-        /* 3. Projects Section (Aapka Extra Page) */
-        #projects {
-            background-color: #ecf0f1;
-        }
-        #projects h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #f71118;
-        }
-        .project-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .project-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 300px;
-        }
-        .project-card h3 {
-            margin-bottom: 10px;
-            color: #f71118;
-        }
-
-        /* 4. Contact Section */
-        #contact {
-            background-color: #fff;
-        }
-        #contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #f71118;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 500px;
-            gap: 15px;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .contact-form button {
-            padding: 15px;
-            background-color: #f71118;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #16a085;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #f71118;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Navigation Bar -->
-    <header>
-        <div class="logo">Akkhil Portfolio</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <header class="fixed top-0 left-0 w-full bg-red-600 shadow-md z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-white text-xl font-bold tracking-wide">Akkhil Portfolio</div>
+            <nav>
+                <ul class="flex space-x-6 text-sm font-semibold">
+                    <li><a href="#home" class="text-white hover:text-black transition-colors duration-200">Home</a></li>
+                    <li><a href="#about" class="text-white hover:text-black transition-colors duration-200">About</a></li>
+                    <li><a href="#expertise" class="text-white hover:text-black transition-colors duration-200">Expertise</a></li>
+                    <li><a href="#projects" class="text-white hover:text-black transition-colors duration-200">Projects</a></li>
+                    <li><a href="#contact" class="text-white hover:text-black transition-colors duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- 1. Home Section -->
-    <section id="home">
-        <!-- Apni photo ka link niche src="" mein dalein -->
-       <br><br><br> <img src="akkhil.jpg" alt="Akkhil Kapoor" class="profile-img">
-        <h1>Hello, I'm AKKHIL KAPOOR</h1>
-        <p>Welcome to my professional portfolio website!</p>
+    <section id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Akkhil.png');">
+        <div class="max-w-3xl animate-fade-in">
+            <img src="akkhil.jpg" alt="Akkhil Kapoor" class="w-40 h-40 rounded-full border-4 border-red-600 mx-auto mb-6 object-cover shadow-xl transition-transform hover:scale-105 duration-300">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">Hello, I'm <span class="text-red-500">AKKHIL KAPOOR</span></h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light max-w-xl mx-auto mb-8">Welcome to my professional portfolio website!</p>
+            <a href="#contact" class="inline-block bg-red-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-red-700 hover:shadow-red-500/20 transition-all duration-300 transform hover:-translate-y-1">Get In Touch</a>
+        </div>
     </section>
 
     <!-- 2. About Section -->
-<!-- 2. About Section -->
-    <section id="about" style="background-color: #fff; padding: 100px 20px; text-align: left; max-width: 1000px; margin: 0 auto;">
-        <h2 style="font-size: 36px; text-align: center; margin-bottom: 40px; color: #f71118; border-bottom: 3px solid #f71118; padding-bottom: 10px; width: fit-content; margin-left: 
-            auto; margin-right: auto;">About Me</h2>
-        
-        <div style="font-size: 18px; line-height: 1.8; color: #444;">
-            <p style="margin-bottom: 20px; font-size: 20px; font-weight: bold; color: #f71118;">Namaste, I'm Akkhil Kapoor.</p>
-            <p style="margin-bottom: 25px;">
-              <div class="about-content">
-
-<p>
-    I am a passionate educator, trainer, and management professional with <strong style="color: #f71118;"> more than 20 years of experience </strong>in the fields of education, 
-    information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve 
-    their goals through quality education, practical knowledge, and continuous learning.
-</p>
-
-<p>
-    I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different 
-    educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners 
-    so that they can successfully apply their knowledge in real-world situations.
-</p>
-
-<p>
-    My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in 
-    teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects. During this period, I have had 
-    the privilege of mentoring students who later established successful careers in various industries.
-</p>
-
-<h3>📚 Teaching Experience</h3>
-
-<p>
-    I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City. These institutes have provided me with opportunities to 
-    teach students from diverse educational and professional backgrounds.
-</p>
-
-<p><strong>Some of the prestigious institutes where I have served include:</strong></p>
-
-<ul>
-    <li>HIIT Ambala City (Currently Working)</li>
-    <li>Helpline Computer Institute, Ambala Cantt</li>
-    <li>Excel Net, Ambala Cantt</li>
-    <li>NIIT, Ambala Cantt</li>
-    <li>Computer Junction, Ambala Cantt</li>
-    <li>Xtreme Technologies, Ambala Cantt</li>
-    <li>Techno Creativity, Ambala Cantt</li>
-</ul>
-
-<p>
-    At these institutions, I have conducted training programs in computer fundamentals, office automation, accounting software, web technologies, graphic designing, multimedia 
-    applications, and professional development courses. My goal has always been to provide students with industry-relevant knowledge that helps them build successful careers.
-</p>
-
-<h3>💻 Areas of Expertise</h3>
-
-<h4>Computer Fundamentals</h4>
-<p>
-    I have extensive experience teaching basic and advanced computer concepts, including operating systems, internet technologies, file management, and productivity tools.
-</p>
-
-<h4>Accounting Software</h4>
-<p>
-    I possess strong knowledge of professional accounting applications such as Tally, Busy, and Marg. I have trained students and professionals in computerized accounting, 
-    inventory management, taxation, GST-related processes, and business record management.
-</p>
-
-<h4>Web Development</h4>
-<p>
-    I have a solid understanding of modern web technologies including HTML, CSS, JavaScript, and website design principles. I enjoy helping students understand how websites 
-    are built and how they can create their own online presence.
-</p>
-
-<h4>Graphic Designing</h4>
-<p>
-    I have trained many students in professional designing software such as Adobe Photoshop and CorelDRAW. These tools are widely used in the design and printing industries, 
-    and I focus on practical project-based learning.
-</p>
-
-<h4>Multimedia & Video Editing</h4>
-<p>
-    Creative technologies have always been an important part of my training programs. I have experience teaching video editing, multimedia production, audio editing, and 
-    song mixing techniques.
-</p>
-
-<h4>Professional Development</h4>
-<p>
-    Apart from technical skills, I also guide students in communication skills, interview preparation, career planning, and workplace professionalism.
-</p>
-
-<h3>💼 Corporate & Management Experience</h3>
-
-<p>
-    In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This practical 
-    business exposure has enabled me to bridge the gap between academic learning and industry requirements.
-</p>
-
-<ul>
-    <li><strong>Milestone Apparel</strong> – Manager</li>
-    <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
-    <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
-</ul>
-
-<p>
-    These managerial experiences have helped me develop a practical understanding of business operations, customer management, and organizational leadership. Today, I combine these 
-    real-world experiences with my teaching expertise to provide students with both theoretical and practical knowledge.
-</p>
-
-<h3>🎯 My Teaching Philosophy</h3>
-
-<p>
-    I believe that learning should be engaging, practical, and inspiring. Every student has unique strengths and learning capabilities, and an effective teacher must adapt their 
-    methods accordingly. My objective is not only to teach concepts but also to build confidence and problem-solving skills among learners.
-</p>
-
-<p><strong>I encourage students to:</strong></p>
-
-<ul>
-    <li>Learn through practical exercises</li>
-    <li>Develop critical thinking skills</li>
-    <li>Stay updated with new technologies</li>
-    <li>Focus on continuous self-improvement</li>
-    <li>Build professional ethics and discipline</li>
-</ul>
-
-<h3>🏆 Achievements & Impact</h3>
-
-<p>
-    During my long teaching career, I have successfully trained thousands of students who are now working in different professional fields. Many of my students have established 
-    successful careers in IT, accounting, business management, graphic designing, and entrepreneurship.
-</p>
-
-<p>
-    The most rewarding aspect of my profession is seeing students transform their skills into meaningful careers and achieve their personal and professional goals.
-</p>
-
-<h3>🚀 Vision for the Future</h3>
-
-<p>
-    Technology and education continue to evolve rapidly, and I remain committed to lifelong learning. My vision is to continue empowering students with modern skills, practical 
-    knowledge, and confidence that help them succeed in an increasingly competitive world.
-</p>
-
-<p>
-    I believe that there is no age limit for learning. Every new skill opens the door to new opportunities, personal growth, and professional success. Through my teaching, 
-    mentoring, and training efforts, I aim to inspire individuals to embrace learning as a lifelong journey.
-</p>
-
-<p>
-    Thank you for visiting my portfolio website. I look forward to sharing knowledge, guiding learners, and contributing to the growth and success of future generations.
-</p>
-</div>
-       </div>
-    </section>
-
-    <section id="about" style="background-color: #ecf0f1; padding: 100px 20px;">
-        <h2 style="font-size: 36px; margin-bottom: 40px; color: #f71118;">My Expertise & Courses Taught</h2>
-        <div class="project-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block border-b-4 border-red-600 pb-3">About Me</h2>
+            </div>
             
-            <!-- Card 1 -->
-            <div class="project-card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px; text-align: left;">
-                <h3 style="color: #f71118; margin-bottom: 15px; font-size: 20px;">💻 Computer Basics & Accounts</h3>
-                <p style="font-size: 16px; color: #555; line-height: 1.5;">Well versed with computer basics as well as professional accounts software like Tally, Busy, and Marg.</p>
-            </div>
+            <div class="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed text-justify">
+                <p class="text-xl font-bold text-red-600">Namaste, I'm Akkhil Kapoor.</p>
+                <p>I am a passionate educator, trainer, and management professional with <strong class="text-red-600 font-semibold">more than 20 years of experience</strong> in the fields of education, information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve their goals through quality education, practical knowledge, and continuous learning.</p>
+                <p>I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners so that they can successfully apply their knowledge in real-world situations.</p>
+                <p>My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects.</p>
 
-            <!-- Card 2 -->
-            <div class="project-card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px; text-align: left;">
-                <h3 style="color: #f71118; margin-bottom: 15px; font-size: 20px;">🌐 IT & Web Courses</h3>
-                <p style="font-size: 16px; color: #555; line-height: 1.5;">Have a good grasp of the basic and important core technologies of web development such as HTML, CSS, 
-                    and JavaScript.</p>
-            </div>
+                <!-- Teaching Experience Sub-section -->
+                <div class="mt-12 bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center mb-4"><i class="fa-solid fa-graduation-cap text-red-600 mr-3"></i>Teaching Experience</h3>
+                    <p class="mb-4">I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City. Some of the prestigious institutes where I have served include:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-700">
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-emerald-500"></i><span>HIIT Ambala City <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-semibold ml-1">Currently Working</span></span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-red-500"></i><span>Helpline Computer Institute, Ambala Cantt</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-red-500"></i><span>Excel Net, Ambala Cantt</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-red-500"></i><span>NIIT, Ambala Cantt</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-red-500"></i><span>Computer Junction, Ambala Cantt</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-red-500"></i><span>Xtreme Technologies, Ambala Cantt</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-red-500"></i><span>Techno Creativity, Ambala Cantt</span></div>
+                    </div>
+                </div>
 
-            <!-- Card 3 -->
-            <div class="project-card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px; text-align: left;">
-                <h3 style="color: #f71118; margin-bottom: 15px; font-size: 20px;">🎨 Design Courses</h3>
-                <p style="font-size: 16px; color: #555; line-height: 1.5;">In the field of graphic designing, students have a long experience of learning professional tools like 
-                    Photoshop and Corel Draw.</p>
+                <!-- Corporate Experience Sub-section -->
+                <div class="mt-8 bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center mb-4"><i class="fa-solid fa-briefcase text-red-600 mr-3"></i>Corporate & Management Experience</h3>
+                    <p class="mb-4">In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-700">
+                        <div class="p-4 bg-white rounded-xl border border-slate-200/60 shadow-xs"><p class="font-bold text-slate-900">Milestone Apparel</p><p class="text-sm text-slate-500">Manager</p></div>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200/60 shadow-xs"><p class="font-bold text-slate-900">Munjal Enterprises</p><p class="text-sm text-slate-500">Sales Manager</p></div>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200/60 shadow-xs"><p class="font-bold text-slate-900">Ecosure Pharma</p><p class="text-sm text-slate-500">Sales Manager</p></div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Card 4 -->
-            <div class="project-card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px; text-align: left;">
-                <h3 style="color: #f71118; margin-bottom: 15px; font-size: 20px;">🎬 Editing Courses</h3>
-                <p style="font-size: 16px; color: #555; line-height: 1.5;">Creative courses like <b>Video editing</b> and <b>song mixing</b> are also taught extensively within 
-                    multimedia.</p>
-            </div>
-
         </div>
     </section>
 
-    <!-- 3. Projects Section (Extra Page) -->
-   <!-- Projects Section -->
-<section id="projects">
-    <h2>My Projects</h2>
-
-    <div class="project-container">
-
-        <!-- Project 1 -->
-        <div class="project-card">
-            <h3>📊 Accounting Management System</h3>
-
-            <p>
-                A complete accounting software for managing business
-                transactions and financial records.
-            </p>
-
-            <br>
-
-            <strong>Key Features</strong>
-
-            <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                <li>Chart of Accounts</li>
-                <li>Journal Entries</li>
-                <li>Ledger Management</li>
-                <li>Trial Balance</li>
-                <li>Profit & Loss Account</li>
-                <li>Balance Sheet</li>
-            </ul>
-
-           </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-
-            <h3>🧾 GST Billing & Inventory System</h3>
-
-            <p>
-                Billing software for GST invoice generation and inventory
-                management.
-            </p>
-
-            <br>
-
-            <strong>Key Features</strong>
-
-            <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                <li>GST Invoice</li>
-                <li>Customer Management</li>
-                <li>Product Management</li>
-                <li>Purchase & Sales</li>
-                <li>Stock Reports</li>
-            </ul>
-
+    <!-- 3. Expertise Section -->
+    <section id="expertise" class="py-24 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block border-b-4 border-red-600 pb-3">My Expertise & Courses Taught</h2>
+            </div>
             
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Computer Basics & Accounts</h3>
+                    <p class="text-sm text-slate-600 line-height-relaxed">Well versed with computer basics as well as professional accounts software like Tally, Busy, and Marg.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">IT & Web Courses</h3>
+                    <p class="text-sm text-slate-600 line-height-relaxed">Have a good grasp of the basic and important core technologies of web development such as HTML, CSS, and JavaScript.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Design Courses</h3>
+                    <p class="text-sm text-slate-600 line-height-relaxed">In the field of graphic designing, students have a long experience of learning professional tools like Photoshop and Corel Draw.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 group hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Editing Courses</h3>
+                    <p class="text-sm text-slate-600 line-height-relaxed">Creative courses like <b>Video editing</b> and <b>song mixing</b> are also taught extensively within multimedia.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Project 3 -->
-        <div class="project-card">
+    <!-- 4. Projects Section -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block border-b-4 border-red-600 pb-3">My Projects</h2>
+            </div>
 
-            <h3>💰 Payroll Management System</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="p-3 bg-red-100 text-red-600 rounded-xl"><i class="fa-solid fa-chart-pie text-xl"></i></span>
+                            <h3 class="text-xl font-bold text-slate-900">Accounting Management System</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm md:text-base">A complete accounting software for managing business transactions and financial records.</p>
+                        <hr class="border-slate-200 my-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-3">Key Features</span>
+                        <ul class="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Chart of Accounts</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Journal Entries</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Ledger Management</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Trial Balance</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Profit & Loss</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Balance Sheet</span></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <p>
-                Payroll software for employee salary calculation and payslip generation.
-            </p>
+                <!-- Project 2 -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="p-3 bg-red-100 text-red-600 rounded-xl"><i class="fa-solid fa-file-invoice-dollar text-xl"></i></span>
+                            <h3 class="text-xl font-bold text-slate-900">GST Billing & Inventory System</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm md:text-base">Billing software for GST invoice generation and inventory management.</p>
+                        <hr class="border-slate-200 my-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-3">Key Features</span>
+                        <ul class="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>GST Invoice</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Customer Management</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Product Management</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Purchase & Sales</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Stock Reports</span></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <br><br>
+                <!-- Project 3 -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="p-3 bg-red-100 text-red-600 rounded-xl"><i class="fa-solid fa-money-check-dollar text-xl"></i></span>
+                            <h3 class="text-xl font-bold text-slate-900">Payroll Management System</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm md:text-base">Payroll software for employee salary calculation and payslip generation.</p>
+                        <hr class="border-slate-200 my-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-3">Key Features</span>
+                        <ul class="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Employee Records</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Salary Calculation</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Attendance</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Payslip</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Reports</span></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <strong>Key Features</strong>
-
-            <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                <li>Employee Records</li>
-                <li>Salary Calculation</li>
-                <li>Attendance</li>
-                <li>Payslip</li>
-                <li>Reports</li>
-            </ul>
-
-            
-
+                <!-- Project 4 -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="p-3 bg-red-100 text-red-600 rounded-xl"><i class="fa-solid fa-boxes-stacked text-xl"></i></span>
+                            <h3 class="text-xl font-bold text-slate-900">Inventory Management System</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm md:text-base">Inventory software to manage stock, suppliers and products.</p>
+                        <hr class="border-slate-200 my-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-3">Key Features</span>
+                        <ul class="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Product Management</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Supplier Records</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Purchase & Sales</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Stock Reports</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-chevron-right text-red-500 text-xs"></i><span>Inventory Tracking</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Project 4 -->
-        <div class="project-card">
+    <!-- 5. Contact Section -->
+    <section id="contact" class="py-24 bg-slate-100">
+        <div class="max-w-md mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block border-b-4 border-red-600 pb-3 mb-12">Contact Me</h2>
+            
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 space-y-4 mb-8 text-left">
+                <div class="flex items-center space-x-4 p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                    <span class="w-10 h-10 bg-red-50 text-red-600 rounded-full flex items-center justify-center"><i class="fa-solid fa-phone"></i></span>
+                    <div><p class="text-xs text-slate-400 font-medium">Mobile</p><p class="text-slate-800 font-semibold">+91 XXXXX XXXXX</p></div>
+                </div>
+                <div class="flex items-center space-x-4 p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                    <span class="w-10 h-10 bg-red-50 text-red-600 rounded-full flex items-center justify-center"><i class="fa-solid fa-envelope"></i></span>
+                    <div><p class="text-xs text-slate-400 font-medium">Email</p><p class="text-slate-800 font-semibold">akhil@hiitambala.com</p></div>
+                </div>
+                <div class="flex items-center space-x-4 p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                    <span class="w-10 h-10 bg-red-50 text-red-600 rounded-full flex items-center justify-center"><i class="fa-solid fa-location-dot"></i></span>
+                    <div><p class="text-xs text-slate-400 font-medium">Location</p><p class="text-slate-800 font-semibold">Ambala, Haryana</p></div>
+                </div>
+            </div>
 
-            <h3>📦 Inventory Management System</h3>
-
-            <p>
-                Inventory software to manage stock, suppliers and products.
-            </p>
-
-            <br><br>
-
-            <strong>Key Features</strong>
-
-            <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                <li>Product Management</li>
-                <li>Supplier Records</li>
-                <li>Purchase & Sales</li>
-                <li>Stock Reports</li>
-                <li>Inventory Tracking</li>
-            </ul>
-
-           
+            <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="w-full inline-flex items-center justify-center bg-emerald-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-emerald-700 transition-colors duration-300 space-x-3 mb-12">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>WhatsApp Me</span>
+            </a>
+            
+            <blockquote class="italic text-slate-500 font-medium text-sm md:text-base border-l-4 border-red-500 pl-4 py-2 text-justify">
+                "There is no age limit to learning, because every new skill brings growth, confidence, and success."
+            </blockquote>
         </div>
-
-    </div>
-
-</section>
-    <!-- 4. Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message Sent!');">
-            <p><strong>📞 Mobile:</strong> +91 XXXXX XXXXX</p>
-    <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
-    <p><strong>📍 Location:</strong> Ambala, Haryana</p>
-
-    <a href="https://wa.me/919XXXXXXXXX" target="_blank">
-        <button type="submit">WhatsApp Me</button>
-            
-           <br><br><Center><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</Center></strong>
-            
-        </form>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 [Akkhil Kapoor]. All Rights Reserved.</p>
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-sm border-t border-slate-800">
+        <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
 
 </body>
