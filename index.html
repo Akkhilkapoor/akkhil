@@ -53,7 +53,7 @@
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
             padding: 5px 0;
             position: relative;
         }
@@ -65,7 +65,7 @@
             bottom: 0;
             left: 0;
             background-color: #fff;
-            transition: width 0.3s ease;
+            transition: width 0.3s ease-in-out;
         }
         /* Active State style */
         header ul li a.active {
@@ -120,7 +120,7 @@
                 rgba(15, 23, 42, 0.85),
                 rgba(15, 23, 42, 0.85)
             ),
-            #1e293b url('akkhil.jpg') no-repeat center center / cover;
+            #1e293b url('akkhil.png') no-repeat center center / cover; /* CHANGED: Updated to .png */
             color: white;
             padding: 120px 20px;
             width: 100%;
@@ -154,11 +154,12 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s ease-in-out; /* CHANGED: Smooth sliding transition */
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
         .cta-btn:hover {
             background-color: #b71c1c;
+            transform: translateY(-2px);
         }
 
         /* 2. About Section */
@@ -319,7 +320,7 @@
             border-radius: 30px;
             font-size: 18px;
             font-weight: bold;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out; /* CHANGED: Smooth sliding transition */
             box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
         .whatsapp-btn:hover {
@@ -351,7 +352,7 @@
         @media (max-width: 768px) {
             header {
                 padding: 12px 15px;
-                flex-direction: row; /* Horizontal alignment for clean look on mobile */
+                flex-direction: row; 
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 8px;
@@ -369,7 +370,7 @@
                 font-size: 13px;
             }
             main {
-                padding-top: 90px; /* Adjusting gap due to mobile header wrapping */
+                padding-top: 90px; 
             }
             section {
                 padding: 60px 15px;
@@ -574,7 +575,6 @@
           <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
 
-    <!-- Fully Optimized JavaScript Logic -->
     <script>
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('header ul li a');
@@ -596,7 +596,6 @@
             });
         }
 
-        // Updated: Runs on both scroll AND page load/refresh
         window.addEventListener('scroll', updateActiveNav);
         window.addEventListener('DOMContentLoaded', updateActiveNav);
     </script>
