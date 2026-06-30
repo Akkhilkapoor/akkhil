@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akkhil Kapoor - Professional educator and IT trainer in Ambala with 20+ years of experience.">
     <title>Akkhil Portfolio</title>
     <style>
@@ -16,7 +17,6 @@
         body {
             background-color: #f4f7f6;
             color: #333;
-            padding-top: 70px;
         }
         
         /* Navigation Bar */
@@ -54,6 +54,10 @@
             color: #000000;
         }
 
+        main {
+            padding-top: 70px; /* Fixed Header ke liye body se hata kar yahan lagaya */
+        }
+
         /* Section Settings */
         section {
             padding: 80px 50px;
@@ -67,7 +71,6 @@
 
         /* 1. Home Section */
         #home {
-            margin-top: 30px;
             background: linear-gradient(
                 rgba(0, 0, 0, 0.6),
                 rgba(0, 0, 0, 0.6)
@@ -76,6 +79,7 @@
             background-blend-mode: overlay;
             color: white;
             padding: 100px 20px;
+            width: 100%;
         }
         .profile-img {
             width: 150px;
@@ -98,7 +102,7 @@
         #about {
             background-color: #fff;
             max-width: 900px;
-            margin: 10px auto;
+            margin: 20px auto;
             padding: 60px 40px;
             text-align: left;
             display: flex;
@@ -120,6 +124,15 @@
             line-height: 1.8;
             color: #444;
             text-align: justify;
+        }
+        .intro-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+        .highlight-text {
+            color: #d32f2f;
         }
         .about-content h3 {
             color: #d32f2f;
@@ -152,6 +165,7 @@
         /* Projects Section */
         #projects {
             background-color: #fff;
+            width: 100%;
         }
         #projects h2 {
             font-size: 36px;
@@ -165,10 +179,10 @@
             flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
-            align-items: stretch; /* Solution 2: Isse saare cards barabar height ke ho jayenge */
+            align-items: stretch;
         }
         .project-card {
-            background: #f4f7f6;
+            background: #fff;
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -177,7 +191,9 @@
             display: flex;
             flex-direction: column;
         }
-        #projects .project-card {
+        
+        /* Dono section ke cards ka background light gray karne ke liye */
+        #projects .project-card, #expertise .project-card {
             background: #f4f7f6;
         }
         .project-card h3 {
@@ -185,10 +201,16 @@
             font-size: 20px;
             color: #d32f2f;
         }
+        .features-title {
+            margin-top: 15px;
+            color: #333;
+            display: block;
+        }
 
         /* 4. Contact Section */
         #contact {
             background-color: #fff;
+            width: 100%;
         }
         #contact h2 {
             font-size: 36px;
@@ -236,7 +258,7 @@
             font-size: 14px;
         }
 
-        /* Solution 1 & 3: Mobile Responsive Settings (Media Query) */
+        /* Mobile Responsive Settings */
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
@@ -260,14 +282,8 @@
                 font-size: 16px;
             }
             .project-card {
-                width: 100%; /* Mobile par cards screen ki full width le lenge */
+                width: 100%;
             }
-            .intro-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #d32f2f;
-    margin-bottom: 20px;
-}
         }
     </style>
 </head>
@@ -283,189 +299,187 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
-<main> 
-    <section id="home">
-        <img src="akkhil.jpg" alt="Akkhil Kapoor" class="profile-img">
-        <h1>Hello, I'm AKKHIL KAPOOR</h1>
-        <p>Welcome to my professional portfolio website!</p>
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        
-        <div class="about-content">
-          <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
+    <main> 
+        <section id="home">
+            <img src="akkhil.jpg" alt="Akkhil Kapoor" class="profile-img">
+            <h1>Hello, I'm AKKHIL KAPOOR</h1>
+            <p>Welcome to my professional portfolio website!</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
             
-            <p>
-                I am a passionate educator, trainer, and management professional with <strong style="color: #d32f2f;"> more than 20 years of experience </strong>in the fields of education, 
-                information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve 
-                their goals through quality education, practical knowledge, and continuous learning.
-            </p>
+            <div class="about-content">
+                <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
+                
+                <p>
+                    I am a passionate educator, trainer, and management professional with <strong class="highlight-text">more than 20 years of experience</strong> in the fields of education, 
+                    information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve 
+                    their goals through quality education, practical knowledge, and continuous learning.
+                </p>
 
-            <p>
-                I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different 
-                educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners 
-                so that they can successfully apply their knowledge in real-world situations.
-            </p>
+                <p>
+                    I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different 
+                    educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners 
+                    so that they can successfully apply their knowledge in real-world situations.
+                </p>
 
-            <p>
-                My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in 
-                teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects. During this period, I have had 
-                the privilege of mentoring students who later established successful careers in various industries.
-            </p>
+                <p>
+                    My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in 
+                    teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects. During this period, I have had 
+                    the privilege of mentoring students who later established successful careers in various industries.
+                </p>
 
-            <h3>📚 Teaching Experience</h3>
-            <p>
-                I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City. These institutes have provided me with opportunities to 
-                teach students from diverse educational and professional backgrounds.
-            </p>
-            <p><strong>Some of the prestigious institutes where I have served include:</strong></p>
-            <ul>
-                <li>HIIT Ambala City (Currently Working)</li>
-                <li>Helpline Computer Institute, Ambala Cantt</li>
-                <li>Excel Net, Ambala Cantt</li>
-                <li>NIIT, Ambala Cantt</li>
-                <li>Computer Junction, Ambala Cantt</li>
-                <li>Xtreme Technologies, Ambala Cantt</li>
-                <li>Techno Creativity, Ambala Cantt</li>
-            </ul>
-
-            <h3>💻 Areas of Expertise</h3>
-            <h4>Computer Fundamentals</h4>
-            <p>I have extensive experience teaching basic and advanced computer concepts, including operating systems, internet technologies, file management, and productivity tools.</p>
-
-            <h4>Accounting Software</h4>
-            <p>I possess strong knowledge of professional accounting applications such as Tally, Busy, and Marg. I have trained students and professionals in computerized accounting, inventory management, taxation, GST-related processes, and business record management.</p>
-
-            <h4>Web Development</h4>
-            <p>I have a solid understanding of modern web technologies including HTML, CSS, JavaScript, and website design principles. I enjoy helping students understand how websites are built and how they can create their own online presence.</p>
-
-            <h4>Graphic Designing</h4>
-            <p>I have trained many students in professional designing software such as Adobe Photoshop and CorelDRAW. These tools are widely used in the design and printing industries, and I focus on practical project-based learning.</p>
-
-            <h4>Multimedia & Video Editing</h4>
-            <p>Creative technologies have always been an important part of my training programs. I have experience teaching video editing, multimedia production, audio editing, and song mixing techniques.</p>
-
-            <h4>Professional Development</h4>
-            <p>Apart from technical skills, I also guide students in communication skills, interview preparation, career planning, and workplace professionalism.</p>
-
-            <h3>💼 Corporate & Management Experience</h3>
-            <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This practical business exposure has enabled me to bridge the gap between academic learning and industry requirements.</p>
-            <ul>
-                <li><strong>Milestone Apparel</strong> – Manager</li>
-                <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
-                <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
-            </ul>
-
-            <h3>🎯 My Teaching Philosophy</h3>
-            <p>I encourage students to: Learn through practical exercises, develop critical thinking skills, stay updated with new technologies, focus on continuous self-improvement, and build professional ethics and discipline.</p>
-
-            <h3>🏆 Achievements & Impact</h3>
-            <p>During my long teaching career, I have successfully trained thousands of students who are now working in different professional fields. Many of my students have established successful careers in IT, accounting, business management, graphic designing, and entrepreneurship.</p>
-
-            <h3>🚀 Vision for the Future</h3>
-            <p>Technology and education continue to evolve rapidly, and I remain committed to lifelong learning. My vision is to continue empowering students with modern skills, practical knowledge, and confidence that help them succeed in an increasingly competitive world.</p>
-        </div>
-    </section>
-
-    <section id="expertise">
-        <h2>My Expertise & Courses Taught</h2>
-        <div class="project-container">
-            <div class="project-card">
-                <h3>💻 Computer Basics & Accounts</h3>
-                <p>Well versed with computer basics as well as professional accounts software like Tally, Busy, and Marg.</p>
-            </div>
-            <div class="project-card">
-                <h3>🌐 IT & Web Courses</h3>
-                <p>Have a good grasp of the basic and important core technologies of web development such as HTML, CSS, and JavaScript.</p>
-            </div>
-            <div class="project-card">
-                <h3>🎨 Design Courses</h3>
-                <p>In the field of graphic designing, students have a long experience of learning professional tools like Photoshop and Corel Draw.</p>
-            </div>
-            <div class="project-card">
-                <h3>🎬 Editing Courses</h3>
-                <p>Creative courses like <b>Video editing</b> and <b>song mixing</b> are also taught extensively within multimedia.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-container">
-            <div class="project-card">
-                <h3>📊 Accounting Management System</h3>
-                <p>A complete accounting software for managing business transactions and financial records.</p>
-                <br>
-                <strong>Key Features</strong>
-                <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                    <li>Chart of Accounts</li>
-                    <li>Journal Entries</li>
-                    <li>Ledger Management</li>
-                    <li>Trial Balance</li>
-                    <li>Profit & Loss Account</li>
-                    <li>Balance Sheet</li>
+                <h3>📚 Teaching Experience</h3>
+                <p>
+                    I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City. These institutes have provided me with opportunities to 
+                    teach students from diverse educational and professional backgrounds.
+                </p>
+                <p><strong>Some of the prestigious institutes where I have served include:</strong></p>
+                <ul>
+                    <li>HIIT Ambala City (Currently Working)</li>
+                    <li>Helpline Computer Institute, Ambala Cantt</li>
+                    <li>Excel Net, Ambala Cantt</li>
+                    <li>NIIT, Ambala Cantt</li>
+                    <li>Computer Junction, Ambala Cantt</li>
+                    <li>Xtreme Technologies, Ambala Cantt</li>
+                    <li>Techno Creativity, Ambala Cantt</li>
                 </ul>
-            </div>
 
-            <div class="project-card">
-                <h3>🧾 GST Billing & Inventory System</h3>
-                <p>Billing software for GST invoice generation and inventory management.</p>
-                <br>
-                <strong>Key Features</strong>
-                <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                    <li>GST Invoice</li>
-                    <li>Customer Management</li>
-                    <li>Product Management</li>
-                    <li>Purchase & Sales</li>
-                    <li>Stock Reports</li>
+                <h3>💻 Areas of Expertise</h3>
+                <h4>Computer Fundamentals</h4>
+                <p>I have extensive experience teaching basic and advanced computer concepts, including operating systems, internet technologies, file management, and productivity tools.</p>
+
+                <h4>Accounting Software</h4>
+                <p>I possess strong knowledge of professional accounting applications such as Tally, Busy, and Marg. I have trained students and professionals in computerized accounting, inventory management, taxation, GST-related processes, and business record management.</p>
+
+                <h4>Web Development</h4>
+                <p>I have a solid understanding of modern web technologies including HTML, CSS, JavaScript, and website design principles. I enjoy helping students understand how websites are built and how they can create their own online presence.</p>
+
+                <h4>Graphic Designing</h4>
+                <p>I have trained many students in professional designing software such as Adobe Photoshop and CorelDRAW. These tools are widely used in the design and printing industries, and I focus on practical project-based learning.</p>
+
+                <h4>Multimedia & Video Editing</h4>
+                <p>Creative technologies have always been an important part of my training programs. I have experience teaching video editing, multimedia production, audio editing, and song mixing techniques.</p>
+
+                <h4>Professional Development</h4>
+                <p>Apart from technical skills, I also guide students in communication skills, interview preparation, career planning, and workplace professionalism.</p>
+
+                <h3>💼 Corporate & Management Experience</h3>
+                <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This practical business exposure has enabled me to bridge the gap between academic learning and industry requirements.</p>
+                <ul>
+                    <li><strong>Milestone Apparel</strong> – Manager</li>
+                    <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
+                    <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
                 </ul>
-            </div>
 
-            <div class="project-card">
-                <h3>💰 Payroll Management System</h3>
-                <p>Payroll software for employee salary calculation and payslip generation.</p>
-                <br>
-                <strong>Key Features</strong>
-                <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                    <li>Employee Records</li>
-                    <li>Salary Calculation</li>
-                    <li>Attendance</li>
-                    <li>Payslip</li>
-                    <li>Reports</li>
-                </ul>
-            </div>
+                <h3>🎯 My Teaching Philosophy</h3>
+                <p>I encourage students to: Learn through practical exercises, develop critical thinking skills, stay updated with new technologies, focus on continuous self-improvement, and build professional ethics and discipline.</p>
 
-            <div class="project-card">
-                <h3>📦 Inventory Management System</h3>
-                <p>Inventory software to manage stock, suppliers and products.</p>
-                <br>
-                <strong>Key Features</strong>
-                <ul style="text-align:left; margin-top:10px; padding-left:20px;">
-                    <li>Product Management</li>
-                    <li>Supplier Records</li>
-                    <li>Purchase & Sales</li>
-                    <li>Stock Reports</li>
-                    <li>Inventory Tracking</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                <h3>🏆 Achievements & Impact</h3>
+                <p>During my long teaching career, I have successfully trained thousands of students who are now working in different professional fields. Many of my students have established successful careers in IT, accounting, business management, graphic designing, and entrepreneurship.</p>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-details">
-            <p><strong>📞 Mobile:</strong> +91 XXXXX XXXXX</p>
-            <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
-            <p><strong>📍 Location:</strong> Ambala, Haryana</p>
-        </div>
-        
-        <a href="https://wa.me/919XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
-        
-        <p class="quote-text"><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</strong></p>
-    </section>
+                <h3>🚀 Vision for the Future</h3>
+                <p>Technology and education continue to evolve rapidly, and I remain committed to lifelong learning. My vision is to continue empowering students with modern skills, practical knowledge, and confidence that help them succeed in an increasingly competitive world.</p>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2>My Expertise & Courses Taught</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3>💻 Computer Basics & Accounts</h3>
+                    <p>Well versed with computer basics as well as professional accounts software like Tally, Busy, and Marg.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🌐 IT & Web Courses</h3>
+                    <p>Have a good grasp of the basic and important core technologies of web development such as HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🎨 Design Courses</h3>
+                    <p>In the field of graphic designing, students have a long experience of learning professional tools like Photoshop and Corel Draw.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🎬 Editing Courses</h3>
+                    <p>Creative courses like <b>Video editing</b> and <b>song mixing</b> are also taught extensively within multimedia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3>📊 Accounting Management System</h3>
+                    <p>A complete accounting software for managing business transactions and financial records.</p>
+                    <span class="features-title"><strong>Key Features</strong></span>
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                        <li>Chart of Accounts</li>
+                        <li>Journal Entries</li>
+                        <li>Ledger Management</li>
+                        <li>Trial Balance</li>
+                        <li>Profit & Loss Account</li>
+                        <li>Balance Sheet</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>🧾 GST Billing & Inventory System</h3>
+                    <p>Billing software for GST invoice generation and inventory management.</p>
+                    <span class="features-title"><strong>Key Features</strong></span>
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                        <li>GST Invoice</li>
+                        <li>Customer Management</li>
+                        <li>Product Management</li>
+                        <li>Purchase & Sales</li>
+                        <li>Stock Reports</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>💰 Payroll Management System</h3>
+                    <p>Payroll software for employee salary calculation and payslip generation.</p>
+                    <span class="features-title"><strong>Key Features</strong></span>
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                        <li>Employee Records</li>
+                        <li>Salary Calculation</li>
+                        <li>Attendance</li>
+                        <li>Payslip</li>
+                        <li>Reports</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>📦 Inventory Management System</h3>
+                    <p>Inventory software to manage stock, suppliers and products.</p>
+                    <span class="features-title"><strong>Key Features</strong></span>
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                        <li>Product Management</li>
+                        <li>Supplier Records</li>
+                        <li>Purchase & Sales</li>
+                        <li>Stock Reports</li>
+                        <li>Inventory Tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-details">
+                <p><strong>📞 Mobile:</strong> +91 XXXXX XXXXX</p>
+                <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
+                <p><strong>📍 Location:</strong> Ambala, Haryana</p>
+            </div>
+            
+            <a href="https://wa.me/919XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
+            
+            <p class="quote-text"><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</strong></p>
+        </section>
 
     </main> 
+    
     <footer>
           <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
