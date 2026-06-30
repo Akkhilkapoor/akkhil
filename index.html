@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akkhil Kapoor - Professional educator and IT trainer in Ambala with 20+ years of experience.">
+    <meta name="keywords" content="Akkhil Kapoor, IT Trainer Ambala, Tally Trainer, Web Development Course Ambala">
     <title>Akkhil Portfolio</title>
     <style>
-        /* General Styles */
+        /* Global Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +21,7 @@
             line-height: 1.6;
         }
         
-        /* Navigation Bar */
+        /* Modern Navigation Bar */
         header {
             position: fixed;
             top: 0;
@@ -66,7 +67,7 @@
             background-color: #fff;
             transition: width 0.3s ease;
         }
-        /* Active State style */
+        /* Active & Hover States */
         header ul li a.active {
             color: #ffffff;
         }
@@ -84,7 +85,7 @@
             padding-top: 70px;
         }
 
-        /* Section Settings */
+        /* Generic Section Styling */
         section {
             padding: 100px 50px;
             display: flex;
@@ -93,7 +94,6 @@
             align-items: center;
             text-align: center;
         }
-        
         section h2 {
             font-size: 36px;
             margin-bottom: 40px;
@@ -119,7 +119,7 @@
                 rgba(15, 23, 42, 0.85),
                 rgba(15, 23, 42, 0.85)
             ),
-            #1e293b url('akkhil.jpg') no-repeat center center / cover; /* File path fixed to match image tag */
+            #1e293b url('akkhil.jpg') no-repeat center center / cover;
             color: white;
             padding: 120px 20px;
             width: 100%;
@@ -171,7 +171,6 @@
             flex-direction: column;
             align-items: stretch;
         }
-        
         .about-content {
             font-size: 17px;
             line-height: 1.8;
@@ -189,8 +188,6 @@
             color: #d32f2f;
             font-weight: 700;
         }
-        
-        /* Info Cards inside About */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -204,20 +201,10 @@
             border-top: 4px solid #d32f2f;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-        
         .about-content h3 {
             color: #1e293b;
             font-size: 20px;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .about-content h4 {
-            color: #d32f2f;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-size: 16px;
         }
         .about-content ul {
             margin-left: 20px;
@@ -231,18 +218,15 @@
             text-align: justify;
         }
 
-        /* Expertise Section */
+        /* 3. Expertise & Projects Grid System */
         #expertise {
             background-color: #f1f5f9;
             width: 100%;
         }
-
-        /* Projects Section */
         #projects {
             background-color: #fff;
             width: 100%;
         }
-        
         .project-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -251,12 +235,11 @@
             width: 100%;
             margin: 0 auto;
         }
-        
         .project-card {
             background: #fff;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             text-align: left;
             display: flex;
             flex-direction: column;
@@ -265,16 +248,11 @@
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        #expertise .project-card {
-            background: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         #projects .project-card {
             background: #f8fafc;
         }
-        
         .project-card h3 {
             margin-bottom: 12px;
             font-size: 20px;
@@ -308,8 +286,6 @@
             border-radius: 8px;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
-        
-        /* Clean Button Design */
         .whatsapp-btn {
             display: inline-block;
             padding: 15px 40px;
@@ -325,15 +301,11 @@
         .whatsapp-btn:hover {
             background-color: #128C7E;
             transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(18, 140, 126, 0.4);
         }
         .quote-text {
             font-style: italic;
             color: #64748b;
             margin-top: 40px;
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
             font-size: 16px;
         }
 
@@ -347,22 +319,40 @@
             border-top: 3px solid #d32f2f;
         }
 
-        /* Mobile Responsive Settings */
+        /* 100% Fixed Mobile Responsive Layout */
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
+                padding: 12px 15px;
                 flex-direction: column;
-                gap: 12px;
+                justify-content: center;
+                gap: 10px;
+            }
+            header .logo {
+                font-size: 20px;
+                text-align: center;
+                width: 100%;
+            }
+            header ul {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
             }
             header ul li {
-                margin-left: 10px;
-                margin-right: 10px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            header ul li a {
+                font-size: 14px;
+            }
+            main {
+                padding-top: 100px;
             }
             section {
-                padding: 70px 20px;
+                padding: 60px 20px;
             }
             #home h1 {
-                font-size: 34px;
+                font-size: 32px;
             }
             #home p {
                 font-size: 16px;
@@ -381,7 +371,6 @@
 
     <header>
         <div class="logo">Akkhil Portfolio</div>
-        <!-- Semantic nav tag added for SEO and standards -->
         <nav>
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
@@ -403,33 +392,16 @@
 
         <section id="about">
             <h2 style="text-align: center;">About Me</h2>
-            
             <div class="about-content">
                 <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
-                
-                <p>
-                    I am a passionate educator, trainer, and management professional with <strong class="highlight-text">more than 20 years of experience</strong> in the fields of education, 
-                    information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve 
-                    their goals through quality education, practical knowledge, and continuous learning.
-                </p>
-
-                <p>
-                    I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different 
-                    educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners 
-                    so that they can successfully apply their knowledge in real-world situations.
-                </p>
-
-                <p>
-                    My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in 
-                    teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects. During this period, I have had 
-                    the privilege of mentoring students who later established successful careers in various industries.
-                </p>
+                <p>I am a passionate educator, trainer, and management professional with <strong class="highlight-text">more than 20 years of experience</strong> in the fields of education, information technology, business management, and corporate training.</p>
+                <p>My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects.</p>
 
                 <div class="info-grid">
                     <div class="info-block">
                         <h3>📚 Teaching Experience</h3>
-                        <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City, serving diverse student batches.</p>
-                        <p><strong>Prestigious institutes include:</strong></p>
+                        <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City.</p>
+                        <p><strong>Institutes include:</strong></p>
                         <ul>
                             <li>HIIT Ambala City (Currently Working)</li>
                             <li>Helpline Computer Institute, Ambala Cantt</li>
@@ -443,22 +415,13 @@
 
                     <div class="info-block">
                         <h3>💼 Corporate Experience</h3>
-                        <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This bridges the gap between academics and industry standards.</p>
+                        <p>In addition to teaching, my corporate management tenure bridges the gap between academics and real industry standards.</p>
                         <ul>
                             <li><strong>Milestone Apparel</strong> – Manager</li>
                             <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
                             <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
                         </ul>
-                        
-                        <h3>🎯 Teaching Philosophy</h3>
-                        <p>I encourage students to learn through practical exercises, develop critical thinking, focus on continuous self-improvement, and build corporate ethics.</p>
                     </div>
-                </div>
-
-                <div class="info-block" style="margin-top: 25px; width: 100%;">
-                    <h3>🏆 Achievements & Vision</h3>
-                    <p><strong>Impact:</strong> Successfully trained thousands of students who are currently leading successful careers in IT, accounting, core design fields, and entrepreneurship.</p>
-                    <p><strong>Vision:</strong> Technology and education continue to evolve rapidly. My vision is to remain committed to lifelong learning while empowering the youth with high-demand modern skills.</p>
                 </div>
             </div>
         </section>
@@ -480,7 +443,7 @@
                 </div>
                 <div class="project-card">
                     <h3>🎬 Editing Courses</h3>
-                    <p>Creative courses like <b>Video editing</b> and <b>song mixing</b> are also taught extensively within multimedia.</p>
+                    <p>Creative courses like Video editing and song mixing are also taught extensively within multimedia.</p>
                 </div>
             </div>
         </section>
@@ -497,11 +460,8 @@
                         <li>Journal Entries</li>
                         <li>Ledger Management</li>
                         <li>Trial Balance</li>
-                        <li>Profit & Loss Account</li>
-                        <li>Balance Sheet</li>
                     </ul>
                 </div>
-
                 <div class="project-card">
                     <h3>🧾 GST Billing & Inventory System</h3>
                     <p>Billing software for GST invoice generation and inventory management.</p>
@@ -510,11 +470,9 @@
                         <li>GST Invoice</li>
                         <li>Customer Management</li>
                         <li>Product Management</li>
-                        <li>Purchase & Sales</li>
                         <li>Stock Reports</li>
                     </ul>
                 </div>
-
                 <div class="project-card">
                     <h3>💰 Payroll Management System</h3>
                     <p>Payroll software for employee salary calculation and payslip generation.</p>
@@ -522,22 +480,7 @@
                     <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
                         <li>Employee Records</li>
                         <li>Salary Calculation</li>
-                        <li>Attendance</li>
-                        <li>Payslip</li>
-                        <li>Reports</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>📦 Inventory Management System</h3>
-                    <p>Inventory software to manage stock, suppliers and products.</p>
-                    <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
-                        <li>Product Management</li>
-                        <li>Supplier Records</li>
-                        <li>Purchase & Sales</li>
-                        <li>Stock Reports</li>
-                        <li>Inventory Tracking</li>
+                        <li>Attendance Tracking</li>
                     </ul>
                 </div>
             </div>
@@ -550,29 +493,24 @@
                 <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
                 <p><strong>📍 Location:</strong> Ambala, Haryana</p>
             </div>
-            
             <a href="https://wa.me/9198XXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
-            
             <p class="quote-text"><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</strong></p>
         </section>
-
     </main> 
     
     <footer>
           <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
 
-    <!-- Bug Free JavaScript Logic -->
     <script>
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('header ul li a');
 
-        window.addEventListener('scroll', () => {
+        function updateActiveNav() {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                // Fixed: pageYOffset replaced with standard window.scrollY
-                if (window.scrollY >= (sectionTop - 150)) {
+                if (window.scrollY >= (sectionTop - 160)) {
                     current = section.getAttribute('id');
                 }
             });
@@ -583,7 +521,10 @@
                     link.classList.add('active');
                 }
             });
-        });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('DOMContentLoaded', updateActiveNav);
     </script>
 </body>
 </html>
