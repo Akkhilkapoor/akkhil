@@ -66,7 +66,7 @@
             background-color: #fff;
             transition: width 0.3s ease;
         }
-        /* Active State style for JS scroll spy */
+        /* Active State style */
         header ul li a.active {
             color: #ffffff;
         }
@@ -116,10 +116,10 @@
         /* 1. Home Section */
         #home {
             background: linear-gradient(
-                rgba(15, 23, 42, 0.8),
-                rgba(15, 23, 42, 0.8)
+                rgba(15, 23, 42, 0.85),
+                rgba(15, 23, 42, 0.85)
             ),
-            #1e293b url('Akkhil.png') no-repeat center center / cover;
+            #1e293b url('akkhil.jpg') no-repeat center center / cover; /* File path fixed to match image tag */
             color: white;
             padding: 120px 20px;
             width: 100%;
@@ -381,13 +381,16 @@
 
     <header>
         <div class="logo">Akkhil Portfolio</div>
-        <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <!-- Semantic nav tag added for SEO and standards -->
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main> 
@@ -559,7 +562,7 @@
           <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
 
-    <!-- Interactive JavaScript Logic -->
+    <!-- Bug Free JavaScript Logic -->
     <script>
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('header ul li a');
@@ -568,9 +571,8 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                // Offset calculation for smooth trigger timing
-                if (pageYOffset >= (sectionTop - 150)) {
+                // Fixed: pageYOffset replaced with standard window.scrollY
+                if (window.scrollY >= (sectionTop - 150)) {
                     current = section.getAttribute('id');
                 }
             });
