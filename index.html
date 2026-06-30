@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akkhil Kapoor - Professional educator and IT trainer in Ambala with 20+ years of experience.">
+    <meta name="keywords" content="Akkhil Kapoor, IT Trainer Ambala, Tally Trainer, Web Development Course Ambala">
     <title>Akkhil Portfolio</title>
     <style>
         /* General Styles */
@@ -15,8 +16,9 @@
             scroll-behavior: smooth;
         }
         body {
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
         }
         
         /* Navigation Bar */
@@ -31,135 +33,210 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         header .logo {
             color: #fff;
             font-size: 24px;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
         header ul {
             display: flex;
             list-style: none;
         }
         header ul li {
-            margin-left: 20px;
+            margin-left: 25px;
         }
         header ul li a {
             color: #ffeb3b;
-            text-decoration: underline;
-            font-size: 18px;
-            transition: 0.3s;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            padding: 5px 0;
+            position: relative;
+        }
+        header ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease-in-out;
+        }
+        /* Active State style */
+        header ul li a.active {
+            color: #ffffff;
+        }
+        header ul li a.active::after {
+            width: 100%;
         }
         header ul li a:hover {
-            color: #000000;
+            color: #ffffff;
+        }
+        header ul li a:hover::after {
+            width: 100%;
         }
 
         main {
-            padding-top: 70px; /* Fixed Header ke liye body se hata kar yahan lagaya */
+            padding-top: 70px;
         }
 
         /* Section Settings */
         section {
-            padding: 80px 50px;
-            min-height: auto;
+            padding: 100px 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
+        
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #d32f2f;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: #d32f2f;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
 
         /* 1. Home Section */
         #home {
             background: linear-gradient(
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.6)
+                rgba(15, 23, 42, 0.85),
+                rgba(15, 23, 42, 0.85)
             ),
-            url('Akkhil.png') no-repeat center center / cover;
-            background-blend-mode: overlay;
+            #1e293b url('akkhil.png') no-repeat center center / cover; /* CHANGED: Updated to .png */
             color: white;
-            padding: 100px 20px;
+            padding: 120px 20px;
             width: 100%;
+            min-height: 85vh;
         }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 5px solid #d32f2f;
-            margin-bottom: 20px;
+            border: 5px solid #fff;
+            margin-bottom: 25px;
             object-fit: cover;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
         #home h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
+            font-size: 48px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
         #home p {
             font-size: 20px;
-            color: #ccc;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #d32f2f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out; /* CHANGED: Smooth sliding transition */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .cta-btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
         }
 
         /* 2. About Section */
         #about {
             background-color: #fff;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 60px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
             text-align: left;
             display: flex;
             flex-direction: column;
             align-items: stretch;
         }
-        #about h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #d32f2f;
-            border-bottom: 3px solid #d32f2f;
-            padding-bottom: 10px;
-            width: fit-content;
-            align-self: center;
-        }
         
         .about-content {
-            font-size: 18px;
+            font-size: 17px;
             line-height: 1.8;
-            color: #444;
-            text-align: justify;
+            color: #475569;
         }
         .intro-text {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: #d32f2f;
             margin-bottom: 20px;
+            border-left: 4px solid #d32f2f;
+            padding-left: 15px;
         }
         .highlight-text {
             color: #d32f2f;
+            font-weight: 700;
         }
-        .about-content h3 {
-            color: #d32f2f;
+        
+        /* Info Cards inside About */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
             margin-top: 30px;
+        }
+        .info-block {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #d32f2f;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .about-content h3 {
+            color: #1e293b;
+            font-size: 20px;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .about-content h4 {
-            color: #333;
-            margin-top: 20px;
+            color: #d32f2f;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 16px;
         }
         .about-content ul {
-            margin-left: 25px;
-            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .about-content li {
+            margin-bottom: 5px;
         }
         .about-content p {
             margin-bottom: 18px;
+            text-align: justify;
         }
 
         /* Expertise Section */
         #expertise {
-            background-color: #ecf0f1;
+            background-color: #f1f5f9;
             width: 100%;
-        }
-        #expertise h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #d32f2f;
         }
 
         /* Projects Section */
@@ -167,121 +244,148 @@
             background-color: #fff;
             width: 100%;
         }
-        #projects h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #d32f2f;
-        }
+        
         .project-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
-            align-items: stretch;
         }
+        
         .project-card {
             background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 280px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             text-align: left;
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        /* Dono section ke cards ka background light gray karne ke liye */
-        #projects .project-card, #expertise .project-card {
-            background: #f4f7f6;
+        #expertise .project-card {
+            background: #ffffff;
         }
+        #projects .project-card {
+            background: #f8fafc;
+        }
+        
         .project-card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 20px;
-            color: #d32f2f;
+            color: #1e293b;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+        .project-card p {
+            color: #64748b;
+            font-size: 15px;
         }
         .features-title {
             margin-top: 15px;
-            color: #333;
-            display: block;
+            color: #d32f2f;
+            font-weight: 600;
+            font-size: 15px;
         }
 
         /* 4. Contact Section */
         #contact {
             background-color: #fff;
             width: 100%;
-        }
-        #contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #d32f2f;
+            border-top: 1px solid #e2e8f0;
         }
         .contact-details {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-size: 18px;
-            line-height: 2;
+            line-height: 2.2;
+            background: #f8fafc;
+            padding: 25px 50px;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
         
-        /* Clean Button Design */
         .whatsapp-btn {
             display: inline-block;
             padding: 15px 40px;
             background-color: #25D366; 
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
             font-size: 18px;
             font-weight: bold;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
+            transition: all 0.3s ease-in-out; /* CHANGED: Smooth sliding transition */
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
         .whatsapp-btn:hover {
             background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(18, 140, 126, 0.4);
         }
         .quote-text {
             font-style: italic;
-            color: #555;
-            margin-top: 30px;
+            color: #64748b;
+            margin-top: 40px;
             text-align: center;
             width: 100%;
             max-width: 600px;
+            font-size: 16px;
         }
 
         /* Footer */
         footer {
-            background-color: #d32f2f;
-            color: white;
+            background-color: #1e293b;
+            color: #94a3b8;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 14px;
+            border-top: 3px solid #d32f2f;
         }
 
-        /* Mobile Responsive Settings */
+        /* Mobile Responsive Settings - Fixed Layout */
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 10px;
+                padding: 12px 15px;
+                flex-direction: row; 
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            header .logo {
+                font-size: 18px;
+                width: 100%;
+                text-align: center;
             }
             header ul li {
-                margin-left: 10px;
-                margin-right: 10px;
+                margin-left: 8px;
+                margin-right: 8px;
             }
             header ul li a {
-                font-size: 16px;
+                font-size: 13px;
+            }
+            main {
+                padding-top: 90px; 
             }
             section {
-                padding: 60px 20px;
+                padding: 60px 15px;
             }
             #home h1 {
-                font-size: 32px;
+                font-size: 30px;
             }
             #home p {
                 font-size: 16px;
             }
-            .project-card {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-details {
+                padding: 20px;
                 width: 100%;
             }
         }
@@ -291,13 +395,15 @@
 
     <header>
         <div class="logo">Akkhil Portfolio</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main> 
@@ -305,10 +411,11 @@
             <img src="akkhil.jpg" alt="Akkhil Kapoor" class="profile-img">
             <h1>Hello, I'm AKKHIL KAPOOR</h1>
             <p>Welcome to my professional portfolio website!</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
         </section>
 
         <section id="about">
-            <h2>About Me</h2>
+            <h2 style="text-align: center;">About Me</h2>
             
             <div class="about-content">
                 <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
@@ -331,57 +438,41 @@
                     the privilege of mentoring students who later established successful careers in various industries.
                 </p>
 
-                <h3>📚 Teaching Experience</h3>
-                <p>
-                    I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City. These institutes have provided me with opportunities to 
-                    teach students from diverse educational and professional backgrounds.
-                </p>
-                <p><strong>Some of the prestigious institutes where I have served include:</strong></p>
-                <ul>
-                    <li>HIIT Ambala City (Currently Working)</li>
-                    <li>Helpline Computer Institute, Ambala Cantt</li>
-                    <li>Excel Net, Ambala Cantt</li>
-                    <li>NIIT, Ambala Cantt</li>
-                    <li>Computer Junction, Ambala Cantt</li>
-                    <li>Xtreme Technologies, Ambala Cantt</li>
-                    <li>Techno Creativity, Ambala Cantt</li>
-                </ul>
+                <div class="info-grid">
+                    <div class="info-block">
+                        <h3>📚 Teaching Experience</h3>
+                        <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City, serving diverse student batches.</p>
+                        <p><strong>Prestigious institutes include:</strong></p>
+                        <ul>
+                            <li>HIIT Ambala City (Currently Working)</li>
+                            <li>Helpline Computer Institute, Ambala Cantt</li>
+                            <li>Excel Net, Ambala Cantt</li>
+                            <li>NIIT, Ambala Cantt</li>
+                            <li>Computer Junction, Ambala Cantt</li>
+                            <li>Xtreme Technologies, Ambala Cantt</li>
+                            <li>Techno Creativity, Ambala Cantt</li>
+                        </ul>
+                    </div>
 
-                <h3>💻 Areas of Expertise</h3>
-                <h4>Computer Fundamentals</h4>
-                <p>I have extensive experience teaching basic and advanced computer concepts, including operating systems, internet technologies, file management, and productivity tools.</p>
+                    <div class="info-block">
+                        <h3>💼 Corporate Experience</h3>
+                        <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This bridges the gap between academics and industry standards.</p>
+                        <ul>
+                            <li><strong>Milestone Apparel</strong> – Manager</li>
+                            <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
+                            <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
+                        </ul>
+                        
+                        <h3>🎯 Teaching Philosophy</h3>
+                        <p>I encourage students to learn through practical exercises, develop critical thinking, focus on continuous self-improvement, and build corporate ethics.</p>
+                    </div>
+                </div>
 
-                <h4>Accounting Software</h4>
-                <p>I possess strong knowledge of professional accounting applications such as Tally, Busy, and Marg. I have trained students and professionals in computerized accounting, inventory management, taxation, GST-related processes, and business record management.</p>
-
-                <h4>Web Development</h4>
-                <p>I have a solid understanding of modern web technologies including HTML, CSS, JavaScript, and website design principles. I enjoy helping students understand how websites are built and how they can create their own online presence.</p>
-
-                <h4>Graphic Designing</h4>
-                <p>I have trained many students in professional designing software such as Adobe Photoshop and CorelDRAW. These tools are widely used in the design and printing industries, and I focus on practical project-based learning.</p>
-
-                <h4>Multimedia & Video Editing</h4>
-                <p>Creative technologies have always been an important part of my training programs. I have experience teaching video editing, multimedia production, audio editing, and song mixing techniques.</p>
-
-                <h4>Professional Development</h4>
-                <p>Apart from technical skills, I also guide students in communication skills, interview preparation, career planning, and workplace professionalism.</p>
-
-                <h3>💼 Corporate & Management Experience</h3>
-                <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This practical business exposure has enabled me to bridge the gap between academic learning and industry requirements.</p>
-                <ul>
-                    <li><strong>Milestone Apparel</strong> – Manager</li>
-                    <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
-                    <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
-                </ul>
-
-                <h3>🎯 My Teaching Philosophy</h3>
-                <p>I encourage students to: Learn through practical exercises, develop critical thinking skills, stay updated with new technologies, focus on continuous self-improvement, and build professional ethics and discipline.</p>
-
-                <h3>🏆 Achievements & Impact</h3>
-                <p>During my long teaching career, I have successfully trained thousands of students who are now working in different professional fields. Many of my students have established successful careers in IT, accounting, business management, graphic designing, and entrepreneurship.</p>
-
-                <h3>🚀 Vision for the Future</h3>
-                <p>Technology and education continue to evolve rapidly, and I remain committed to lifelong learning. My vision is to continue empowering students with modern skills, practical knowledge, and confidence that help them succeed in an increasingly competitive world.</p>
+                <div class="info-block" style="margin-top: 25px; width: 100%;">
+                    <h3>🏆 Achievements & Vision</h3>
+                    <p><strong>Impact:</strong> Successfully trained thousands of students who are currently leading successful careers in IT, accounting, core design fields, and entrepreneurship.</p>
+                    <p><strong>Vision:</strong> Technology and education continue to evolve rapidly. My vision is to remain committed to lifelong learning while empowering the youth with high-demand modern skills.</p>
+                </div>
             </div>
         </section>
 
@@ -398,7 +489,7 @@
                 </div>
                 <div class="project-card">
                     <h3>🎨 Design Courses</h3>
-                    <p>In the field of graphic designing, students have a long experience of learning professional tools like Photoshop and Corel Draw.</p>
+                    <p>Extensive experience in training students on professional tools like Photoshop and CorelDraw for industry readiness.</p>
                 </div>
                 <div class="project-card">
                     <h3>🎬 Editing Courses</h3>
@@ -414,7 +505,7 @@
                     <h3>📊 Accounting Management System</h3>
                     <p>A complete accounting software for managing business transactions and financial records.</p>
                     <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
                         <li>Chart of Accounts</li>
                         <li>Journal Entries</li>
                         <li>Ledger Management</li>
@@ -428,7 +519,7 @@
                     <h3>🧾 GST Billing & Inventory System</h3>
                     <p>Billing software for GST invoice generation and inventory management.</p>
                     <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
                         <li>GST Invoice</li>
                         <li>Customer Management</li>
                         <li>Product Management</li>
@@ -441,7 +532,7 @@
                     <h3>💰 Payroll Management System</h3>
                     <p>Payroll software for employee salary calculation and payslip generation.</p>
                     <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
                         <li>Employee Records</li>
                         <li>Salary Calculation</li>
                         <li>Attendance</li>
@@ -454,7 +545,7 @@
                     <h3>📦 Inventory Management System</h3>
                     <p>Inventory software to manage stock, suppliers and products.</p>
                     <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
                         <li>Product Management</li>
                         <li>Supplier Records</li>
                         <li>Purchase & Sales</li>
@@ -468,12 +559,12 @@
         <section id="contact">
             <h2>Contact Me</h2>
             <div class="contact-details">
-                <p><strong>📞 Mobile:</strong> +91 97XXX XXXXX</p>
+                <p><strong>📞 Mobile:</strong> +91 98XXX-XXXXX</p>
                 <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
                 <p><strong>📍 Location:</strong> Ambala, Haryana</p>
             </div>
             
-            <a href="https://wa.me/919XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
+            <a href="https://wa.me/9198XXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
             
             <p class="quote-text"><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</strong></p>
         </section>
@@ -484,5 +575,29 @@
           <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('header ul li a');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= (sectionTop - 160)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('DOMContentLoaded', updateActiveNav);
+    </script>
 </body>
 </html>
