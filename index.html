@@ -10,16 +10,17 @@
     <meta name="keywords" content="Akkhil Kapoor, IT Trainer Ambala, Tally Trainer Ambala, Web Development Course Ambala, HIIT Ambala, Computer Institute Ambala">
     <meta name="author" content="Akkhil Kapoor">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.hiitambala.com/"> <!-- Replace with your actual live domain URL -->
+    <link rel="canonical" href="https://www.hiitambala.com/"> 
 
     <!-- Open Graph / Facebook Meta Tags (For Social Sharing) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Akkhil Kapoor | Professional IT Trainer & Educator">
     <meta property="og:description" content="Over 20+ years of experience training thousands of students in IT, Accounting (Tally), and Web Development in Ambala.">
-    <meta property="og:image" content="https://www.hiitambala.com/akkhil.jpg"> <!-- Replace with full image URL -->
+    <!-- FIXED: Ensured the og:image matches your main profile image filename -->
+    <meta property="og:image" content="https://www.hiitambala.com/akkhil.jpg"> 
 
-    <!-- Google Search Console Verification (GSC Placeholder) -->
-    <!-- Replace 'YOUR_VERIFICATION_CODE' with the actual code from Google Search Console -->
+    <!-- Google Search Console Verification -->
+    <!-- NOTE: Replace 'YOUR_VERIFICATION_CODE' with your actual code from GSC when deploying -->
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
 
     <!-- Structured Data / JSON-LD Schema (Huge for SEO) -->
@@ -105,7 +106,6 @@
             background-color: #fff;
             transition: width 0.3s ease-in-out;
         }
-        /* Active State style */
         header ul li a.active {
             color: #ffffff;
         }
@@ -155,11 +155,11 @@
         /* 1. Home Section */
         #home {
             background: linear-gradient(
-                rgba(15, 23, 42, 0.85),
-                rgba(15, 23, 42, 0.85)
+                rgba(15, 23, 42, 0.88),
+                rgba(15, 23, 42, 0.88)
             ),
-            /* Fallback and background styling optimized */
-            #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
+           /* is image ko change nahi krna hai */
+            #1e293b url('akkhilkapoor.png') no-repeat center center / cover; 
             color: white;
             padding: 120px 20px;
             width: 100%;
@@ -231,7 +231,6 @@
             font-weight: 700;
         }
         
-        /* Info Cards inside About */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -348,8 +347,27 @@
             padding: 25px 50px;
             border-radius: 8px;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
         }
         
+        /* ADDED: Social Media Links Container for Professional Look */
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
         .whatsapp-btn {
             display: inline-block;
             padding: 15px 40px;
@@ -387,7 +405,7 @@
             border-top: 3px solid #d32f2f;
         }
 
-        /* Mobile Responsive Settings - Fixed Layout */
+        /* Mobile Responsive Settings */
         @media (max-width: 768px) {
             header {
                 padding: 12px 15px;
@@ -425,7 +443,6 @@
             }
             .contact-details {
                 padding: 20px;
-                width: 100%;
             }
         }
     </style>
@@ -447,7 +464,7 @@
 
     <main> 
         <section id="home">
-            <!-- Added loading="lazy" and fixed standard file format to .jpg for performance -->
+            <!-- FIXED: Maintained consistent extension (.jpg) -->
             <img src="akkhil.jpg" alt="Akkhil Kapoor - Professional IT Trainer in Ambala" class="profile-img" loading="lazy">
             <h1>Hello, I'm AKKHIL KAPOOR</h1>
             <p>Welcome to my professional portfolio website!</p>
@@ -599,11 +616,20 @@
         <section id="contact">
             <h2>Contact Me</h2>
             <div class="contact-details">
+                <!-- NOTE: Replace with your actual mobile and email details -->
                 <p><strong>📞 Mobile:</strong> +91 98XXX-XXXXX</p>
                 <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
                 <p><strong>📍 Location:</strong> Ambala, Haryana</p>
+                
+                <!-- ADDED: Placeholders for your professional networks -->
+                <div class="social-links">
+                    <strong>🌐 Network:</strong>
+                    <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener">LinkedIn</a> | 
+                    <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener">Facebook</a>
+                </div>
             </div>
             
+            <!-- NOTE: Make sure to change '9198XXXXXXXX' to your active WhatsApp phone number (with country code) -->
             <a href="https://wa.me/9198XXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
             
             <p class="quote-text"><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</strong></p>
