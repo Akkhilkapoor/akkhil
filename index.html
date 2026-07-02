@@ -195,7 +195,7 @@
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    margin: 5px 10px; /* इससे दोनों बटनों के बीच और ऊपर-नीचे थोड़ा गैप बन जाएगा */
+    margin: 10px; 
 }
         .cta-btn:hover {
             background-color: #b71c1c;
@@ -408,6 +408,11 @@
 
         /* Mobile Responsive Settings */
         @media (max-width: 768px) {
+            #home .cta-btn {
+        display: flex; 
+        margin: 10px auto; 
+        max-width: 250px; 
+        }
             header {
                 padding: 12px 15px;
                 flex-direction: row; 
