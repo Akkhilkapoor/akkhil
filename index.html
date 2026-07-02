@@ -183,17 +183,20 @@
             margin-bottom: 30px;
             max-width: 600px;
         }
-        .cta-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #d32f2f;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
+       .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    background-color: #d32f2f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin: 5px 10px; /* इससे दोनों बटनों के बीच और ऊपर-नीचे थोड़ा गैप बन जाएगा */
+}
         .cta-btn:hover {
             background-color: #b71c1c;
             transform: translateY(-2px);
@@ -467,6 +470,7 @@
             <h1>Hello, I'm AKKHIL KAPOOR</h1>
             <p>Welcome to my professional portfolio website!</p>
             <a href="#projects" class="cta-btn">View My Work</a>
+            <a href="my-resume.pdf" target="_blank" class="cta-btn">My Resume</a>
         </section>
 
         <section id="about">
