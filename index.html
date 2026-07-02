@@ -3,691 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Akkhil Kapoor | Professional IT Trainer & Educator in Ambala</title>
-    <meta name="description" content="Akkhil Kapoor is a professional educator and IT trainer in Ambala with 20+ years of experience in Tally, Web Development, Graphic Design, and Accounting Systems.">
-    <meta name="keywords" content="Akkhil Kapoor, IT Trainer Ambala, Tally Trainer Ambala, Web Development Course Ambala, HIIT Ambala, Computer Institute Ambala">
+    <title>Akkhil Kapoor | Professional IT Trainer & Portfolio</title>
+    <meta name="description" content="Official portfolio of Akkhil Kapoor, an experienced IT Trainer in Ambala specializing in Full-Stack Development, Cyber Security, Cloud Computing, and AI/ML.">
+    <meta name="keywords" content="Akkhil Kapoor, IT Trainer Ambala, Web Development Coach, Cyber Security Trainer, Cloud Computing, Akkhil Kapoor Portfolio">
     <meta name="author" content="Akkhil Kapoor">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.hiitambala.com/"> 
-
-    <!-- Open Graph / Facebook Meta Tags (For Social Sharing) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Akkhil Kapoor | Professional IT Trainer & Educator">
-    <meta property="og:description" content="Over 20+ years of experience training thousands of students in IT, Accounting (Tally), and Web Development in Ambala.">
-    <!-- FIXED: Ensured the og:image matches your main profile image filename -->
-    <meta property="og:image" content="https://www.hiitambala.com/akkhil.jpg"> 
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM" />
-    <!-- Structured Data / JSON-LD Schema (Huge for SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Akkhil Kapoor",
-      "jobTitle": "Professional IT Trainer & Educator",
-      "worksFor": {
-        "@type": "EducationalOrganization",
-        "name": "HIIT Ambala City"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ambala",
-        "addressRegion": "Haryana",
-        "addressCountry": "IN"
-      },
-      "description": "Professional educator and IT trainer in Ambala with 20+ years of experience specializing in Tally, Web Development, and Multimedia.",
-      "knowsAbout": ["Tally", "Web Development", "Graphic Design", "Accounting Management Systems", "Payroll Systems"]
-    }
-    </script>
-
+    <link rel="canonical" href="https://yourdomain.com/">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* General Styles */
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary-color: #d32f2f;
+            --primary-dark: #b71c1c;
+            --text-dark: #212121;
+            --text-light: #757575;
+            --bg-light: #f9f9f9;
+            --bg-white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
+
         body {
-            background-color: #f8fafc;
-            color: #334155;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
             line-height: 1.6;
         }
-        
-        /* Navigation Bar */
+
+        /* HEADER & NAVIGATION */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #d32f2f;
-            padding: 15px 50px;
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
         }
-        header .logo {
-            color: #fff;
+
+        .logo {
             font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        header ul {
+
+        .nav-links {
             display: flex;
             list-style: none;
+            gap: 20px;
         }
-        header ul li {
-            margin-left: 25px;
-        }
-        header ul li a {
-            color: #ffeb3b;
+
+        .nav-links a {
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease-in-out;
-            padding: 5px 0;
-            position: relative;
-        }
-        header ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #fff;
-            transition: width 0.3s ease-in-out;
-        }
-        header ul li a.active {
-            color: #ffffff;
-        }
-        header ul li a.active::after {
-            width: 100%;
-        }
-        header ul li a:hover {
-            color: #ffffff;
-        }
-        header ul li a:hover::after {
-            width: 100%;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
         }
 
-        main {
-            padding-top: 70px;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
         }
 
-        /* Section Settings */
-        section {
-            padding: 100px 50px;
+        /* HOME SECTION */
+        #home {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 100px 20px 60px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--bg-white);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        #home h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        /* बटनों को एक लाइन में रखने वाला नया कंटेनर */
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            flex-wrap: nowrap; /* बड़ी स्क्रीन पर किसी भी हाल में लाइन नहीं बदलेगा */
+            margin-top: 10px;
+        }
+
+        #home .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            white-space: nowrap; /* टेक्स्ट को टूटने से रोकेगा */
+        }
+
+        #home .cta-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* SECTION COMMON STYLES */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         section h2 {
-            font-size: 36px;
+            font-size: 2rem;
+            text-align: center;
             margin-bottom: 40px;
-            color: #d32f2f;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
+
         section h2::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 4px;
-            background-color: #d32f2f;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 2px;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
 
-        /* 1. Home Section */
-        #home {
-            background: linear-gradient(
-                rgba(15, 23, 42, 0.88),
-                rgba(15, 23, 42, 0.88)
-            ),
-           /* is image ko change nahi krna hai */
-            #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
-            color: white;
-            padding: 120px 20px;
-            width: 100%;
-            min-height: 85vh;
-        }
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            margin-bottom: 25px;
-            object-fit: cover;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-        }
-        #home h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        #home p {
-            font-size: 20px;
-            color: #cbd5e1;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-       .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 30px;
-    background-color: #d32f2f;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    margin: 10px; 
-}
-        .cta-btn:hover {
-            background-color: #b71c1c;
-            transform: translateY(-2px);
-        }
-
-        /* 2. About Section */
-        #about {
-            background-color: #fff;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 40px;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-        
-        .about-content {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #475569;
-        }
-        .intro-text {
-            font-size: 22px;
-            font-weight: bold;
-            color: #d32f2f;
-            margin-bottom: 20px;
-            border-left: 4px solid #d32f2f;
-            padding-left: 15px;
-        }
-        .highlight-text {
-            color: #d32f2f;
-            font-weight: 700;
-        }
-        
-        .info-grid {
+        /* PROJECTS SECTION */
+        .projects-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .info-block {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 8px;
-            border-top: 4px solid #d32f2f;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        
-        .about-content h3 {
-            color: #1e293b;
-            font-size: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .about-content h4 {
-            color: #d32f2f;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-        .about-content ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        .about-content li {
-            margin-bottom: 5px;
-        }
-        .about-content p {
-            margin-bottom: 18px;
-            text-align: justify;
-        }
-
-        /* Expertise Section */
-        #expertise {
-            background-color: #f1f5f9;
-            width: 100%;
-        }
-
-        /* Projects Section */
-        #projects {
-            background-color: #fff;
-            width: 100%;
-        }
-        
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
         }
-        
+
         .project-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
+
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        #expertise .project-card {
-            background: #ffffff;
-        }
-        #projects .project-card {
-            background: #f8fafc;
-        }
-        
-        .project-card h3 {
-            margin-bottom: 12px;
-            font-size: 20px;
-            color: #1e293b;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 10px;
-        }
-        .project-card p {
-            color: #64748b;
-            font-size: 15px;
-        }
-        .features-title {
-            margin-top: 15px;
-            color: #d32f2f;
-            font-weight: 600;
-            font-size: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
         }
 
-        /* 4. Contact Section */
-        #contact {
-            background-color: #fff;
-            width: 100%;
-            border-top: 1px solid #e2e8f0;
-        }
-        .contact-details {
-            margin-bottom: 30px;
-            font-size: 18px;
-            line-height: 2.2;
-            background: #f8fafc;
-            padding: 25px 50px;
-            border-radius: 8px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
-            text-align: left;
-            max-width: 600px;
-            width: 100%;
-        }
-        
-        /* ADDED: Social Media Links Container for Professional Look */
-        .social-links {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
-        }
-        .social-links a {
-            color: #d32f2f;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .social-links a:hover {
-            text-decoration: underline;
+        .project-info {
+            padding: 20px;
         }
 
-        .whatsapp-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #25D366; 
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(18, 140, 126, 0.4);
-        }
-        .quote-text {
-            font-style: italic;
-            color: #64748b;
-            margin-top: 40px;
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-            font-size: 16px;
+        .project-info h3 {
+            margin-bottom: 10px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #1e293b;
-            color: #94a3b8;
-            text-align: center;
-            padding: 25px;
-            font-size: 14px;
-            border-top: 3px solid #d32f2f;
-        }
-
-#home .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 30px;
-    background-color: #d32f2f;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    margin: 10px; 
-}
-
-#home .cta-btn:hover {
-    background-color: #b71c1c;
-    transform: translateY(-2px);
-}
-/* Mobile Responsive Settings */
+        /* RESPONSIVE DESIGN (MOBILE) */
         @media (max-width: 768px) {
-            header {
-                padding: 12px 15px;
-                flex-direction: row; 
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 8px;
+            .nav-links {
+                display: none; /* आप चाहें तो बाद में मोबाइल हैमबर्गर मेनू बना सकते हैं */
             }
-            header .logo {
-                font-size: 18px;
-                width: 100%;
-                text-align: center;
-            }
-            header ul li {
-                margin-left: 8px;
-                margin-right: 8px;
-            }
-            header ul li a {
-                font-size: 13px;
-            }
-            main {
-                padding-top: 90px; 
-            }
-            section {
-                padding: 60px 15px;
-            }
+            
             #home h1 {
-                font-size: 30px;
-            }
-            #home p {
-                font-size: 16px;
+                font-size: 2rem;
             }
 
-            /* मोबाइल में बटन तोड़ने वाला पुराना कोड यहाँ से हटा दिया गया है */
-
-            .info-grid {
-                grid-template-columns: 1fr;
+            /* मोबाइल पर बहुत कम जगह होने पर बटन सुरक्षित रूप से एडजस्ट होंगे */
+            .cta-container {
+                flex-wrap: wrap; 
+                gap: 10px;
+                width: 100%;
             }
-            .contact-details {
-                padding: 20px;
+
+            #home .cta-btn {
+                max-width: 280px;
+                width: 100%;
+                font-size: 15px;
+                padding: 10px 20px;
             }
         }
-            </style>
+    </style>
 </head>
 <body>
 
+    <!-- HEADER / NAVIGATION -->
     <header>
-        <div class="logo">Akkhil Portfolio</div>
-        <nav aria-label="Main Navigation">
-            <ul>
+        <nav>
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Akkhil Kapoor
+            </a>
+            <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main> 
-        <section id="home">
-            <!-- FIXED: Maintained consistent extension (.jpg) -->
-            <img src="akkhil.jpg" alt="Akkhil Kapoor - Professional IT Trainer in Ambala" class="profile-img" loading="lazy">
-            <h1>Hello, I'm AKKHIL KAPOOR</h1>
-            <p>Welcome to my professional portfolio website!</p>
+    <!-- MAIN HOME SECTION -->
+    <section id="home">
+        <img src="akkhil.jpg" alt="Akkhil Kapoor - Professional IT Trainer in Ambala" class="profile-img" loading="lazy">
+        <h1>Hello, I'm AKKHIL KAPOOR</h1>
+        <p>Welcome to my professional portfolio website! I am an experienced IT Trainer helping students and professionals master modern tech skills.</p>
+        
+        <!-- बटनों का सुधरा हुआ ब्लॉक -->
+        <div class="cta-container">
             <a href="#projects" class="cta-btn">View My Work</a>
             <a href="my-resume.pdf" target="_blank" class="cta-btn">My Resume</a>
-        </section>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2 style="text-align: center;">About Me</h2>
-            
-            <div class="about-content">
-                <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
-                
-                <p>
-                    I am a passionate educator, trainer, and management professional with <strong class="highlight-text">more than 20 years of experience</strong> in the fields of education, 
-                    information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve 
-                    their goals through quality education, practical knowledge, and continuous learning.
-                </p>
-
-                <p>
-                    I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different 
-                    educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners 
-                    so that they can successfully apply their knowledge in real-world situations.
-                </p>
-
-                <p>
-                    My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in 
-                    teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects. During this period, I have had 
-                    the privilege of mentoring students who later established successful careers in various industries.
-                </p>
-
-                <div class="info-grid">
-                    <div class="info-block">
-                        <h3>📚 Teaching Experience</h3>
-                        <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City, serving diverse student batches.</p>
-                        <h4>Prestigious institutes include:</h4>
-                        <ul>
-                            <li>HIIT Ambala City (Currently Working)</li>
-                            <li>Helpline Computer Institute, Ambala Cantt</li>
-                            <li>Excel Net, Ambala Cantt</li>
-                            <li>NIIT, Ambala Cantt</li>
-                            <li>Computer Junction, Ambala Cantt</li>
-                            <li>Xtreme Technologies, Ambala Cantt</li>
-                            <li>Techno Creativity, Ambala Cantt</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-block">
-                        <h3>💼 Corporate Experience</h3>
-                        <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This bridges the gap between academics and industry standards.</p>
-                        <ul>
-                            <li><strong>Milestone Apparel</strong> – Manager</li>
-                            <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
-                            <li><strong>Ecosure Pharma</strong> – Sales Manager</li>
-                        </ul>
-                        
-                        <h3>🎯 Teaching Philosophy</h3>
-                        <p>I encourage students to learn through practical exercises, develop critical thinking, focus on continuous self-improvement, and build corporate ethics.</p>
-                    </div>
-                </div>
-
-                <div class="info-block" style="margin-top: 25px; width: 100%;">
-                    <h3>🏆 Achievements & Vision</h3>
-                    <p><strong>Impact:</strong> Successfully trained thousands of students who are currently leading successful careers in IT, accounting, core design fields, and entrepreneurship.</p>
-                    <p><strong>Vision:</strong> Technology and education continue to evolve rapidly. My vision is to remain committed to lifelong learning while empowering the youth with high-demand modern skills.</p>
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <h2>My Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>E-Learning Platform</h3>
+                    <p>A full-stack learning management system built for students to access courses and quizzes seamlessly.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="expertise">
-            <h2>My Expertise & Courses Taught</h2>
-            <div class="project-container">
-                <div class="project-card">
-                    <h3>💻 Computer Basics & Accounts</h3>
-                    <p>Well versed with computer basics as well as professional accounts software like Tally, Busy, and Marg.</p>
-                </div>
-                <div class="project-card">
-                    <h3>🌐 IT & Web Courses</h3>
-                    <p>Have a good grasp of the basic and important core technologies of web development such as HTML, CSS, and JavaScript.</p>
-                </div>
-                <div class="project-card">
-                    <h3>🎨 Design Courses</h3>
-                    <p>Extensive experience in training students on professional tools like Photoshop and CorelDraw for industry readiness.</p>
-                </div>
-                <div class="project-card">
-                    <h3>🎬 Editing Courses</h3>
-                    <p>Creative courses like <b>Video editing</b> and <b>song mixing</b> are also taught extensively within multimedia.</p>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Portfolio Template</h3>
+                    <p>A clean, responsive, and SEO-friendly portfolio website designed specifically for educators and trainers.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="project-container">
-                <div class="project-card">
-                    <h3>📊 Accounting Management System</h3>
-                    <p>A complete accounting software for managing business transactions and financial records.</p>
-                    <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
-                        <li>Chart of Accounts</li>
-                        <li>Journal Entries</li>
-                        <li>Ledger Management</li>
-                        <li>Trial Balance</li>
-                        <li>Profit & Loss Account</li>
-                        <li>Balance Sheet</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>🧾 GST Billing & Inventory System</h3>
-                    <p>Billing software for GST invoice generation and inventory management.</p>
-                    <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
-                        <li>GST Invoice</li>
-                        <li>Customer Management</li>
-                        <li>Product Management</li>
-                        <li>Purchase & Sales</li>
-                        <li>Stock Reports</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>💰 Payroll Management System</h3>
-                    <p>Payroll software for employee salary calculation and payslip generation.</p>
-                    <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
-                        <li>Employee Records</li>
-                        <li>Salary Calculation</li>
-                        <li>Attendance</li>
-                        <li>Payslip</li>
-                        <li>Reports</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>📦 Inventory Management System</h3>
-                    <p>Inventory software to manage stock, suppliers and products.</p>
-                    <span class="features-title"><strong>Key Features</strong></span>
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color: #64748b; font-size: 14px;">
-                        <li>Product Management</li>
-                        <li>Supplier Records</li>
-                        <li>Purchase & Sales</li>
-                        <li>Stock Reports</li>
-                        <li>Inventory Tracking</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-details">
-                <!-- NOTE: Replace with your actual mobile and email details -->
-                <p><strong>📞 Mobile:</strong> +91 98XXX-XXXXX</p>
-                <p><strong>📧 Email:</strong> akhil@hiitambala.com</p>
-                <p><strong>📍 Location:</strong> Ambala, Haryana</p>
-                
-                <!-- ADDED: Placeholders for your professional networks -->
-                <div class="social-links">
-                    <strong>🌐 Network:</strong>
-                    <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener">LinkedIn</a> | 
-                    <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener">Facebook</a>
-                </div>
-            </div>
-            
-            <!-- NOTE: Make sure to change '9198XXXXXXXX' to your active WhatsApp phone number (with country code) -->
-            <a href="https://wa.me/9198XXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp Me</a>
-            
-            <p class="quote-text"><strong>"There is no age limit to learning, because every new skill brings growth, confidence, and success."</strong></p>
-        </section>
-
-    </main> 
-    
-    <footer>
-          <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('header ul li a');
-
-        function updateActiveNav() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= (sectionTop - 160)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNav);
-        window.addEventListener('DOMContentLoaded', updateActiveNav);
-    </script>
 </body>
 </html>
