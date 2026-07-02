@@ -438,12 +438,15 @@
     #home p {
         font-size: 16px;
     }
-    /* बटन को मोबाइल में ऊपर-नीचे सेट करने के लिए नया नियम */
+
+    /* मोबाइल में बटनों को दो अलग-अलग लाइन में करने का जादुई कोड */
     #home .cta-btn {
-        display: flex;
-        margin: 12px auto;
-        max-width: 220px;
+        display: flex;       /* फुल विड्थ ब्लॉक बनाने के लिए */
+        margin: 12px auto;   /* ऊपर-नीचे 12px का गैप और सेंटर करने के लिए */
+        max-width: 260px;    /* मोबाइल पर बटन बहुत ज्यादा चौड़े और अजीब न लगें */
+        justify-content: center;
     }
+
     .info-grid {
         grid-template-columns: 1fr;
     }
