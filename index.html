@@ -407,50 +407,52 @@
         }
 
         /* Mobile Responsive Settings */
-        @media (max-width: 768px) {
-            #home .cta-btn {
-        display: flex; 
-        margin: 10px auto; 
-        max-width: 250px; 
-        }
-            header {
-                padding: 12px 15px;
-                flex-direction: row; 
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 8px;
-            }
-            header .logo {
-                font-size: 18px;
-                width: 100%;
-                text-align: center;
-            }
-            header ul li {
-                margin-left: 8px;
-                margin-right: 8px;
-            }
-            header ul li a {
-                font-size: 13px;
-            }
-            main {
-                padding-top: 90px; 
-            }
-            section {
-                padding: 60px 15px;
-            }
-            #home h1 {
-                font-size: 30px;
-            }
-            #home p {
-                font-size: 16px;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-details {
-                padding: 20px;
-            }
-        }
+        /* Mobile Responsive Settings */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 15px;
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    header .logo {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+    header ul li {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    header ul li a {
+        font-size: 13px;
+    }
+    main {
+        padding-top: 90px; 
+    }
+    section {
+        padding: 60px 15px;
+    }
+    #home h1 {
+        font-size: 30px;
+    }
+    #home p {
+        font-size: 16px;
+    }
+    /* बटन को मोबाइल में ऊपर-नीचे सेट करने के लिए नया नियम */
+    #home .cta-btn {
+        display: flex;
+        margin: 12px auto;
+        max-width: 220px;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-details {
+        padding: 20px;
+    }
+}
     </style>
 </head>
 <body>
