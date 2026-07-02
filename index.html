@@ -72,11 +72,20 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         header .logo {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Icon aur naam ke beech ka gap */
+}
+
+header .logo svg {
+    width: 28px;  /* Icon ki चौड़ाई */
+    height: 28px; /* Icon ki ऊंचाई */
+    fill: #ffffff; /* Icon ka color white karne ke liye */
+}
         header ul {
             display: flex;
             list-style: none;
