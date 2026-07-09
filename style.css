@@ -17,13 +17,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #d32f2f;
+    background-color: #d32f2f; /* Premium Red */
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 header .logo {
     color: #fff;
@@ -42,15 +42,16 @@ header .logo svg {
 header ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 header ul li {
     margin-left: 25px;
 }
 header ul li a {
-    color: #ffeb3b;
+    color: rgba(255, 255, 255, 0.85); /* Badla gaya: Yellow hatakar soft white kiya */
     text-decoration: none;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease-in-out;
     padding: 5px 0;
     position: relative;
@@ -62,11 +63,12 @@ header ul li a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #ffeb3b; /* Underline ke liye yellow ab sundar lagega */
     transition: width 0.3s ease-in-out;
 }
 header ul li a.active {
     color: #ffffff;
+    font-weight: 600;
 }
 header ul li a.active::after {
     width: 100%;
@@ -79,7 +81,7 @@ header ul li a:hover::after {
 }
 
 main {
-    padding-top: 70px;
+    padding-top: 75px;
 }
 
 /* Section Settings */
@@ -122,11 +124,15 @@ section h2::after {
 
 /* 1. Home Section */
 #home {
-    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
     color: white;
     padding: 120px 20px;
     width: 100%;
     min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #home h1 {
     font-size: 48px;
@@ -137,23 +143,24 @@ section h2::after {
 #home p {
     font-size: 20px;
     color: #cbd5e1;
-    margin-bottom: 30px;
-    max-width: 600px;
+    margin-bottom: 35px;
+    max-width: 650px;
 }
 .profile-img {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 4px solid #fff;
     margin-bottom: 25px;
     object-fit: cover;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 .btn-container {
     display: flex;
     gap: 15px;
     justify-content: center;
-    flex-wrap: nowrap; 
+    align-items: center;
+    flex-wrap: wrap; /* Mobile par buttons niche auto adjust honge */
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -162,22 +169,20 @@ section h2::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 24px;
+    padding: 12px 28px; /* Padding badhai taaki button clean lage */
     background-color: #d32f2f;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     font-size: 15px;
-    white-space: nowrap; 
-    flex: 1; 
-    max-width: 160px;
 }
 .cta-btn:hover {
     background-color: #b71c1c;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 /* 2. About Section */
@@ -298,36 +303,41 @@ section h2::after {
 }
 .contact-form {
     background: #fff;
-    padding: 30px;
+    padding: 40px; /* Padding thodi badhai */
     border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0,0,0,.12);
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
     width: 100%;
     max-width: 760px;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 .contact-form input, .contact-form select, .contact-form textarea {
     width: 100%;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
+    padding: 14px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
     font-size: 16px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
 }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
     outline: none;
     border-color: #d32f2f;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
 }
 .contact-form button {
     background: #d32f2f;
     color: white;
     border: none;
     padding: 15px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 18px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s ease;
 }
 .contact-form button:hover {
     background: #b71c1c;
@@ -338,40 +348,53 @@ footer {
     background-color: #1e293b;
     color: #94a3b8;
     text-align: center;
-    padding: 25px;
+    padding: 30px;
     font-size: 14px;
-    border-top: 3px solid #d32f2f;
+    border-top: 4px solid #d32f2f;
 }
 footer p { letter-spacing: .4px; }
 
-/* Mobile Responsive Settings */
+/* Mobile Responsive Settings (Fix kiya gaya) */
 @media (max-width: 768px) {
     header {
-        padding: 12px 15px;
-        flex-direction: row; 
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
+        padding: 15px 20px;
+        flex-direction: column; 
+        gap: 12px;
     }
     header .logo {
-        font-size: 18px;
+        font-size: 20px;
+        justify-content: center;
         width: 100%;
-        text-align: center;
+    }
+    header ul {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
     }
     header ul li {
-        margin-left: 8px;
-        margin-right: 8px;
+        margin: 0 5px;
     }
     header ul li a {
-        font-size: 13px;
+        font-size: 14px;
     }
     main {
-        padding-top: 90px; 
+        padding-top: 110px; /* Mobile header ke height ke hisab se padding badhai */
     }
     section {
-        padding: 60px 15px;
+        padding: 60px 20px;
     }
-    #home h1 { font-size: 30px; }
+    #home h1 { font-size: 32px; }
     #home p { font-size: 16px; }
+    
+    .btn-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cta-btn {
+        width: 100%;
+        max-width: 100%;
+    }
     .info-grid { grid-template-columns: 1fr; }
+    #about { padding: 50px 20px; }
 }
