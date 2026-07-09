@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Akkhil Kapoor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
+            </svg>
+            Akkhil Portfolio
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="expertise.html">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form action="https://formsubmit.co/akkhilkapoor@gmail.com" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://akkhilkapoor.github.io/akkhil/thankyou.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+                <input type="hidden" name="_template" value="table">
+
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <input type="text" name="Phone" placeholder="Phone Number (Optional)">
+
+                <select name="Course">
+                    <option value="">Select Course</option>
+                    <option>Tally Prime</option>
+                    <option>Advanced Excel</option>
+                    <option>Web Development</option>
+                    <option>Graphic Designing</option>
+                    <option>AI Tools</option>
+                    <option>Other</option>
+                </select>
+
+                <textarea name="Message" rows="6" placeholder="Write your message here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
