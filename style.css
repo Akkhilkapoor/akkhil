@@ -1,377 +1,175 @@
-/* General Styles */
+/* 1. Global Reset & Typography */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
-    background-color: #f8fafc;
-    color: #334155;
+    background-color: #f8f9fa;
+    color: #333333;
     line-height: 1.6;
 }
 
-/* Navigation Bar */
+/* 2. Header & Navigation */
 header {
-    position: fixed;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #d32f2f;
-    padding: 15px 50px;
+    z-index: 100;
+}
+
+header div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-header .logo {
-    color: #fff;
-    font-size: 24px;
+    flex-wrap: wrap;
     font-weight: bold;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-size: 1.2rem;
+    color: #0056b3; /* Professional Blue */
 }
-header .logo svg {
-    width: 28px;
-    height: 28px;
-    fill: #ffffff;
-}
-header ul {
+
+nav ul {
     display: flex;
     list-style: none;
-}
-header ul li {
-    margin-left: 25px;
-}
-header ul li a {
-    color: #ffeb3b;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    padding: 5px 0;
-    position: relative;
-}
-header ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    transition: width 0.3s ease-in-out;
-}
-header ul li a.active {
-    color: #ffffff;
-}
-header ul li a.active::after {
-    width: 100%;
-}
-header ul li a:hover {
-    color: #ffffff;
-}
-header ul li a:hover::after {
-    width: 100%;
+    gap: 20px;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a[href="index.html"] {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 4px;
+}
+
+/* 3. Hero Section (Main Content) */
 main {
-    padding-top: 70px;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-/* Section Settings */
-section {
-    padding: 100px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+main section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
-    scroll-margin-top: 90px;
-}
-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #d32f2f;
-    position: relative;
-    padding-bottom: 15px;
-}
-section h2::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 4px;
-    background-color: #d32f2f;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
 }
 
-/* Premium enhancements */
-.project-card, .info-block, .contact-form {
-    transition: all .3s ease;
-}
-.project-card:hover, .info-block:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(0,0,0,.12);
-}
-
-/* 1. Home Section */
-#home {
-    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
-    color: white;
-    padding: 120px 20px;
-    width: 100%;
-    min-height: 85vh;
-}
-#home h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    line-height: 1.2;
-}
-#home p {
-    font-size: 20px;
-    color: #cbd5e1;
-    margin-bottom: 30px;
-    max-width: 600px;
-}
-.profile-img {
-    width: 160px;
-    height: 160px;
+/* Profile Image Styling */
+main section img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 5px solid #fff;
-    margin-bottom: 25px;
     object-fit: cover;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+    border: 4px solid #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.btn-container {
+
+/* Typography Improvements */
+main h1 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #666666;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* 4. Buttons (Call to Action) */
+main div {
     display: flex;
+    justify-content: center;
     gap: 15px;
-    justify-content: center;
-    flex-wrap: nowrap; 
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
 }
-.cta-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    background-color: #d32f2f;
-    color: #fff;
+
+main div a {
     text-decoration: none;
-    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    font-size: 15px;
-    white-space: nowrap; 
-    flex: 1; 
-    max-width: 160px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
-.cta-btn:hover {
-    background-color: #b71c1c;
+
+/* Primary Button (View My Work) */
+main div a[href="projects.html"] {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+main div a[href="projects.html"]:hover {
+    background-color: #004085;
     transform: translateY(-2px);
 }
 
-/* 2. About Section */
-#about {
-    background-color: #fff;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 80px 40px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-.about-content {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #475569;
-}
-.intro-text {
-    font-size: 22px;
-    font-weight: bold;
-    color: #d32f2f;
-    margin-bottom: 20px;
-    border-left: 4px solid #d32f2f;
-    padding-left: 15px;
-}
-.highlight-text {
-    color: #d32f2f;
-    font-weight: 700;
-}
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: 30px;
-}
-.info-block {
-    background: #f8fafc;
-    padding: 25px;
-    border-radius: 8px;
-    border-top: 4px solid #d32f2f;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-.about-content h3 {
-    color: #1e293b;
-    font-size: 20px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.about-content h4 {
-    color: #d32f2f;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-.about-content ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-.about-content li {
-    margin-bottom: 5px;
-}
-.about-content p {
-    margin-bottom: 18px;
-    text-align: justify;
+/* Secondary Button (Resume) */
+main div a[href="my-resume.pdf"] {
+    background-color: #f1f3f5;
+    color: #333333;
+    border: 1px solid #ced4da;
 }
 
-/* 3. Expertise & Projects Section Layout */
-#expertise { background-color: #f1f5f9; width: 100%; }
-#projects { background-color: #fff; width: 100%; }
-
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
-.project-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #e2e8f0;
-}
-#expertise .project-card { background: #ffffff; }
-#projects .project-card { background: #f8fafc; }
-
-.project-card h3 {
-    margin-bottom: 12px;
-    font-size: 20px;
-    color: #1e293b;
-    border-bottom: 2px solid #f1f5f9;
-    padding-bottom: 10px;
-}
-.project-card p {
-    color: #64748b;
-    font-size: 15px;
-}
-.features-title {
-    margin-top: 15px;
-    color: #d32f2f;
-    font-weight: 600;
-    font-size: 15px;
+main div a[href="my-resume.pdf"]:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-2px);
 }
 
-/* 4. Contact Section */
-#contact {
-    background-color: #fff;
-    width: 100%;
-    border-top: 1px solid #e2e8f0;
-}
-.contact-form {
-    background: #fff;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0,0,0,.12);
-    width: 100%;
-    max-width: 760px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.contact-form input, .contact-form select, .contact-form textarea {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 16px;
-}
-.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: #d32f2f;
-}
-.contact-form button {
-    background: #d32f2f;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.contact-form button:hover {
-    background: #b71c1c;
-}
-
-/* Footer */
+/* 5. Footer */
 footer {
-    background-color: #1e293b;
-    color: #94a3b8;
     text-align: center;
-    padding: 25px;
-    font-size: 14px;
-    border-top: 3px solid #d32f2f;
+    padding: 30px 20px;
+    color: #888888;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    border-top: 1px solid #e9ecef;
 }
-footer p { letter-spacing: .4px; }
 
-/* Mobile Responsive Settings */
-@media (max-width: 768px) {
-    header {
-        padding: 12px 15px;
-        flex-direction: row; 
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-    }
-    header .logo {
-        font-size: 18px;
-        width: 100%;
+/* 6. Responsive Design (Mobile Friendly) */
+@media (max-width: 600px) {
+    header div {
+        flex-direction: column;
+        gap: 15px;
         text-align: center;
     }
-    header ul li {
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-    header ul li a {
-        font-size: 13px;
-    }
+    
     main {
-        padding-top: 90px; 
+        margin: 30px auto;
     }
-    section {
-        padding: 60px 15px;
+    
+    main section {
+        padding: 25px 15px;
     }
-    #home h1 { font-size: 30px; }
-    #home p { font-size: 16px; }
-    .info-grid { grid-template-columns: 1fr; }
+    
+    main h1 {
+        font-size: 1.6rem;
+    }
+    
+    main div {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    main div a {
+        width: 100%;
+    }
 }
