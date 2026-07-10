@@ -1,61 +1,114 @@
-/* General Styles */
+/* ==========================================================================
+   1. VARIABLES & DESIGN TOKENS (Premium Crimson Red & Deep Corporate Slate)
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --primary: #e11d48;           /* Modern Vibrant Crimson Red (Sharper than purana #d32f2f) */
+    --primary-hover: #be123c;     /* Smooth darker crimson hover effect */
+    --primary-light: rgba(225, 29, 72, 0.08); /* Glow aur focus states ke liye */
+    
+    /* Background Layout System */
+    --bg-main: #f8fafc;           /* Ultra-clean light gray main body */
+    --bg-surface: #ffffff;        /* Cards, Blocks aur Forms ke liye sharp white */
+    --bg-alt: #f1f5f9;            /* Section divide karne ke liye secondary slate gray */
+    --bg-dark: #0f172a;           /* Hero section aur Footer ke liye luxury dark blue-slate */
+    
+    /* Typography System */
+    --text-main: #0f172a;         /* Headings ke liye solid executive slate (pure black se better readability) */
+    --text-muted: #64748b;        /* Subtitles aur generic paragraph descriptions ke liye soft tone */
+    --text-inverse: #ffffff;      /* Dark backgrounds par text visibility ke liye */
+    
+    /* Typography Specs */
+    --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    
+    /* Shadows & Fluid Transitions */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+    --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.06);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-sm: 6px;
+    --radius-md: 12px;
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body {
-    background-color: #f8fafc;
-    color: #334155;
-    line-height: 1.6;
+    font-family: var(--font-sans);
 }
 
-/* Navigation Bar */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR (Premium Glassmorphism Dashboard Style)
+   ========================================================================== */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #d32f2f; /* Premium Red */
-    padding: 15px 50px;
+    background-color: rgba(15, 23, 42, 0.85); /* Deep slate transparent background */
+    backdrop-filter: blur(12px);               /* Apple-style smooth glass blur */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: var(--shadow-sm);
 }
+
 header .logo {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    color: var(--text-inverse);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    text-decoration: none;
 }
+
 header .logo svg {
-    width: 28px;
-    height: 28px;
-    fill: #ffffff;
+    width: 26px;
+    height: 26px;
+    fill: var(--text-inverse);
 }
+
 header ul {
     display: flex;
     list-style: none;
     align-items: center;
 }
+
 header ul li {
-    margin-left: 25px;
+    margin-left: 30px;
 }
+
 header ul li a {
-    color: rgba(255, 255, 255, 0.85); /* Badla gaya: Yellow hatakar soft white kiya */
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    transition: all 0.3s ease-in-out;
-    padding: 5px 0;
+    transition: var(--transition);
+    padding: 6px 0;
     position: relative;
+    letter-spacing: 0.3px;
 }
+
 header ul li a::after {
     content: '';
     position: absolute;
@@ -63,28 +116,27 @@ header ul li a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #ffeb3b; /* Underline ke liye yellow ab sundar lagega */
-    transition: width 0.3s ease-in-out;
+    background-color: var(--text-inverse); /* Clean white minimal indicator line */
+    transition: var(--transition);
 }
-header ul li a.active {
-    color: #ffffff;
-    font-weight: 600;
-}
-header ul li a.active::after {
-    width: 100%;
-}
+
+header ul li a.active,
 header ul li a:hover {
-    color: #ffffff;
+    color: var(--text-inverse);
 }
+
+header ul li a.active::after,
 header ul li a:hover::after {
     width: 100%;
 }
 
 main {
-    padding-top: 75px;
+    padding-top: 72px;
 }
 
-/* Section Settings */
+/* ==========================================================================
+   4. STRUCTURAL SECTIONS & TITLES
+   ========================================================================== */
 section {
     padding: 100px 50px;
     display: flex;
@@ -92,309 +144,414 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    scroll-margin-top: 90px;
+    scroll-margin-top: 72px;
 }
+
 section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #d32f2f;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 45px;
+    color: var(--text-main);
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 16px;
+    letter-spacing: -0.5px;
 }
+
 section h2::after {
     content: '';
     position: absolute;
-    width: 60px;
-    height: 4px;
-    background-color: #d32f2f;
+    width: 50px;
+    height: 3.5px;
+    background-color: var(--primary);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 2px;
+    border-radius: var(--radius-sm);
 }
 
-/* Premium enhancements */
+/* Global Micro-interactions for Cards */
 .project-card, .info-block, .contact-form {
-    transition: all .3s ease;
-}
-.project-card:hover, .info-block:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+    transition: var(--transition);
 }
 
-/* 1. Home Section */
+.project-card:hover, .info-block:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   5. HERO SECTION (#home)
+   ========================================================================== */
 #home {
-    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
-    color: white;
-    padding: 120px 20px;
+    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.94)), 
+                #1e293b url('Akkhilkapoor.png') no-repeat center center / cover; 
+    color: var(--text-inverse);
+    padding: 140px 20px;
     width: 100%;
-    min-height: 85vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#home h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    line-height: 1.2;
-}
-#home p {
-    font-size: 20px;
-    color: #cbd5e1;
-    margin-bottom: 35px;
-    max-width: 650px;
-}
+
 .profile-img {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 4px solid #fff;
-    margin-bottom: 25px;
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 30px;
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transition: var(--transition);
 }
+
+.profile-img:hover {
+    border-color: var(--primary);
+    transform: scale(1.03);
+}
+
+#home h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    line-height: 1.15;
+}
+
+#home p {
+    font-size: 19px;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    max-width: 650px;
+    font-weight: 400;
+}
+
 .btn-container {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Mobile par buttons niche auto adjust honge */
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
     margin: 0 auto;
 }
+
 .cta-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 28px; /* Padding badhai taaki button clean lage */
-    background-color: #d32f2f;
-    color: #fff;
+    padding: 14px 32px;
+    background-color: var(--primary);
+    color: var(--text-inverse);
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
     font-size: 15px;
-}
-.cta-btn:hover {
-    background-color: #b71c1c;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    letter-spacing: 0.3px;
 }
 
-/* 2. About Section */
+.cta-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.45);
+}
+
+/* ==========================================================================
+   6. ABOUT SECTION (#about)
+   ========================================================================== */
 #about {
-    background-color: #fff;
-    max-width: 1000px;
+    background-color: var(--bg-surface);
+    max-width: 1050px;
     margin: 0 auto;
-    padding: 80px 40px;
+    padding: 90px 40px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
+
 .about-content {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.8;
     color: #475569;
 }
+
 .intro-text {
     font-size: 22px;
-    font-weight: bold;
-    color: #d32f2f;
-    margin-bottom: 20px;
-    border-left: 4px solid #d32f2f;
-    padding-left: 15px;
-}
-.highlight-text {
-    color: #d32f2f;
     font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 24px;
+    border-left: 4px solid var(--primary);
+    padding-left: 20px;
+    letter-spacing: -0.3px;
 }
+
+.highlight-text {
+    color: var(--primary);
+    font-weight: 600;
+}
+
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
 }
+
 .info-block {
-    background: #f8fafc;
-    padding: 25px;
-    border-radius: 8px;
-    border-top: 4px solid #d32f2f;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    background: var(--bg-main);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    border-top: 4px solid var(--primary);
+    box-shadow: var(--shadow-sm);
 }
+
 .about-content h3 {
-    color: #1e293b;
-    font-size: 20px;
+    color: var(--text-main);
+    font-size: 19px;
+    font-weight: 700;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
+
 .about-content h4 {
-    color: #d32f2f;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 16px;
+    color: var(--primary);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
 }
+
 .about-content ul {
     margin-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
+
 .about-content li {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
+
 .about-content p {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
-/* 3. Expertise & Projects Section Layout */
-#expertise { background-color: #f1f5f9; width: 100%; }
-#projects { background-color: #fff; width: 100%; }
+/* ==========================================================================
+   7. EXPERTISE & PROJECTS SECTION
+   ========================================================================== */
+#expertise { background-color: var(--bg-alt); width: 100%; }
+#projects { background-color: var(--bg-surface); width: 100%; }
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
+
 .project-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    background: var(--bg-surface);
+    padding: 35px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
     text-align: left;
     display: flex;
     flex-direction: column;
     border: 1px solid #e2e8f0;
 }
-#expertise .project-card { background: #ffffff; }
-#projects .project-card { background: #f8fafc; }
+
+#expertise .project-card { background: var(--bg-surface); }
+#projects .project-card { background: var(--bg-main); }
 
 .project-card h3 {
-    margin-bottom: 12px;
-    font-size: 20px;
-    color: #1e293b;
-    border-bottom: 2px solid #f1f5f9;
-    padding-bottom: 10px;
-}
-.project-card p {
-    color: #64748b;
-    font-size: 15px;
-}
-.features-title {
-    margin-top: 15px;
-    color: #d32f2f;
-    font-weight: 600;
-    font-size: 15px;
+    margin-bottom: 16px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--bg-alt);
+    padding-bottom: 12px;
 }
 
-/* 4. Contact Section */
+.project-card p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.features-title {
+    margin-top: 18px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. CONTACT FORM WORKBENCH
+   ========================================================================== */
 #contact {
-    background-color: #fff;
+    background-color: var(--bg-surface);
     width: 100%;
     border-top: 1px solid #e2e8f0;
 }
+
 .contact-form {
-    background: #fff;
-    padding: 40px; /* Padding thodi badhai */
-    border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    background: var(--bg-surface);
+    padding: 50px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
     width: 100%;
-    max-width: 760px;
+    max-width: 700px;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-.contact-form input, .contact-form select, .contact-form textarea {
-    width: 100%;
-    padding: 14px 18px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #f8fafc;
-    transition: all 0.3s ease;
-}
-.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: #d32f2f;
-    background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
-}
-.contact-form button {
-    background: #d32f2f;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-.contact-form button:hover {
-    background: #b71c1c;
+    gap: 24px;
+    border: 1px solid #f1f5f9;
 }
 
-/* Footer */
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.contact-form input:focus, 
+.contact-form select:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--bg-surface);
+    box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.contact-form button {
+    background: var(--primary);
+    color: var(--text-inverse);
+    border: none;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+}
+
+.contact-form button:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.3);
+}
+
+/* ==========================================================================
+   9. FOOTER DEEP ZONE
+   ========================================================================== */
 footer {
-    background-color: #1e293b;
+    background-color: var(--bg-dark);
     color: #94a3b8;
     text-align: center;
-    padding: 30px;
+    padding: 40px 20px;
     font-size: 14px;
-    border-top: 4px solid #d32f2f;
+    border-top: 4px solid var(--primary);
 }
-footer p { letter-spacing: .4px; }
 
-/* Mobile Responsive Settings (Fix kiya gaya) */
+footer p { 
+    letter-spacing: 0.5px; 
+}
+
+/* ==========================================================================
+   10. ULTIMATE MOBILE BREAKPOINTS
+   ========================================================================== */
 @media (max-width: 768px) {
     header {
-        padding: 15px 20px;
+        padding: 16px 24px;
         flex-direction: column; 
-        gap: 12px;
+        gap: 16px;
     }
+    
     header .logo {
         font-size: 20px;
         justify-content: center;
-        width: 100%;
     }
+    
     header ul {
-        width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 12px;
     }
+    
     header ul li {
-        margin: 0 5px;
+        margin: 0 8px;
     }
+    
     header ul li a {
         font-size: 14px;
     }
+    
     main {
-        padding-top: 110px; /* Mobile header ke height ke hisab se padding badhai */
+        padding-top: 120px; /* Custom spacer for responsive navbar */
     }
+    
     section {
-        padding: 60px 20px;
+        padding: 70px 24px;
     }
-    #home h1 { font-size: 32px; }
-    #home p { font-size: 16px; }
+    
+    section h2 {
+        font-size: 28px;
+        margin-bottom: 35px;
+    }
+    
+    #home {
+        padding: 100px 20px;
+        min-height: auto;
+    }
+    
+    #home h1 { 
+        font-size: 36px; 
+    }
+    
+    #home p { 
+        font-size: 16px; 
+    }
+    
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
     
     .btn-container {
         flex-direction: column;
         width: 100%;
     }
+    
     .cta-btn {
         width: 100%;
-        max-width: 100%;
     }
-    .info-grid { grid-template-columns: 1fr; }
-    #about { padding: 50px 20px; }
+    
+    #about { 
+        padding: 60px 24px; 
+    }
+    
+    .info-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    .contact-form {
+        padding: 30px 20px;
+    }
 }
