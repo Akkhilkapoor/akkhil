@@ -3,60 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me | Akkhil Kapoor</title>
+    <!-- Contact Page Specific SEO Tags -->
+    <title>Contact Akkhil Kapoor | Professional Course Enquiry Ambala</title>
+    <meta name="description" content="Get in touch with Akkhil Kapoor in Ambala for coaching queries on Tally Prime, Advanced Excel, Web Development, and Graphic Designing.">
+    <meta name="keywords" content="Contact Akkhil Kapoor, Tally coaching Ambala, Excel training enquiry, Learn web design, Ambala computer teacher contact">
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Modern Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
-            </svg>
-            Akkhil Portfolio
+
+    <!-- Header & Navigation (Synced Across All Pages) -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
+                </svg>
+                <span>Akkhil Portfolio</span>
+            </div>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav aria-label="Main Navigation" id="mainNav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="expertise.html">Expertise</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section id="contact">
-            <h2>Contact Me</h2>
+    <!-- Main Content Area -->
+    <main class="main-content-padding">
+        <section id="contact-section">
+            <div class="container">
+                <h2 class="page-title">Contact Me</h2>
+                
+                <div class="contact-wrapper">
+                    <!-- Added Local Contact Info Sidebar for trust building -->
+                    <div class="contact-info-panel">
+                        <h3>Get In Touch</h3>
+                        <p>Have questions about the courses or looking to collaborate on software development projects? Drop a message!</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ambala, Haryana, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>akkhilkapoor@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </div>
+                    </div>
 
-            <form action="https://formsubmit.co/akkhilkapoor@gmail.com" method="POST" class="contact-form">
-                <input type="hidden" name="_next" value="https://akkhilkapoor.github.io/akkhil/thankyou.html">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Message from Portfolio Website">
-                <input type="hidden" name="_template" value="table">
+                    <!-- Secure & Processed Contact Form -->
+                    <div class="contact-form-container">
+                        <form action="https://formsubmit.co/akkhilkapoor@gmail.com" method="POST" class="contact-form">
+                            <!-- FormSubmit Configuration Inputs -->
+                            <input type="hidden" name="_next" value="https://akkhilkapoor.github.io/akkhil/thankyou.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+                            <input type="hidden" name="_template" value="table">
 
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="Email" placeholder="Your Email" required>
-                <input type="text" name="Phone" placeholder="Phone Number (Optional)">
+                            <div class="form-group">
+                                <label for="form-name">Your Name</label>
+                                <input type="text" id="form-name" name="Name" placeholder="Enter your full name" required>
+                            </div>
 
-                <select name="Course">
-                    <option value="">Select Course</option>
-                    <option>Tally Prime</option>
-                    <option>Advanced Excel</option>
-                    <option>Web Development</option>
-                    <option>Graphic Designing</option>
-                    <option>AI Tools</option>
-                    <option>Other</option>
-                </select>
+                            <div class="form-group">
+                                <label for="form-email">Your Email</label>
+                                <input type="email" id="form-email" name="Email" placeholder="Enter your email address" required>
+                            </div>
 
-                <textarea name="Message" rows="6" placeholder="Write your message here..." required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+                            <div class="form-group">
+                                <label for="form-phone">Phone Number (Optional)</label>
+                                <input type="text" id="form-phone" name="Phone" placeholder="Enter your mobile number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-course">Select Interested Course</label>
+                                <select id="form-course" name="Course">
+                                    <option value="">-- Choose a Course --</option>
+                                    <option value="Tally Prime">Tally Prime</option>
+                                    <option value="Advanced Excel">Advanced Excel</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Graphic Designing">Graphic Designing</option>
+                                    <option value="AI Tools">AI Tools &amp; Productivity</option>
+                                    <option value="Other">Other Query</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Write Message</label>
+                                <textarea id="form-message" name="Message" rows="5" placeholder="Type your detailed requirements here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(mainNav.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
 </body>
 </html>
