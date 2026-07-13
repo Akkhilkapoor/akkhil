@@ -215,6 +215,44 @@ section h2::after {
     justify-content: center;
     align-items: center;
 }
+/* Hero section jisme piche background image dikhegi */
+#home-hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
+                url('bg-banner.jpg') no-repeat center center / cover;
+    padding: 80px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Container jo photo aur text ko aane-saamne karega */
+.hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+/* Aapki profile photo ko smooth round corner dene ke liye */
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Text wrapper styles */
+.hero-text-wrapper {
+    flex: 1;
+    min-width: 300px;
+    color: #ffffff;
+}
 
 .profile-img {
     width: 150px;
