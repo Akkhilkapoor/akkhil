@@ -9,15 +9,17 @@
     <meta name="author" content="Akkhil Kapoor">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://akkhilkapoor.github.io/akkhil/"> 
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Open Graph Tags -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Akkhil Kapoor | Professional Accounts, IT Trainer & Educator">
     <meta property="og:description" content="Over 20+ years of experience training thousands of students in IT, Accounting (Tally), and Web Development in Ambala.">
     <meta property="og:image" content="https://www.hiitambala.com/akkhil.jpg"> 
 
     <meta name="google-site-verification" content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM" />
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,38 +42,73 @@
     </script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
-            </svg>
-            Akkhil Portfolio
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
+                </svg>
+                <span>Akkhil Portfolio</span>
+            </div>
+            
+            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav aria-label="Main Navigation" id="mainNav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="expertise.html">Expertise</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main> 
-        <section id="home">
-            <img src="akkhil.jpg" alt="Akkhil Kapoor - Professional Accounts & IT Trainer Educator in Ambala" class="profile-img" loading="lazy">
-            <h1>Akkhil Kapoor – Professional Accounts & IT Trainer Educator in Ambala</h1>
-            <p>I am Akkhil Kapoor, an experienced IT Trainer and Accounts Educator with more than 20 years of teaching experience in Ambala, Haryana. I specialize in Tally Prime, Advanced Excel, Web Development, Graphic Designing, Artificial Intelligence Tools, Computer Fundamentals, GST, Payroll, and Office Automation. My mission is to provide practical, job-oriented computer education that helps students build successful careers.</p>
-            <div class="btn-container">
-                <a href="projects.html" class="cta-btn">View My Work</a>
-                <a href="my-resume.pdf" target="_blank" class="cta-btn">My Resume</a>
+        <section id="home-hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-image-wrapper">
+                    <img src="akkhil.jpg" alt="Akkhil Kapoor - Professional Accounts & IT Trainer Educator in Ambala" class="profile-img" loading="lazy">
+                </div>
+                <div class="hero-text-wrapper">
+                    <h1>Akkhil Kapoor</h1>
+                    <h2>Professional Accounts & IT Trainer Educator in Ambala</h2>
+                    <p>I am Akkhil Kapoor, an experienced IT Trainer and Accounts Educator with more than 20 years of teaching experience in Ambala, Haryana. I specialize in Tally Prime, Advanced Excel, Web Development, Graphic Designing, Artificial Intelligence Tools, Computer Fundamentals, GST, Payroll, and Office Automation. My mission is to provide practical, job-oriented computer education that helps students build successful careers.</p>
+                    <div class="btn-container">
+                        <a href="projects.html" class="cta-btn btn-primary">View My Work</a>
+                        <a href="my-resume.pdf" target="_blank" class="cta-btn btn-secondary">My Resume</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main> 
     
-    <footer>
-          <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+            // Icon toggle between bars and times (X)
+            const icon = mobileMenuBtn.querySelector('i');
+            if(mainNav.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
 </body>
 </html>
