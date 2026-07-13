@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     /* Color Palette */
-    --primary: #e11d48;           /* Modern Vibrant Crimson Red (Sharper than purana #d32f2f) */
+    --primary: #e11d48;           /* Modern Vibrant Crimson Red */
     --primary-hover: #be123c;     /* Smooth darker crimson hover effect */
     --primary-light: rgba(225, 29, 72, 0.08); /* Glow aur focus states ke liye */
     
@@ -14,9 +14,9 @@
     --bg-dark: #0f172a;           /* Hero section aur Footer ke liye luxury dark blue-slate */
     
     /* Typography System */
-    --text-main: #0f172a;         /* Headings ke liye solid executive slate (pure black se better readability) */
-    --text-muted: #64748b;        /* Subtitles aur generic paragraph descriptions ke liye soft tone */
-    --text-inverse: #ffffff;      /* Dark backgrounds par text visibility ke liye */
+    --text-main: #0f172a;         /* Headings ke liye solid executive slate */
+    --text-muted: #64748b;        /* Subtitles aur generic paragraph descriptions */
+    --text-inverse: #ffffff;      /* Dark backgrounds par text visibility */
     
     /* Typography Specs */
     --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -88,6 +88,16 @@ header .logo svg {
     fill: var(--text-inverse);
 }
 
+/* Container synchronized layout */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 header ul {
     display: flex;
     list-style: none;
@@ -116,7 +126,7 @@ header ul li a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--text-inverse); /* Clean white minimal indicator line */
+    background-color: var(--text-inverse);
     transition: var(--transition);
 }
 
@@ -128,6 +138,17 @@ header ul li a:hover {
 header ul li a.active::after,
 header ul li a:hover::after {
     width: 100%;
+}
+
+/* Responsive Hamburger Menu Button hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-inverse);
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 main {
@@ -474,83 +495,102 @@ footer p {
 }
 
 /* ==========================================================================
-   10. ULTIMATE MOBILE BREAKPOINTS
+   10. ULTIMATE MOBILE BREAKPOINTS (Fixed Mobile Hamburger System)
    ========================================================================== */
 @media (max-width: 768px) {
     header {
         padding: 16px 24px;
-        flex-direction: column; 
-        gap: 16px;
     }
-    
-    header .logo {
-        font-size: 20px;
-        justify-content: center;
+
+    .menu-toggle {
+        display: block; /* Show hamburger button on mobile screens */
     }
-    
+
+    /* Fixed Navigation layout drawer mechanism */
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* JavaScript will toggle the 'open' class on <nav> element */
+    header nav.open {
+        max-height: 350px;
+    }
+
     header ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
+        flex-direction: column;
+        padding: 20px 0;
+        width: 100%;
+        align-items: center;
     }
-    
+
     header ul li {
-        margin: 0 8px;
+        margin: 12px 0;
     }
-    
+
     header ul li a {
-        font-size: 14px;
+        font-size: 16px;
+        display: block;
     }
-    
+
     main {
-        padding-top: 120px; /* Custom spacer for responsive navbar */
+        padding-top: 68px;
     }
-    
+
     section {
         padding: 70px 24px;
     }
-    
+
     section h2 {
         font-size: 28px;
         margin-bottom: 35px;
     }
-    
+
     #home {
         padding: 100px 20px;
         min-height: auto;
     }
-    
+
     #home h1 { 
         font-size: 36px; 
     }
-    
+
     #home p { 
         font-size: 16px; 
     }
-    
+
     .profile-img {
         width: 130px;
         height: 130px;
     }
-    
+
     .btn-container {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .cta-btn {
         width: 100%;
     }
-    
+
     #about { 
         padding: 60px 24px; 
     }
-    
+
     .info-grid { 
         grid-template-columns: 1fr; 
         gap: 20px;
     }
-    
+
     .contact-form {
         padding: 30px 20px;
     }
