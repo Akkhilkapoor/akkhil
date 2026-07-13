@@ -218,7 +218,7 @@ section h2::after {
 /* Hero section jisme piche background image dikhegi */
 #home-hero {
     background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
-                url('akkhilkapoor.png') no-repeat center center / cover;
+                url('Akkhilkapoor.png') no-repeat center center / cover;
     padding: 80px 0;
     min-height: 80vh;
     display: flex;
