@@ -326,11 +326,24 @@ section h2::after {
     max-width: 1050px;
     margin: 0 auto;
     padding: 90px 40px;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
+.about-content p {
+    text-align: justify; 
+}
 
+.intro-text {
+    text-align: center;
+    border-left: none; 
+    padding-left: 0;
+}
+
+.info-grid {
+    text-align: left; 
+    width: 100%;
+}
 .about-content {
     font-size: 16px;
     line-height: 1.8;
