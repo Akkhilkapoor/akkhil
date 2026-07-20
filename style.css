@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIABLES & DESIGN TOKENS (Premium Crimson Red & Deep Corporate Slate)
-   ========================================================================== */
+
 :root {
     /* Color Palette */
     --primary: #e11d48;           /* Modern Vibrant Crimson Red */
@@ -295,6 +293,7 @@ section h2::after {
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
+   margin-top: 35px;
 }
 
 .cta-btn {
