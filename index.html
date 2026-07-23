@@ -166,7 +166,7 @@ My mission is to provide practical, job-oriented education that helps students b
                                 <strong style="font-size: 1em; color: #333;">${item.Name || item['Full Name']}</strong>
                                 <span style="font-size: 0.9em;">${ratingStars}</span>
                             </div>
-                            <p style="margin: 0; color: #555; line-height: 1.4; font-size: 0.95em;">"${item['Your Review \\/ Experience'] || item.Review || item['Your Review'] || 'Great learning experience.'}"</p>
+                            <p style="margin: 0; color: #555; line-height: 1.4; font-size: 0.95em;">"${item.Review || item['Your Review / Experience'] || item['Your Review']}"</p>
                         </div>
                     `;
                     container.appendChild(reviewCard);
