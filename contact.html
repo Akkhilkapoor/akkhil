@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
 
 ```
@@ -39,12 +38,10 @@
 
 <header class="site-header">
 
-
     <div class="nav-container">
 
 
         <div class="logo">
-
 
             <svg
                 viewBox="0 0 24 24"
@@ -87,7 +84,6 @@
             aria-label="Main Navigation"
             id="mainNav"
         >
-
 
             <ul class="nav-links">
 
@@ -152,12 +148,10 @@
 
             </ul>
 
-
         </nav>
 
 
     </div>
-
 
 </header>
 
@@ -278,7 +272,7 @@
 
 
 <!-- ===============================
-     SUPABASE EDGE FUNCTION CONTACT SYSTEM
+     SUPABASE EDGE FUNCTION + WHATSAPP
 =============================== -->
 
 <script>
@@ -287,14 +281,6 @@
     /*
     =====================================
     SUPABASE EDGE FUNCTION URL
-    =====================================
-
-    Is URL ko hum next step me banayenge.
-
-    Example:
-
-    https://lmkvtvmkbvpzgsrutheu.supabase.co/functions/v1/send-contact-message
-
     =====================================
     */
 
@@ -416,7 +402,7 @@
 
                 /*
                 ==============================
-                SEND DATA TO SUPABASE EDGE FUNCTION
+                SEND DATA TO SUPABASE
                 ==============================
                 */
 
@@ -475,7 +461,9 @@
 
 
                 if (
+
                     !response.ok
+
                 ) {
 
                     throw new Error(
@@ -504,6 +492,50 @@
 
                 /*
                 ==============================
+                OPEN WHATSAPP
+                ==============================
+                */
+
+
+                const whatsappMessage = `
+```
+
+New Contact Message
+
+Name: ${name}
+
+Email: ${email}
+
+Phone: ${phone}
+
+Message:
+
+${message}
+
+```
+                `;
+
+
+                const whatsappURL =
+
+                    `https://wa.me/919729590777?text=${encodeURIComponent(
+
+                        whatsappMessage
+
+                    )}`;
+
+
+                window.open(
+
+                    whatsappURL,
+
+                    "_blank"
+
+                );
+
+
+                /*
+                ==============================
                 RESET FORM
                 ==============================
                 */
@@ -516,7 +548,9 @@
 
 
             catch (
+
                 error
+
             ) {
 
 
