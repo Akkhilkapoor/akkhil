@@ -1,89 +1,668 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Contact Page Specific SEO Tags -->
-    <title>Contact Me | Akkhil Kapoor</title>
-    <meta name="description" content="Get in touch with Akkhil Kapoor. Send a message for inquiries regarding Tally Prime, Advanced Excel, Web Development, and Graphic Designing courses.">
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Header Responsive Menu Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Contact Page Specific SEO Tags -->
+
+<title>Contact Me | Akkhil Kapoor</title>
+
+<meta
+    name="description"
+    content="Get in touch with Akkhil Kapoor. Send a message for inquiries regarding Tally Prime, Advanced Excel, Web Development, and Graphic Designing courses."
+>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- FontAwesome for Header Responsive Menu Icons -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+>
+```
+
 </head>
+
 <body>
 
-    <!-- Header & Navigation (Synced Across All Pages) -->
-    <header class="site-header">
-        <div class="nav-container">
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
-                </svg>
-                <span>Akkhil Portfolio</span>
-            </div>
-            
-            <!-- Mobile Menu Toggle Button -->
-            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
+```
+<!-- ===============================
+     HEADER & NAVIGATION
+=============================== -->
+
+<header class="site-header">
+
+
+    <div class="nav-container">
+
+
+        <div class="logo">
+
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="30"
+                height="30"
+            >
+
+                <path
+                    d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"
+                />
+
+            </svg>
+
+
+            <span>
+
+                Akkhil Portfolio
+
+            </span>
+
+
+        </div>
+
+
+        <!-- Mobile Menu Toggle Button -->
+
+        <button
+            class="menu-toggle"
+            id="mobileMenuBtn"
+            aria-label="Toggle Navigation"
+        >
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+
+        <nav
+            aria-label="Main Navigation"
+            id="mainNav"
+        >
+
+
+            <ul class="nav-links">
+
+
+                <li>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="expertise.html">
+
+                        Expertise
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="projects.html">
+
+                        Projects
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="contact.html"
+                        class="active"
+                    >
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+
+
+</header>
+
+
+<!-- ===============================
+     MAIN CONTENT
+=============================== -->
+
+<main class="main-content-padding">
+
+
+    <section id="contact">
+
+
+        <h2>
+
+            Contact Me
+
+        </h2>
+
+
+        <!-- CONTACT FORM -->
+
+        <form
+            id="contactForm"
+            class="contact-form"
+        >
+
+
+            <input
+                type="text"
+                id="contactName"
+                name="Name"
+                placeholder="Your Name"
+                required
+            >
+
+
+            <input
+                type="email"
+                id="contactEmail"
+                name="Email"
+                placeholder="Your Email"
+                required
+            >
+
+
+            <input
+                type="text"
+                id="contactPhone"
+                name="Phone"
+                placeholder="Phone Number"
+                required
+            >
+
+
+            <textarea
+                id="contactMessage"
+                name="Message"
+                rows="6"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                id="sendMessageBtn"
+            >
+
+                Send Message
+
             </button>
 
-            <nav aria-label="Main Navigation" id="mainNav">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Main Content Area -->
-    <main class="main-content-padding">
-        <section id="contact">
-            <h2>Contact Me</h2>
+            <!-- STATUS MESSAGE -->
 
-            <form action="https://formsubmit.co/akkhilkapoor@gmail.com" method="POST" class="contact-form">
-                <!-- FormSubmit Configuration Settings -->
-                <input type="hidden" name="_next" value="https://akkhilkapoor.github.io/akkhil/thankyou.html">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Message from Portfolio Website">
-                <input type="hidden" name="_template" value="table">
+            <p
+                id="contactStatus"
+                style="
+                    text-align: center;
+                    margin-top: 10px;
+                    font-weight: 600;
+                "
+            ></p>
 
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="Email" placeholder="Your Email" required>
-                <input type="text" name="Phone" placeholder="Phone Number" required>
 
-                <textarea name="Message" rows="6" placeholder="Write your message here..." required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
+        </form>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
-        </div>
-    </footer>
 
-    <!-- Mobile Navigation Toggle Script -->
-    <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
+    </section>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('open');
-            const icon = mobileMenuBtn.querySelector('i');
-            if(mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+
+</main>
+
+
+<!-- ===============================
+     FOOTER
+=============================== -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+        <p>
+
+            &copy; 2026 Akkhil Kapoor. All Rights Reserved.
+
+        </p>
+
+
+    </div>
+
+
+</footer>
+
+
+<!-- ===============================
+     SUPABASE EDGE FUNCTION CONTACT SYSTEM
+=============================== -->
+
+<script>
+
+
+    /*
+    =====================================
+    SUPABASE EDGE FUNCTION URL
+    =====================================
+
+    Is URL ko hum next step me banayenge.
+
+    Example:
+
+    https://lmkvtvmkbvpzgsrutheu.supabase.co/functions/v1/send-contact-message
+
+    =====================================
+    */
+
+
+    const EDGE_FUNCTION_URL =
+        "https://lmkvtvmkbvpzgsrutheu.supabase.co/functions/v1/send-contact-message";
+
+
+    /*
+    =====================================
+    DOM ELEMENTS
+    =====================================
+    */
+
+
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
+
+
+    const sendMessageBtn =
+        document.getElementById(
+            "sendMessageBtn"
+        );
+
+
+    const contactStatus =
+        document.getElementById(
+            "contactStatus"
+        );
+
+
+    /*
+    =====================================
+    CONTACT FORM SUBMIT
+    =====================================
+    */
+
+
+    contactForm.addEventListener(
+
+        "submit",
+
+        async function(event) {
+
+
+            event.preventDefault();
+
+
+            /*
+            ==============================
+            GET FORM VALUES
+            ==============================
+            */
+
+
+            const name =
+                document
+                .getElementById(
+                    "contactName"
+                )
+                .value
+                .trim();
+
+
+            const email =
+                document
+                .getElementById(
+                    "contactEmail"
+                )
+                .value
+                .trim();
+
+
+            const phone =
+                document
+                .getElementById(
+                    "contactPhone"
+                )
+                .value
+                .trim();
+
+
+            const message =
+                document
+                .getElementById(
+                    "contactMessage"
+                )
+                .value
+                .trim();
+
+
+            /*
+            ==============================
+            BUTTON LOADING STATE
+            ==============================
+            */
+
+
+            sendMessageBtn.disabled =
+                true;
+
+
+            sendMessageBtn.textContent =
+                "Sending...";
+
+
+            contactStatus.textContent =
+                "";
+
+
+            contactStatus.style.color =
+                "";
+
+
+            try {
+
+
+                /*
+                ==============================
+                SEND DATA TO SUPABASE EDGE FUNCTION
+                ==============================
+                */
+
+
+                const response =
+                    await fetch(
+
+                        EDGE_FUNCTION_URL,
+
+                        {
+
+                            method:
+                                "POST",
+
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+
+                            body:
+
+                                JSON.stringify(
+
+                                    {
+
+                                        name:
+                                            name,
+
+                                        email:
+                                            email,
+
+                                        phone:
+                                            phone,
+
+                                        message:
+                                            message
+
+                                    }
+
+                                )
+
+                        }
+
+                    );
+
+
+                /*
+                ==============================
+                RESPONSE CHECK
+                ==============================
+                */
+
+
+                if (
+                    !response.ok
+                ) {
+
+                    throw new Error(
+
+                        "Message sending failed"
+
+                    );
+
+                }
+
+
+                /*
+                ==============================
+                SUCCESS MESSAGE
+                ==============================
+                */
+
+
+                contactStatus.style.color =
+                    "green";
+
+
+                contactStatus.textContent =
+                    "Thank you! Your message has been sent successfully.";
+
+
+                /*
+                ==============================
+                RESET FORM
+                ==============================
+                */
+
+
+                contactForm.reset();
+
+
             }
-        });
-    </script>
+
+
+            catch (
+                error
+            ) {
+
+
+                console.error(
+
+                    "Contact form error:",
+
+                    error
+
+                );
+
+
+                contactStatus.style.color =
+                    "red";
+
+
+                contactStatus.textContent =
+                    "Something went wrong. Please try again.";
+
+
+            }
+
+
+            finally {
+
+
+                /*
+                ==============================
+                RESET BUTTON
+                ==============================
+                */
+
+
+                sendMessageBtn.disabled =
+                    false;
+
+
+                sendMessageBtn.textContent =
+                    "Send Message";
+
+
+            }
+
+
+        }
+
+    );
+
+
+    /*
+    =====================================
+    MOBILE NAVIGATION
+    =====================================
+    */
+
+
+    const mobileMenuBtn =
+        document.getElementById(
+            "mobileMenuBtn"
+        );
+
+
+    const mainNav =
+        document.getElementById(
+            "mainNav"
+        );
+
+
+    mobileMenuBtn.addEventListener(
+
+        "click",
+
+        function() {
+
+
+            mainNav.classList.toggle(
+
+                "open"
+
+            );
+
+
+            const icon =
+                mobileMenuBtn.querySelector(
+
+                    "i"
+
+                );
+
+
+            if (
+
+                mainNav.classList.contains(
+
+                    "open"
+
+                )
+
+            ) {
+
+
+                icon.classList.remove(
+
+                    "fa-bars"
+
+                );
+
+
+                icon.classList.add(
+
+                    "fa-times"
+
+                );
+
+
+            }
+
+
+            else {
+
+
+                icon.classList.remove(
+
+                    "fa-times"
+
+                );
+
+
+                icon.classList.add(
+
+                    "fa-bars"
+
+                );
+
+
+            }
+
+
+        }
+
+    );
+
+
+</script>
+```
+
 </body>
+
 </html>
