@@ -277,422 +277,101 @@
 
 <script>
 
+const contactForm =
+    document.getElementById("contactForm");
 
-    /*
-    =====================================
-    SUPABASE EDGE FUNCTION URL
-    =====================================
-    */
+const sendMessageBtn =
+    document.getElementById("sendMessageBtn");
 
+const contactStatus =
+    document.getElementById("contactStatus");
 
-    const EDGE_FUNCTION_URL =
-        "https://lmkvtvmkbvpzgsrutheu.supabase.co/functions/v1/send-contact-message";
 
+contactForm.addEventListener("submit", function(event) {
 
-    /*
-    =====================================
-    DOM ELEMENTS
-    =====================================
-    */
+    event.preventDefault();
 
 
-    const contactForm =
-        document.getElementById(
-            "contactForm"
-        );
+    const name =
+        document.getElementById("contactName").value.trim();
 
 
-    const sendMessageBtn =
-        document.getElementById(
-            "sendMessageBtn"
-        );
+    const email =
+        document.getElementById("contactEmail").value.trim();
 
 
-    const contactStatus =
-        document.getElementById(
-            "contactStatus"
-        );
+    const phone =
+        document.getElementById("contactPhone").value.trim();
 
 
-    /*
-    =====================================
-    CONTACT FORM SUBMIT
-    =====================================
-    */
+    const message =
+        document.getElementById("contactMessage").value.trim();
 
 
-    contactForm.addEventListener(
-
-        "submit",
-
-        async function(event) {
-
-
-            event.preventDefault();
-
-
-            /*
-            ==============================
-            GET FORM VALUES
-            ==============================
-            */
-
-
-            const name =
-                document
-                .getElementById(
-                    "contactName"
-                )
-                .value
-                .trim();
-
-
-            const email =
-                document
-                .getElementById(
-                    "contactEmail"
-                )
-                .value
-                .trim();
-
-
-            const phone =
-                document
-                .getElementById(
-                    "contactPhone"
-                )
-                .value
-                .trim();
-
-
-            const message =
-                document
-                .getElementById(
-                    "contactMessage"
-                )
-                .value
-                .trim();
-
-
-            /*
-            ==============================
-            BUTTON LOADING STATE
-            ==============================
-            */
-
-
-            sendMessageBtn.disabled =
-                true;
-
-
-            sendMessageBtn.textContent =
-                "Sending...";
-
-
-            contactStatus.textContent =
-                "";
-
-
-            contactStatus.style.color =
-                "";
-
-
-            try {
-
-
-                /*
-                ==============================
-                SEND DATA TO SUPABASE
-                ==============================
-                */
-
-
-                const response =
-                    await fetch(
-
-                        EDGE_FUNCTION_URL,
-
-                        {
-
-                            method:
-                                "POST",
-
-
-                            headers: {
-
-                                "Content-Type":
-                                    "application/json"
-
-                            },
-
-
-                            body:
-
-                                JSON.stringify(
-
-                                    {
-
-                                        name:
-                                            name,
-
-                                        email:
-                                            email,
-
-                                        phone:
-                                            phone,
-
-                                        message:
-                                            message
-
-                                    }
-
-                                )
-
-                        }
-
-                    );
-
-
-                /*
-                ==============================
-                RESPONSE CHECK
-                ==============================
-                */
-
-
-                if (
-
-                    !response.ok
-
-                ) {
-
-                    throw new Error(
-
-                        "Message sending failed"
-
-                    );
-
-                }
-
-
-                /*
-                ==============================
-                SUCCESS MESSAGE
-                ==============================
-                */
-
-
-                contactStatus.style.color =
-                    "green";
-
-
-                contactStatus.textContent =
-                    "Thank you! Your message has been sent successfully.";
-
-
-                /*
-                ==============================
-                OPEN WHATSAPP
-                ==============================
-                */
-
-
-                const whatsappMessage = `
-```
-
-New Contact Message
+    const whatsappMessage =
+`New Contact Message
 
 Name: ${name}
-
 Email: ${email}
-
 Phone: ${phone}
 
 Message:
+${message}`;
 
-${message}
 
-```
-                `;
+    const whatsappURL =
+        "https://wa.me/919729590777?text=" +
+        encodeURIComponent(whatsappMessage);
 
 
-                const whatsappURL =
+    contactStatus.style.color = "green";
 
-                    `https://wa.me/919729590777?text=${encodeURIComponent(
+    contactStatus.textContent =
+        "Opening WhatsApp...";
 
-                        whatsappMessage
 
-                    )}`;
+    window.location.href =
+        whatsappURL;
 
+});
 
-                window.open(
 
-                    whatsappURL,
+// Mobile Navigation
 
-                    "_blank"
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
 
-                );
 
+const mainNav =
+    document.getElementById("mainNav");
 
-                /*
-                ==============================
-                RESET FORM
-                ==============================
-                */
 
+mobileMenuBtn.addEventListener("click", function() {
 
-                contactForm.reset();
+    mainNav.classList.toggle("open");
 
 
-            }
+    const icon =
+        mobileMenuBtn.querySelector("i");
 
 
-            catch (
+    if (mainNav.classList.contains("open")) {
 
-                error
+        icon.classList.remove("fa-bars");
 
-            ) {
+        icon.classList.add("fa-times");
 
+    }
 
-                console.error(
+    else {
 
-                    "Contact form error:",
+        icon.classList.remove("fa-times");
 
-                    error
+        icon.classList.add("fa-bars");
 
-                );
+    }
 
-
-                contactStatus.style.color =
-                    "red";
-
-
-                contactStatus.textContent =
-                    "Something went wrong. Please try again.";
-
-
-            }
-
-
-            finally {
-
-
-                /*
-                ==============================
-                RESET BUTTON
-                ==============================
-                */
-
-
-                sendMessageBtn.disabled =
-                    false;
-
-
-                sendMessageBtn.textContent =
-                    "Send Message";
-
-
-            }
-
-
-        }
-
-    );
-
-
-    /*
-    =====================================
-    MOBILE NAVIGATION
-    =====================================
-    */
-
-
-    const mobileMenuBtn =
-        document.getElementById(
-            "mobileMenuBtn"
-        );
-
-
-    const mainNav =
-        document.getElementById(
-            "mainNav"
-        );
-
-
-    mobileMenuBtn.addEventListener(
-
-        "click",
-
-        function() {
-
-
-            mainNav.classList.toggle(
-
-                "open"
-
-            );
-
-
-            const icon =
-                mobileMenuBtn.querySelector(
-
-                    "i"
-
-                );
-
-
-            if (
-
-                mainNav.classList.contains(
-
-                    "open"
-
-                )
-
-            ) {
-
-
-                icon.classList.remove(
-
-                    "fa-bars"
-
-                );
-
-
-                icon.classList.add(
-
-                    "fa-times"
-
-                );
-
-
-            }
-
-
-            else {
-
-
-                icon.classList.remove(
-
-                    "fa-times"
-
-                );
-
-
-                icon.classList.add(
-
-                    "fa-bars"
-
-                );
-
-
-            }
-
-
-        }
-
-    );
-
+});
 
 </script>
 ```
