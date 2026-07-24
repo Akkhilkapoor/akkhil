@@ -3,207 +3,1474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Akkhil Kapoor | Professional Accounts, IT Trainer | Educator in Ambala</title>
+
     <meta name="description" content="Akkhil Kapoor is a professional Accounts & IT trainer | Educator in Ambala with 20+ years of experience in Tally, Web Development, Graphic Design, and Accounting Systems.">
+
     <meta name="keywords" content="Akkhil Kapoor, Professional Accounts & IT Trainer Ambala, Tally Trainer Ambala, Web Development Course Ambala, HIIT Ambala, Computer Institute Ambala">
+
     <meta name="author" content="Akkhil Kapoor">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://akkhilkapoor.github.io/akkhil/"> 
-    
+
+    <link rel="canonical" href="https://akkhilkapoor.github.io/akkhil/">
+
     <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Akkhil Kapoor | Professional Accounts, IT Trainer | Educator">
     <meta property="og:description" content="Over 20+ years of experience training thousands of students in IT, Accounting (Tally), and Web Development in Ambala.">
-    <meta property="og:image" content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg"> 
+    <meta property="og:image" content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg">
 
-    <meta name="google-site-verification" content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM" />
-    
+
+    <meta name="google-site-verification" content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM">
+
+
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Akkhil Kapoor",
-      "jobTitle": "Professional Accounts & IT Trainer | Educator",
-      "worksFor": {
-        "@type": "EducationalOrganization",
-        "name": "HIIT Ambala City"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ambala",
-        "addressRegion": "Haryana",
-        "addressCountry": "IN"
-      },
-      "description": "Professional Accounts Educator and IT trainer in Ambala with 20+ years of experience specializing in Tally, Web Development, and Multimedia.",
-      "knowsAbout": ["Tally", "Web Development", "Graphic Design", "Accounting Management Systems", "Payroll Systems"]
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Akkhil Kapoor",
+        "jobTitle": "Professional Accounts & IT Trainer | Educator",
+        "worksFor": {
+            "@type": "EducationalOrganization",
+            "name": "HIIT Ambala City"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ambala",
+            "addressRegion": "Haryana",
+            "addressCountry": "IN"
+        },
+        "description": "Professional Accounts Educator and IT trainer in Ambala with 20+ years of experience specializing in Tally, Web Development, and Multimedia.",
+        "knowsAbout": [
+            "Tally",
+            "Web Development",
+            "Graphic Design",
+            "Accounting Management Systems",
+            "Payroll Systems"
+        ]
     }
     </script>
 
-    <style>
-      /* Reviews Multi-column Grid Styling */
-      .reviews-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-        text-align: left;
-        margin-top: 10px;
-      }
 
-      /* Desktop View: Maximum 4 Columns */
-      @media (min-width: 992px) {
+    <style>
+
+        /* ===============================
+           REVIEWS GRID
+        =============================== */
+
         .reviews-grid {
-          grid-template-columns: repeat(4, 1fr);
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
+
+            text-align: left;
+
+            margin-top: 10px;
+
         }
-      }
+
+
+        @media (min-width: 992px) {
+
+            .reviews-grid {
+
+                grid-template-columns:
+                repeat(4, 1fr);
+
+            }
+
+        }
+
+
+        /* ===============================
+           REVIEW MODAL
+        =============================== */
+
+        #reviewModal {
+
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: rgba(0,0,0,0.6);
+
+            z-index: 1000;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+        }
+
+
+        .review-modal-box {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            width: 90%;
+
+            max-width: 500px;
+
+            position: relative;
+
+            box-shadow:
+            0 4px 10px rgba(0,0,0,0.3);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+        }
+
+
+        #closeReviewBtn {
+
+            position: absolute;
+
+            top: 10px;
+
+            right: 15px;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            color: #333;
+
+        }
+
+
+        .review-form-group {
+
+            margin-bottom: 15px;
+
+            text-align: left;
+
+        }
+
+
+        .review-form-group label {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-weight: bold;
+
+            color: #333;
+
+        }
+
+
+        .review-form-group input,
+
+        .review-form-group select,
+
+        .review-form-group textarea {
+
+            width: 100%;
+
+            padding: 11px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .review-form-group textarea {
+
+            resize: vertical;
+
+            min-height: 100px;
+
+        }
+
+
+        #submitReviewBtn {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #007bff;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        #submitReviewBtn:hover {
+
+            background: #0056b3;
+
+        }
+
+
+        #submitReviewBtn:disabled {
+
+            background: #999;
+
+            cursor: not-allowed;
+
+        }
+
+
+        #reviewMessage {
+
+            margin-top: 15px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+
+        .review-card {
+
+            background: #f9f9f9;
+
+            border: 1px solid #e0e0e0;
+
+            padding: 15px 18px;
+
+            border-radius: 8px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+        }
+
     </style>
+
 </head>
+
+
 <body>
 
+
+    <!-- ===============================
+         HEADER
+    =============================== -->
+
     <header class="site-header">
+
         <div class="nav-container">
+
+
             <div class="logo">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="30"
+                    height="30"
+                >
+
+                    <path
+                        d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"
+                    />
+
                 </svg>
-                <span>Akkhil Portfolio</span>
+
+
+                <span>
+
+                    Akkhil Portfolio
+
+                </span>
+
             </div>
-            
-            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+
+
+            <button
+                class="menu-toggle"
+                id="mobileMenuBtn"
+                aria-label="Toggle Navigation"
+            >
+
                 <i class="fas fa-bars"></i>
+
             </button>
 
-            <nav aria-label="Main Navigation" id="mainNav">
+
+            <nav
+                aria-label="Main Navigation"
+                id="mainNav"
+            >
+
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+
+                    <li>
+
+                        <a
+                            href="index.html"
+                            class="active"
+                        >
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="about.html">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="expertise.html">
+
+                            Expertise
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="projects.html">
+
+                            Projects
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+
                 </ul>
+
             </nav>
+
+
         </div>
+
     </header>
 
-    <main> 
-        <section id="home-hero" class="hero-section">
+
+    <!-- ===============================
+         MAIN
+    =============================== -->
+
+    <main>
+
+
+        <!-- HERO SECTION -->
+
+        <section
+            id="home-hero"
+            class="hero-section"
+        >
+
             <div class="hero-container">
+
+
                 <div class="hero-image-wrapper">
-                    <img src="akkhil.jpg" alt="Akkhil Kapoor - Professional Accounts & IT Trainer | Educator in Ambala" class="profile-img" loading="eager">
+
+                    <img
+                        src="akkhil.jpg"
+                        alt="Akkhil Kapoor - Professional Accounts & IT Trainer | Educator in Ambala"
+                        class="profile-img"
+                        loading="eager"
+                    >
+
                 </div>
+
+
                 <div class="hero-text-wrapper">
-                    <h1>Akkhil Kapoor</h1>
-                    <p><b>Professional Accounts &amp; IT Trainer | Educator in Ambala</b></p>
-                    <p>I am Akkhil Kapoor, an experienced IT Trainer and Accounts Educator with 20+ years of teaching experience in Ambala, Haryana.
-I help students build practical skills in Accounting, Tally Prime, Busy, Office Automation, Web Development, AI Tools, and modern computer technologies. 
-My mission is to provide practical, job-oriented education that helps students build successful careers.</p>
-                    
+
+
+                    <h1>
+
+                        Akkhil Kapoor
+
+                    </h1>
+
+
+                    <p>
+
+                        <b>
+
+                            Professional Accounts &amp; IT Trainer | Educator in Ambala
+
+                        </b>
+
+                    </p>
+
+
+                    <p>
+
+                        I am Akkhil Kapoor, an experienced IT Trainer and Accounts Educator with 20+ years of teaching experience in Ambala, Haryana.
+
+                        I help students build practical skills in Accounting, Tally Prime, Busy, Office Automation, Web Development, AI Tools, and modern computer technologies.
+
+                        My mission is to provide practical, job-oriented education that helps students build successful careers.
+
+                    </p>
+
+
                     <div class="btn-container">
-                        <a href="projects.html" class="cta-btn btn-primary">View My Work</a>
-                        <a href="my-resume.pdf" target="_blank" class="cta-btn btn-secondary">My Resume</a>
+
+
+                        <a
+                            href="projects.html"
+                            class="cta-btn btn-primary"
+                        >
+
+                            View My Work
+
+                        </a>
+
+
+                        <a
+                            href="my-resume.pdf"
+                            target="_blank"
+                            class="cta-btn btn-secondary"
+                        >
+
+                            My Resume
+
+                        </a>
+
+
                     </div>
+
+
                 </div>
+
+
             </div>
+
         </section>
 
-        <!-- Student Reviews Section (Width increased for 3-4 cards per row) -->
-        <section class="reviews-section" style="padding: 40px 20px; max-width: 1100px; margin: 0 auto; text-align: center;">
-            <h2>Student Reviews & Feedback</h2>
-            
-            <button id="openReviewBtn" style="padding: 12px 24px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 25px; transition: 0.3s;">
+
+        <!-- ===============================
+             STUDENT REVIEWS
+        =============================== -->
+
+        <section
+            class="reviews-section"
+            style="
+                padding: 40px 20px;
+                max-width: 1100px;
+                margin: 0 auto;
+                text-align: center;
+            "
+        >
+
+
+            <h2>
+
+                Student Reviews & Feedback
+
+            </h2>
+
+
+            <button
+                id="openReviewBtn"
+                style="
+                    padding: 12px 24px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin-bottom: 25px;
+                    transition: 0.3s;
+                "
+            >
+
                 ✍️ Write a Review
+
             </button>
 
-            <!-- Grid Container for 3-4 Cards in a Row -->
-            <div id="reviews-container" class="reviews-grid">
-                <p style="grid-column: 1/-1; text-align: center;">Loading reviews...</p>
-            </div>
-        </section>
-    </main> 
 
-    <!-- Pop-up Modal Form -->
-    <div id="reviewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-            <span id="closeReviewBtn" style="position: absolute; top: 10px; right: 15px; font-size: 24px; font-weight: bold; cursor: pointer; color: #333;">&times;</span>
-            <h3 style="margin-top: 0; margin-bottom: 15px;">Submit Your Review</h3>
-            
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfNS2YZ0alQAWe4tF5ojolSWvw9HWqsUMeZiSWnPddYo9NLxQ/viewform?usp=header" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <div
+                id="reviews-container"
+                class="reviews-grid"
+            >
+
+                <p
+                    style="
+                        grid-column: 1/-1;
+                        text-align: center;
+                    "
+                >
+
+                    Loading reviews...
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ===============================
+         REVIEW MODAL
+    =============================== -->
+
+    <div id="reviewModal">
+
+
+        <div class="review-modal-box">
+
+
+            <span id="closeReviewBtn">
+
+                &times;
+
+            </span>
+
+
+            <h3>
+
+                Submit Your Review
+
+            </h3>
+
+
+            <form id="reviewForm">
+
+
+                <div class="review-form-group">
+
+
+                    <label for="reviewName">
+
+                        Your Name
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="reviewName"
+                        required
+                    >
+
+
+                </div>
+
+
+                <div class="review-form-group">
+
+
+                    <label for="reviewEmail">
+
+                        Email Address
+
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="reviewEmail"
+                        required
+                    >
+
+
+                </div>
+
+
+                <div class="review-form-group">
+
+
+                    <label for="reviewPhone">
+
+                        Phone Number
+
+                    </label>
+
+
+                    <input
+                        type="tel"
+                        id="reviewPhone"
+                        required
+                    >
+
+
+                </div>
+
+
+                <div class="review-form-group">
+
+
+                    <label for="reviewRating">
+
+                        Rating
+
+                    </label>
+
+
+                    <select
+                        id="reviewRating"
+                        required
+                    >
+
+                        <option value="">
+
+                            Select Rating
+
+                        </option>
+
+
+                        <option value="5">
+
+                            ⭐⭐⭐⭐⭐ Excellent
+
+                        </option>
+
+
+                        <option value="4">
+
+                            ⭐⭐⭐⭐ Very Good
+
+                        </option>
+
+
+                        <option value="3">
+
+                            ⭐⭐⭐ Good
+
+                        </option>
+
+
+                        <option value="2">
+
+                            ⭐⭐ Needs Improvement
+
+                        </option>
+
+
+                        <option value="1">
+
+                            ⭐ Poor
+
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+                <div class="review-form-group">
+
+
+                    <label for="reviewText">
+
+                        Your Feedback
+
+                    </label>
+
+
+                    <textarea
+                        id="reviewText"
+                        rows="5"
+                        required
+                    ></textarea>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="submitReviewBtn"
+                >
+
+                    Submit Review
+
+                </button>
+
+
+                <p id="reviewMessage"></p>
+
+
+            </form>
+
+
         </div>
+
+
     </div>
 
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
     <footer class="site-footer">
+
+
         <div class="footer-container">
-            <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+
+
+            <p>
+
+                &copy; 2026 Akkhil Kapoor. All Rights Reserved.
+
+            </p>
+
+
         </div>
+
+
     </footer>
 
-    <!-- JavaScript Logic -->
+
+    <!-- ===============================
+         SUPABASE REVIEW SYSTEM
+    =============================== -->
+
     <script>
-        const SHEETDB_API_URL = "https://sheetdb.io/api/v1/bewiiw2g4vmvr/search?Status=Approved";
 
-        async function fetchReviews() {
-            const container = document.getElementById('reviews-container');
-            try {
-                const response = await fetch(SHEETDB_API_URL);
-                const data = await response.json();
 
-                container.innerHTML = ''; 
+        /*
+        =====================================
+        SUPABASE CONFIGURATION
+        =====================================
+        */
 
-                if (!data || data.length === 0) {
-                    container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No reviews available yet.</p>';
-                    return;
+
+        const SUPABASE_URL =
+            "lmkvtvmkbvpzgsrutheu";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_SsDcoVpYs44Q99CRyS2Wmw_GTCxubIE";
+
+
+        /*
+        =====================================
+        DOM ELEMENTS
+        =====================================
+        */
+
+
+        const reviewsContainer =
+            document.getElementById(
+                "reviews-container"
+            );
+
+
+        const reviewModal =
+            document.getElementById(
+                "reviewModal"
+            );
+
+
+        const openReviewBtn =
+            document.getElementById(
+                "openReviewBtn"
+            );
+
+
+        const closeReviewBtn =
+            document.getElementById(
+                "closeReviewBtn"
+            );
+
+
+        const reviewForm =
+            document.getElementById(
+                "reviewForm"
+            );
+
+
+        const submitReviewBtn =
+            document.getElementById(
+                "submitReviewBtn"
+            );
+
+
+        const reviewMessage =
+            document.getElementById(
+                "reviewMessage"
+            );
+
+
+        /*
+        =====================================
+        OPEN REVIEW MODAL
+        =====================================
+        */
+
+
+        openReviewBtn.onclick =
+            function() {
+
+                reviewModal.style.display =
+                    "flex";
+
+            };
+
+
+        /*
+        =====================================
+        CLOSE REVIEW MODAL
+        =====================================
+        */
+
+
+        closeReviewBtn.onclick =
+            function() {
+
+                reviewModal.style.display =
+                    "none";
+
+            };
+
+
+        window.onclick =
+            function(event) {
+
+                if (
+                    event.target ===
+                    reviewModal
+                ) {
+
+                    reviewModal.style.display =
+                        "none";
+
                 }
 
-                data.forEach(item => {
-                    const ratingStars = '⭐'.repeat(parseInt(item.Rating) || 5);
-                    
-                    const reviewCard = document.createElement('div');
-                    reviewCard.style.cssText = "background: #f9f9f9; border: 1px solid #e0e0e0; padding: 15px 18px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between;";
-                    reviewCard.innerHTML = `
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 5px;">
-                                <strong style="font-size: 1em; color: #333;">${item.Name || item['Full Name']}</strong>
-                                <span style="font-size: 0.9em;">${ratingStars}</span>
-                            </div>
-                            <p style="margin: 0; color: #555; line-height: 1.4; font-size: 0.95em;">"${item.Review || item['Your Review / Experience'] || item['Your Review']}"</p>
-                        </div>
+            };
+
+
+        /*
+        =====================================
+        LOAD APPROVED REVIEWS
+        =====================================
+        */
+
+
+        async function fetchReviews() {
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+
+                        `${SUPABASE_URL}/rest/v1/student_reviews?Approved=eq.true&select=Name,Rating,Review&order=Created_at.desc`,
+
+                        {
+
+                            method: "GET",
+
+                            headers: {
+
+                                "apikey":
+                                    SUPABASE_KEY,
+
+                                "Authorization":
+                                    `Bearer ${SUPABASE_KEY}`
+
+                            }
+
+                        }
+
+                    );
+
+
+                if (
+                    !response.ok
+                ) {
+
+                    throw new Error(
+                        "Failed to load reviews"
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                reviewsContainer.innerHTML =
+                    "";
+
+
+                if (
+                    !data ||
+                    data.length === 0
+                ) {
+
+
+                    reviewsContainer.innerHTML = `
+
+                        <p style="
+                            grid-column: 1/-1;
+                            text-align: center;
+                        ">
+
+                            No reviews available yet.
+
+                        </p>
+
                     `;
-                    container.appendChild(reviewCard);
-                });
-            } catch (error) {
-                console.error('Error loading reviews:', error);
-                container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: red;">Failed to load reviews.</p>';
+
+
+                    return;
+
+                }
+
+
+                data.forEach(
+
+                    function(item) {
+
+
+                        const reviewCard =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        reviewCard.className =
+                            "review-card";
+
+
+                        const rating =
+                            parseInt(
+                                item.Rating
+                            ) || 5;
+
+
+                        const ratingStars =
+                            "⭐".repeat(
+                                rating
+                            );
+
+
+                        reviewCard.innerHTML = `
+
+                            <div>
+
+                                <div style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    margin-bottom: 8px;
+                                    flex-wrap: wrap;
+                                    gap: 5px;
+                                ">
+
+                                    <strong
+                                        style="
+                                            font-size: 1em;
+                                            color: #333;
+                                        "
+                                    >
+
+                                        ${escapeHTML(
+                                            item.Name
+                                        )}
+
+                                    </strong>
+
+
+                                    <span
+                                        style="
+                                            font-size: 0.9em;
+                                        "
+                                    >
+
+                                        ${ratingStars}
+
+                                    </span>
+
+                                </div>
+
+
+                                <p
+                                    style="
+                                        margin: 0;
+                                        color: #555;
+                                        line-height: 1.4;
+                                        font-size: 0.95em;
+                                    "
+                                >
+
+                                    "${escapeHTML(
+                                        item.Review
+                                    )}"
+
+                                </p>
+
+                            </div>
+
+                        `;
+
+
+                        reviewsContainer.appendChild(
+                            reviewCard
+                        );
+
+
+                    }
+
+                );
+
+
             }
+
+            catch (
+                error
+            ) {
+
+
+                console.error(
+                    "Error loading reviews:",
+                    error
+                );
+
+
+                reviewsContainer.innerHTML = `
+
+                    <p style="
+                        grid-column: 1/-1;
+                        text-align: center;
+                        color: red;
+                    ">
+
+                        Failed to load reviews.
+
+                    </p>
+
+                `;
+
+            }
+
         }
 
-        // Pop-up Modal Logic
-        const modal = document.getElementById('reviewModal');
-        const openBtn = document.getElementById('openReviewBtn');
-        const closeBtn = document.getElementById('closeReviewBtn');
 
-        openBtn.onclick = () => modal.style.display = 'flex';
-        closeBtn.onclick = () => modal.style.display = 'none';
-        window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+        /*
+        =====================================
+        SUBMIT NEW REVIEW
+        =====================================
+        */
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('open');
-            const icon = mobileMenuBtn.querySelector('i');
-            if(mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        reviewForm.addEventListener(
+
+            "submit",
+
+            async function(event) {
+
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                    .getElementById(
+                        "reviewName"
+                    )
+                    .value
+                    .trim();
+
+
+                const email =
+                    document
+                    .getElementById(
+                        "reviewEmail"
+                    )
+                    .value
+                    .trim();
+
+
+                const phone =
+                    document
+                    .getElementById(
+                        "reviewPhone"
+                    )
+                    .value
+                    .trim();
+
+
+                const rating =
+                    document
+                    .getElementById(
+                        "reviewRating"
+                    )
+                    .value;
+
+
+                const review =
+                    document
+                    .getElementById(
+                        "reviewText"
+                    )
+                    .value
+                    .trim();
+
+
+                submitReviewBtn.disabled =
+                    true;
+
+
+                submitReviewBtn.textContent =
+                    "Submitting...";
+
+
+                reviewMessage.textContent =
+                    "";
+
+
+                try {
+
+
+                    const response =
+                        await fetch(
+
+                            `${SUPABASE_URL}/rest/v1/student_reviews`,
+
+                            {
+
+                                method: "POST",
+
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "application/json",
+
+
+                                    "apikey":
+                                        SUPABASE_KEY,
+
+
+                                    "Authorization":
+                                        `Bearer ${SUPABASE_KEY}`,
+
+
+                                    "Prefer":
+                                        "return=minimal"
+
+                                },
+
+
+                                body:
+                                JSON.stringify(
+
+                                    {
+
+                                        Name:
+                                            name,
+
+                                        Email:
+                                            email,
+
+                                        "Phone No":
+                                            phone,
+
+                                        Rating:
+                                            parseInt(
+                                                rating
+                                            ),
+
+                                        Review:
+                                            review,
+
+                                        Approved:
+                                            false
+
+                                    }
+
+                                )
+
+                            }
+
+                        );
+
+
+                    if (
+                        !response.ok
+                    ) {
+
+
+                        const errorData =
+                            await response.text();
+
+
+                        console.error(
+                            errorData
+                        );
+
+
+                        throw new Error(
+                            "Review submission failed"
+                        );
+
+                    }
+
+
+                    reviewMessage.style.color =
+                        "green";
+
+
+                    reviewMessage.textContent =
+                        "Thank you! Your review has been submitted successfully.";
+
+
+                    reviewForm.reset();
+
+
+                    setTimeout(
+
+                        function() {
+
+
+                            reviewModal.style.display =
+                                "none";
+
+
+                            reviewMessage.textContent =
+                                "";
+
+
+                        },
+
+                        2500
+
+                    );
+
+
+                }
+
+                catch (
+                    error
+                ) {
+
+
+                    console.error(
+                        "Error submitting review:",
+                        error
+                    );
+
+
+                    reviewMessage.style.color =
+                        "red";
+
+
+                    reviewMessage.textContent =
+                        "Something went wrong. Please try again.";
+
+                }
+
+
+                finally {
+
+
+                    submitReviewBtn.disabled =
+                        false;
+
+
+                    submitReviewBtn.textContent =
+                        "Submit Review";
+
+
+                }
+
             }
-        });
 
-        // Run on Page Load
+        );
+
+
+        /*
+        =====================================
+        ESCAPE HTML
+        =====================================
+        */
+
+
+        function escapeHTML(
+            text
+        ) {
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                text || "";
+
+
+            return div.innerHTML;
+
+        }
+
+
+        /*
+        =====================================
+        MOBILE MENU
+        =====================================
+        */
+
+
+        const mobileMenuBtn =
+            document.getElementById(
+                "mobileMenuBtn"
+            );
+
+
+        const mainNav =
+            document.getElementById(
+                "mainNav"
+            );
+
+
+        mobileMenuBtn.addEventListener(
+
+            "click",
+
+            function() {
+
+
+                mainNav.classList.toggle(
+                    "open"
+                );
+
+
+                const icon =
+                    mobileMenuBtn.querySelector(
+                        "i"
+                    );
+
+
+                if (
+
+                    mainNav.classList.contains(
+                        "open"
+                    )
+
+                ) {
+
+
+                    icon.classList.remove(
+                        "fa-bars"
+                    );
+
+
+                    icon.classList.add(
+                        "fa-times"
+                    );
+
+
+                }
+
+                else {
+
+
+                    icon.classList.remove(
+                        "fa-times"
+                    );
+
+
+                    icon.classList.add(
+                        "fa-bars"
+                    );
+
+                }
+
+            }
+
+        );
+
+
+        /*
+        =====================================
+        LOAD REVIEWS ON PAGE LOAD
+        =====================================
+        */
+
+
         fetchReviews();
+
+
     </script>
+
+
 </body>
+
 </html>
