@@ -67,7 +67,8 @@
         }
 
         input,
-        textarea {
+        textarea,
+        select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
@@ -109,7 +110,7 @@
 <body>
 
 
-    <!-- Header -->
+    <!-- HEADER -->
 
     <header>
 
@@ -122,7 +123,7 @@
     </header>
 
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
 
     <div class="container">
 
@@ -131,12 +132,12 @@
             <h3>Add New Blog</h3>
 
 
-            <!-- Blog Form -->
+            <!-- BLOG FORM -->
 
             <form id="blogForm">
 
 
-                <!-- Blog Title -->
+                <!-- BLOG TITLE -->
 
                 <label>
                     Blog Title
@@ -150,7 +151,7 @@
                 >
 
 
-                <!-- Blog Content -->
+                <!-- BLOG CONTENT -->
 
                 <label>
                     Blog Content
@@ -163,7 +164,7 @@
                 ></textarea>
 
 
-                <!-- Image URL -->
+                <!-- IMAGE URL -->
 
                 <label>
                     Image URL
@@ -176,7 +177,7 @@
                 >
 
 
-                <!-- Video URL -->
+                <!-- VIDEO URL -->
 
                 <label>
                     YouTube Video URL
@@ -189,20 +190,39 @@
                 >
 
 
-                <!-- Publish Button -->
+                <!-- STATUS -->
+
+                <label>
+                    Blog Status
+                </label>
+
+                <select id="status">
+
+                    <option value="true">
+                        Published
+                    </option>
+
+                    <option value="false">
+                        Draft
+                    </option>
+
+                </select>
+
+
+                <!-- SUBMIT BUTTON -->
 
                 <button
                     type="submit"
                     id="publishBtn"
                 >
-                    Publish Blog
+                    Save Blog
                 </button>
 
 
             </form>
 
 
-            <!-- Message -->
+            <!-- MESSAGE -->
 
             <div id="message"></div>
 
@@ -212,12 +232,12 @@
     </div>
 
 
-    <!-- Supabase Library -->
+    <!-- SUPABASE LIBRARY -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-    <!-- Supabase Configuration -->
+    <!-- SUPABASE CONFIGURATION -->
 
     <script src="js/supabase-config.js"></script>
 
@@ -244,7 +264,8 @@
             if (error || !user) {
 
 
-                window.location.href = "admin.html";
+                window.location.href =
+                    "admin.html";
 
 
                 return;
@@ -288,7 +309,7 @@
 
 
         // =====================================
-        // ADD NEW BLOG
+        // ADD BLOG
         // =====================================
 
         document
@@ -296,12 +317,10 @@
             .addEventListener("submit", async function (event) {
 
 
-                // Stop page refresh
-
                 event.preventDefault();
 
 
-                // Get title
+                // GET TITLE
 
                 const title =
                     document
@@ -310,7 +329,7 @@
                         .trim();
 
 
-                // Get content
+                // GET CONTENT
 
                 const content =
                     document
@@ -319,7 +338,7 @@
                         .trim();
 
 
-                // Get image URL
+                // GET IMAGE URL
 
                 const image_url =
                     document
@@ -328,7 +347,7 @@
                         .trim();
 
 
-                // Get video URL
+                // GET VIDEO URL
 
                 const video_url =
                     document
@@ -337,14 +356,22 @@
                         .trim();
 
 
-                // Message area
+                // GET STATUS
+
+                const is_published =
+                    document
+                        .getElementById("status")
+                        .value === "true";
+
+
+                // MESSAGE
 
                 const message =
                     document
                         .getElementById("message");
 
 
-                // Publish button
+                // BUTTON
 
                 const publishBtn =
                     document
@@ -352,16 +379,15 @@
 
 
                 message.textContent =
-                    "Publishing blog...";
+                    "Saving blog...";
 
 
-                publishBtn.disabled = true;
+                publishBtn.disabled =
+                    true;
 
 
 
-                // =====================================
-                // CHECK LOGIN AGAIN
-                // =====================================
+                // CHECK LOGIN
 
                 const {
 
@@ -385,9 +411,7 @@
 
 
 
-                // =====================================
                 // CREATE SLUG
-                // =====================================
 
                 const slug = title
                     .toLowerCase()
@@ -397,9 +421,7 @@
 
 
 
-                // =====================================
-                // INSERT BLOG INTO SUPABASE
-                // =====================================
+                // INSERT BLOG
 
                 const {
 
@@ -426,7 +448,8 @@
                                 video_url:
                                     video_url || null,
 
-                                is_published: true
+                                is_published:
+                                    is_published
 
                             }
 
@@ -434,9 +457,7 @@
 
 
 
-                // =====================================
-                // ERROR HANDLING
-                // =====================================
+                // ERROR
 
                 if (error) {
 
@@ -445,7 +466,8 @@
                         "Error: " + error.message;
 
 
-                    publishBtn.disabled = false;
+                    publishBtn.disabled =
+                        false;
 
 
                     return;
@@ -455,22 +477,34 @@
 
 
 
-                // =====================================
                 // SUCCESS
-                // =====================================
 
-                message.textContent =
-                    "Blog published successfully!";
+                if (is_published === true) {
 
 
-                // Clear form
+                    message.textContent =
+                        "Blog published successfully!";
+
+
+                } else {
+
+
+                    message.textContent =
+                        "Blog saved as draft successfully!";
+
+
+                }
+
+
+                // RESET FORM
 
                 document
                     .getElementById("blogForm")
                     .reset();
 
 
-                publishBtn.disabled = false;
+                publishBtn.disabled =
+                    false;
 
 
             });
