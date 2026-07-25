@@ -4,9 +4,10 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Blog | Akkhil Kapoor</title>
+    <title>Blogs | Akkhil Kapoor</title>
 
     <style>
 
@@ -21,20 +22,30 @@
             color: #111827;
         }
 
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
         .container {
             max-width: 1100px;
-            margin: auto;
-            padding: 30px 20px;
+            margin: 40px auto;
+            padding: 20px;
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        #blogContainer {
+        .blogs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+
             gap: 25px;
         }
 
@@ -42,12 +53,12 @@
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
         .blog-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
         }
 
@@ -57,17 +68,17 @@
 
         .blog-content h2 {
             margin-top: 0;
+            margin-bottom: 12px;
         }
 
-        .date {
-            color: #6b7280;
-            font-size: 14px;
-            margin-bottom: 12px;
+        .blog-content p {
+            color: #4b5563;
+            line-height: 1.6;
         }
 
         .read-more {
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 10px;
             padding: 10px 16px;
             background: #111827;
             color: white;
@@ -75,18 +86,13 @@
             border-radius: 6px;
         }
 
-        .no-image {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #e5e7eb;
+        .no-blogs {
+            text-align: center;
             color: #6b7280;
         }
 
-        #message {
+        .loading {
             text-align: center;
-            margin: 30px 0;
         }
 
     </style>
@@ -97,41 +103,59 @@
 <body>
 
 
+    <header>
+
+        <h1>
+            My Blogs
+        </h1>
+
+        <p>
+            Latest articles and updates
+        </p>
+
+    </header>
+
+
     <div class="container">
 
-        <h1>My Blog</h1>
 
-        <div id="message">
-            Loading blogs...
+        <div
+            id="blogsGrid"
+            class="blogs-grid"
+        >
+
+            <p class="loading">
+                Loading blogs...
+            </p>
+
         </div>
 
-        <div id="blogContainer"></div>
 
     </div>
 
 
-    <!-- Supabase Library -->
+
+    <!-- SUPABASE -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-    <!-- Supabase Configuration -->
+    <!-- YOUR SUPABASE CONFIG -->
 
     <script src="js/supabase-config.js"></script>
+
 
 
     <script>
 
 
-        async function loadBlogs() {
+        async function loadPublishedBlogs() {
 
 
-            const message =
-                document.getElementById("message");
-
-
-            const blogContainer =
-                document.getElementById("blogContainer");
+            const blogsGrid =
+                document.getElementById(
+                    "blogsGrid"
+                );
 
 
             const {
@@ -144,139 +168,146 @@
                 await supabaseClient
                     .from("blogs")
                     .select("*")
-                    .eq("is_published", true)
-                    .order("created_at", {
-                        ascending: false
-                    });
+                    .eq(
+                        "is_published",
+                        true
+                    )
+                    .order(
+                        "created_at",
+                        {
+                            ascending: false
+                        }
+                    );
 
 
             if (error) {
 
 
-                message.textContent =
-                    "Error loading blogs";
+                blogsGrid.innerHTML = `
 
+                    <p class="no-blogs">
 
-                console.error(error);
+                        Error loading blogs:
+                        ${error.message}
 
-
-                return;
-
-
-            }
-
-
-            if (!blogs || blogs.length === 0) {
-
-
-                message.textContent =
-                    "No published blogs found.";
-
-
-                return;
-
-
-            }
-
-
-            message.textContent = "";
-
-
-            blogs.forEach(function(blog) {
-
-
-                const card =
-                    document.createElement("div");
-
-
-                card.className =
-                    "blog-card";
-
-
-                let imageHTML = "";
-
-
-                if (blog.image_url) {
-
-
-                    imageHTML = `
-
-                        <img
-                            src="${blog.image_url}"
-                            alt="${blog.title}"
-                        >
-
-                    `;
-
-
-                } else {
-
-
-                    imageHTML = `
-
-                        <div class="no-image">
-                            No Image
-                        </div>
-
-                    `;
-
-
-                }
-
-
-                card.innerHTML = `
-
-                    ${imageHTML}
-
-                    <div class="blog-content">
-
-                        <h2>
-                            ${blog.title}
-                        </h2>
-
-                        <div class="date">
-
-                            ${new Date(
-                                blog.created_at
-                            ).toLocaleDateString()}
-
-                        </div>
-
-                        <p>
-
-                            ${blog.content.substring(
-                                0,
-                                180
-                            )}
-
-                            ...
-
-                        </p>
-
-                        <a
-                            href="blog-detail.html?slug=${blog.slug}"
-                            class="read-more"
-                        >
-
-                            Read More
-
-                        </a>
-
-                    </div>
+                    </p>
 
                 `;
 
 
-                blogContainer.appendChild(card);
+                return;
 
 
-            });
+            }
+
+
+            if (
+                !blogs
+                ||
+                blogs.length === 0
+            ) {
+
+
+                blogsGrid.innerHTML = `
+
+                    <p class="no-blogs">
+
+                        No published blogs available.
+
+                    </p>
+
+                `;
+
+
+                return;
+
+
+            }
+
+
+            blogsGrid.innerHTML =
+                "";
+
+
+            blogs.forEach(
+                function(blog) {
+
+
+                    const blogCard =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    blogCard.className =
+                        "blog-card";
+
+
+                    const imageHTML =
+                        blog.image_url
+                            ? `
+
+                                <img
+                                    src="${blog.image_url}"
+                                    alt="${blog.title}"
+                                >
+
+                            `
+                            : "";
+
+
+                    const shortContent =
+                        blog.content
+                            .substring(
+                                0,
+                                150
+                            )
+                            + "...";
+
+
+                    blogCard.innerHTML = `
+
+                        ${imageHTML}
+
+                        <div
+                            class="blog-content"
+                        >
+
+                            <h2>
+                                ${blog.title}
+                            </h2>
+
+                            <p>
+                                ${shortContent}
+                            </p>
+
+                            <a
+                                class="read-more"
+                                href="blog-detail.html?slug=${blog.slug}"
+                            >
+
+                                Read More
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+
+                    blogsGrid.appendChild(
+                        blogCard
+                    );
+
+
+                }
+            );
 
 
         }
 
 
-        loadBlogs();
+        loadPublishedBlogs();
 
 
     </script>
