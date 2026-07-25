@@ -5,35 +5,32 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Blog | Akkhil Kapoor</title>
-
 
     <meta
         name="description"
         content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator."
     >
 
-
     <meta
         name="author"
         content="Akkhil Kapoor"
     >
-
 
     <meta
         name="robots"
         content="index, follow"
     >
 
-
     <link
         rel="stylesheet"
         href="style.css"
     >
-
 
     <link
         rel="stylesheet"
@@ -41,14 +38,11 @@
     >
 
 
-
     <style>
-
 
         /* ===============================
            BLOG DETAIL PAGE
         =============================== */
-
 
         .blog-detail-section {
 
@@ -70,20 +64,8 @@
             border-radius: 12px;
 
             box-shadow:
-
                 0 5px 20px
-
-                rgba(
-
-                    0,
-
-                    0,
-
-                    0,
-
-                    0.08
-
-                );
+                rgba(0, 0, 0, 0.08);
 
         }
 
@@ -91,7 +73,6 @@
         /* ===============================
            BACK BUTTON
         =============================== */
-
 
         .back-to-blogs {
 
@@ -127,7 +108,6 @@
            BLOG TITLE
         =============================== */
 
-
         .blog-detail-title {
 
             font-size: 42px;
@@ -145,7 +125,6 @@
            BLOG DATE
         =============================== */
 
-
         .blog-date {
 
             color: #777;
@@ -160,7 +139,6 @@
         /* ===============================
            BLOG IMAGE
         =============================== */
-
 
         .blog-detail-image {
 
@@ -183,7 +161,6 @@
            BLOG CONTENT
         =============================== */
 
-
         .blog-detail-content {
 
             font-size: 18px;
@@ -198,9 +175,7 @@
 
 
         .blog-detail-content h1,
-
         .blog-detail-content h2,
-
         .blog-detail-content h3 {
 
             margin-top: 30px;
@@ -218,7 +193,6 @@
 
 
         .blog-detail-content ul,
-
         .blog-detail-content ol {
 
             margin-bottom: 20px;
@@ -254,7 +228,6 @@
            VIDEO
         =============================== */
 
-
         .blog-video {
 
             margin-top: 35px;
@@ -286,9 +259,7 @@
            LOADING / ERROR
         =============================== */
 
-
         .blog-loading,
-
         .blog-error {
 
             text-align: center;
@@ -309,13 +280,7 @@
            RESPONSIVE
         =============================== */
 
-
-        @media (
-
-            max-width: 768px
-
-        ) {
-
+        @media (max-width: 768px) {
 
             .blog-detail-section {
 
@@ -351,16 +316,25 @@
 
             }
 
-
         }
 
-
     </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="js/supabase-config.js"></script>
+
+    <!-- SUPABASE LIBRARY -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+
+    <!-- SUPABASE CONFIG -->
+
+    <script
+        src="js/supabase-config.js"
+    ></script>
+
 </head>
-
 
 
 <body>
@@ -370,35 +344,25 @@
          HEADER
     =============================== -->
 
-
     <header class="site-header">
-
 
         <div class="nav-container">
 
 
+            <!-- LOGO -->
+
             <div class="logo">
 
-
                 <svg
-
                     viewBox="0 0 24 24"
-
                     fill="currentColor"
-
                     width="30"
-
                     height="30"
-
                 >
 
-
                     <path
-
                         d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"
-
                     />
-
 
                 </svg>
 
@@ -409,37 +373,28 @@
 
                 </span>
 
-
             </div>
 
 
+            <!-- MOBILE MENU BUTTON -->
 
             <button
-
                 class="menu-toggle"
-
                 id="mobileMenuBtn"
-
                 aria-label="Toggle Navigation"
-
             >
 
-
                 <i class="fas fa-bars"></i>
-
 
             </button>
 
 
+            <!-- NAVIGATION -->
 
             <nav
-
                 aria-label="Main Navigation"
-
                 id="mainNav"
-
             >
-
 
                 <ul class="nav-links">
 
@@ -491,11 +446,8 @@
                     <li>
 
                         <a
-
                             href="blog.html"
-
                             class="active"
-
                         >
 
                             Blog
@@ -518,44 +470,38 @@
 
                 </ul>
 
-
             </nav>
 
 
         </div>
 
-
     </header>
-
 
 
     <!-- ===============================
          MAIN
     =============================== -->
 
-
     <main>
 
 
-        <section class="blog-detail-section">
+        <section
+            class="blog-detail-section"
+        >
 
 
             <div
-
                 id="blogContainer"
-
                 class="blog-detail-container"
-
             >
 
 
-                <div class="blog-loading">
-
+                <div
+                    class="blog-loading"
+                >
 
                     <i
-
                         class="fas fa-spinner fa-spin"
-
                     ></i>
 
 
@@ -564,7 +510,6 @@
                         Loading blog...
 
                     </p>
-
 
                 </div>
 
@@ -578,11 +523,9 @@
     </main>
 
 
-
     <!-- ===============================
          FOOTER
     =============================== -->
-
 
     <footer class="site-footer">
 
@@ -592,7 +535,8 @@
 
             <p>
 
-                &copy; 2026 Akkhil Kapoor. All Rights Reserved.
+                &copy; 2026 Akkhil Kapoor.
+                All Rights Reserved.
 
             </p>
 
@@ -603,240 +547,190 @@
     </footer>
 
 
-
     <!-- ===============================
-         SUPABASE BLOG SYSTEM
+         BLOG DETAIL JAVASCRIPT
     =============================== -->
-
 
     <script>
 
 
-        
-
+        /*
+        =====================================
+        DOM ELEMENT
+        =====================================
+        */
 
 
         const blogContainer =
-
             document.getElementById(
-
                 "blogContainer"
-
             );
 
+
+        /*
+        =====================================
+        LOAD BLOG
+        =====================================
+        */
 
 
         async function loadBlog() {
 
 
             const urlParams =
-
                 new URLSearchParams(
-
                     window.location.search
-
                 );
 
 
             const slug =
-
                 urlParams.get(
-
                     "slug"
-
                 );
 
 
+            console.log(
+                "Blog Slug:",
+                slug
+            );
 
-            if (
 
-                !slug
-
-            ) {
+            if (!slug) {
 
 
                 showError(
-
                     "Blog not found."
-
                 );
 
 
                 return;
 
-
             }
-
 
 
             try {
 
 
-                const response =
+                const {
 
-                    await fetch(
+                    data: blogs,
 
+                    error
 
-                        `${SUPABASE_URL}/rest/v1/blogs?slug=eq.${encodeURIComponent(slug)}&is_published=eq.true&select=*`,
+                } = await supabaseClient
 
+                    .from("blogs")
 
-                        {
+                    .select("*")
 
+                    .eq(
+                        "slug",
+                        slug
+                    )
 
-                            method: "GET",
+                    .eq(
+                        "is_published",
+                        true
+                    )
 
-
-                            headers: {
-
-
-                                "apikey":
-
-                                    SUPABASE_KEY,
-
-
-                                "Authorization":
-
-                                    `Bearer ${SUPABASE_KEY}`
+                    .limit(1);
 
 
-                            }
+                console.log(
+                    "Blog Data:",
+                    blogs
+                );
 
 
-                        }
+                console.log(
+                    "Supabase Error:",
+                    error
+                );
 
 
-                    );
+                if (error) {
 
 
-
-                if (
-
-                    !response.ok
-
-                ) {
-
-
-                    throw new Error(
-
-                        "Failed to load blog"
-
-                    );
-
+                    throw error;
 
                 }
 
 
-
-                const blogs =
-
-                    await response.json();
-
-
-
                 if (
-
                     !blogs
-
                     ||
-
                     blogs.length === 0
-
                 ) {
 
 
                     showError(
-
                         "Blog not found."
-
                     );
 
 
                     return;
 
-
                 }
 
 
-
                 const blog =
-
                     blogs[0];
 
 
-
-                let imageHTML = "";
-
+                let imageHTML =
+                    "";
 
 
                 if (
-
                     blog.image_url
-
                 ) {
 
 
                     imageHTML = `
 
-
                         <img
 
                             src="${escapeHTML(
-
                                 blog.image_url
-
                             )}"
 
                             alt="${escapeHTML(
-
                                 blog.title
-
                             )}"
 
                             class="blog-detail-image"
 
                         >
 
-
                     `;
-
 
                 }
 
 
-
-                let dateHTML = "";
-
+                let dateHTML =
+                    "";
 
 
                 if (
-
                     blog.created_at
-
                 ) {
 
 
                     const date =
-
                         new Date(
-
                             blog.created_at
-
                         );
-
 
 
                     dateHTML = `
 
-
-                        <div class="blog-date">
-
+                        <div
+                            class="blog-date"
+                        >
 
                             <i
-
                                 class="far fa-calendar-alt"
-
                             ></i>
-
 
                             ${date.toLocaleDateString(
 
@@ -844,76 +738,61 @@
 
                                 {
 
-                                    day: "numeric",
+                                    day:
+                                        "numeric",
 
-                                    month: "long",
+                                    month:
+                                        "long",
 
-                                    year: "numeric"
+                                    year:
+                                        "numeric"
 
                                 }
 
                             )}
 
-
                         </div>
 
-
                     `;
-
 
                 }
 
 
-
-                let videoHTML = "";
-
+                let videoHTML =
+                    "";
 
 
                 if (
-
                     blog.video_url
-
                 ) {
 
 
                     const videoId =
-
                         getYouTubeVideoId(
-
                             blog.video_url
-
                         );
 
 
-
                     if (
-
                         videoId
-
                     ) {
 
 
                         videoHTML = `
 
-
-                            <div class="blog-video">
-
+                            <div
+                                class="blog-video"
+                            >
 
                                 <h3>
 
-
                                     <i
-
                                         class="fab fa-youtube"
-
                                     ></i>
-
 
                                     Related Video
 
-
                                 </h3>
-
 
 
                                 <iframe
@@ -921,26 +800,20 @@
                                     src="https://www.youtube.com/embed/${videoId}"
 
                                     title="${escapeHTML(
-
                                         blog.title
-
                                     )}"
 
                                     allowfullscreen
 
                                 ></iframe>
 
-
                             </div>
 
-
                         `;
-
 
                     }
 
                 }
-
 
 
                 blogContainer.innerHTML = `
@@ -954,152 +827,110 @@
 
                     >
 
-
                         <i
-
                             class="fas fa-arrow-left"
-
                         ></i>
 
-
                         Back to Blogs
-
 
                     </a>
 
 
-
                     <h1
-
                         class="blog-detail-title"
-
                     >
 
                         ${escapeHTML(
-
                             blog.title
-
                         )}
 
-
                     </h1>
-
 
 
                     ${dateHTML}
 
 
-
                     ${imageHTML}
 
 
-
                     <div
-
                         class="blog-detail-content"
-
                     >
 
                         ${blog.content}
 
-
                     </div>
-
 
 
                     ${videoHTML}
 
-
                 `;
 
 
-
                 document.title =
-
                     blog.title
-
                     +
-
                     " | Akkhil Kapoor";
-
 
 
             }
 
-
-            catch (
-
-                error
-
-            ) {
+            catch (error) {
 
 
                 console.error(
-
                     "Error loading blog:",
-
                     error
-
                 );
 
 
                 showError(
-
                     "Failed to load blog. Please try again later."
-
                 );
 
-
             }
-
 
         }
 
 
+        /*
+        =====================================
+        YOUTUBE VIDEO ID
+        =====================================
+        */
+
 
         function getYouTubeVideoId(
-
             url
-
         ) {
 
 
-            let videoId = "";
-
+            let videoId =
+                "";
 
 
             try {
 
 
                 const urlObject =
-
                     new URL(
-
                         url
-
                     );
-
 
 
                 if (
 
                     urlObject.hostname.includes(
-
                         "youtube.com"
-
                     )
 
                 ) {
 
 
                     videoId =
-
                         urlObject.searchParams.get(
-
                             "v"
-
                         );
-
 
                 }
 
@@ -1107,20 +938,15 @@
                 else if (
 
                     urlObject.hostname.includes(
-
                         "youtu.be"
-
                     )
 
                 ) {
 
 
                     videoId =
-
                         urlObject.pathname.substring(
-
                             1
-
                         );
 
                 }
@@ -1128,36 +954,30 @@
 
             }
 
-
-            catch (
-
-                error
-
-            ) {
+            catch (error) {
 
 
                 console.error(
-
                     "Invalid YouTube URL"
-
                 );
-
 
             }
 
 
-
             return videoId;
-
 
         }
 
 
+        /*
+        =====================================
+        SHOW ERROR
+        =====================================
+        */
+
 
         function showError(
-
             message
-
         ) {
 
 
@@ -1165,28 +985,19 @@
 
 
                 <div
-
                     class="blog-error"
-
                 >
 
-
                     <i
-
                         class="fas fa-exclamation-triangle"
-
                     ></i>
-
 
 
                     <h2>
 
-
                         ${message}
 
-
                     </h2>
-
 
 
                     <a
@@ -1197,75 +1008,63 @@
 
                     >
 
-
                         Back to Blogs
-
 
                     </a>
 
-
                 </div>
 
-
             `;
-
 
         }
 
 
+        /*
+        =====================================
+        ESCAPE HTML
+        =====================================
+        */
+
 
         function escapeHTML(
-
             text
-
         ) {
 
 
             const div =
-
                 document.createElement(
-
                     "div"
-
                 );
 
 
-
             div.textContent =
-
-                text || "";
-
+                text
+                ||
+                "";
 
 
             return div.innerHTML;
 
-
         }
 
 
-
-        /* ===============================
-           MOBILE MENU
-        =============================== */
+        /*
+        =====================================
+        MOBILE MENU
+        =====================================
+        */
 
 
         const mobileMenuBtn =
-
             document.getElementById(
-
                 "mobileMenuBtn"
-
             );
 
 
         const mainNav =
-
             document.getElementById(
-
                 "mainNav"
-
             );
-
 
 
         mobileMenuBtn.addEventListener(
@@ -1276,45 +1075,32 @@
 
 
                 mainNav.classList.toggle(
-
                     "open"
-
                 );
 
 
-
                 const icon =
-
                     mobileMenuBtn.querySelector(
-
                         "i"
-
                     );
-
 
 
                 if (
 
                     mainNav.classList.contains(
-
                         "open"
-
                     )
 
                 ) {
 
 
                     icon.classList.remove(
-
                         "fa-bars"
-
                     );
 
 
                     icon.classList.add(
-
                         "fa-times"
-
                     );
 
                 }
@@ -1323,39 +1109,34 @@
 
 
                     icon.classList.remove(
-
                         "fa-times"
-
                     );
 
 
                     icon.classList.add(
-
                         "fa-bars"
-
                     );
 
                 }
-
 
             }
 
         );
 
 
+        /*
+        =====================================
+        START
+        =====================================
+        */
+
 
         loadBlog();
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="js/supabase-config.js"></script>
 
-<script>
+    </script>
 
-    // Yahan naya loadBlog() wala code paste karo
-
-</script>
 
 </body>
+
 </html>
