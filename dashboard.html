@@ -164,7 +164,10 @@
         }
 
     </style>
-
+<link
+    href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
+    rel="stylesheet"
+>
 </head>
 
 
@@ -213,11 +216,7 @@
                     Blog Content
                 </label>
 
-                <textarea
-                    id="content"
-                    placeholder="Write your blog content here..."
-                    required
-                ></textarea>
+                <div id="editor"></div>
 
 
                 <label>
@@ -969,7 +968,39 @@
 
     </script>
 
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
 
+<script>
+
+const quill = new Quill("#editor", {
+
+    theme: "snow",
+
+    placeholder: "Write your blog here...",
+
+    modules: {
+
+        toolbar: [
+
+            [{ header: [1, 2, 3, false] }],
+
+            ["bold", "italic", "underline"],
+
+            [{ list: "ordered" }, { list: "bullet" }],
+
+            ["link"],
+
+            [{ align: [] }],
+
+            ["clean"]
+
+        ]
+
+    }
+
+});
+
+</script>
 </body>
 
 </html>
