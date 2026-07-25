@@ -8,181 +8,328 @@
 
     <title>Admin Dashboard | Akkhil Kapoor</title>
 
+    <!-- QUILL EDITOR CSS -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
+        rel="stylesheet"
+    >
+
+
     <style>
 
         * {
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             font-family: Arial, sans-serif;
+
             background: #f4f6f9;
+
             color: #111827;
+
         }
+
 
         header {
+
             background: #111827;
+
             color: white;
+
             padding: 18px 25px;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
         }
+
 
         header h2 {
+
             margin: 0;
+
         }
+
 
         #logoutBtn {
+
             background: #dc2626;
+
             color: white;
+
             border: none;
+
             padding: 10px 18px;
+
             border-radius: 6px;
+
             cursor: pointer;
+
         }
+
 
         .container {
+
             max-width: 1100px;
+
             margin: 30px auto;
+
             padding: 20px;
+
         }
+
 
         .card {
+
             background: white;
+
             padding: 25px;
+
             margin-bottom: 25px;
+
             border-radius: 12px;
+
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
         }
+
 
         h3 {
+
             margin-top: 0;
+
         }
+
 
         label {
+
             display: block;
+
             margin-top: 18px;
+
             margin-bottom: 6px;
+
             font-weight: bold;
+
         }
+
 
         input,
-        textarea,
+
         select {
+
             width: 100%;
+
             padding: 12px;
+
             border: 1px solid #ddd;
+
             border-radius: 7px;
+
             font-size: 15px;
+
         }
 
-        textarea {
-            min-height: 200px;
-            resize: vertical;
+
+        #editor {
+
+            min-height: 250px;
+
+            background: white;
+
         }
+
+
+        .ql-editor {
+
+            min-height: 250px;
+
+            font-size: 16px;
+
+        }
+
 
         button {
+
             cursor: pointer;
+
         }
+
 
         #saveBtn {
+
             margin-top: 20px;
+
             padding: 13px 25px;
+
             background: #111827;
+
             color: white;
+
             border: none;
+
             border-radius: 7px;
+
             font-size: 16px;
+
         }
+
 
         #cancelBtn {
+
             margin-top: 20px;
+
             padding: 13px 25px;
+
             background: #6b7280;
+
             color: white;
+
             border: none;
+
             border-radius: 7px;
+
             font-size: 16px;
+
             display: none;
+
         }
+
 
         #message {
+
             margin-top: 15px;
+
             font-weight: bold;
+
         }
+
 
         .blog-item {
+
             border: 1px solid #e5e7eb;
+
             padding: 18px;
+
             margin-top: 15px;
+
             border-radius: 8px;
+
         }
+
 
         .blog-item h4 {
+
             margin: 0 0 8px 0;
+
         }
+
 
         .status {
+
             display: inline-block;
+
             padding: 5px 10px;
+
             border-radius: 5px;
+
             font-size: 13px;
+
             margin-bottom: 12px;
+
         }
+
 
         .published {
+
             background: #dcfce7;
+
             color: #166534;
+
         }
+
 
         .draft {
+
             background: #fef3c7;
+
             color: #92400e;
+
         }
+
 
         .editBtn {
+
             background: #2563eb;
+
             color: white;
+
             border: none;
+
             padding: 8px 14px;
+
             border-radius: 5px;
+
             margin-right: 8px;
+
         }
+
 
         .deleteBtn {
+
             background: #dc2626;
+
             color: white;
+
             border: none;
+
             padding: 8px 14px;
+
             border-radius: 5px;
+
         }
 
+
         .no-blogs {
+
             color: #6b7280;
+
         }
 
     </style>
-<link
-    href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
-    rel="stylesheet"
->
+
 </head>
 
 
 <body>
 
 
+    <!-- HEADER -->
+
     <header>
 
-        <h2>Blog Admin Dashboard</h2>
+        <h2>
+            Blog Admin Dashboard
+        </h2>
+
 
         <button id="logoutBtn">
+
             Logout
+
         </button>
 
     </header>
+
 
 
     <div class="container">
@@ -192,89 +339,159 @@
 
         <div class="card">
 
+
             <h3 id="formHeading">
+
                 Add New Blog
+
             </h3>
+
 
 
             <form id="blogForm">
 
 
+                <!-- TITLE -->
+
                 <label>
+
                     Blog Title
+
                 </label>
 
+
                 <input
+
                     type="text"
+
                     id="title"
+
                     placeholder="Enter blog title"
+
                     required
+
                 >
 
 
+
+                <!-- RICH TEXT CONTENT -->
+
                 <label>
+
                     Blog Content
+
                 </label>
+
 
                 <div id="editor"></div>
 
 
+
+                <!-- IMAGE -->
+
                 <label>
+
                     Blog Image
+
                 </label>
 
+
                 <input
+
                     type="file"
+
                     id="image_file"
+
                     accept="image/*"
+
                 >
 
 
+
+                <!-- VIDEO -->
+
                 <label>
+
                     YouTube Video URL
+
                 </label>
+
 
                 <input
+
                     type="url"
+
                     id="video_url"
+
                     placeholder="https://youtube.com/watch?v=..."
+
                 >
 
 
+
+                <!-- STATUS -->
+
                 <label>
+
                     Blog Status
+
                 </label>
+
 
                 <select id="status">
 
+
                     <option value="true">
+
                         Published
+
                     </option>
 
+
                     <option value="false">
+
                         Draft
+
                     </option>
+
 
                 </select>
 
 
+
+                <!-- SAVE -->
+
                 <button
+
                     type="submit"
+
                     id="saveBtn"
+
                 >
+
                     Save Blog
+
                 </button>
 
 
+
+                <!-- CANCEL -->
+
                 <button
+
                     type="button"
+
                     id="cancelBtn"
+
                 >
+
                     Cancel Edit
+
                 </button>
 
 
             </form>
+
 
 
             <div id="message"></div>
@@ -288,13 +505,18 @@
 
         <div class="card">
 
+
             <h3>
+
                 My All Blogs
+
             </h3>
 
 
             <div id="blogsList">
+
                 Loading blogs...
+
             </div>
 
 
@@ -305,506 +527,1313 @@
 
 
 
+    <!-- SUPABASE -->
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
+    <!-- SUPABASE CONFIG -->
+
     <script src="js/supabase-config.js"></script>
+
+
+    <!-- QUILL EDITOR JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
 
 
     <script>
 
 
-        let editingBlogId = null;
+        // ====================================
+        // QUILL EDITOR
+        // ====================================
 
-        let editingBlogImage = null;
+
+        const quill = new Quill(
+
+            "#editor",
+
+            {
+
+                theme: "snow",
+
+                placeholder:
+                    "Write your blog here...",
+
+                modules:
+
+                {
+
+                    toolbar:
+
+                    [
+
+                        [
+                            {
+                                header:
+                                [
+                                    1,
+                                    2,
+                                    3,
+                                    false
+                                ]
+                            }
+                        ],
+
+                        [
+                            "bold",
+                            "italic",
+                            "underline"
+                        ],
+
+                        [
+                            {
+                                list:
+                                "ordered"
+                            },
+
+                            {
+                                list:
+                                "bullet"
+                            }
+                        ],
+
+                        [
+                            "link"
+                        ],
+
+                        [
+                            {
+                                align:
+                                []
+                            }
+                        ],
+
+                        [
+                            "clean"
+                        ]
+
+                    ]
+
+                }
+
+            }
+
+        );
 
 
 
+        // ====================================
+        // VARIABLES
+        // ====================================
+
+
+        let editingBlogId =
+            null;
+
+
+        let editingBlogImage =
+            null;
+
+
+
+        // ====================================
         // CHECK LOGIN
+        // ====================================
 
-        async function checkUser() {
 
-            const {
-                data: { user },
+        async function checkUser()
+
+
+        {
+
+
+            const
+
+            {
+
+                data:
+                {
+
+                    user
+
+                },
+
                 error
-            } = await supabaseClient.auth.getUser();
+
+            }
+
+            =
+
+            await supabaseClient
+
+                .auth
+
+                .getUser();
 
 
-            if (error || !user) {
 
-                window.location.href = "admin.html";
+            if (
+
+                error
+
+                ||
+
+                !user
+
+            )
+
+
+            {
+
+
+                window.location.href =
+                    "admin.html";
+
 
                 return;
+
 
             }
 
 
+
             loadBlogs();
 
+
         }
+
 
 
         checkUser();
 
 
 
+        // ====================================
         // LOGOUT
+        // ====================================
+
 
         document
-            .getElementById("logoutBtn")
-            .addEventListener("click", async function () {
 
-                await supabaseClient.auth.signOut();
+            .getElementById(
 
-                window.location.href = "admin.html";
+                "logoutBtn"
 
-            });
+            )
+
+            .addEventListener(
+
+                "click",
+
+                async function()
+
+
+                {
+
+
+                    await supabaseClient
+
+                        .auth
+
+                        .signOut();
 
 
 
+                    window.location.href =
+                        "admin.html";
+
+
+                }
+
+            );
+
+
+
+        // ====================================
         // LOAD BLOGS
+        // ====================================
 
-        async function loadBlogs() {
+
+        async function loadBlogs()
 
 
-            const blogsList =
-                document.getElementById("blogsList");
+        {
+
+
+            const
+
+            blogsList =
+
+            document
+
+                .getElementById(
+
+                    "blogsList"
+
+                );
+
 
 
             blogsList.innerHTML =
                 "Loading blogs...";
 
 
-            const {
-                data: blogs,
+
+            const
+
+            {
+
+                data:
+                blogs,
+
                 error
-            } = await supabaseClient
-                .from("blogs")
-                .select("*")
-                .order("created_at", {
-                    ascending: false
-                });
+
+            }
+
+            =
+
+            await supabaseClient
+
+                .from(
+
+                    "blogs"
+
+                )
+
+                .select(
+
+                    "*"
+
+                )
+
+                .order(
+
+                    "created_at",
+
+                    {
+
+                        ascending:
+                        false
+
+                    }
+
+                );
 
 
-            if (error) {
+
+            if (
+
+                error
+
+            )
+
+
+            {
+
 
                 blogsList.innerHTML =
+
                     "Error loading blogs: "
-                    + error.message;
+
+                    +
+
+                    error.message;
+
+
 
                 return;
+
 
             }
 
 
-            if (!blogs || blogs.length === 0) {
+
+            if (
+
+                !blogs
+
+                ||
+
+                blogs.length === 0
+
+            )
+
+
+            {
+
 
                 blogsList.innerHTML =
+
                     '<p class="no-blogs">No blogs found.</p>';
 
+
+
                 return;
+
 
             }
 
 
-            blogsList.innerHTML = "";
+
+            blogsList.innerHTML =
+                "";
 
 
-            blogs.forEach(function (blog) {
+
+            blogs.forEach(
+
+                function(
+
+                    blog
+
+                )
 
 
-                const blogItem =
-                    document.createElement("div");
+                {
 
 
-                blogItem.className =
-                    "blog-item";
+                    const
+
+                    blogItem =
+
+                    document
+
+                        .createElement(
+
+                            "div"
+
+                        );
 
 
-                const statusClass =
+
+                    blogItem.className =
+                        "blog-item";
+
+
+
+                    const
+
+                    statusClass =
+
                     blog.is_published
-                        ? "published"
-                        : "draft";
+
+                        ?
+
+                        "published"
+
+                        :
+
+                        "draft";
 
 
-                const statusText =
+
+                    const
+
+                    statusText =
+
                     blog.is_published
-                        ? "Published"
-                        : "Draft";
+
+                        ?
+
+                        "Published"
+
+                        :
+
+                        "Draft";
 
 
-                blogItem.innerHTML = `
 
-                    <h4>
-                        ${blog.title}
-                    </h4>
-
-                    <span class="status ${statusClass}">
-                        ${statusText}
-                    </span>
-
-                    <br>
-
-                    <button
-                        class="editBtn"
-                        onclick="editBlog('${blog.id}')"
-                    >
-                        Edit
-                    </button>
-
-                    <button
-                        class="deleteBtn"
-                        onclick="deleteBlog('${blog.id}')"
-                    >
-                        Delete
-                    </button>
-
-                `;
+                    blogItem.innerHTML = `
 
 
-                blogsList.appendChild(blogItem);
+                        <h4>
+
+                            ${blog.title}
+
+                        </h4>
 
 
-            });
+                        <span
+
+                            class="status ${statusClass}"
+
+                        >
+
+                            ${statusText}
+
+                        </span>
+
+
+                        <br>
+
+
+                        <button
+
+                            class="editBtn"
+
+                            onclick="editBlog('${blog.id}')"
+
+                        >
+
+                            Edit
+
+                        </button>
+
+
+                        <button
+
+                            class="deleteBtn"
+
+                            onclick="deleteBlog('${blog.id}')"
+
+                        >
+
+                            Delete
+
+                        </button>
+
+
+                    `;
+
+
+
+                    blogsList.appendChild(
+
+                        blogItem
+
+                    );
+
+
+                }
+
+            );
 
 
         }
 
 
 
+        // ====================================
         // SAVE BLOG
+        // ====================================
+
 
         document
-            .getElementById("blogForm")
-            .addEventListener("submit", async function (event) {
+
+            .getElementById(
+
+                "blogForm"
+
+            )
+
+            .addEventListener(
+
+                "submit",
+
+                async function(
+
+                    event
+
+                )
 
 
-                event.preventDefault();
+                {
 
 
-                const titleElement =
-                    document.getElementById("title");
-
-
-                const contentElement =
-                    document.getElementById("content");
-
-
-                const imageElement =
-                    document.getElementById("image_file");
-
-
-                const videoElement =
-                    document.getElementById("video_url");
-
-
-                const statusElement =
-                    document.getElementById("status");
-
-
-                const messageElement =
-                    document.getElementById("message");
-
-
-                const saveButton =
-                    document.getElementById("saveBtn");
-
-
-                if (
-                    !titleElement ||
-                    !contentElement ||
-                    !imageElement ||
-                    !videoElement ||
-                    !statusElement ||
-                    !messageElement ||
-                    !saveButton
-                ) {
-
-                    alert(
-                        "Form element missing. Please refresh the page."
-                    );
-
-                    return;
-
-                }
-
-
-                const title =
-                    titleElement.value.trim();
-
-
-                const content =
-                    contentElement.value.trim();
-
-
-                const video_url =
-                    videoElement.value.trim();
-
-
-                const is_published =
-                    statusElement.value === "true";
-
-
-                const imageFile =
-                    imageElement.files &&
-                    imageElement.files.length > 0
-                        ? imageElement.files[0]
-                        : null;
-
-
-                messageElement.textContent =
-                    "Saving blog...";
-
-
-                saveButton.disabled =
-                    true;
+                    event.preventDefault();
 
 
 
-                // CREATE SLUG
+                    const
 
-                const slug =
+                    title =
+
+                    document
+
+                        .getElementById(
+
+                            "title"
+
+                        )
+
+                        .value
+
+                        .trim();
+
+
+
+                    const
+
+                    content =
+
+                    quill
+
+                        .root
+
+                        .innerHTML;
+
+
+
+                    const
+
+                    video_url =
+
+                    document
+
+                        .getElementById(
+
+                            "video_url"
+
+                        )
+
+                        .value
+
+                        .trim();
+
+
+
+                    const
+
+                    is_published =
+
+                    document
+
+                        .getElementById(
+
+                            "status"
+
+                        )
+
+                        .value
+
+                        ===
+
+                        "true";
+
+
+
+                    const
+
+                    imageFile =
+
+                    document
+
+                        .getElementById(
+
+                            "image_file"
+
+                        )
+
+                        .files[0];
+
+
+
+                    const
+
+                    message =
+
+                    document
+
+                        .getElementById(
+
+                            "message"
+
+                        );
+
+
+
+                    const
+
+                    saveBtn =
+
+                    document
+
+                        .getElementById(
+
+                            "saveBtn"
+
+                        );
+
+
+
+                    if (
+
+                        !title
+
+                    )
+
+
+                    {
+
+
+                        message.textContent =
+
+                            "Please enter blog title.";
+
+
+                        return;
+
+
+                    }
+
+
+
+                    if (
+
+                        !content
+
+                        ||
+
+                        content ===
+
+                        "<p><br></p>"
+
+                    )
+
+
+                    {
+
+
+                        message.textContent =
+
+                            "Please write blog content.";
+
+
+                        return;
+
+
+                    }
+
+
+
+                    message.textContent =
+
+                        "Saving blog...";
+
+
+
+                    saveBtn.disabled =
+                        true;
+
+
+
+                    // SLUG
+
+
+                    const
+
+                    slug =
+
                     title
+
                         .toLowerCase()
+
                         .trim()
-                        .replace(/[^\w\s-]/g, "")
-                        .replace(/\s+/g, "-");
+
+                        .replace(
+
+                            /[^\w\s-]/g,
+
+                            ""
+
+                        )
+
+                        .replace(
+
+                            /\s+/g,
+
+                            "-"
+
+                        );
 
 
 
-                // OLD IMAGE URL
+                    // OLD IMAGE
 
-                let image_url =
+
+                    let
+
+                    image_url =
+
                     editingBlogImage;
 
 
 
-                // UPLOAD IMAGE
-
-                if (imageFile) {
+                    // UPLOAD IMAGE
 
 
-                    const fileName =
-                        Date.now()
-                        + "-"
-                        + imageFile.name
-                            .replace(/\s+/g, "-");
+                    if (
+
+                        imageFile
+
+                    )
 
 
-                    const {
-                        error: uploadError
-                    } = await supabaseClient
-                        .storage
-                        .from("blog-images")
-                        .upload(
-                            fileName,
-                            imageFile
+                    {
+
+
+                        const
+
+                        fileName =
+
+                            Date.now()
+
+                            +
+
+                            "-"
+
+                            +
+
+                            imageFile.name
+
+                                .replace(
+
+                                    /\s+/g,
+
+                                    "-"
+
+                                );
+
+
+
+                        const
+
+                        {
+
+                            error:
+
+                            uploadError
+
+                        }
+
+                        =
+
+                        await supabaseClient
+
+                            .storage
+
+                            .from(
+
+                                "blog-images"
+
+                            )
+
+                            .upload(
+
+                                fileName,
+
+                                imageFile
+
+                            );
+
+
+
+                        if (
+
+                            uploadError
+
+                        )
+
+
+                        {
+
+
+                            message.textContent =
+
+                                "Image upload error: "
+
+                                +
+
+                                uploadError.message;
+
+
+
+                            saveBtn.disabled =
+                                false;
+
+
+
+                            return;
+
+
+                        }
+
+
+
+                        const
+
+                        {
+
+                            data:
+
+                            publicUrlData
+
+                        }
+
+                        =
+
+                        supabaseClient
+
+                            .storage
+
+                            .from(
+
+                                "blog-images"
+
+                            )
+
+                            .getPublicUrl(
+
+                                fileName
+
+                            );
+
+
+
+                        image_url =
+
+                            publicUrlData
+
+                                .publicUrl;
+
+
+                    }
+
+
+
+                    // UPDATE BLOG
+
+
+                    if (
+
+                        editingBlogId
+
+                    )
+
+
+                    {
+
+
+                        const
+
+                        {
+
+                            error
+
+                        }
+
+                        =
+
+                        await supabaseClient
+
+                            .from(
+
+                                "blogs"
+
+                            )
+
+                            .update(
+
+                                {
+
+
+                                    title:
+
+                                        title,
+
+
+                                    slug:
+
+                                        slug,
+
+
+                                    content:
+
+                                        content,
+
+
+                                    image_url:
+
+                                        image_url
+
+                                        ||
+
+                                        null,
+
+
+                                    video_url:
+
+                                        video_url
+
+                                        ||
+
+                                        null,
+
+
+                                    is_published:
+
+                                        is_published
+
+
+                                }
+
+                            )
+
+                            .eq(
+
+                                "id",
+
+                                editingBlogId
+
+                            );
+
+
+
+                        if (
+
+                            error
+
+                        )
+
+
+                        {
+
+
+                            message.textContent =
+
+                                "Error: "
+
+                                +
+
+                                error.message;
+
+
+
+                            saveBtn.disabled =
+                                false;
+
+
+
+                            return;
+
+
+                        }
+
+
+
+                        message.textContent =
+
+                            "Blog updated successfully!";
+
+
+                    }
+
+
+
+                    // INSERT BLOG
+
+
+                    else
+
+
+                    {
+
+
+                        const
+
+                        {
+
+                            error
+
+                        }
+
+                        =
+
+                        await supabaseClient
+
+                            .from(
+
+                                "blogs"
+
+                            )
+
+                            .insert(
+
+                                [
+
+                                    {
+
+
+                                        title:
+
+                                            title,
+
+
+                                        slug:
+
+                                            slug,
+
+
+                                        content:
+
+                                            content,
+
+
+                                        image_url:
+
+                                            image_url
+
+                                            ||
+
+                                            null,
+
+
+                                        video_url:
+
+                                            video_url
+
+                                            ||
+
+                                            null,
+
+
+                                        is_published:
+
+                                            is_published
+
+
+                                    }
+
+                                ]
+
+                            );
+
+
+
+                        if (
+
+                            error
+
+                        )
+
+
+                        {
+
+
+                            message.textContent =
+
+                                "Error: "
+
+                                +
+
+                                error.message;
+
+
+
+                            saveBtn.disabled =
+                                false;
+
+
+
+                            return;
+
+
+                        }
+
+
+
+                        message.textContent =
+
+                            is_published
+
+                                ?
+
+                                "Blog published successfully!"
+
+                                :
+
+                                "Blog saved as draft successfully!";
+
+
+                    }
+
+
+
+                    // RESET
+
+
+                    editingBlogId =
+                        null;
+
+
+                    editingBlogImage =
+                        null;
+
+
+
+                    document
+
+                        .getElementById(
+
+                            "blogForm"
+
+                        )
+
+                        .reset();
+
+
+
+                    quill
+
+                        .setContents(
+
+                            []
+
                         );
 
 
-                    if (uploadError) {
 
-                        messageElement.textContent =
-                            "Image upload error: "
-                            + uploadError.message;
+                    document
 
-                        saveButton.disabled =
-                            false;
+                        .getElementById(
 
-                        return;
+                            "formHeading"
 
-                    }
+                        )
 
+                        .textContent =
 
-                    const {
-                        data: publicUrlData
-                    } = supabaseClient
-                        .storage
-                        .from("blog-images")
-                        .getPublicUrl(fileName);
-
-
-                    image_url =
-                        publicUrlData.publicUrl;
-
-
-                }
+                        "Add New Blog";
 
 
 
-                // UPDATE EXISTING BLOG
+                    document
 
-                if (editingBlogId) {
+                        .getElementById(
 
+                            "saveBtn"
 
-                    const {
-                        error
-                    } = await supabaseClient
-                        .from("blogs")
-                        .update({
+                        )
 
-                            title: title,
+                        .textContent =
 
-                            slug: slug,
-
-                            content: content,
-
-                            image_url:
-                                image_url || null,
-
-                            video_url:
-                                video_url || null,
-
-                            is_published:
-                                is_published
-
-                        })
-                        .eq(
-                            "id",
-                            editingBlogId
-                        );
+                        "Save Blog";
 
 
-                    if (error) {
 
-                        messageElement.textContent =
-                            "Error: "
-                            + error.message;
+                    document
 
-                        saveButton.disabled =
-                            false;
+                        .getElementById(
 
-                        return;
+                            "cancelBtn"
 
-                    }
+                        )
+
+                        .style.display =
+
+                        "none";
 
 
-                    messageElement.textContent =
-                        "Blog updated successfully!";
+
+                    saveBtn.disabled =
+                        false;
+
+
+
+                    loadBlogs();
 
 
                 }
 
-
-
-                // ADD NEW BLOG
-
-                else {
-
-
-                    const {
-                        error
-                    } = await supabaseClient
-                        .from("blogs")
-                        .insert([{
-
-                            title: title,
-
-                            slug: slug,
-
-                            content: content,
-
-                            image_url:
-                                image_url || null,
-
-                            video_url:
-                                video_url || null,
-
-                            is_published:
-                                is_published
-
-                        }]);
-
-
-                    if (error) {
-
-                        messageElement.textContent =
-                            "Error: "
-                            + error.message;
-
-                        saveButton.disabled =
-                            false;
-
-                        return;
-
-                    }
-
-
-                    messageElement.textContent =
-                        is_published
-                            ? "Blog published successfully!"
-                            : "Blog saved as draft successfully!";
-
-                }
+            );
 
 
 
-                editingBlogId =
-                    null;
-
-
-                editingBlogImage =
-                    null;
-
-
-                document
-                    .getElementById("blogForm")
-                    .reset();
-
-
-                document
-                    .getElementById("formHeading")
-                    .textContent =
-                    "Add New Blog";
-
-
-                document
-                    .getElementById("saveBtn")
-                    .textContent =
-                    "Save Blog";
-
-
-                document
-                    .getElementById("cancelBtn")
-                    .style.display =
-                    "none";
-
-
-                saveButton.disabled =
-                    false;
-
-
-                loadBlogs();
-
-
-            });
-
-
-
+        // ====================================
         // EDIT BLOG
+        // ====================================
 
-        async function editBlog(id) {
+
+        async function editBlog(
+
+            id
+
+        )
 
 
-            const {
-                data: blog,
+        {
+
+
+            const
+
+            {
+
+                data:
+
+                blog,
+
                 error
-            } = await supabaseClient
-                .from("blogs")
-                .select("*")
-                .eq("id", id)
+
+            }
+
+            =
+
+            await supabaseClient
+
+                .from(
+
+                    "blogs"
+
+                )
+
+                .select(
+
+                    "*"
+
+                )
+
+                .eq(
+
+                    "id",
+
+                    id
+
+                )
+
                 .single();
 
 
-            if (error) {
+
+            if (
+
+                error
+
+            )
+
+
+            {
+
 
                 alert(
+
                     "Error loading blog: "
-                    + error.message
+
+                    +
+
+                    error.message
+
                 );
+
+
 
                 return;
 
+
             }
+
 
 
             editingBlogId =
@@ -815,53 +1844,127 @@
                 blog.image_url;
 
 
-            document
-                .getElementById("title")
-                .value =
-                blog.title || "";
-
 
             document
-                .getElementById("content")
+
+                .getElementById(
+
+                    "title"
+
+                )
+
                 .value =
-                blog.content || "";
+
+                blog.title
+
+                ||
+
+                "";
+
+
+
+            quill
+
+                .root
+
+                .innerHTML =
+
+                blog.content
+
+                ||
+
+                "";
+
 
 
             document
-                .getElementById("video_url")
+
+                .getElementById(
+
+                    "video_url"
+
+                )
+
                 .value =
-                blog.video_url || "";
+
+                blog.video_url
+
+                ||
+
+                "";
+
 
 
             document
-                .getElementById("status")
+
+                .getElementById(
+
+                    "status"
+
+                )
+
                 .value =
+
                 blog.is_published
-                    ? "true"
-                    : "false";
+
+                    ?
+
+                    "true"
+
+                    :
+
+                    "false";
+
 
 
             document
-                .getElementById("formHeading")
+
+                .getElementById(
+
+                    "formHeading"
+
+                )
+
                 .textContent =
+
                 "Edit Blog";
 
 
+
             document
-                .getElementById("saveBtn")
+
+                .getElementById(
+
+                    "saveBtn"
+
+                )
+
                 .textContent =
+
                 "Update Blog";
 
 
+
             document
-                .getElementById("cancelBtn")
+
+                .getElementById(
+
+                    "cancelBtn"
+
+                )
+
                 .style.display =
+
                 "inline-block";
 
 
+
             window.scrollTo(
+
                 0,
+
                 0
+
             );
 
 
@@ -869,95 +1972,230 @@
 
 
 
+        // ====================================
         // CANCEL EDIT
+        // ====================================
+
 
         document
-            .getElementById("cancelBtn")
-            .addEventListener("click", function () {
+
+            .getElementById(
+
+                "cancelBtn"
+
+            )
+
+            .addEventListener(
+
+                "click",
+
+                function()
 
 
-                editingBlogId =
-                    null;
+                {
 
 
-                editingBlogImage =
-                    null;
+                    editingBlogId =
+                        null;
 
 
-                document
-                    .getElementById("blogForm")
-                    .reset();
-
-
-                document
-                    .getElementById("formHeading")
-                    .textContent =
-                    "Add New Blog";
-
-
-                document
-                    .getElementById("saveBtn")
-                    .textContent =
-                    "Save Blog";
-
-
-                document
-                    .getElementById("cancelBtn")
-                    .style.display =
-                    "none";
-
-
-                document
-                    .getElementById("message")
-                    .textContent =
-                    "";
-
-
-            });
+                    editingBlogImage =
+                        null;
 
 
 
+                    document
+
+                        .getElementById(
+
+                            "blogForm"
+
+                        )
+
+                        .reset();
+
+
+
+                    quill
+
+                        .setContents(
+
+                            []
+
+                        );
+
+
+
+                    document
+
+                        .getElementById(
+
+                            "formHeading"
+
+                        )
+
+                        .textContent =
+
+                        "Add New Blog";
+
+
+
+                    document
+
+                        .getElementById(
+
+                            "saveBtn"
+
+                        )
+
+                        .textContent =
+
+                        "Save Blog";
+
+
+
+                    document
+
+                        .getElementById(
+
+                            "cancelBtn"
+
+                        )
+
+                        .style.display =
+
+                        "none";
+
+
+
+                    document
+
+                        .getElementById(
+
+                            "message"
+
+                        )
+
+                        .textContent =
+
+                        "";
+
+
+                }
+
+            );
+
+
+
+        // ====================================
         // DELETE BLOG
+        // ====================================
 
-        async function deleteBlog(id) {
+
+        async function deleteBlog(
+
+            id
+
+        )
 
 
-            const confirmDelete =
+        {
+
+
+            const
+
+            confirmDelete =
+
                 confirm(
+
                     "Are you sure you want to delete this blog?"
+
                 );
 
 
-            if (!confirmDelete) {
+
+            if (
+
+                !confirmDelete
+
+            )
+
+
+            {
+
 
                 return;
+
 
             }
 
 
-            const {
+
+            const
+
+            {
+
                 error
-            } = await supabaseClient
-                .from("blogs")
+
+            }
+
+            =
+
+            await supabaseClient
+
+                .from(
+
+                    "blogs"
+
+                )
+
                 .delete()
-                .eq("id", id);
+
+                .eq(
+
+                    "id",
+
+                    id
+
+                );
 
 
-            if (error) {
+
+            if (
+
+                error
+
+            )
+
+
+            {
+
 
                 alert(
+
                     "Error deleting blog: "
-                    + error.message
+
+                    +
+
+                    error.message
+
                 );
+
+
 
                 return;
 
+
             }
+
 
 
             alert(
+
                 "Blog deleted successfully!"
+
             );
+
 
 
             loadBlogs();
@@ -968,39 +2206,7 @@
 
     </script>
 
-<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
 
-<script>
-
-const quill = new Quill("#editor", {
-
-    theme: "snow",
-
-    placeholder: "Write your blog here...",
-
-    modules: {
-
-        toolbar: [
-
-            [{ header: [1, 2, 3, false] }],
-
-            ["bold", "italic", "underline"],
-
-            [{ list: "ordered" }, { list: "bullet" }],
-
-            ["link"],
-
-            [{ align: [] }],
-
-            ["clean"]
-
-        ]
-
-    }
-
-});
-
-</script>
 </body>
 
 </html>
