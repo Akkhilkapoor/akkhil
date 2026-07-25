@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,58 +10,49 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
+    <!-- ===============================
+         HEADER & NAVIGATION
+    =============================== -->
     <header class="site-header">
         <div class="nav-container">
             <div class="logo">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"/>
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z" />
                 </svg>
                 <span>Akkhil Portfolio</span>
             </div>
-            
+
             <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
             </button>
 
             <nav aria-label="Main Navigation" id="mainNav">
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-
-        <li>
-            <a href="about.html" class="active">
-                About
-            </a>
-        </li>
-
-        <li><a href="expertise.html">Expertise</a></li>
-
-        <li><a href="projects.html">Projects</a></li>
-
-        <!-- BLOG ADDED -->
-        <li>
-            <a href="blog.html">
-                Blog
-            </a>
-        </li>
-
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-
-बस अपने about.html में पुराने navigation वाले हिस्से को इस code से replace कर दो। बाकी पूरा code बिल्कुल वैसा ही रहेगा।
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
+    <!-- ===============================
+         MAIN CONTENT
+    =============================== -->
     <main class="main-content-padding">
         <section id="about" class="about-section-wrapper">
             <div class="container">
                 <div class="section-header">
-    <h2>About Me</h2>
-    <div class="underline"></div>
-</div>
-                
+                    <h2>About Me</h2>
+                    <div class="underline"></div>
+                </div>
+
                 <div class="about-content">
                     <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
                     <p>I am a passionate educator, trainer, and management professional with <strong class="highlight-text">more than 20 years of experience</strong> in the fields of education, information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve their goals through quality education, practical knowledge, and continuous learning.</p>
@@ -73,13 +65,13 @@
                             <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City, serving diverse student batches.</p>
                             <h4>Prestigious institutes include:</h4>
                             <ul class="styled-list">
-                                <li> HIIT Ambala City (Currently Working)<i class="fas fa-check-circle list-icon"></i></li>
-                                <li> Helpline Computer Institute, Ambala Cantt</li>
-                                <li> Excel Net, Ambala Cantt</li>
-                                <li> NIIT, Ambala Cantt</li>
-                                <li> Computer Junction, Ambala Cantt</li>
-                                <li> Xtreme Technologies, Ambala Cantt</li>
-                                <li> Techno Creativity, Ambala Cantt</li>
+                                <li>HIIT Ambala City (Currently Working)<i class="fas fa-check-circle list-icon"></i></li>
+                                <li>Helpline Computer Institute, Ambala Cantt</li>
+                                <li>Excel Net, Ambala Cantt</li>
+                                <li>NIIT, Ambala Cantt</li>
+                                <li>Computer Junction, Ambala Cantt</li>
+                                <li>Xtreme Technologies, Ambala Cantt</li>
+                                <li>Techno Creativity, Ambala Cantt</li>
                             </ul>
                         </div>
 
@@ -88,11 +80,11 @@
                             <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This bridges the gap between academics and industry standards.</p>
                             <ul class="styled-list corporate-list">
                                 <li><strong>Milestone Apparel</strong> – Manager</li>
-                                <li><strong>Vchau Voyage LLP</strong> – Accounts Manager</li>                            
+                                <li><strong>Vchau Voyage LLP</strong> – Accounts Manager</li>
                                 <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
                                 <li><strong>Ecosure Pharma</strong> – Territory Manager</li>
                             </ul>
-                            
+
                             <h3 class="philosophy-title"><i class="fas fa-lightbulb icon-gap"></i> Teaching Philosophy</h3>
                             <p>I encourage students to learn through practical exercises, develop critical thinking, focus on continuous self-improvement, and build corporate ethics.</p>
                         </div>
@@ -108,12 +100,18 @@
         </section>
     </main>
 
+    <!-- ===============================
+         FOOTER
+    =============================== -->
     <footer class="site-footer">
         <div class="footer-container">
             <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- ===============================
+         JAVASCRIPT
+    =============================== -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
@@ -121,7 +119,7 @@
         mobileMenuBtn.addEventListener('click', () => {
             mainNav.classList.toggle('open');
             const icon = mobileMenuBtn.querySelector('i');
-            if(mainNav.classList.contains('open')) {
+            if (mainNav.classList.contains('open')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -131,4 +129,5 @@
         });
     </script>
 </body>
+
 </html>
