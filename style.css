@@ -1,20 +1,19 @@
-
 :root {
     /* Color Palette */
-    --primary: #e11d48;           /* Modern Vibrant Crimson Red */
-    --primary-hover: #be123c;     /* Smooth darker crimson hover effect */
+    --primary: #e11d48;            /* Modern Vibrant Crimson Red */
+    --primary-hover: #be123c;      /* Smooth darker crimson hover effect */
     --primary-light: rgba(225, 29, 72, 0.08); /* Glow aur focus states ke liye */
     
     /* Background Layout System */
-    --bg-main: #f8fafc;           /* Ultra-clean light gray main body */
-    --bg-surface: #ffffff;        /* Cards, Blocks aur Forms ke liye sharp white */
-    --bg-alt: #f1f5f9;            /* Section divide karne ke liye secondary slate gray */
-    --bg-dark: #0f172a;           /* Hero section aur Footer ke liye luxury dark blue-slate */
+    --bg-main: #f8fafc;            /* Ultra-clean light gray main body */
+    --bg-surface: #ffffff;         /* Cards, Blocks aur Forms ke liye sharp white */
+    --bg-alt: #f1f5f9;             /* Section divide karne ke liye secondary slate gray */
+    --bg-dark: #0f172a;            /* Hero section aur Footer ke liye luxury dark blue-slate */
     
     /* Typography System */
-    --text-main: #0f172a;         /* Headings ke liye solid executive slate */
-    --text-muted: #64748b;        /* Subtitles aur generic paragraph descriptions */
-    --text-inverse: #ffffff;      /* Dark backgrounds par text visibility */
+    --text-main: #0f172a;          /* Headings ke liye solid executive slate */
+    --text-muted: #64748b;         /* Subtitles aur generic paragraph descriptions */
+    --text-inverse: #ffffff;       /* Dark backgrounds par text visibility */
     
     /* Typography Specs */
     --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -57,8 +56,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.85); /* Deep slate transparent background */
-    backdrop-filter: blur(12px);               /* Apple-style smooth glass blur */
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 16px 50px;
     display: flex;
@@ -86,7 +85,6 @@ header .logo svg {
     fill: var(--text-inverse);
 }
 
-/* Container synchronized layout */
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -138,7 +136,6 @@ header ul li a:hover::after {
     width: 100%;
 }
 
-/* Responsive Hamburger Menu Button hidden on desktop */
 .menu-toggle {
     display: none;
     background: none;
@@ -188,11 +185,6 @@ section h2::after {
     border-radius: var(--radius-sm);
 }
 
-/* Global Micro-interactions for Cards */
-.project-card, .info-block, .contact-form {
-    transition: var(--transition);
-}
-
 .project-card:hover, .info-block:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
@@ -213,17 +205,7 @@ section h2::after {
     justify-content: center;
     align-items: center;
 }
-/* Hero section jisme piche background image dikhegi */
-#home-hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
-                url('Akkhilkapoor.png') no-repeat center center / cover;
-    padding: 80px 0;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-}
 
-/* Container jo photo aur text ko aane-saamne karega */
 .hero-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -235,29 +217,12 @@ section h2::after {
     gap: 40px;
 }
 
-/* Aapki profile photo ko smooth round corner dene ke liye */
 .profile-img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* Text wrapper styles */
-.hero-text-wrapper {
-    flex: 1;
-    min-width: 300px;
-    color: #ffffff;
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.15);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     object-fit: cover;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
     transition: var(--transition);
@@ -292,8 +257,7 @@ section h2::after {
     flex-wrap: wrap;
     width: 100%;
     max-width: 520px;
-    margin: 0 auto;
-   margin-top: 35px;
+    margin: 35px auto 0 auto;
 }
 
 .cta-btn {
@@ -330,24 +294,17 @@ section h2::after {
     display: flex;
     flex-direction: column;
 }
-.about-content p {
-    text-align: justify; 
-}
 
-.intro-text {
-    text-align: center;
-    border-left: none; 
-    padding-left: 0;
-}
-
-.info-grid {
-    text-align: left; 
-    width: 100%;
-}
 .about-content {
     font-size: 16px;
     line-height: 1.8;
     color: #475569;
+    width: 100%;
+}
+
+.about-content p {
+    text-align: justify;
+    margin-bottom: 20px;
 }
 
 .intro-text {
@@ -358,11 +315,7 @@ section h2::after {
     border-left: 4px solid var(--primary);
     padding-left: 20px;
     letter-spacing: -0.3px;
-}
-
-.highlight-text {
-    color: var(--primary);
-    font-weight: 600;
+    text-align: left !important;
 }
 
 .info-grid {
@@ -370,6 +323,8 @@ section h2::after {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 40px;
+    text-align: left;
+    width: 100%;
 }
 
 .info-block {
@@ -378,6 +333,7 @@ section h2::after {
     border-radius: var(--radius-md);
     border-top: 4px solid var(--primary);
     box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
 .about-content h3 {
@@ -388,28 +344,6 @@ section h2::after {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.about-content h4 {
-    color: var(--primary);
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.about-content ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.about-content li {
-    margin-bottom: 6px;
-}
-
-.about-content p {
-    margin-bottom: 20px;
-    text-align: justify;
 }
 
 /* ==========================================================================
@@ -436,6 +370,7 @@ section h2::after {
     display: flex;
     flex-direction: column;
     border: 1px solid #e2e8f0;
+    transition: var(--transition);
 }
 
 #expertise .project-card { background: var(--bg-surface); }
@@ -456,13 +391,277 @@ section h2::after {
     line-height: 1.6;
 }
 
-.features-title {
-    margin-top: 18px;
-    color: var(--primary);
-    font-weight: 600;
+/* ==========================================================================
+   STUDENT REVIEWS & FEEDBACK SECTION (WITH READ MORE FIX)
+   ========================================================================== */
+.reviews-section {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-main);
+    width: 100%;
+}
+
+.reviews-section h2 {
+    margin-bottom: 12px;
+}
+
+.reviews-section h2::before {
+    content: "⭐ ";
+}
+
+.reviews-section h2::after {
+    content: "⭐ Real experiences from students";
+    display: block;
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
     font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+#openReviewBtn {
+    padding: 13px 28px !important;
+    background: var(--primary) !important;
+    color: var(--text-inverse) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(225, 29, 72, 0.25);
+    transition: var(--transition) !important;
+    margin-bottom: 10px;
+}
+
+#openReviewBtn:hover {
+    background: var(--primary-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.35);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+    margin: 20px auto 0 auto;
+}
+
+@media (min-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr) !important; /* Balanced 3 column layout */
+    }
+}
+
+.review-card {
+    position: relative;
+    background: var(--bg-surface);
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card::before {
+    content: "“";
+    position: absolute;
+    top: -8px;
+    right: 18px;
+    font-family: Georgia, serif;
+    font-size: 65px;
+    line-height: 1;
+    color: var(--primary-light);
+    pointer-events: none;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.review-card strong {
+    color: var(--text-main) !important;
+    font-size: 16px !important;
+}
+
+/* Review Text Line Clamp & Read More System */
+.review-text {
+    margin: 10px 0 0 0 !important;
+    color: var(--text-muted) !important;
+    line-height: 1.6 !important;
+    font-size: 0.95em !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Maximum 4 lines clamp */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.review-text.expanded {
+    display: block !important;
+}
+
+.read-more-btn {
+    background: none !important;
+    border: none !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+    font-size: 0.85em !important;
+    cursor: pointer;
+    padding: 6px 0 0 0 !important;
+    margin-top: 4px;
+    text-align: left;
+    display: none; /* JS automatically shows if long */
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+/* Modal Background & Box */
+#reviewModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.review-modal-box {
+    background: var(--bg-surface);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.30);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: reviewModalOpen 0.3s ease;
+}
+
+@keyframes reviewModalOpen {
+    from { opacity: 0; transform: translateY(25px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.review-modal-box h3 {
+    text-align: center;
+    color: var(--text-main);
+    font-size: 24px;
+    margin: 5px 0 8px;
+}
+
+.review-modal-box h3::after {
+    content: "Your feedback helps us improve.";
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 7px;
+}
+
+#closeReviewBtn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 30px;
+    font-weight: 400;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+#closeReviewBtn:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.review-form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.review-form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.review-form-group input,
+.review-form-group select,
+.review-form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.review-form-group input:focus,
+.review-form-group select:focus,
+.review-form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--bg-surface);
+    box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.review-form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+#submitReviewBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--primary);
+    color: var(--text-inverse);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+}
+
+#submitReviewBtn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
+}
+
+#submitReviewBtn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#reviewMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -545,7 +744,7 @@ footer p {
 }
 
 /* ==========================================================================
-   10. ULTIMATE MOBILE BREAKPOINTS (Fixed Mobile Hamburger System)
+   10. RESPONSIVE MEDIA BREAKPOINTS
    ========================================================================== */
 @media (max-width: 768px) {
     header {
@@ -553,10 +752,9 @@ footer p {
     }
 
     .menu-toggle {
-        display: block; /* Show hamburger button on mobile screens */
+        display: block;
     }
 
-    /* Fixed Navigation layout drawer mechanism */
     header nav {
         position: absolute;
         top: 100%;
@@ -571,7 +769,6 @@ footer p {
         transition: max-height 0.3s ease-in-out;
     }
 
-    /* JavaScript will toggle the 'open' class on <nav> element */
     header nav.open {
         max-height: 350px;
     }
@@ -644,309 +841,6 @@ footer p {
     .contact-form {
         padding: 30px 20px;
     }
-}
-/* =========================================================
-   STUDENT REVIEWS & FEEDBACK - ATTRACTIVE DESIGN
-   Only Review Section Styling
-========================================================= */
-
-/* Review Section */
-
-.reviews-section {
-    position: relative;
-    overflow: hidden;
-}
-
-
-/* Review Heading */
-
-.reviews-section h2 {
-    margin-bottom: 12px;
-}
-
-.reviews-section h2::before {
-    content: "⭐ ";
-}
-
-
-/* Small Subtitle */
-
-.reviews-section h2::after {
-    content: "⭐ Real experiences from students";
-    display: block;
-    position: static;
-    transform: none;
-    width: auto;
-    height: auto;
-    background: none;
-    border-radius: 0;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--text-muted);
-    margin-top: 8px;
-}
-
-
-/* Write Review Button */
-
-#openReviewBtn {
-    padding: 13px 28px !important;
-    background: var(--primary) !important;
-    color: var(--text-inverse) !important;
-    border: none !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(225, 29, 72, 0.25);
-    transition: var(--transition) !important;
-}
-
-#openReviewBtn:hover {
-    background: var(--primary-hover) !important;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.35);
-}
-
-
-/* Reviews Grid */
-
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-    width: 100%;
-    text-align: left;
-    margin-top: 20px;
-}
-
-
-/* Review Card */
-
-.review-card {
-    position: relative;
-    background: var(--bg-surface);
-    border: 1px solid #e2e8f0;
-    padding: 24px;
-    border-radius: var(--radius-md);
-    min-height: 160px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    overflow: hidden;
-}
-
-
-/* Quote Design */
-
-.review-card::before {
-    content: "“";
-    position: absolute;
-    top: -8px;
-    right: 18px;
-    font-family: Georgia, serif;
-    font-size: 65px;
-    line-height: 1;
-    color: var(--primary-light);
-    pointer-events: none;
-}
-
-
-/* Card Hover */
-
-.review-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary);
-}
-
-
-/* Student Name */
-
-.review-card strong {
-    color: var(--text-main) !important;
-    font-size: 16px !important;
-}
-
-
-/* Review Text */
-
-.review-card p {
-    color: var(--text-muted) !important;
-    line-height: 1.7 !important;
-}
-
-
-/* Modal Background */
-
-#reviewModal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.72);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-
-/* Modal Box */
-
-.review-modal-box {
-    background: var(--bg-surface);
-    padding: 32px;
-    border-radius: var(--radius-md);
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.30);
-    max-height: 90vh;
-    overflow-y: auto;
-    animation: reviewModalOpen 0.3s ease;
-}
-
-
-@keyframes reviewModalOpen {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px) scale(0.96);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-}
-
-
-/* Modal Heading */
-
-.review-modal-box h3 {
-    text-align: center;
-    color: var(--text-main);
-    font-size: 24px;
-    margin: 5px 0 8px;
-}
-
-.review-modal-box h3::after {
-    content: "Your feedback helps us improve.";
-    display: block;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--text-muted);
-    margin-top: 7px;
-}
-
-
-/* Close Button */
-
-#closeReviewBtn {
-    position: absolute;
-    top: 12px;
-    right: 18px;
-    font-size: 30px;
-    font-weight: 400;
-    cursor: pointer;
-    color: var(--text-muted);
-    transition: var(--transition);
-}
-
-#closeReviewBtn:hover {
-    color: var(--primary);
-    transform: rotate(90deg);
-}
-
-
-/* Form Groups */
-
-.review-form-group {
-    margin-bottom: 18px;
-    text-align: left;
-}
-
-.review-form-group label {
-    display: block;
-    margin-bottom: 7px;
-    font-weight: 600;
-    color: var(--text-main);
-}
-
-
-/* Form Fields */
-
-.review-form-group input,
-.review-form-group select,
-.review-form-group textarea {
-    width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    box-sizing: border-box;
-    background: var(--bg-main);
-    color: var(--text-main);
-    transition: var(--transition);
-}
-
-.review-form-group input:focus,
-.review-form-group select:focus,
-.review-form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: var(--bg-surface);
-    box-shadow: 0 0 0 4px var(--primary-light);
-}
-
-.review-form-group textarea {
-    resize: vertical;
-    min-height: 110px;
-}
-
-
-/* Submit Button */
-
-#submitReviewBtn {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: var(--radius-sm);
-    background: var(--primary);
-    color: var(--text-inverse);
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
-}
-
-#submitReviewBtn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
-}
-
-#submitReviewBtn:disabled {
-    background: #94a3b8;
-    cursor: not-allowed;
-    transform: none;
-}
-
-
-/* Message */
-
-#reviewMessage {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 600;
-}
-
-
-/* Mobile Review Design */
-
-@media (max-width: 600px) {
 
     .reviews-grid {
         grid-template-columns: 1fr;
@@ -959,5 +853,4 @@ footer p {
     .review-modal-box h3 {
         font-size: 21px;
     }
-
 }
