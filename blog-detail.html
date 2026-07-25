@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Blog | Akkhil Kapoor</title>
@@ -22,7 +23,7 @@
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 20px;
         }
@@ -31,25 +32,20 @@
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        h1 {
-            margin-top: 0;
-            font-size: 36px;
-        }
-
-        .date {
-            color: #6b7280;
-            margin-bottom: 25px;
-        }
-
-        .featured-image {
+        .blog-detail img {
             width: 100%;
             max-height: 500px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
         }
 
         .content {
@@ -69,19 +65,20 @@
             border-radius: 10px;
         }
 
-        .back-button {
+        .back-btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 10px 18px;
+            margin-bottom: 20px;
+            padding: 10px 16px;
             background: #111827;
             color: white;
             text-decoration: none;
             border-radius: 6px;
         }
 
-        #message {
+        .loading,
+        .error {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
         }
 
     </style>
@@ -94,72 +91,40 @@
 
     <div class="container">
 
-        <div id="message">
-            Loading blog...
-        </div>
+
+        <a
+            href="blog.html"
+            class="back-btn"
+        >
+            ← Back to Blogs
+        </a>
 
 
-        <article
+        <div
+            id="blogContainer"
             class="blog-detail"
-            id="blogDetail"
-            style="display: none;"
         >
 
-            <h1 id="blogTitle"></h1>
-
-            <div
-                class="date"
-                id="blogDate"
-            ></div>
-
-
-            <img
-                id="blogImage"
-                class="featured-image"
-                style="display: none;"
-            >
-
-
-            <div
-                class="content"
-                id="blogContent"
-            ></div>
-
-
-            <div
-                class="video"
-                id="videoContainer"
-                style="display: none;"
-            >
-
-                <iframe
-                    id="videoFrame"
-                    allowfullscreen
-                ></iframe>
-
+            <div class="loading">
+                Loading blog...
             </div>
 
+        </div>
 
-            <a
-                href="blog.html"
-                class="back-button"
-            >
-                ← Back to Blogs
-            </a>
-
-        </article>
 
     </div>
 
 
-    <!-- Supabase Library -->
+
+    <!-- SUPABASE -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-    <!-- Supabase Configuration -->
+    <!-- SUPABASE CONFIG -->
 
     <script src="js/supabase-config.js"></script>
+
 
 
     <script>
@@ -168,27 +133,34 @@
         async function loadBlog() {
 
 
-            const params =
+            const blogContainer =
+                document.getElementById(
+                    "blogContainer"
+                );
+
+
+            const urlParams =
                 new URLSearchParams(
                     window.location.search
                 );
 
 
             const slug =
-                params.get("slug");
-
-
-            const message =
-                document.getElementById(
-                    "message"
-                );
+                urlParams.get("slug");
 
 
             if (!slug) {
 
 
-                message.textContent =
-                    "Blog not found.";
+                blogContainer.innerHTML = `
+
+                    <div class="error">
+
+                        Blog not found.
+
+                    </div>
+
+                `;
 
 
                 return;
@@ -207,16 +179,29 @@
                 await supabaseClient
                     .from("blogs")
                     .select("*")
-                    .eq("slug", slug)
-                    .eq("is_published", true)
+                    .eq(
+                        "slug",
+                        slug
+                    )
+                    .eq(
+                        "is_published",
+                        true
+                    )
                     .single();
 
 
             if (error || !blog) {
 
 
-                message.textContent =
-                    "Blog not found.";
+                blogContainer.innerHTML = `
+
+                    <div class="error">
+
+                        Blog not found.
+
+                    </div>
+
+                `;
 
 
                 return;
@@ -225,95 +210,99 @@
             }
 
 
-            message.style.display =
-                "none";
-
-
-            document
-                .getElementById(
-                    "blogDetail"
-                )
-                .style.display =
-                "block";
-
-
-            document
-                .getElementById(
-                    "blogTitle"
-                )
-                .textContent =
-                blog.title;
-
-
-            document
-                .getElementById(
-                    "blogDate"
-                )
-                .textContent =
-                new Date(
-                    blog.created_at
-                ).toLocaleDateString();
-
-
-            document
-                .getElementById(
-                    "blogContent"
-                )
-                .textContent =
-                blog.content;
+            let imageHTML =
+                "";
 
 
             if (blog.image_url) {
 
 
-                const image =
-                    document.getElementById(
-                        "blogImage"
-                    );
+                imageHTML = `
 
+                    <img
 
-                image.src =
-                    blog.image_url;
+                        src="${blog.image_url}"
 
+                        alt="${blog.title}"
 
-                image.alt =
-                    blog.title;
+                    >
 
-
-                image.style.display =
-                    "block";
+                `;
 
 
             }
 
 
+
+            let videoHTML =
+                "";
+
+
             if (blog.video_url) {
 
 
-                const videoId =
-                    getYouTubeVideoId(
+                let videoId =
+                    "";
+
+
+                if (
+                    blog.video_url.includes(
+                        "watch?v="
+                    )
+                ) {
+
+
+                    videoId =
                         blog.video_url
-                    );
+                            .split(
+                                "watch?v="
+                            )[1]
+                            .split(
+                                "&"
+                            )[0];
+
+
+                }
+
+
+                else if (
+                    blog.video_url.includes(
+                        "youtu.be/"
+                    )
+                ) {
+
+
+                    videoId =
+                        blog.video_url
+                            .split(
+                                "youtu.be/"
+                            )[1]
+                            .split(
+                                "?"
+                            )[0];
+
+
+                }
 
 
                 if (videoId) {
 
 
-                    document
-                        .getElementById(
-                            "videoFrame"
-                        )
-                        .src =
-                        "https://www.youtube.com/embed/"
-                        + videoId;
+                    videoHTML = `
 
+                        <div class="video">
 
-                    document
-                        .getElementById(
-                            "videoContainer"
-                        )
-                        .style.display =
-                        "block";
+                            <iframe
+
+                                src="https://www.youtube.com/embed/${videoId}"
+
+                                allowfullscreen
+
+                            ></iframe>
+
+                        </div>
+
+                    `;
 
 
                 }
@@ -322,23 +311,33 @@
             }
 
 
-        }
+
+            blogContainer.innerHTML = `
+
+                ${imageHTML}
+
+                <h1>
+
+                    ${blog.title}
+
+                </h1>
 
 
-        function getYouTubeVideoId(url) {
+                <div class="content">
+
+                    ${blog.content}
+
+                </div>
 
 
-            const regex =
-                /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([^&?\/]+)/;
+                ${videoHTML}
+
+            `;
 
 
-            const match =
-                url.match(regex);
-
-
-            return match
-                ? match[1]
-                : null;
+            document.title =
+                blog.title
+                + " | Akkhil Kapoor";
 
 
         }
