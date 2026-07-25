@@ -2,15 +2,11 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Blogs | Akkhil Kapoor</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -41,11 +37,7 @@
 
         .blogs-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(280px, 1fr)
-            );
-
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
@@ -94,14 +86,10 @@
         .loading {
             text-align: center;
         }
-
     </style>
-
 </head>
 
-
 <body>
-
 
     <!-- ===============================
          HEADER & NAVIGATION
@@ -122,222 +110,111 @@
             <nav aria-label="Main Navigation" id="mainNav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="expertise.html">Expertise</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-        <header class="blog-page-header">
-        <h1>
-            My Blogs
-        </h1>
 
-        <p>
-            Latest articles and updates
-        </p>
-
+    <!-- BLOG PAGE HERO HEADER -->
+    <header class="blog-page-header">
+        <h1>My Blogs</h1>
+        <p>Latest articles and updates</p>
     </header>
 
-
     <div class="container">
-
-
-        <div
-            id="blogsGrid"
-            class="blogs-grid"
-        >
-
-            <p class="loading">
-                Loading blogs...
-            </p>
-
+        <div id="blogsGrid" class="blogs-grid">
+            <p class="loading">Loading blogs...</p>
         </div>
-
-
     </div>
 
-
-
     <!-- SUPABASE -->
-
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
     <!-- YOUR SUPABASE CONFIG -->
-
     <script src="js/supabase-config.js"></script>
 
-
-
     <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mainNav = document.getElementById("mainNav");
 
-
-        async function loadPublishedBlogs() {
-
-
-            const blogsGrid =
-                document.getElementById(
-                    "blogsGrid"
-                );
-
-
-            const {
-
-                data: blogs,
-
-                error
-
-            } =
-                await supabaseClient
-                    .from("blogs")
-                    .select("*")
-                    .eq(
-                        "is_published",
-                        true
-                    )
-                    .order(
-                        "created_at",
-                        {
-                            ascending: false
-                        }
-                    );
-
-
-            if (error) {
-
-
-                blogsGrid.innerHTML = `
-
-                    <p class="no-blogs">
-
-                        Error loading blogs:
-                        ${error.message}
-
-                    </p>
-
-                `;
-
-
-                return;
-
-
-            }
-
-
-            if (
-                !blogs
-                ||
-                blogs.length === 0
-            ) {
-
-
-                blogsGrid.innerHTML = `
-
-                    <p class="no-blogs">
-
-                        No published blogs available.
-
-                    </p>
-
-                `;
-
-
-                return;
-
-
-            }
-
-
-            blogsGrid.innerHTML =
-                "";
-
-
-            blogs.forEach(
-                function(blog) {
-
-
-                    const blogCard =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    blogCard.className =
-                        "blog-card";
-
-
-                    const imageHTML =
-                        blog.image_url
-                            ? `
-
-                                <img
-                                    src="${blog.image_url}"
-                                    alt="${blog.title}"
-                                >
-
-                            `
-                            : "";
-
-
-                    const shortContent =
-                        blog.content
-                            .substring(
-                                0,
-                                150
-                            )
-                            + "...";
-
-
-                    blogCard.innerHTML = `
-
-                        ${imageHTML}
-
-                        <div
-                            class="blog-content"
-                        >
-
-                            <h2>
-                                ${blog.title}
-                            </h2>
-
-                            <p>
-                                ${shortContent}
-                            </p>
-
-                           <a
-    class="read-more"
-    href="blog-detail.html?slug=${encodeURIComponent(blog.slug)}"
->
-    Read More
-</a>
-
-                        </div>
-
-                    `;
-
-
-                    blogsGrid.appendChild(
-                        blogCard
-                    );
-
-
+        if (mobileMenuBtn && mainNav) {
+            mobileMenuBtn.addEventListener("click", function() {
+                mainNav.classList.toggle("open");
+                const icon = mobileMenuBtn.querySelector("i");
+                if (icon) {
+                    if (mainNav.classList.contains("open")) {
+                        icon.classList.remove("fa-bars");
+                        icon.classList.add("fa-times");
+                    } else {
+                        icon.classList.remove("fa-times");
+                        icon.classList.add("fa-bars");
+                    }
                 }
-            );
-
-
+            });
         }
 
+        async function loadPublishedBlogs() {
+            const blogsGrid = document.getElementById("blogsGrid");
+
+            const { data: blogs, error } = await supabaseClient
+                .from("blogs")
+                .select("*")
+                .eq("is_published", true)
+                .order("created_at", { ascending: false });
+
+            if (error) {
+                blogsGrid.innerHTML = `
+                    <p class="no-blogs">
+                        Error loading blogs: ${error.message}
+                    </p>
+                `;
+                return;
+            }
+
+            if (!blogs || blogs.length === 0) {
+                blogsGrid.innerHTML = `
+                    <p class="no-blogs">
+                        No published blogs available.
+                    </p>
+                `;
+                return;
+            }
+
+            blogsGrid.innerHTML = "";
+
+            blogs.forEach(function(blog) {
+                const blogCard = document.createElement("div");
+                blogCard.className = "blog-card";
+
+                const imageHTML = blog.image_url
+                    ? `<img src="${blog.image_url}" alt="${blog.title}">`
+                    : "";
+
+                const shortContent = blog.content.substring(0, 150) + "...";
+
+                blogCard.innerHTML = `
+                    ${imageHTML}
+                    <div class="blog-content">
+                        <h2>${blog.title}</h2>
+                        <p>${shortContent}</p>
+                        <a class="read-more" href="blog-detail.html?slug=${encodeURIComponent(blog.slug)}">
+                            Read More
+                        </a>
+                    </div>
+                `;
+
+                blogsGrid.appendChild(blogCard);
+            });
+        }
 
         loadPublishedBlogs();
-
-
     </script>
-
-
 </body>
 
 </html>
