@@ -281,14 +281,12 @@
                                 ${shortContent}
                             </p>
 
-                            <a
-                                class="read-more"
-                                href="blog-detail.html?slug=${blog.slug}"
-                            >
-
-                                Read More
-
-                            </a>
+                           <a
+    class="read-more"
+    href="blog-detail.html?slug=${encodeURIComponent(blog.slug)}"
+>
+    Read More
+</a>
 
                         </div>
 
