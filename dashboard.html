@@ -1,19 +1,484 @@
-const slug = title
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-");
+<!DOCTYPE html>
+<html lang="en">
 
-const { data, error } =
-    await supabaseClient
-        .from("blogs")
-        .insert([
-            {
-                title: title,
-                slug: slug,
-                content: content,
-                image_url: image_url || null,
-                video_url: video_url || null,
-                is_published: true
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Akkhil Kapoor</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        #logoutBtn {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        #publishBtn {
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: #111827;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #publishBtn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h2>Blog Admin Dashboard</h2>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <div class="container">
+
+        <div class="card">
+
+            <h3>Add New Blog</h3>
+
+
+            <!-- Blog Form -->
+
+            <form id="blogForm">
+
+
+                <!-- Blog Title -->
+
+                <label>
+                    Blog Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter blog title"
+                    required
+                >
+
+
+                <!-- Blog Content -->
+
+                <label>
+                    Blog Content
+                </label>
+
+                <textarea
+                    id="content"
+                    placeholder="Write your blog content here..."
+                    required
+                ></textarea>
+
+
+                <!-- Image URL -->
+
+                <label>
+                    Image URL
+                </label>
+
+                <input
+                    type="url"
+                    id="image_url"
+                    placeholder="https://example.com/image.jpg"
+                >
+
+
+                <!-- Video URL -->
+
+                <label>
+                    YouTube Video URL
+                </label>
+
+                <input
+                    type="url"
+                    id="video_url"
+                    placeholder="https://youtube.com/watch?v=..."
+                >
+
+
+                <!-- Publish Button -->
+
+                <button
+                    type="submit"
+                    id="publishBtn"
+                >
+                    Publish Blog
+                </button>
+
+
+            </form>
+
+
+            <!-- Message -->
+
+            <div id="message"></div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Supabase Library -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- Supabase Configuration -->
+
+    <script src="js/supabase-config.js"></script>
+
+
+    <script>
+
+
+        // =====================================
+        // CHECK USER LOGIN
+        // =====================================
+
+        async function checkUser() {
+
+
+            const {
+
+                data: { user },
+
+                error
+
+            } = await supabaseClient.auth.getUser();
+
+
+            if (error || !user) {
+
+
+                window.location.href = "admin.html";
+
+
+                return;
+
+
             }
-        ]);
+
+
+        }
+
+
+        checkUser();
+
+
+
+        // =====================================
+        // LOGOUT
+        // =====================================
+
+        document
+            .getElementById("logoutBtn")
+            .addEventListener("click", async function () {
+
+
+                const { error } =
+                    await supabaseClient.auth.signOut();
+
+
+                if (!error) {
+
+
+                    window.location.href =
+                        "admin.html";
+
+
+                }
+
+
+            });
+
+
+
+        // =====================================
+        // ADD NEW BLOG
+        // =====================================
+
+        document
+            .getElementById("blogForm")
+            .addEventListener("submit", async function (event) {
+
+
+                // Stop page refresh
+
+                event.preventDefault();
+
+
+                // Get title
+
+                const title =
+                    document
+                        .getElementById("title")
+                        .value
+                        .trim();
+
+
+                // Get content
+
+                const content =
+                    document
+                        .getElementById("content")
+                        .value
+                        .trim();
+
+
+                // Get image URL
+
+                const image_url =
+                    document
+                        .getElementById("image_url")
+                        .value
+                        .trim();
+
+
+                // Get video URL
+
+                const video_url =
+                    document
+                        .getElementById("video_url")
+                        .value
+                        .trim();
+
+
+                // Message area
+
+                const message =
+                    document
+                        .getElementById("message");
+
+
+                // Publish button
+
+                const publishBtn =
+                    document
+                        .getElementById("publishBtn");
+
+
+                message.textContent =
+                    "Publishing blog...";
+
+
+                publishBtn.disabled = true;
+
+
+
+                // =====================================
+                // CHECK LOGIN AGAIN
+                // =====================================
+
+                const {
+
+                    data: { user }
+
+                } =
+                    await supabaseClient.auth.getUser();
+
+
+                if (!user) {
+
+
+                    window.location.href =
+                        "admin.html";
+
+
+                    return;
+
+
+                }
+
+
+
+                // =====================================
+                // CREATE SLUG
+                // =====================================
+
+                const slug = title
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, "")
+                    .replace(/\s+/g, "-");
+
+
+
+                // =====================================
+                // INSERT BLOG INTO SUPABASE
+                // =====================================
+
+                const {
+
+                    data,
+
+                    error
+
+                } =
+                    await supabaseClient
+                        .from("blogs")
+                        .insert([
+
+                            {
+
+                                title: title,
+
+                                slug: slug,
+
+                                content: content,
+
+                                image_url:
+                                    image_url || null,
+
+                                video_url:
+                                    video_url || null,
+
+                                is_published: true
+
+                            }
+
+                        ]);
+
+
+
+                // =====================================
+                // ERROR HANDLING
+                // =====================================
+
+                if (error) {
+
+
+                    message.textContent =
+                        "Error: " + error.message;
+
+
+                    publishBtn.disabled = false;
+
+
+                    return;
+
+
+                }
+
+
+
+                // =====================================
+                // SUCCESS
+                // =====================================
+
+                message.textContent =
+                    "Blog published successfully!";
+
+
+                // Clear form
+
+                document
+                    .getElementById("blogForm")
+                    .reset();
+
+
+                publishBtn.disabled = false;
+
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>
