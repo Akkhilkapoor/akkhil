@@ -1,2212 +1,491 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Admin Dashboard | Akkhil Kapoor</title>
 
-    <!-- QUILL EDITOR CSS -->
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
-        rel="stylesheet"
-    >
-
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        body {
-
-            margin: 0;
-
-            font-family: Arial, sans-serif;
-
-            background: #f4f6f9;
-
-            color: #111827;
-
-        }
-
-
-        header {
-
-            background: #111827;
-
-            color: white;
-
-            padding: 18px 25px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-        }
-
-
-        header h2 {
-
-            margin: 0;
-
-        }
-
-
-        #logoutBtn {
-
-            background: #dc2626;
-
-            color: white;
-
-            border: none;
-
-            padding: 10px 18px;
-
-            border-radius: 6px;
-
-            cursor: pointer;
-
-        }
-
-
-        .container {
-
-            max-width: 1100px;
-
-            margin: 30px auto;
-
-            padding: 20px;
-
-        }
-
-
-        .card {
-
-            background: white;
-
-            padding: 25px;
-
-            margin-bottom: 25px;
-
-            border-radius: 12px;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-        }
-
-
-        h3 {
-
-            margin-top: 0;
-
-        }
-
-
-        label {
-
-            display: block;
-
-            margin-top: 18px;
-
-            margin-bottom: 6px;
-
-            font-weight: bold;
-
-        }
-
-
-        input,
-
-        select {
-
-            width: 100%;
-
-            padding: 12px;
-
-            border: 1px solid #ddd;
-
-            border-radius: 7px;
-
-            font-size: 15px;
-
-        }
-
-
-        #editor {
-
-            min-height: 250px;
-
-            background: white;
-
-        }
-
-
-        .ql-editor {
-
-            min-height: 250px;
-
-            font-size: 16px;
-
-        }
-
-
-        button {
-
-            cursor: pointer;
-
-        }
-
-
-        #saveBtn {
-
-            margin-top: 20px;
-
-            padding: 13px 25px;
-
-            background: #111827;
-
-            color: white;
-
-            border: none;
-
-            border-radius: 7px;
-
-            font-size: 16px;
-
-        }
-
-
-        #cancelBtn {
-
-            margin-top: 20px;
-
-            padding: 13px 25px;
-
-            background: #6b7280;
-
-            color: white;
-
-            border: none;
-
-            border-radius: 7px;
-
-            font-size: 16px;
-
-            display: none;
-
-        }
-
-
-        #message {
-
-            margin-top: 15px;
-
-            font-weight: bold;
-
-        }
-
-
-        .blog-item {
-
-            border: 1px solid #e5e7eb;
-
-            padding: 18px;
-
-            margin-top: 15px;
-
-            border-radius: 8px;
-
-        }
-
-
-        .blog-item h4 {
-
-            margin: 0 0 8px 0;
-
-        }
-
-
-        .status {
-
-            display: inline-block;
-
-            padding: 5px 10px;
-
-            border-radius: 5px;
-
-            font-size: 13px;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .published {
-
-            background: #dcfce7;
-
-            color: #166534;
-
-        }
-
-
-        .draft {
-
-            background: #fef3c7;
-
-            color: #92400e;
-
-        }
-
-
-        .editBtn {
-
-            background: #2563eb;
-
-            color: white;
-
-            border: none;
-
-            padding: 8px 14px;
-
-            border-radius: 5px;
-
-            margin-right: 8px;
-
-        }
-
-
-        .deleteBtn {
-
-            background: #dc2626;
-
-            color: white;
-
-            border: none;
-
-            padding: 8px 14px;
-
-            border-radius: 5px;
-
-        }
-
-
-        .no-blogs {
-
-            color: #6b7280;
-
-        }
-
-    </style>
+```
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        color: #111827;
+    }
+
+    header {
+        background: #111827;
+        color: white;
+        padding: 18px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h2 {
+        margin: 0;
+    }
+
+    #logoutBtn {
+        background: #dc2626;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+    label {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+
+    #editor,
+    .ql-editor {
+        min-height: 250px;
+    }
+
+    #editor {
+        background: white;
+    }
+
+    .ql-editor {
+        font-size: 16px;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    #saveBtn,
+    #cancelBtn {
+        margin-top: 20px;
+        padding: 13px 25px;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        font-size: 16px;
+    }
+
+    #saveBtn {
+        background: #111827;
+    }
+
+    #cancelBtn {
+        background: #6b7280;
+        display: none;
+    }
+
+    #message {
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    .blog-item {
+        border: 1px solid #e5e7eb;
+        padding: 18px;
+        margin-top: 15px;
+        border-radius: 8px;
+    }
+
+    .blog-item h4 {
+        margin: 0 0 8px 0;
+    }
+
+    .status {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .published {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .draft {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .editBtn {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 5px;
+        margin-right: 8px;
+    }
+
+    .deleteBtn {
+        background: #dc2626;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 5px;
+    }
+
+    .no-blogs {
+        color: #6b7280;
+    }
+</style>
+```
 
 </head>
 
-
 <body>
-
-
-    <!-- HEADER -->
-
     <header>
-
-        <h2>
-            Blog Admin Dashboard
-        </h2>
-
-
-        <button id="logoutBtn">
-
-            Logout
-
-        </button>
-
+        <h2>Blog Admin Dashboard</h2>
+        <button id="logoutBtn">Logout</button>
     </header>
 
-
-
-    <div class="container">
-
-
-        <!-- ADD / EDIT BLOG -->
-
-        <div class="card">
-
-
-            <h3 id="formHeading">
-
-                Add New Blog
-
-            </h3>
-
-
-
-            <form id="blogForm">
-
-
-                <!-- TITLE -->
-
-                <label>
-
-                    Blog Title
-
-                </label>
-
-
-                <input
-
-                    type="text"
-
-                    id="title"
-
-                    placeholder="Enter blog title"
-
-                    required
-
-                >
-
-
-
-                <!-- RICH TEXT CONTENT -->
-
-                <label>
-
-                    Blog Content
-
-                </label>
-
-
-                <div id="editor"></div>
-
-
-
-                <!-- IMAGE -->
-
-                <label>
-
-                    Blog Image
-
-                </label>
-
-
-                <input
-
-                    type="file"
-
-                    id="image_file"
-
-                    accept="image/*"
-
-                >
-
-
-
-                <!-- VIDEO -->
-
-                <label>
-
-                    YouTube Video URL
-
-                </label>
-
-
-                <input
-
-                    type="url"
-
-                    id="video_url"
-
-                    placeholder="https://youtube.com/watch?v=..."
-
-                >
-
-
-
-                <!-- STATUS -->
-
-                <label>
-
-                    Blog Status
-
-                </label>
-
-
-                <select id="status">
-
-
-                    <option value="true">
-
-                        Published
-
-                    </option>
-
-
-                    <option value="false">
-
-                        Draft
-
-                    </option>
-
-
-                </select>
-
-
-
-                <!-- SAVE -->
-
-                <button
-
-                    type="submit"
-
-                    id="saveBtn"
-
-                >
-
-                    Save Blog
-
-                </button>
-
-
-
-                <!-- CANCEL -->
-
-                <button
-
-                    type="button"
-
-                    id="cancelBtn"
-
-                >
-
-                    Cancel Edit
-
-                </button>
-
-
-            </form>
-
-
-
-            <div id="message"></div>
-
-
-        </div>
-
-
-
-        <!-- ALL BLOGS -->
-
-        <div class="card">
-
-
-            <h3>
-
-                My All Blogs
-
-            </h3>
-
-
-            <div id="blogsList">
-
-                Loading blogs...
-
-            </div>
-
-
-        </div>
-
-
+```
+<div class="container">
+    <div class="card">
+        <h3 id="formHeading">Add New Blog</h3>
+
+        <form id="blogForm">
+            <label>Blog Title</label>
+            <input type="text" id="title" placeholder="Enter blog title" required>
+
+            <label>Blog Content</label>
+            <div id="editor"></div>
+
+            <label>Blog Image</label>
+            <input type="file" id="image_file" accept="image/*">
+
+            <label>YouTube Video URL</label>
+            <input type="url" id="video_url" placeholder="https://youtube.com/watch?v=...">
+
+            <label>Blog Status</label>
+            <select id="status">
+                <option value="true">Published</option>
+                <option value="false">Draft</option>
+            </select>
+
+            <button type="submit" id="saveBtn">Save Blog</button>
+            <button type="button" id="cancelBtn">Cancel Edit</button>
+        </form>
+
+        <div id="message"></div>
     </div>
 
-
-
-    <!-- SUPABASE -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
-    <!-- SUPABASE CONFIG -->
-
-    <script src="js/supabase-config.js"></script>
-
-
-    <!-- QUILL EDITOR JS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-
-
-
-    <script>
-
-
-        // ====================================
-        // QUILL EDITOR
-        // ====================================
-
-
-        const quill = new Quill(
-
-            "#editor",
-
-            {
-
-                theme: "snow",
-
-                placeholder:
-                    "Write your blog here...",
-
-                modules:
-
-                {
-
-                    toolbar:
-
-                    [
-
-                        [
-                            {
-                                header:
-                                [
-                                    1,
-                                    2,
-                                    3,
-                                    false
-                                ]
-                            }
-                        ],
-
-                        [
-                            "bold",
-                            "italic",
-                            "underline"
-                        ],
-
-                        [
-                            {
-                                list:
-                                "ordered"
-                            },
-
-                            {
-                                list:
-                                "bullet"
-                            }
-                        ],
-
-                        [
-                            "link"
-                        ],
-
-                        [
-                            {
-                                align:
-                                []
-                            }
-                        ],
-
-                        [
-                            "clean"
-                        ]
-
-                    ]
-
-                }
-
-            }
-
-        );
-
-
-
-        // ====================================
-        // VARIABLES
-        // ====================================
-
-
-        let editingBlogId =
-            null;
-
-
-        let editingBlogImage =
-            null;
-
-
-
-        // ====================================
-        // CHECK LOGIN
-        // ====================================
-
-
-        async function checkUser()
-
-
-        {
-
-
-            const
-
-            {
-
-                data:
-                {
-
-                    user
-
-                },
-
-                error
-
-            }
-
-            =
-
-            await supabaseClient
-
-                .auth
-
-                .getUser();
-
-
-
-            if (
-
-                error
-
-                ||
-
-                !user
-
-            )
-
-
-            {
-
-
-                window.location.href =
-                    "admin.html";
-
-
-                return;
-
-
-            }
-
-
-
-            loadBlogs();
-
-
+    <div class="card">
+        <h3>My All Blogs</h3>
+        <div id="blogsList">Loading blogs...</div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+<script>
+    const quill = new Quill("#editor", {
+        theme: "snow",
+        placeholder: "Write your blog here...",
+        modules: {
+            toolbar: [
+                [{ header: [1, 2, 3, false] }],
+                ["bold", "italic", "underline"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["link"],
+                [{ align: [] }],
+                ["clean"]
+            ]
+        }
+    });
+
+    let editingBlogId = null;
+    let editingBlogImage = null;
+
+    async function checkUser() {
+        const {
+            data: { user },
+            error
+        } = await supabaseClient.auth.getUser();
+
+        if (error || !user) {
+            window.location.href = "admin.html";
+            return;
         }
 
-
-
-        checkUser();
-
-
-
-        // ====================================
-        // LOGOUT
-        // ====================================
-
-
-        document
-
-            .getElementById(
-
-                "logoutBtn"
-
-            )
-
-            .addEventListener(
-
-                "click",
-
-                async function()
-
-
-                {
-
-
-                    await supabaseClient
-
-                        .auth
-
-                        .signOut();
-
-
-
-                    window.location.href =
-                        "admin.html";
-
-
-                }
-
-            );
-
-
-
-        // ====================================
-        // LOAD BLOGS
-        // ====================================
-
-
-        async function loadBlogs()
-
-
-        {
-
-
-            const
-
-            blogsList =
-
-            document
-
-                .getElementById(
-
-                    "blogsList"
-
-                );
-
-
-
-            blogsList.innerHTML =
-                "Loading blogs...";
-
-
-
-            const
-
-            {
-
-                data:
-                blogs,
-
-                error
-
-            }
-
-            =
-
-            await supabaseClient
-
-                .from(
-
-                    "blogs"
-
-                )
-
-                .select(
-
-                    "*"
-
-                )
-
-                .order(
-
-                    "created_at",
-
-                    {
-
-                        ascending:
-                        false
-
-                    }
-
-                );
-
-
-
-            if (
-
-                error
-
-            )
-
-
-            {
-
-
-                blogsList.innerHTML =
-
-                    "Error loading blogs: "
-
-                    +
-
-                    error.message;
-
-
-
-                return;
-
-
-            }
-
-
-
-            if (
-
-                !blogs
-
-                ||
-
-                blogs.length === 0
-
-            )
-
-
-            {
-
-
-                blogsList.innerHTML =
-
-                    '<p class="no-blogs">No blogs found.</p>';
-
-
-
-                return;
-
-
-            }
-
-
-
-            blogsList.innerHTML =
-                "";
-
-
-
-            blogs.forEach(
-
-                function(
-
-                    blog
-
-                )
-
-
-                {
-
-
-                    const
-
-                    blogItem =
-
-                    document
-
-                        .createElement(
-
-                            "div"
-
-                        );
-
-
-
-                    blogItem.className =
-                        "blog-item";
-
-
-
-                    const
-
-                    statusClass =
-
-                    blog.is_published
-
-                        ?
-
-                        "published"
-
-                        :
-
-                        "draft";
-
-
-
-                    const
-
-                    statusText =
-
-                    blog.is_published
-
-                        ?
-
-                        "Published"
-
-                        :
-
-                        "Draft";
-
-
-
-                    blogItem.innerHTML = `
-
-
-                        <h4>
-
-                            ${blog.title}
-
-                        </h4>
-
-
-                        <span
-
-                            class="status ${statusClass}"
-
-                        >
-
-                            ${statusText}
-
-                        </span>
-
-
-                        <br>
-
-
-                        <button
-
-                            class="editBtn"
-
-                            onclick="editBlog('${blog.id}')"
-
-                        >
-
-                            Edit
-
-                        </button>
-
-
-                        <button
-
-                            class="deleteBtn"
-
-                            onclick="deleteBlog('${blog.id}')"
-
-                        >
-
-                            Delete
-
-                        </button>
-
-
-                    `;
-
-
-
-                    blogsList.appendChild(
-
-                        blogItem
-
-                    );
-
-
-                }
-
-            );
-
-
+        loadBlogs();
+    }
+
+    checkUser();
+
+    document.getElementById("logoutBtn").addEventListener("click", async function() {
+        await supabaseClient.auth.signOut();
+        window.location.href = "admin.html";
+    });
+
+    async function loadBlogs() {
+        const blogsList = document.getElementById("blogsList");
+        blogsList.innerHTML = "Loading blogs...";
+
+        const { data: blogs, error } = await supabaseClient
+            .from("blogs")
+            .select("*")
+            .order("created_at", {
+                ascending: false
+            });
+
+        if (error) {
+            blogsList.innerHTML = "Error loading blogs: " + error.message;
+            return;
         }
 
-
-
-        // ====================================
-        // SAVE BLOG
-        // ====================================
-
-
-        document
-
-            .getElementById(
-
-                "blogForm"
-
-            )
-
-            .addEventListener(
-
-                "submit",
-
-                async function(
-
-                    event
-
-                )
-
-
-                {
-
-
-                    event.preventDefault();
-
-
-
-                    const
-
-                    title =
-
-                    document
-
-                        .getElementById(
-
-                            "title"
-
-                        )
-
-                        .value
-
-                        .trim();
-
-
-
-                    const
-
-                    content =
-
-                    quill
-
-                        .root
-
-                        .innerHTML;
-
-
-
-                    const
-
-                    video_url =
-
-                    document
-
-                        .getElementById(
-
-                            "video_url"
-
-                        )
-
-                        .value
-
-                        .trim();
-
-
-
-                    const
-
-                    is_published =
-
-                    document
-
-                        .getElementById(
-
-                            "status"
-
-                        )
-
-                        .value
-
-                        ===
-
-                        "true";
-
-
-
-                    const
-
-                    imageFile =
-
-                    document
-
-                        .getElementById(
-
-                            "image_file"
-
-                        )
-
-                        .files[0];
-
-
-
-                    const
-
-                    message =
-
-                    document
-
-                        .getElementById(
-
-                            "message"
-
-                        );
-
-
-
-                    const
-
-                    saveBtn =
-
-                    document
-
-                        .getElementById(
-
-                            "saveBtn"
-
-                        );
-
-
-
-                    if (
-
-                        !title
-
-                    )
-
-
-                    {
-
-
-                        message.textContent =
-
-                            "Please enter blog title.";
-
-
-                        return;
-
-
-                    }
-
-
-
-                    if (
-
-                        !content
-
-                        ||
-
-                        content ===
-
-                        "<p><br></p>"
-
-                    )
-
-
-                    {
-
-
-                        message.textContent =
-
-                            "Please write blog content.";
-
-
-                        return;
-
-
-                    }
-
-
-
-                    message.textContent =
-
-                        "Saving blog...";
-
-
-
-                    saveBtn.disabled =
-                        true;
-
-
-
-                    // SLUG
-
-
-                    const
-
-                    slug =
-
-                    title
-
-                        .toLowerCase()
-
-                        .trim()
-
-                        .replace(
-
-                            /[^\w\s-]/g,
-
-                            ""
-
-                        )
-
-                        .replace(
-
-                            /\s+/g,
-
-                            "-"
-
-                        );
-
-
-
-                    // OLD IMAGE
-
-
-                    let
-
-                    image_url =
-
-                    editingBlogImage;
-
-
-
-                    // UPLOAD IMAGE
-
-
-                    if (
-
-                        imageFile
-
-                    )
-
-
-                    {
-
-
-                        const
-
-                        fileName =
-
-                            Date.now()
-
-                            +
-
-                            "-"
-
-                            +
-
-                            imageFile.name
-
-                                .replace(
-
-                                    /\s+/g,
-
-                                    "-"
-
-                                );
-
-
-
-                        const
-
-                        {
-
-                            error:
-
-                            uploadError
-
-                        }
-
-                        =
-
-                        await supabaseClient
-
-                            .storage
-
-                            .from(
-
-                                "blog-images"
-
-                            )
-
-                            .upload(
-
-                                fileName,
-
-                                imageFile
-
-                            );
-
-
-
-                        if (
-
-                            uploadError
-
-                        )
-
-
-                        {
-
-
-                            message.textContent =
-
-                                "Image upload error: "
-
-                                +
-
-                                uploadError.message;
-
-
-
-                            saveBtn.disabled =
-                                false;
-
-
-
-                            return;
-
-
-                        }
-
-
-
-                        const
-
-                        {
-
-                            data:
-
-                            publicUrlData
-
-                        }
-
-                        =
-
-                        supabaseClient
-
-                            .storage
-
-                            .from(
-
-                                "blog-images"
-
-                            )
-
-                            .getPublicUrl(
-
-                                fileName
-
-                            );
-
-
-
-                        image_url =
-
-                            publicUrlData
-
-                                .publicUrl;
-
-
-                    }
-
-
-
-                    // UPDATE BLOG
-
-
-                    if (
-
-                        editingBlogId
-
-                    )
-
-
-                    {
-
-
-                        const
-
-                        {
-
-                            error
-
-                        }
-
-                        =
-
-                        await supabaseClient
-
-                            .from(
-
-                                "blogs"
-
-                            )
-
-                            .update(
-
-                                {
-
-
-                                    title:
-
-                                        title,
-
-
-                                    slug:
-
-                                        slug,
-
-
-                                    content:
-
-                                        content,
-
-
-                                    image_url:
-
-                                        image_url
-
-                                        ||
-
-                                        null,
-
-
-                                    video_url:
-
-                                        video_url
-
-                                        ||
-
-                                        null,
-
-
-                                    is_published:
-
-                                        is_published
-
-
-                                }
-
-                            )
-
-                            .eq(
-
-                                "id",
-
-                                editingBlogId
-
-                            );
-
-
-
-                        if (
-
-                            error
-
-                        )
-
-
-                        {
-
-
-                            message.textContent =
-
-                                "Error: "
-
-                                +
-
-                                error.message;
-
-
-
-                            saveBtn.disabled =
-                                false;
-
-
-
-                            return;
-
-
-                        }
-
-
-
-                        message.textContent =
-
-                            "Blog updated successfully!";
-
-
-                    }
-
-
-
-                    // INSERT BLOG
-
-
-                    else
-
-
-                    {
-
-
-                        const
-
-                        {
-
-                            error
-
-                        }
-
-                        =
-
-                        await supabaseClient
-
-                            .from(
-
-                                "blogs"
-
-                            )
-
-                            .insert(
-
-                                [
-
-                                    {
-
-
-                                        title:
-
-                                            title,
-
-
-                                        slug:
-
-                                            slug,
-
-
-                                        content:
-
-                                            content,
-
-
-                                        image_url:
-
-                                            image_url
-
-                                            ||
-
-                                            null,
-
-
-                                        video_url:
-
-                                            video_url
-
-                                            ||
-
-                                            null,
-
-
-                                        is_published:
-
-                                            is_published
-
-
-                                    }
-
-                                ]
-
-                            );
-
-
-
-                        if (
-
-                            error
-
-                        )
-
-
-                        {
-
-
-                            message.textContent =
-
-                                "Error: "
-
-                                +
-
-                                error.message;
-
-
-
-                            saveBtn.disabled =
-                                false;
-
-
-
-                            return;
-
-
-                        }
-
-
-
-                        message.textContent =
-
-                            is_published
-
-                                ?
-
-                                "Blog published successfully!"
-
-                                :
-
-                                "Blog saved as draft successfully!";
-
-
-                    }
-
-
-
-                    // RESET
-
-
-                    editingBlogId =
-                        null;
-
-
-                    editingBlogImage =
-                        null;
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "blogForm"
-
-                        )
-
-                        .reset();
-
-
-
-                    quill
-
-                        .setContents(
-
-                            []
-
-                        );
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "formHeading"
-
-                        )
-
-                        .textContent =
-
-                        "Add New Blog";
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "saveBtn"
-
-                        )
-
-                        .textContent =
-
-                        "Save Blog";
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "cancelBtn"
-
-                        )
-
-                        .style.display =
-
-                        "none";
-
-
-
-                    saveBtn.disabled =
-                        false;
-
-
-
-                    loadBlogs();
-
-
-                }
-
-            );
-
-
-
-        // ====================================
-        // EDIT BLOG
-        // ====================================
-
-
-        async function editBlog(
-
-            id
-
-        )
-
-
-        {
-
-
-            const
-
-            {
-
-                data:
-
-                blog,
-
-                error
-
-            }
-
-            =
-
-            await supabaseClient
-
-                .from(
-
-                    "blogs"
-
-                )
-
-                .select(
-
-                    "*"
-
-                )
-
-                .eq(
-
-                    "id",
-
-                    id
-
-                )
-
-                .single();
-
-
-
-            if (
-
-                error
-
-            )
-
-
-            {
-
-
-                alert(
-
-                    "Error loading blog: "
-
-                    +
-
-                    error.message
-
-                );
-
-
-
-                return;
-
-
-            }
-
-
-
-            editingBlogId =
-                blog.id;
-
-
-            editingBlogImage =
-                blog.image_url;
-
-
-
-            document
-
-                .getElementById(
-
-                    "title"
-
-                )
-
-                .value =
-
-                blog.title
-
-                ||
-
-                "";
-
-
-
-            quill
-
-                .root
-
-                .innerHTML =
-
-                blog.content
-
-                ||
-
-                "";
-
-
-
-            document
-
-                .getElementById(
-
-                    "video_url"
-
-                )
-
-                .value =
-
-                blog.video_url
-
-                ||
-
-                "";
-
-
-
-            document
-
-                .getElementById(
-
-                    "status"
-
-                )
-
-                .value =
-
-                blog.is_published
-
-                    ?
-
-                    "true"
-
-                    :
-
-                    "false";
-
-
-
-            document
-
-                .getElementById(
-
-                    "formHeading"
-
-                )
-
-                .textContent =
-
-                "Edit Blog";
-
-
-
-            document
-
-                .getElementById(
-
-                    "saveBtn"
-
-                )
-
-                .textContent =
-
-                "Update Blog";
-
-
-
-            document
-
-                .getElementById(
-
-                    "cancelBtn"
-
-                )
-
-                .style.display =
-
-                "inline-block";
-
-
-
-            window.scrollTo(
-
-                0,
-
-                0
-
-            );
-
-
+        if (!blogs || blogs.length === 0) {
+            blogsList.innerHTML = '<p class="no-blogs">No blogs found.</p>';
+            return;
         }
 
-
-
-        // ====================================
-        // CANCEL EDIT
-        // ====================================
-
-
-        document
-
-            .getElementById(
-
-                "cancelBtn"
-
-            )
-
-            .addEventListener(
-
-                "click",
-
-                function()
-
-
-                {
-
-
-                    editingBlogId =
-                        null;
-
-
-                    editingBlogImage =
-                        null;
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "blogForm"
-
-                        )
-
-                        .reset();
-
-
-
-                    quill
-
-                        .setContents(
-
-                            []
-
-                        );
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "formHeading"
-
-                        )
-
-                        .textContent =
-
-                        "Add New Blog";
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "saveBtn"
-
-                        )
-
-                        .textContent =
-
-                        "Save Blog";
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "cancelBtn"
-
-                        )
-
-                        .style.display =
-
-                        "none";
-
-
-
-                    document
-
-                        .getElementById(
-
-                            "message"
-
-                        )
-
-                        .textContent =
-
-                        "";
-
-
-                }
-
-            );
-
-
-
-        // ====================================
-        // DELETE BLOG
-        // ====================================
-
-
-        async function deleteBlog(
-
-            id
-
-        )
-
-
-        {
-
-
-            const
-
-            confirmDelete =
-
-                confirm(
-
-                    "Are you sure you want to delete this blog?"
-
-                );
-
-
-
-            if (
-
-                !confirmDelete
-
-            )
-
-
-            {
-
-
-                return;
-
-
-            }
-
-
-
-            const
-
-            {
-
-                error
-
-            }
-
-            =
-
-            await supabaseClient
-
-                .from(
-
-                    "blogs"
-
-                )
-
-                .delete()
-
-                .eq(
-
-                    "id",
-
-                    id
-
-                );
-
-
-
-            if (
-
-                error
-
-            )
-
-
-            {
-
-
-                alert(
-
-                    "Error deleting blog: "
-
-                    +
-
-                    error.message
-
-                );
-
-
-
-                return;
-
-
-            }
-
-
-
-            alert(
-
-                "Blog deleted successfully!"
-
-            );
-
-
-
-            loadBlogs();
-
-
+        blogsList.innerHTML = "";
+
+        blogs.forEach(function(blog) {
+            const blogItem = document.createElement("div");
+            blogItem.className = "blog-item";
+
+            const statusClass = blog.is_published ? "published" : "draft";
+            const statusText = blog.is_published ? "Published" : "Draft";
+
+            blogItem.innerHTML = `
+                <h4>${blog.title}</h4>
+
+                <span class="status ${statusClass}">
+                    ${statusText}
+                </span>
+
+                <br>
+
+                <button class="editBtn" onclick="editBlog('${blog.id}')">
+                    Edit
+                </button>
+
+                <button class="deleteBtn" onclick="deleteBlog('${blog.id}')">
+                    Delete
+                </button>
+            `;
+
+            blogsList.appendChild(blogItem);
+        });
+    }
+
+    document.getElementById("blogForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const title = document.getElementById("title").value.trim();
+        const content = quill.root.innerHTML;
+        const video_url = document.getElementById("video_url").value.trim();
+        const is_published = document.getElementById("status").value === "true";
+        const imageFile = document.getElementById("image_file").files[0];
+        const message = document.getElementById("message");
+        const saveBtn = document.getElementById("saveBtn");
+
+        if (!title) {
+            message.textContent = "Please enter blog title.";
+            return;
         }
 
+        if (!content || content === "<p><br></p>") {
+            message.textContent = "Please write blog content.";
+            return;
+        }
 
-    </script>
+        message.textContent = "Saving blog...";
+        saveBtn.disabled = true;
 
+        const slug = title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/\s+/g, "-");
+
+        let image_url = editingBlogImage;
+
+        if (imageFile) {
+            const fileName = Date.now() + "-" + imageFile.name.replace(/\s+/g, "-");
+
+            const { error: uploadError } = await supabaseClient
+                .storage
+                .from("blog-images")
+                .upload(fileName, imageFile);
+
+            if (uploadError) {
+                message.textContent = "Image upload error: " + uploadError.message;
+                saveBtn.disabled = false;
+                return;
+            }
+
+            const { data: publicUrlData } = supabaseClient
+                .storage
+                .from("blog-images")
+                .getPublicUrl(fileName);
+
+            image_url = publicUrlData.publicUrl;
+        }
+
+        if (editingBlogId) {
+            const { error } = await supabaseClient
+                .from("blogs")
+                .update({
+                    title: title,
+                    slug: slug,
+                    content: content,
+                    image_url: image_url || null,
+                    video_url: video_url || null,
+                    is_published: is_published
+                })
+                .eq("id", editingBlogId);
+
+            if (error) {
+                message.textContent = "Error: " + error.message;
+                saveBtn.disabled = false;
+                return;
+            }
+
+            message.textContent = "Blog updated successfully!";
+        } else {
+            const { error } = await supabaseClient
+                .from("blogs")
+                .insert([
+                    {
+                        title: title,
+                        slug: slug,
+                        content: content,
+                        image_url: image_url || null,
+                        video_url: video_url || null,
+                        is_published: is_published
+                    }
+                ]);
+
+            if (error) {
+                message.textContent = "Error: " + error.message;
+                saveBtn.disabled = false;
+                return;
+            }
+
+            message.textContent = is_published
+                ? "Blog published successfully!"
+                : "Blog saved as draft successfully!";
+        }
+
+        editingBlogId = null;
+        editingBlogImage = null;
+
+        document.getElementById("blogForm").reset();
+        quill.setContents([]);
+
+        document.getElementById("formHeading").textContent = "Add New Blog";
+        document.getElementById("saveBtn").textContent = "Save Blog";
+        document.getElementById("cancelBtn").style.display = "none";
+
+        saveBtn.disabled = false;
+        loadBlogs();
+    });
+
+    async function editBlog(id) {
+        const { data: blog, error } = await supabaseClient
+            .from("blogs")
+            .select("*")
+            .eq("id", id)
+            .single();
+
+        if (error) {
+            alert("Error loading blog: " + error.message);
+            return;
+        }
+
+        editingBlogId = blog.id;
+        editingBlogImage = blog.image_url;
+
+        document.getElementById("title").value = blog.title || "";
+        quill.root.innerHTML = blog.content || "";
+        document.getElementById("video_url").value = blog.video_url || "";
+        document.getElementById("status").value = blog.is_published ? "true" : "false";
+
+        document.getElementById("formHeading").textContent = "Edit Blog";
+        document.getElementById("saveBtn").textContent = "Update Blog";
+        document.getElementById("cancelBtn").style.display = "inline-block";
+
+        window.scrollTo(0, 0);
+    }
+
+    document.getElementById("cancelBtn").addEventListener("click", function() {
+        editingBlogId = null;
+        editingBlogImage = null;
+
+        document.getElementById("blogForm").reset();
+        quill.setContents([]);
+
+        document.getElementById("formHeading").textContent = "Add New Blog";
+        document.getElementById("saveBtn").textContent = "Save Blog";
+        document.getElementById("cancelBtn").style.display = "none";
+        document.getElementById("message").textContent = "";
+    });
+
+    async function deleteBlog(id) {
+        const confirmDelete = confirm("Are you sure you want to delete this blog?");
+
+        if (!confirmDelete) {
+            return;
+        }
+
+        const { error } = await supabaseClient
+            .from("blogs")
+            .delete()
+            .eq("id", id);
+
+        if (error) {
+            alert("Error deleting blog: " + error.message);
+            return;
+        }
+
+        alert("Blog deleted successfully!");
+        loadBlogs();
+    }
+</script>
+```
 
 </body>
-
 </html>
