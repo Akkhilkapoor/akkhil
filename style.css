@@ -1150,63 +1150,180 @@ nav {
    CONTACT PAGE
 ===================================================== */
 
-.contact-section {
-    width: 100%;
-    padding: 60px 20px;
-}
-
-.contact-container {
-    width: 100%;
+#contact {
+    width: 90%;
     max-width: 800px;
 
-    margin: auto;
+    margin: 0 auto;
+}
 
-    padding: 35px;
+/* ===============================
+   CONTACT HEADING
+=============================== */
+
+#contact > h2 {
+    text-align: center;
+
+    color: #111827;
+
+    font-size: 36px;
+
+    margin-bottom: 35px;
+}
+
+/* ===============================
+   CONTACT FORM
+=============================== */
+
+.contact-form {
+    width: 100%;
 
     background: #ffffff;
 
+    padding: 35px;
+
     border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
 
     box-shadow:
         0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-.contact-container input,
-.contact-container textarea,
-.contact-container select {
+/* ===============================
+   INPUTS & TEXTAREA
+=============================== */
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
 
-    padding: 12px;
+    display: block;
 
-    margin-bottom: 15px;
+    padding: 13px 15px;
+
+    margin-bottom: 18px;
 
     border: 1px solid #d1d5db;
-    border-radius: 6px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
 
     font-size: 15px;
+
+    color: #1f2937;
+
+    background: #ffffff;
+
+    outline: none;
+
+    transition: 0.3s ease;
 }
 
-.contact-container textarea {
-    min-height: 150px;
+/* INPUT FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* TEXTAREA */
+
+.contact-form textarea {
     resize: vertical;
+
+    min-height: 140px;
 }
 
-.contact-container button {
-    padding: 12px 25px;
+/* ===============================
+   SEND BUTTON
+=============================== */
 
-    background: #2563eb;
-    color: #ffffff;
+#sendMessageBtn {
+    width: 100%;
+
+    padding: 13px 20px;
 
     border: none;
-    border-radius: 6px;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.contact-container button:hover {
+#sendMessageBtn:hover {
     background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   STATUS MESSAGE
+=============================== */
+
+#contactStatus {
+    min-height: 22px;
+
+    font-size: 14px;
+}
+
+/* ===============================
+   TABLET
+=============================== */
+
+@media (max-width: 900px) {
+
+    #contact {
+        width: 92%;
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 600px) {
+
+    #contact {
+        width: 100%;
+    }
+
+    #contact > h2 {
+        font-size: 30px;
+
+        margin-bottom: 25px;
+    }
+
+    .contact-form {
+        padding: 22px 18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+
+        padding: 12px;
+    }
+
 }
 
 
