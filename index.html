@@ -36,15 +36,21 @@
         href="https://akkhilkapoor.github.io/akkhil/"
     >
 
+    <!-- COMMON CSS -->
+
     <link
         rel="stylesheet"
         href="style.css"
     >
 
+    <!-- FONT AWESOME -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     >
+
+    <!-- OPEN GRAPH -->
 
     <meta
         property="og:type"
@@ -66,10 +72,14 @@
         content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg"
     >
 
+    <!-- GOOGLE VERIFICATION -->
+
     <meta
         name="google-site-verification"
         content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM"
     >
+
+    <!-- STRUCTURED DATA -->
 
     <script type="application/ld+json">
 
@@ -100,335 +110,18 @@
 
     </script>
 
-
-    <!-- REVIEW CSS -->
-
-    <style>
-
-        .reviews-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(
-                        220px,
-                        1fr
-                    )
-                );
-
-            gap: 20px;
-
-            text-align: left;
-
-            margin-top: 10px;
-
-            align-items: stretch;
-
-        }
-
-
-        @media (min-width: 992px) {
-
-            .reviews-grid {
-
-                grid-template-columns:
-                    repeat(
-                        4,
-                        1fr
-                    );
-
-            }
-
-        }
-
-
-        .review-card {
-
-            background: #f9f9f9;
-
-            border: 1px solid #e0e0e0;
-
-            padding: 15px 18px;
-
-            border-radius: 8px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            min-height: 260px;
-
-            transition: 0.3s ease;
-
-        }
-
-
-        .review-card:hover {
-
-            box-shadow:
-                0 4px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.12
-                );
-
-            transform: translateY(-3px);
-
-        }
-
-
-        .review-text {
-
-            margin: 0;
-
-            color: #555;
-
-            line-height: 1.5;
-
-            font-size: 0.95em;
-
-        }
-
-
-        .review-text.collapsed {
-
-            display: -webkit-box;
-
-            -webkit-line-clamp: 10;
-
-            -webkit-box-orient: vertical;
-
-            overflow: hidden;
-
-        }
-
-
-        .read-more-review {
-
-            display: inline-block;
-
-            margin-top: 8px;
-
-            border: none;
-
-            background: none;
-
-            padding: 0;
-
-            color: #007bff;
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-        }
-
-
-        .read-more-review:hover {
-
-            text-decoration: underline;
-
-        }
-
-
-        #reviewModal {
-
-            display: none;
-
-            position: fixed;
-
-            inset: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: rgba(0, 0, 0, 0.6);
-
-            z-index: 1000;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 20px;
-
-            box-sizing: border-box;
-
-        }
-
-
-        .review-modal-box {
-
-            background: white;
-
-            padding: 25px;
-
-            border-radius: 10px;
-
-            width: 90%;
-
-            max-width: 500px;
-
-            position: relative;
-
-            box-shadow:
-                0 4px 10px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.3
-                );
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-        }
-
-
-        #closeReviewBtn {
-
-            position: absolute;
-
-            top: 10px;
-
-            right: 15px;
-
-            font-size: 28px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            color: #333;
-
-        }
-
-
-        .review-form-group {
-
-            margin-bottom: 15px;
-
-            text-align: left;
-
-        }
-
-
-        .review-form-group label {
-
-            display: block;
-
-            margin-bottom: 6px;
-
-            font-weight: bold;
-
-            color: #333;
-
-        }
-
-
-        .review-form-group input,
-
-        .review-form-group select,
-
-        .review-form-group textarea {
-
-            width: 100%;
-
-            padding: 11px;
-
-            border: 1px solid #ccc;
-
-            border-radius: 6px;
-
-            font-size: 15px;
-
-            box-sizing: border-box;
-
-        }
-
-
-        .review-form-group textarea {
-
-            resize: vertical;
-
-            min-height: 100px;
-
-        }
-
-
-        #submitReviewBtn {
-
-            width: 100%;
-
-            padding: 12px;
-
-            border: none;
-
-            border-radius: 6px;
-
-            background: #007bff;
-
-            color: white;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-        }
-
-
-        #submitReviewBtn:hover {
-
-            background: #0056b3;
-
-        }
-
-
-        #submitReviewBtn:disabled {
-
-            background: #999;
-
-            cursor: not-allowed;
-
-        }
-
-
-        #reviewMessage {
-
-            margin-top: 15px;
-
-            text-align: center;
-
-            font-weight: bold;
-
-        }
-
-    </style>
-
 </head>
 
 
 <body>
 
 
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
 
     <header class="site-header">
 
         <div class="nav-container">
+
 
             <div class="logo">
 
@@ -444,6 +137,7 @@
                     />
 
                 </svg>
+
 
                 <span>
                     Akkhil Portfolio
@@ -464,66 +158,98 @@
 
 
             <nav
-                aria-label="Main Navigation"
                 id="mainNav"
+                aria-label="Main Navigation"
             >
 
                 <ul class="nav-links">
 
+
                     <li>
+
                         <a
                             href="index.html"
                             class="active"
                         >
+
                             Home
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="about.html">
+
                             About
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="expertise.html">
+
                             Expertise
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="projects.html">
+
                             Projects
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="blog.html">
+
                             Blog
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="contact.html">
+
                             Contact
+
                         </a>
+
                     </li>
+
 
                 </ul>
 
             </nav>
+
 
         </div>
 
     </header>
 
 
-    <!-- MAIN -->
+    <!-- ================= MAIN ================= -->
 
     <main>
 
 
-        <!-- HERO SECTION -->
+        <!-- ================= HERO SECTION ================= -->
 
         <section
             id="home-hero"
@@ -547,15 +273,20 @@
 
                 <div class="hero-text-wrapper">
 
+
                     <h1>
+
                         Akkhil Kapoor
+
                     </h1>
 
 
                     <p>
 
                         <b>
+
                             Professional Accounts &amp; IT Trainer | Educator in Ambala
+
                         </b>
 
                     </p>
@@ -574,11 +305,14 @@
 
                     <div class="btn-container">
 
+
                         <a
                             href="projects.html"
                             class="cta-btn btn-primary"
                         >
+
                             View My Work
+
                         </a>
 
 
@@ -587,19 +321,24 @@
                             target="_blank"
                             class="cta-btn btn-secondary"
                         >
+
                             My Resume
+
                         </a>
+
 
                     </div>
 
+
                 </div>
+
 
             </div>
 
         </section>
 
 
-        <!-- STUDENT REVIEWS -->
+        <!-- ================= STUDENT REVIEWS ================= -->
 
         <section
             class="reviews-section"
@@ -611,8 +350,11 @@
             "
         >
 
+
             <h2>
+
                 Student Reviews & Feedback
+
             </h2>
 
 
@@ -627,6 +369,7 @@
                     font-weight: bold;
                     cursor: pointer;
                     margin-bottom: 25px;
+                    transition: 0.3s;
                 "
             >
 
@@ -653,19 +396,28 @@
 
             </div>
 
+
         </section>
+
 
     </main>
 
 
-    <!-- REVIEW MODAL -->
+    <!-- ================= REVIEW MODAL ================= -->
 
-    <div id="reviewModal">
+    <div
+        id="reviewModal"
+    >
 
-        <div class="review-modal-box">
+
+        <div
+            class="review-modal-box"
+        >
 
 
-            <span id="closeReviewBtn">
+            <span
+                id="closeReviewBtn"
+            >
 
                 &times;
 
@@ -673,18 +425,29 @@
 
 
             <h3>
+
                 Submit Your Review
+
             </h3>
 
 
-            <form id="reviewForm">
+            <form
+                id="reviewForm"
+            >
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewName">
+                    <label
+                        for="reviewName"
+                    >
+
                         Your Name
+
                     </label>
+
 
                     <input
                         type="text"
@@ -695,11 +458,18 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewEmail">
+                    <label
+                        for="reviewEmail"
+                    >
+
                         Email Address
+
                     </label>
+
 
                     <input
                         type="email"
@@ -710,11 +480,18 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewPhone">
+                    <label
+                        for="reviewPhone"
+                    >
+
                         Phone Number
+
                     </label>
+
 
                     <input
                         type="tel"
@@ -725,11 +502,18 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewRating">
+                    <label
+                        for="reviewRating"
+                    >
+
                         Rating
+
                     </label>
+
 
                     <select
                         id="reviewRating"
@@ -737,39 +521,64 @@
                     >
 
                         <option value="">
+
                             Select Rating
+
                         </option>
+
 
                         <option value="5">
+
                             ⭐⭐⭐⭐⭐ Excellent
+
                         </option>
+
 
                         <option value="4">
+
                             ⭐⭐⭐⭐ Very Good
+
                         </option>
+
 
                         <option value="3">
+
                             ⭐⭐⭐ Good
+
                         </option>
+
 
                         <option value="2">
+
                             ⭐⭐ Needs Improvement
+
                         </option>
 
+
                         <option value="1">
+
                             ⭐ Poor
+
                         </option>
+
 
                     </select>
 
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewText">
+                    <label
+                        for="reviewText"
+                    >
+
                         Your Feedback
+
                     </label>
+
 
                     <textarea
                         id="reviewText"
@@ -790,20 +599,29 @@
                 </button>
 
 
-                <p id="reviewMessage"></p>
+                <p
+                    id="reviewMessage"
+                ></p>
+
 
             </form>
 
+
         </div>
+
 
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- ================= FOOTER ================= -->
 
-    <footer class="site-footer">
+    <footer
+        class="site-footer"
+    >
 
-        <div class="footer-container">
+        <div
+            class="footer-container"
+        >
 
             <p>
 
@@ -817,9 +635,14 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script>
+
+
+        /* =====================================================
+           SUPABASE CONFIGURATION
+        ===================================================== */
 
 
         const SUPABASE_URL =
@@ -828,6 +651,11 @@
 
         const SUPABASE_KEY =
             "sb_publishable_SsDcoVpYs44Q99CRyS2Wmw_GTCxubIE";
+
+
+        /* =====================================================
+           DOM ELEMENTS
+        ===================================================== */
 
 
         const reviewsContainer =
@@ -872,7 +700,10 @@
             );
 
 
-        /* OPEN REVIEW MODAL */
+        /* =====================================================
+           OPEN REVIEW MODAL
+        ===================================================== */
+
 
         openReviewBtn.addEventListener(
 
@@ -888,7 +719,10 @@
         );
 
 
-        /* CLOSE REVIEW MODAL */
+        /* =====================================================
+           CLOSE REVIEW MODAL
+        ===================================================== */
+
 
         closeReviewBtn.addEventListener(
 
@@ -911,10 +745,8 @@
             function (event) {
 
                 if (
-
                     event.target ===
                     reviewModal
-
                 ) {
 
                     reviewModal.style.display =
@@ -927,7 +759,10 @@
         );
 
 
-        /* LOAD REVIEWS */
+        /* =====================================================
+           LOAD APPROVED REVIEWS
+        ===================================================== */
+
 
         async function fetchReviews() {
 
@@ -938,11 +773,7 @@
                 const response =
                     await fetch(
 
-                        SUPABASE_URL +
-                        "/rest/v1/student_reviews" +
-                        "?Approved=eq.true" +
-                        "&select=Name,Rating,Review" +
-                        "&order=Created_at.desc",
+                        `${SUPABASE_URL}/rest/v1/student_reviews?Approved=eq.true&select=Name,Rating,Review&order=Created_at.desc`,
 
                         {
 
@@ -955,11 +786,7 @@
                                     SUPABASE_KEY,
 
                                 "Authorization":
-                                    "Bearer " +
-                                    SUPABASE_KEY,
-
-                                "Content-Type":
-                                    "application/json"
+                                    `Bearer ${SUPABASE_KEY}`
 
                             }
 
@@ -968,7 +795,9 @@
                     );
 
 
-                if (!response.ok) {
+                if (
+                    !response.ok
+                ) {
 
                     throw new Error(
                         "Failed to load reviews"
@@ -986,10 +815,8 @@
 
 
                 if (
-
-                    !Array.isArray(data) ||
+                    !data ||
                     data.length === 0
-
                 ) {
 
                     reviewsContainer.innerHTML = `
@@ -1028,7 +855,7 @@
 
 
                         const rating =
-                            Number(
+                            parseInt(
                                 item.Rating
                             ) || 5;
 
@@ -1044,9 +871,14 @@
                             "";
 
 
+                        /*
+                            REVIEW CARD HTML
+                        */
+
+
                         reviewCard.innerHTML = `
 
-                            <div>
+                            <div class="review-card-content">
 
                                 <div
                                     style="
@@ -1066,9 +898,7 @@
                                         "
                                     >
 
-                                        ${escapeHTML(
-                                            item.Name
-                                        )}
+                                        ${escapeHTML(item.Name)}
 
                                     </strong>
 
@@ -1087,24 +917,23 @@
 
 
                                 <p
-                                    class="review-text collapsed"
+                                    class="review-text"
                                 >
 
-                                    "${escapeHTML(
-                                        reviewText
-                                    )}"
+                                    "${escapeHTML(reviewText)}"
 
                                 </p>
 
 
                                 <button
-                                    class="read-more-review"
+                                    class="read-review-btn"
                                     type="button"
                                 >
 
                                     Read More
 
                                 </button>
+
 
                             </div>
 
@@ -1119,21 +948,16 @@
 
                         const readMoreBtn =
                             reviewCard.querySelector(
-                                ".read-more-review"
+                                ".read-review-btn"
                             );
 
 
-                        reviewsContainer.appendChild(
-                            reviewCard
-                        );
-
-
                         /*
-                            Check after card is
-                            added to page
+                            CHECK IF REVIEW IS ACTUALLY LONG
                         */
 
-                        requestAnimationFrame(
+
+                        setTimeout(
 
                             function () {
 
@@ -1150,9 +974,16 @@
 
                                 }
 
-                            }
+                            },
+
+                            100
 
                         );
+
+
+                        /*
+                            READ MORE / READ LESS
+                        */
 
 
                         readMoreBtn.addEventListener(
@@ -1162,31 +993,38 @@
                             function () {
 
 
-                                const isCollapsed =
+                                if (
+
                                     textElement.classList.contains(
-                                        "collapsed"
-                                    );
+                                        "expanded"
+                                    )
 
+                                ) {
 
-                                if (isCollapsed) {
 
                                     textElement.classList.remove(
-                                        "collapsed"
+                                        "expanded"
                                     );
+
+
+                                    readMoreBtn.textContent =
+                                        "Read More";
+
+
+                                }
+
+
+                                else {
+
+
+                                    textElement.classList.add(
+                                        "expanded"
+                                    );
+
 
                                     readMoreBtn.textContent =
                                         "Read Less";
 
-                                }
-
-                                else {
-
-                                    textElement.classList.add(
-                                        "collapsed"
-                                    );
-
-                                    readMoreBtn.textContent =
-                                        "Read More";
 
                                 }
 
@@ -1194,9 +1032,16 @@
 
                         );
 
+
+                        reviewsContainer.appendChild(
+                            reviewCard
+                        );
+
+
                     }
 
                 );
+
 
             }
 
@@ -1228,10 +1073,14 @@
 
             }
 
+
         }
 
 
-        /* SUBMIT REVIEW */
+        /* =====================================================
+           SUBMIT REVIEW
+        ===================================================== */
+
 
         reviewForm.addEventListener(
 
@@ -1305,8 +1154,7 @@
                     const response =
                         await fetch(
 
-                            SUPABASE_URL +
-                            "/rest/v1/student_reviews",
+                            `${SUPABASE_URL}/rest/v1/student_reviews`,
 
                             {
 
@@ -1322,8 +1170,7 @@
                                         SUPABASE_KEY,
 
                                     "Authorization":
-                                        "Bearer " +
-                                        SUPABASE_KEY,
+                                        `Bearer ${SUPABASE_KEY}`,
 
                                     "Prefer":
                                         "return=minimal"
@@ -1344,7 +1191,7 @@
                                             phone,
 
                                         Rating:
-                                            Number(
+                                            parseInt(
                                                 rating
                                             ),
 
@@ -1361,15 +1208,17 @@
                         );
 
 
-                    if (!response.ok) {
+                    if (
+                        !response.ok
+                    ) {
 
 
-                        const errorText =
+                        const errorData =
                             await response.text();
 
 
                         console.error(
-                            errorText
+                            errorData
                         );
 
 
@@ -1395,8 +1244,10 @@
 
                         function () {
 
+
                             reviewModal.style.display =
                                 "none";
+
 
                             reviewMessage.textContent =
                                 "";
@@ -1406,6 +1257,7 @@
                         2500
 
                     );
+
 
                 }
 
@@ -1441,14 +1293,20 @@
 
                 }
 
+
             }
 
         );
 
 
-        /* ESCAPE HTML */
+        /* =====================================================
+           ESCAPE HTML
+        ===================================================== */
 
-        function escapeHTML(text) {
+
+        function escapeHTML(
+            text
+        ) {
 
 
             const div =
@@ -1467,7 +1325,10 @@
         }
 
 
-        /* MOBILE MENU */
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
 
         const mobileMenuBtn =
             document.getElementById(
@@ -1517,7 +1378,9 @@
                         "fa-times"
                     );
 
+
                 }
+
 
                 else {
 
@@ -1538,7 +1401,10 @@
         );
 
 
-        /* START */
+        /* =====================================================
+           LOAD REVIEWS
+        ===================================================== */
+
 
         fetchReviews();
 
