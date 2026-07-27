@@ -1064,77 +1064,67 @@
 
                         reviewCard.innerHTML = `
 
-                            <div>
+    <div>
 
-                                <div
-                                    style="
-                                        display: flex;
-                                        justify-content: space-between;
-                                        align-items: center;
-                                        margin-bottom: 8px;
-                                        flex-wrap: wrap;
-                                        gap: 5px;
-                                    "
-                                >
+        <div
+            style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+                flex-wrap: wrap;
+                gap: 5px;
+            "
+        >
 
-                                    <strong
-                                        style="
-                                            font-size: 1em;
-                                            color: #333;
-                                        "
-                                    >
+            <strong
+                style="
+                    font-size: 1em;
+                    color: #333;
+                "
+            >
 
-                                        ${escapeHTML(
-                                            item.Name
-                                        )}
+                ${escapeHTML(item.Name)}
 
-                                    </strong>
+            </strong>
 
 
-                                    <span
-                                        style="
-                                            font-size: 0.9em;
-                                        "
-                                    >
+            <span
+                style="
+                    font-size: 0.9em;
+                "
+            >
 
-                                        ${ratingStars}
+                ${ratingStars}
 
-                                    </span>
+            </span>
 
-                                </div>
-
-
-                                <div
-                                    class="review-text-wrapper"
-                                >
-
-                                    <p
-                                        class="review-text collapsed"
-                                    >
-
-                                        "${escapeHTML(
-                                            reviewText
-                                        )}"
-
-                                    </p>
+        </div>
 
 
-                                    <button
-                                        class="read-more-review"
-                                        type="button"
-                                    >
+        <div class="review-text-wrapper">
 
-                                        Read More
+            <p class="review-text collapsed">
 
-                                    </button>
+                "${escapeHTML(reviewText)}"
 
-                                </div>
-
-                            </div>
-
-                        `;
+            </p>
 
 
+            <button
+                class="read-more-review"
+                type="button"
+            >
+
+                Read More
+
+            </button>
+
+        </div>
+
+    </div>
+
+`;
                         const textElement =
                             reviewCard.querySelector(
                                 ".review-text"
