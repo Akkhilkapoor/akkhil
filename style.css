@@ -1,10 +1,13 @@
 /* =====================================================
-   AKKHIL KAPOOR PORTFOLIO - COMPLETE STYLE.CSS
+   AKKHIL KAPOOR PORTFOLIO
+   COMPLETE RESPONSIVE STYLE.CSS
+   Desktop | Laptop | Tablet | Mobile
 ===================================================== */
 
-/* ===============================
-   RESET
-=============================== */
+
+/* =====================================================
+   RESET & GLOBAL
+===================================================== */
 
 * {
     margin: 0;
@@ -21,15 +24,33 @@ body {
     background: #f5f7fb;
     color: #1f2937;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* ===============================
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
    HEADER
-=============================== */
+===================================================== */
 
 .site-header {
+    width: 100%;
     background: #111827;
-    color: white;
+    color: #ffffff;
     padding: 15px 30px;
     position: sticky;
     top: 0;
@@ -38,57 +59,78 @@ body {
 }
 
 .nav-container {
+    width: 100%;
     max-width: 1200px;
     margin: auto;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: white;
+
+    color: #ffffff;
     font-size: 21px;
     font-weight: 700;
-    text-decoration: none;
+
+    white-space: nowrap;
 }
 
 .logo svg {
     width: 30px;
     height: 30px;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+    display: block;
 }
 
 .nav-links {
     display: flex;
-    list-style: none;
+    align-items: center;
     gap: 28px;
+    list-style: none;
 }
 
 .nav-links a {
+    position: relative;
+
     color: #d1d5db;
-    text-decoration: none;
     font-size: 15px;
     font-weight: 500;
-    transition: 0.3s;
-    position: relative;
+
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: white;
+    color: #ffffff;
 }
 
 .nav-links a::after {
     content: "";
+
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -7px;
+
     width: 0;
     height: 2px;
+
     background: #3b82f6;
-    transition: 0.3s;
+
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after,
@@ -96,27 +138,36 @@ body {
     width: 100%;
 }
 
-/* ===============================
-   MOBILE MENU
-=============================== */
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
 
 .menu-toggle {
     display: none;
-    background: none;
+
+    background: transparent;
     border: none;
-    color: white;
+
+    color: #ffffff;
     font-size: 24px;
+
     cursor: pointer;
 }
 
-/* ===============================
-   HERO SECTION
-=============================== */
+
+/* =====================================================
+   HERO SECTION - INDEX PAGE
+===================================================== */
 
 .hero-section {
+    width: 100%;
     min-height: 600px;
+
     display: flex;
     align-items: center;
+
+    color: #ffffff;
 
     background:
         linear-gradient(
@@ -128,13 +179,12 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    color: white;
 }
 
 .hero-container {
     width: 90%;
     max-width: 1150px;
+
     margin: auto;
 
     display: grid;
@@ -144,24 +194,24 @@ body {
     align-items: center;
 }
 
-/* ===============================
+
+/* =====================================================
    HERO PROFILE IMAGE
-=============================== */
+===================================================== */
 
 .hero-image-wrapper {
     width: 100%;
     height: 420px;
 
-    border-radius: 18px;
+    overflow: hidden;
 
+    border-radius: 18px;
     border: 5px solid rgba(255, 255, 255, 0.9);
+
+    background: #ffffff;
 
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.45);
-
-    overflow: hidden;
-
-    background: #ffffff;
 }
 
 .hero-image-wrapper img,
@@ -172,57 +222,64 @@ body {
     height: 100%;
 
     object-fit: cover;
-
     object-position: center;
-
-    border: none;
 }
 
-/* ===============================
+
+/* =====================================================
    HERO TEXT
-=============================== */
+===================================================== */
 
 .hero-text-wrapper h1 {
-    font-size: 52px;
     margin-bottom: 12px;
+
+    font-size: 52px;
+    line-height: 1.2;
     font-weight: 800;
 }
 
 .hero-text-wrapper > p:first-of-type {
-    font-size: 21px;
-    color: #93c5fd;
     margin-bottom: 20px;
+
+    color: #93c5fd;
+    font-size: 21px;
 }
 
 .hero-text-wrapper p {
+    color: #e5e7eb;
+
     font-size: 17px;
     line-height: 1.8;
-    color: #e5e7eb;
 }
 
-/* ===============================
+
+/* =====================================================
    BUTTONS
-=============================== */
+===================================================== */
 
 .btn-container {
     display: flex;
-    gap: 15px;
-    margin-top: 30px;
     flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 30px;
 }
 
 .cta-btn {
     display: inline-block;
+
     padding: 12px 25px;
+
     border-radius: 7px;
-    text-decoration: none;
+
     font-weight: 600;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
     background: #2563eb;
-    color: white;
+    color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -232,21 +289,24 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 1px solid white;
+    color: #ffffff;
+
+    border: 1px solid #ffffff;
 }
 
 .btn-secondary:hover {
-    background: white;
+    background: #ffffff;
     color: #111827;
 }
 
-/* ===============================
+
+/* =====================================================
    COMMON PAGE CONTENT
-=============================== */
+===================================================== */
 
 .main-content-padding {
-    padding: 50px 20px;
+    width: 100%;
+    padding: 60px 20px;
 }
 
 .container {
@@ -256,43 +316,64 @@ body {
 }
 
 .section-header {
+    max-width: 850px;
+
+    margin: 0 auto 40px;
+
     text-align: center;
-    margin-bottom: 35px;
 }
 
 .section-header h2 {
-    font-size: 36px;
     color: #111827;
+    font-size: 36px;
+    line-height: 1.3;
+}
+
+.section-header p {
+    margin-top: 15px;
+    color: #6b7280;
 }
 
 .underline {
     width: 70px;
     height: 4px;
-    background: #2563eb;
+
     margin: 12px auto;
+
+    background: #2563eb;
+
     border-radius: 5px;
 }
 
-/* ===============================
+
+/* =====================================================
    ABOUT PAGE
-=============================== */
+===================================================== */
 
 .about-section-wrapper {
     padding: 20px 0 50px;
 }
 
 .about-content {
-    background: white;
+    width: 100%;
+
     padding: 35px;
+
+    background: #ffffff;
+
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
 }
 
 .intro-text {
+    margin-bottom: 15px;
+
+    color: #2563eb;
+
     font-size: 25px;
     font-weight: 700;
-    color: #2563eb;
-    margin-bottom: 15px;
 }
 
 .about-content p {
@@ -305,21 +386,25 @@ body {
 
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 25px;
+
     margin-top: 30px;
 }
 
 .info-block {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
     padding: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
 }
 
 .info-block h3 {
-    color: #111827;
     margin-bottom: 12px;
+    color: #111827;
 }
 
 .icon-gap {
@@ -336,8 +421,8 @@ body {
 }
 
 .list-icon {
-    color: #16a34a;
     margin-left: 8px;
+    color: #16a34a;
 }
 
 .full-width-block {
@@ -348,93 +433,220 @@ body {
     margin-top: 25px;
 }
 
-/* ===============================
+
+/* =====================================================
    EXPERTISE PAGE
-=============================== */
+===================================================== */
 
 .expertise-section {
+    width: 100%;
     padding: 60px 20px;
 }
 
 .expertise-grid {
     width: 90%;
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .expertise-card {
-    background: #ffffff;
+    min-height: 100%;
 
     padding: 30px 25px;
 
-    border-radius: 12px;
+    background: #ffffff;
 
     border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    text-align: center;
 
     box-shadow:
         0 5px 18px rgba(0, 0, 0, 0.06);
 
-    transition: 0.3s ease;
-
-    text-align: center;
+    transition: all 0.3s ease;
 }
 
 .expertise-card:hover {
     transform: translateY(-6px);
 
+    border-color: #2563eb;
+
     box-shadow:
         0 12px 28px rgba(0, 0, 0, 0.12);
-
-    border-color: #2563eb;
 }
 
-.expertise-card i {
-    font-size: 40px;
+.expertise-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 18px;
+
+    background: #eff6ff;
+
+    border-radius: 50%;
+}
+
+.expertise-icon i {
     color: #2563eb;
-    margin-bottom: 18px;
+    font-size: 36px;
 }
 
 .expertise-card h3 {
-    font-size: 21px;
-    color: #111827;
     margin-bottom: 12px;
+
+    color: #111827;
+
+    font-size: 21px;
+    line-height: 1.4;
 }
 
 .expertise-card p {
+    margin-bottom: 18px;
+
     color: #6b7280;
+
     line-height: 1.7;
 }
 
-/* ===============================
+.expertise-card ul {
+    padding-left: 20px;
+
+    text-align: left;
+}
+
+.expertise-card li {
+    margin-bottom: 8px;
+
+    color: #374151;
+}
+
+
+/* =====================================================
+   PROJECTS PAGE
+===================================================== */
+
+.projects-section {
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.projects-grid {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 22px;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
+
+    color: #111827;
+    font-size: 21px;
+}
+
+.project-content p {
+    margin-bottom: 15px;
+
+    color: #6b7280;
+}
+
+.project-link {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    background: #1d4ed8;
+}
+
+
+/* =====================================================
    REVIEWS
-=============================== */
+===================================================== */
 
 .reviews-section {
+    width: 100%;
     background: #ffffff;
 }
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
     gap: 20px;
 
     text-align: left;
 }
 
 .review-card {
+    padding: 18px;
+
     background: #f9fafb;
 
     border: 1px solid #e5e7eb;
-
-    padding: 18px;
-
     border-radius: 10px;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .review-card:hover {
@@ -444,52 +656,48 @@ body {
         0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ===============================
+
+/* =====================================================
    REVIEW MODAL
-=============================== */
+===================================================== */
 
 #reviewModal {
     display: none;
 
     position: fixed;
-
     inset: 0;
-
-    background: rgba(0, 0, 0, 0.65);
 
     z-index: 2000;
 
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
-
     padding: 20px;
+
+    background: rgba(0, 0, 0, 0.65);
 }
 
 .review-modal-box {
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 12px;
+    position: relative;
 
     width: 90%;
-
     max-width: 500px;
-
     max-height: 90vh;
 
     overflow-y: auto;
 
-    position: relative;
+    padding: 25px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
 }
 
 #closeReviewBtn {
     position: absolute;
 
-    right: 18px;
-
     top: 10px;
+    right: 18px;
 
     font-size: 28px;
 
@@ -503,9 +711,9 @@ body {
 .review-form-group label {
     display: block;
 
-    font-weight: bold;
-
     margin-bottom: 5px;
+
+    font-weight: bold;
 }
 
 .review-form-group input,
@@ -516,7 +724,6 @@ body {
     padding: 11px;
 
     border: 1px solid #d1d5db;
-
     border-radius: 6px;
 
     font-size: 15px;
@@ -528,16 +735,16 @@ body {
     padding: 12px;
 
     background: #2563eb;
-
-    color: white;
+    color: #ffffff;
 
     border: none;
-
     border-radius: 6px;
+
+    font-weight: bold;
 
     cursor: pointer;
 
-    font-weight: bold;
+    transition: 0.3s;
 }
 
 #submitReviewBtn:hover {
@@ -546,22 +753,23 @@ body {
 
 #submitReviewBtn:disabled {
     background: #9ca3af;
-
     cursor: not-allowed;
 }
 
-/* ===============================
+
+/* =====================================================
    BLOG PAGE
-=============================== */
+===================================================== */
 
 .blog-page-header {
-    background: #111827;
-
-    color: white;
-
-    text-align: center;
+    width: 100%;
 
     padding: 65px 20px;
+
+    background: #111827;
+    color: #ffffff;
+
+    text-align: center;
 }
 
 .blog-page-header h1 {
@@ -569,41 +777,38 @@ body {
 }
 
 .blog-page-header p {
+    margin-top: 10px;
     color: #cbd5e1;
 }
 
 .blogs-grid {
-    display: grid;
+    width: 90%;
+    max-width: 1100px;
 
+    margin: 40px auto;
+
+    display: grid;
     grid-template-columns:
         repeat(auto-fit, minmax(280px, 1fr));
 
     gap: 25px;
-
-    margin: 40px auto;
-
-    width: 90%;
-
-    max-width: 1100px;
 }
 
 .blog-card {
-    background: white;
-
-    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
 
     overflow: hidden;
 
+    background: #ffffff;
+
     border: 1px solid #e5e7eb;
+    border-radius: 12px;
 
     box-shadow:
         0 5px 18px rgba(0, 0, 0, 0.06);
 
-    transition: 0.3s;
-
-    display: flex;
-
-    flex-direction: column;
+    transition: all 0.3s ease;
 }
 
 .blog-card:hover {
@@ -614,73 +819,71 @@ body {
 }
 
 .blog-card img {
-    width: 100%;
+    display: block;
 
+    width: 100%;
     height: 210px;
 
     object-fit: cover;
 }
 
 .blog-content {
-    padding: 22px;
-
     display: flex;
-
     flex-direction: column;
-
     flex-grow: 1;
+
+    padding: 22px;
 }
 
 .blog-content h2 {
     margin-bottom: 10px;
-
     font-size: 21px;
 }
 
 .blog-content p {
-    color: #6b7280;
-
     flex-grow: 1;
+    color: #6b7280;
 }
 
 .read-more {
+    align-self: flex-start;
+
     display: inline-block;
 
     margin-top: 15px;
 
-    background: #2563eb;
-
-    color: white;
-
     padding: 9px 18px;
+
+    background: #2563eb;
+    color: #ffffff;
 
     border-radius: 6px;
 
-    text-decoration: none;
-
-    align-self: flex-start;
+    transition: 0.3s;
 }
 
 .read-more:hover {
     background: #1d4ed8;
 }
 
-/* ===============================
-   BLOG DETAIL
-=============================== */
+
+/* =====================================================
+   BLOG DETAIL PAGE
+===================================================== */
 
 .blog-detail-section {
-    padding: 50px 20px;
-
+    width: 100%;
     max-width: 1000px;
 
     margin: auto;
+
+    padding: 50px 20px;
 }
 
 .blog-detail-container {
-    background: white;
-
     padding: 35px;
+
+    background: #ffffff;
 
     border-radius: 12px;
 
@@ -696,10 +899,7 @@ body {
     padding: 10px 18px;
 
     background: #2563eb;
-
-    color: white;
-
-    text-decoration: none;
+    color: #ffffff;
 
     border-radius: 6px;
 }
@@ -709,44 +909,43 @@ body {
 }
 
 .blog-detail-title {
-    font-size: 42px;
-
-    line-height: 1.25;
-
     margin-bottom: 15px;
+
+    font-size: 42px;
+    line-height: 1.25;
 }
 
 .blog-date {
-    color: #777;
-
     margin-bottom: 25px;
+    color: #777777;
 }
 
 .blog-detail-image {
-    width: 100%;
+    display: block;
 
+    width: 100%;
     max-height: 550px;
+
+    margin-bottom: 30px;
 
     object-fit: cover;
 
     border-radius: 10px;
-
-    margin-bottom: 30px;
 }
 
 .blog-detail-content {
-    font-size: 18px;
+    color: #333333;
 
+    font-size: 18px;
     line-height: 1.8;
 
-    color: #333;
+    overflow-wrap: break-word;
 }
 
 .blog-detail-content h1,
 .blog-detail-content h2,
 .blog-detail-content h3 {
     margin-top: 30px;
-
     margin-bottom: 15px;
 }
 
@@ -757,29 +956,27 @@ body {
 .blog-detail-content ul,
 .blog-detail-content ol {
     margin-bottom: 20px;
-
     padding-left: 30px;
 }
 
 .blog-detail-content img {
     max-width: 100%;
-
     height: auto;
 
-    border-radius: 8px;
-
     margin: 20px 0;
+
+    border-radius: 8px;
 }
 
 .blog-detail-content a {
     color: #2563eb;
-
     text-decoration: underline;
 }
 
-/* ===============================
+
+/* =====================================================
    BLOG VIDEO
-=============================== */
+===================================================== */
 
 .blog-video {
     margin-top: 35px;
@@ -791,30 +988,31 @@ body {
 
 .blog-video iframe {
     width: 100%;
-
     height: 500px;
 
     border: none;
-
     border-radius: 10px;
 }
 
-/* ===============================
-   CONTACT FORM
-=============================== */
+
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
 
 .contact-section {
-    padding: 50px 20px;
+    width: 100%;
+    padding: 60px 20px;
 }
 
 .contact-container {
+    width: 100%;
     max-width: 800px;
 
     margin: auto;
 
-    background: white;
-
     padding: 35px;
+
+    background: #ffffff;
 
     border-radius: 12px;
 
@@ -832,66 +1030,102 @@ body {
     margin-bottom: 15px;
 
     border: 1px solid #d1d5db;
-
     border-radius: 6px;
+
+    font-size: 15px;
+}
+
+.contact-container textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 .contact-container button {
-    background: #2563eb;
-
-    color: white;
-
-    border: none;
-
     padding: 12px 25px;
 
+    background: #2563eb;
+    color: #ffffff;
+
+    border: none;
     border-radius: 6px;
 
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .contact-container button:hover {
     background: #1d4ed8;
 }
 
-/* ===============================
+
+/* =====================================================
    FOOTER
-=============================== */
+===================================================== */
 
 .site-footer {
-    background: #111827;
+    width: 100%;
 
+    margin-top: 40px;
+    padding: 25px 20px;
+
+    background: #111827;
     color: #9ca3af;
 
     text-align: center;
-
-    padding: 25px 20px;
-
-    margin-top: 40px;
 }
 
 .footer-container {
+    width: 90%;
     max-width: 1100px;
 
     margin: auto;
 }
 
-/* ===============================
-   RESPONSIVE DESIGN
-=============================== */
+
+/* =====================================================
+   LARGE TABLET / SMALL LAPTOP
+   901px - 1100px
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .hero-container {
+        gap: 40px;
+    }
+
+    .expertise-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+   769px - 900px
+===================================================== */
 
 @media (max-width: 900px) {
+
+    .site-header {
+        padding: 15px 25px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
 
     .hero-container {
         grid-template-columns: 1fr;
 
         text-align: center;
-
-        gap: 35px;
     }
 
     .hero-image-wrapper {
         width: 300px;
+        height: 380px;
 
         margin: auto;
     }
@@ -900,14 +1134,21 @@ body {
         justify-content: center;
     }
 
-    .expertise-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-text-wrapper h1 {
+        font-size: 44px;
     }
 
     .info-grid {
         grid-template-columns: 1fr;
     }
+
 }
+
+
+/* =====================================================
+   MOBILE
+   768px AND BELOW
+===================================================== */
 
 @media (max-width: 768px) {
 
@@ -923,22 +1164,21 @@ body {
         position: absolute;
 
         top: 100%;
-
         left: 0;
 
         width: 100%;
-
-        background: #111827;
 
         max-height: 0;
 
         overflow: hidden;
 
+        background: #111827;
+
         transition: max-height 0.3s ease;
     }
 
     nav.open {
-        max-height: 400px;
+        max-height: 500px;
     }
 
     .nav-links {
@@ -946,9 +1186,9 @@ body {
 
         gap: 0;
 
-        text-align: center;
-
         padding: 20px;
+
+        text-align: center;
     }
 
     .nav-links li {
@@ -957,13 +1197,15 @@ body {
 
     .hero-section {
         min-height: auto;
-
         padding: 60px 0;
+    }
+
+    .hero-container {
+        width: 90%;
     }
 
     .hero-image-wrapper {
         width: 260px;
-
         height: 330px;
     }
 
@@ -975,24 +1217,41 @@ body {
         font-size: 18px;
     }
 
-    .info-grid {
+    .main-content-padding {
+        padding: 45px 15px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .expertise-grid,
+    .projects-grid {
         grid-template-columns: 1fr;
     }
 
     .about-content {
-        padding: 22px;
+        padding: 25px 20px;
     }
 
-    .expertise-grid {
+    .info-grid {
         grid-template-columns: 1fr;
     }
 
+    .blog-detail-section {
+        padding: 35px 15px;
+    }
+
     .blog-detail-container {
-        padding: 22px;
+        padding: 25px 20px;
     }
 
     .blog-detail-title {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .blog-detail-content {
@@ -1000,9 +1259,20 @@ body {
     }
 
     .blog-video iframe {
-        height: 260px;
+        height: 280px;
     }
+
+    .contact-container {
+        padding: 25px 20px;
+    }
+
 }
+
+
+/* =====================================================
+   SMALL MOBILE
+   480px AND BELOW
+===================================================== */
 
 @media (max-width: 480px) {
 
@@ -1010,9 +1280,13 @@ body {
         font-size: 18px;
     }
 
+    .logo svg {
+        width: 26px;
+        height: 26px;
+    }
+
     .hero-image-wrapper {
         width: 230px;
-
         height: 300px;
     }
 
@@ -1020,11 +1294,64 @@ body {
         font-size: 32px;
     }
 
+    .hero-text-wrapper p {
+        font-size: 15px;
+    }
+
     .section-header h2 {
-        font-size: 30px;
+        font-size: 28px;
+    }
+
+    .expertise-card {
+        padding: 25px 20px;
     }
 
     .blog-page-header h1 {
         font-size: 34px;
     }
+
+    .blog-detail-title {
+        font-size: 28px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-btn {
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+   360px AND BELOW
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .site-header {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero-image-wrapper {
+        width: 210px;
+        height: 280px;
+    }
+
+    .hero-text-wrapper h1 {
+        font-size: 28px;
+    }
+
+    .blog-detail-container {
+        padding: 20px 15px;
+    }
+
 }
