@@ -1,1118 +1,478 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Akkhil Kapoor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 ```
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Blogs | Akkhil Kapoor</title>
-
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-
-    /* ===============================
-       COLOR PALETTE
-    =============================== */
-
     :root {
-
         --primary: #e11d48;
-
         --primary-hover: #be123c;
-
         --primary-light: rgba(225, 29, 72, 0.08);
-
         --bg-main: #f8fafc;
-
         --bg-surface: #ffffff;
-
         --bg-dark: #0f172a;
-
         --text-main: #0f172a;
-
         --text-muted: #64748b;
-
         --text-inverse: #ffffff;
-
-        --font-sans: 'Segoe UI',
-            system-ui,
-            -apple-system,
-            sans-serif;
-
-        --shadow-sm:
-            0 1px 3px rgba(0, 0, 0, 0.05);
-
-        --shadow-md:
-            0 4px 6px -1px rgba(15, 23, 42, 0.05),
-            0 2px 4px -1px rgba(15, 23, 42, 0.03);
-
-        --shadow-lg:
-            0 20px 40px rgba(15, 23, 42, 0.06);
-
-        --transition:
-            all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-
+        --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+        --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.06);
+        --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         --radius-sm: 6px;
-
         --radius-md: 12px;
-
     }
-
-
-    /* ===============================
-       RESET
-    =============================== */
 
     * {
-
         margin: 0;
-
         padding: 0;
-
         box-sizing: border-box;
-
         font-family: var(--font-sans);
-
     }
-
 
     html {
-
         scroll-behavior: smooth;
-
     }
-
 
     body {
-
         background-color: var(--bg-main);
-
         color: var(--text-main);
-
         line-height: 1.7;
-
         -webkit-font-smoothing: antialiased;
-
     }
-
-
-    /* ===============================
-       HEADER
-    =============================== */
 
     header.site-header {
-
         position: fixed;
-
         top: 0;
-
         left: 0;
-
         width: 100%;
-
-        background-color:
-            rgba(15, 23, 42, 0.85);
-
+        background-color: rgba(15, 23, 42, 0.85);
         backdrop-filter: blur(12px);
-
         -webkit-backdrop-filter: blur(12px);
-
         padding: 16px 50px;
-
         display: flex;
-
         justify-content: space-between;
-
         align-items: center;
-
         z-index: 1000;
-
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.06);
-
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         box-shadow: var(--shadow-sm);
-
     }
-
 
     .nav-container {
-
         display: flex;
-
         justify-content: space-between;
-
         align-items: center;
-
         width: 100%;
-
         max-width: 1200px;
-
         margin: 0 auto;
-
     }
-
 
     .logo {
-
         color: var(--text-inverse);
-
         font-size: 22px;
-
         font-weight: 700;
-
         letter-spacing: -0.5px;
-
         display: flex;
-
         align-items: center;
-
         gap: 12px;
-
         text-decoration: none;
-
     }
-
 
     .logo svg {
-
         width: 26px;
-
         height: 26px;
-
         fill: var(--text-inverse);
-
     }
-
-
-    /* ===============================
-       NAVIGATION
-    =============================== */
 
     .nav-links {
-
         display: flex;
-
         list-style: none;
-
         align-items: center;
-
     }
-
 
     .nav-links li {
-
         margin-left: 30px;
-
     }
-
 
     .nav-links a {
-
-        color:
-            rgba(255, 255, 255, 0.8);
-
+        color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
-
         font-size: 15px;
-
         font-weight: 500;
-
         transition: var(--transition);
-
         padding: 6px 0;
-
         position: relative;
-
         letter-spacing: 0.3px;
-
     }
-
 
     .nav-links a::after {
-
         content: '';
-
         position: absolute;
-
         width: 0;
-
         height: 2px;
-
         bottom: 0;
-
         left: 0;
-
-        background-color:
-            var(--text-inverse);
-
+        background-color: var(--text-inverse);
         transition: var(--transition);
-
     }
-
 
     .nav-links a.active,
-
     .nav-links a:hover {
-
         color: var(--text-inverse);
-
     }
-
 
     .nav-links a.active::after,
-
     .nav-links a:hover::after {
-
         width: 100%;
-
     }
-
 
     .menu-toggle {
-
         display: none;
-
         background: none;
-
         border: none;
-
         color: var(--text-inverse);
-
         font-size: 22px;
-
         cursor: pointer;
-
     }
-
 
     main {
-
         padding-top: 72px;
-
     }
-
-
-    /* ===============================
-       BLOG HEADER
-    =============================== */
 
     .blog-page-header {
-
-        background:
-            linear-gradient(
-                rgba(15, 23, 42, 0.88),
-                rgba(15, 23, 42, 0.94)
-            );
-
+        background: linear-gradient(
+            rgba(15, 23, 42, 0.88),
+            rgba(15, 23, 42, 0.94)
+        );
         color: var(--text-inverse);
-
         padding: 60px 20px;
-
         text-align: center;
-
     }
-
 
     .blog-page-header h1 {
-
         font-size: 38px;
-
         font-weight: 800;
-
         letter-spacing: -0.5px;
-
         margin-bottom: 10px;
-
     }
-
 
     .blog-page-header p {
-
         font-size: 17px;
-
         color: #cbd5e1;
-
     }
-
-
-    /* ===============================
-       BLOG CONTAINER
-    =============================== */
 
     .container {
-
         max-width: 1100px;
-
         margin: 40px auto;
-
         padding: 0 20px;
-
     }
-
 
     .blogs-grid {
-
         display: grid;
-
-        grid-template-columns:
-            repeat(
-                auto-fit,
-                minmax(280px, 1fr)
-            );
-
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
-
         width: 100%;
-
     }
-
-
-    /* ===============================
-       BLOG CARD
-    =============================== */
 
     .blog-card {
-
         background: var(--bg-surface);
-
         border-radius: var(--radius-md);
-
         overflow: hidden;
-
         box-shadow: var(--shadow-md);
-
         border: 1px solid #e2e8f0;
-
         display: flex;
-
         flex-direction: column;
-
         transition: var(--transition);
-
     }
-
 
     .blog-card:hover {
-
         transform: translateY(-6px);
-
         box-shadow: var(--shadow-lg);
-
         border-color: var(--primary);
-
     }
-
 
     .blog-card img {
-
         width: 100%;
-
         height: 220px;
-
         object-fit: cover;
-
     }
-
 
     .blog-content {
-
         padding: 24px;
-
         display: flex;
-
         flex-direction: column;
-
         flex-grow: 1;
-
     }
-
 
     .blog-content h2 {
-
         margin-top: 0;
-
         margin-bottom: 12px;
-
         font-size: 20px;
-
         font-weight: 700;
-
         color: var(--text-main);
-
     }
-
 
     .blog-content p {
-
         color: var(--text-muted);
-
         line-height: 1.6;
-
         font-size: 15px;
-
         flex-grow: 1;
-
     }
-
 
     .read-more {
-
         display: inline-flex;
-
         align-items: center;
-
         justify-content: center;
-
         margin-top: 18px;
-
         padding: 10px 20px;
-
         background: var(--bg-dark);
-
         color: var(--text-inverse);
-
         text-decoration: none;
-
         border-radius: var(--radius-sm);
-
         font-weight: 600;
-
         font-size: 14px;
-
         transition: var(--transition);
-
         align-self: flex-start;
-
     }
-
 
     .read-more:hover {
-
         background: var(--primary);
-
-        box-shadow:
-            0 4px 12px
-            rgba(225, 29, 72, 0.3);
-
+        box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
     }
-
 
     .no-blogs,
-
     .loading {
-
         text-align: center;
-
         color: var(--text-muted);
-
         font-size: 16px;
-
         grid-column: 1 / -1;
-
         padding: 40px 0;
-
     }
-
-
-    /* ===============================
-       FOOTER
-    =============================== */
 
     footer {
-
         background-color: var(--bg-dark);
-
         color: #94a3b8;
-
         text-align: center;
-
         padding: 40px 20px;
-
         font-size: 14px;
-
         border-top: 4px solid var(--primary);
-
         margin-top: 60px;
-
     }
-
 
     footer p {
-
         letter-spacing: 0.5px;
-
     }
-
-
-    /* ===============================
-       MOBILE
-    =============================== */
 
     @media (max-width: 768px) {
-
         header.site-header {
-
             padding: 16px 24px;
-
         }
-
 
         .menu-toggle {
-
             display: block;
-
         }
-
 
         header.site-header nav {
-
             position: absolute;
-
             top: 100%;
-
             left: 0;
-
             width: 100%;
-
-            background-color:
-                rgba(15, 23, 42, 0.95);
-
+            background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(16px);
-
             -webkit-backdrop-filter: blur(16px);
-
-            border-bottom:
-                1px solid
-                rgba(255, 255, 255, 0.1);
-
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             max-height: 0;
-
             overflow: hidden;
-
-            transition:
-                max-height 0.3s
-                ease-in-out;
-
+            transition: max-height 0.3s ease-in-out;
         }
-
 
         header.site-header nav.open {
-
             max-height: 350px;
-
         }
-
 
         .nav-links {
-
             flex-direction: column;
-
             padding: 20px 0;
-
             width: 100%;
-
             align-items: center;
-
         }
-
 
         .nav-links li {
-
             margin: 12px 0;
-
         }
-
 
         .nav-links a {
-
             font-size: 16px;
-
             display: block;
-
         }
-
 
         .blog-page-header h1 {
-
             font-size: 30px;
-
         }
-
     }
-
 </style>
 ```
 
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z" />
+                </svg>
+                <span>Akkhil Portfolio</span>
+            </a>
 
 ```
-<!-- ===============================
-     HEADER
-=============================== -->
-
-<header class="site-header">
-
-    <div class="nav-container">
-
-
-        <a href="index.html" class="logo">
-
-            <svg viewBox="0 0 24 24" fill="currentColor">
-
-                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z" />
-
-            </svg>
-
-            <span>Akkhil Portfolio</span>
-
-        </a>
-
-
-        <button
-            class="menu-toggle"
-            id="mobileMenuBtn"
-            aria-label="Toggle Navigation">
-
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
             <i class="fas fa-bars"></i>
-
         </button>
 
-
-        <nav
-            aria-label="Main Navigation"
-            id="mainNav">
-
+        <nav aria-label="Main Navigation" id="mainNav">
             <ul class="nav-links">
-
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="expertise.html">
-                        Expertise
-                    </a>
-                </li>
-
-                <li>
-                    <a href="projects.html">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="blog.html"
-                        class="active">
-
-                        Blog
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="expertise.html">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-
         </nav>
-
     </div>
-
 </header>
 
-
-<!-- ===============================
-     MAIN
-=============================== -->
-
 <main>
-
-
     <section class="blog-page-header">
-
-        <h1>
-            My Blogs
-        </h1>
-
-        <p>
-            Latest articles and updates
-        </p>
-
+        <h1>My Blogs</h1>
+        <p>Latest articles and updates</p>
     </section>
 
-
     <div class="container">
-
-        <div
-            id="blogsGrid"
-            class="blogs-grid">
-
-            <p class="loading">
-
-                Loading blogs...
-
-            </p>
-
+        <div id="blogsGrid" class="blogs-grid">
+            <p class="loading">Loading blogs...</p>
         </div>
-
     </div>
-
 </main>
 
-
-<!-- ===============================
-     FOOTER
-=============================== -->
-
 <footer>
-
-    <p>
-        &copy; 2026 Akkhil Kapoor.
-        All Rights Reserved.
-    </p>
-
+    <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
 </footer>
 
-
-<!-- ===============================
-     SUPABASE
-=============================== -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script src="js/supabase-config.js"></script>
 
-
 <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mainNav = document.getElementById("mainNav");
 
+    mobileMenuBtn.addEventListener("click", function() {
+        mainNav.classList.toggle("open");
 
-    /* ===============================
-       MOBILE MENU
-    =============================== */
+        const icon = mobileMenuBtn.querySelector("i");
 
-
-    const mobileMenuBtn =
-        document.getElementById(
-            "mobileMenuBtn"
-        );
-
-
-    const mainNav =
-        document.getElementById(
-            "mainNav"
-        );
-
-
-    mobileMenuBtn.addEventListener(
-
-        "click",
-
-        function () {
-
-            mainNav.classList.toggle(
-                "open"
-            );
-
-
-            const icon =
-                mobileMenuBtn.querySelector(
-                    "i"
-                );
-
-
-            if (
-                mainNav.classList.contains(
-                    "open"
-                )
-            ) {
-
-                icon.classList.remove(
-                    "fa-bars"
-                );
-
-                icon.classList.add(
-                    "fa-times"
-                );
-
-            }
-
-            else {
-
-                icon.classList.remove(
-                    "fa-times"
-                );
-
-                icon.classList.add(
-                    "fa-bars"
-                );
-
-            }
-
+        if (mainNav.classList.contains("open")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+        } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
         }
-
-    );
-
-
-    /* ===============================
-       LOAD BLOGS
-    =============================== */
-
+    });
 
     async function loadPublishedBlogs() {
+        const blogsGrid = document.getElementById("blogsGrid");
 
-
-        const blogsGrid =
-            document.getElementById(
-                "blogsGrid"
-            );
-
-
-        const {
-
-            data: blogs,
-
-            error
-
-        } = await supabaseClient
-
+        const { data: blogs, error } = await supabaseClient
             .from("blogs")
-
             .select("*")
-
-            .eq(
-                "is_published",
-                true
-            )
-
-            .order(
-                "created_at",
-                {
-                    ascending: false
-                }
-            );
-
+            .eq("is_published", true)
+            .order("created_at", {
+                ascending: false
+            });
 
         if (error) {
-
             blogsGrid.innerHTML = `
-
                 <p class="no-blogs">
-
                     Error loading blogs:
                     ${error.message}
-
                 </p>
-
             `;
-
             return;
-
         }
 
-
-        if (
-            !blogs ||
-            blogs.length === 0
-        ) {
-
+        if (!blogs || blogs.length === 0) {
             blogsGrid.innerHTML = `
-
                 <p class="no-blogs">
-
                     No published blogs available.
-
                 </p>
-
             `;
-
             return;
-
         }
-
 
         blogsGrid.innerHTML = "";
 
+        blogs.forEach(function(blog) {
+            const blogCard = document.createElement("div");
+            blogCard.className = "blog-card";
 
-        blogs.forEach(
+            const imageHTML = blog.image_url
+                ? `
+                    <img
+                        src="${escapeHTML(blog.image_url)}"
+                        alt="${escapeHTML(blog.title)}"
+                    >
+                `
+                : "";
 
-            function (blog) {
+            const shortContent = blog.content
+                ? stripHTML(blog.content).substring(0, 150) + "..."
+                : "";
 
+            blogCard.innerHTML = `
+                ${imageHTML}
 
-                const blogCard =
-                    document.createElement(
-                        "div"
-                    );
+                <div class="blog-content">
+                    <h2>${escapeHTML(blog.title)}</h2>
 
+                    <p>${escapeHTML(shortContent)}</p>
 
-                blogCard.className =
-                    "blog-card";
+                    <a
+                        class="read-more"
+                        href="blog-detail.html?slug=${encodeURIComponent(blog.slug)}"
+                    >
+                        Read More
+                    </a>
+                </div>
+            `;
 
-
-                const imageHTML =
-                    blog.image_url
-
-                        ? `
-
-                            <img
-
-                                src="${escapeHTML(
-                                    blog.image_url
-                                )}"
-
-                                alt="${escapeHTML(
-                                    blog.title
-                                )}"
-
-                            >
-
-                        `
-
-                        : "";
-
-
-                const shortContent =
-                    blog.content
-
-                        ? stripHTML(
-                            blog.content
-                        ).substring(
-                            0,
-                            150
-                        ) + "..."
-
-                        : "";
-
-
-                blogCard.innerHTML = `
-
-
-                    ${imageHTML}
-
-
-                    <div class="blog-content">
-
-
-                        <h2>
-
-                            ${escapeHTML(
-                                blog.title
-                            )}
-
-                        </h2>
-
-
-                        <p>
-
-                            ${escapeHTML(
-                                shortContent
-                            )}
-
-                        </p>
-
-
-                        <a
-
-                            class="read-more"
-
-                            href="blog-detail.html?slug=${encodeURIComponent(
-                                blog.slug
-                            )}"
-
-                        >
-
-                            Read More
-
-                        </a>
-
-
-                    </div>
-
-                `;
-
-
-                blogsGrid.appendChild(
-                    blogCard
-                );
-
-            }
-
-        );
-
+            blogsGrid.appendChild(blogCard);
+        });
     }
 
+    function stripHTML(html) {
+        const div = document.createElement("div");
+        div.innerHTML = html || "";
 
-    /* ===============================
-       STRIP HTML
-    =============================== */
-
-
-    function stripHTML(
-        html
-    ) {
-
-        const div =
-            document.createElement(
-                "div"
-            );
-
-        div.innerHTML =
-            html || "";
-
-        return div.textContent ||
-            div.innerText ||
-            "";
-
+        return div.textContent || div.innerText || "";
     }
 
-
-    /* ===============================
-       ESCAPE HTML
-    =============================== */
-
-
-    function escapeHTML(
-        text
-    ) {
-
-        const div =
-            document.createElement(
-                "div"
-            );
-
-        div.textContent =
-            text || "";
+    function escapeHTML(text) {
+        const div = document.createElement("div");
+        div.textContent = text || "";
 
         return div.innerHTML;
-
     }
 
-
     loadPublishedBlogs();
-
-
 </script>
 ```
 
 </body>
-
 </html>
