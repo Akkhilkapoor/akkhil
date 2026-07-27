@@ -434,83 +434,41 @@ nav {
 }
 
 
-/* =====================================================
-   EXPERTISE PAGE
-===================================================== */
-
 /* ===============================
-   EXPERTISE CARDS
+   EXPERTISE CARD TEXT ALIGNMENT
 =============================== */
 
+/* Card ki existing width/layout same rahegi */
+
 .expertise-card {
-    background: #ffffff;
-
-    padding: 30px 25px;
-
-    border-radius: 12px;
-
-    border: 1px solid #e5e7eb;
-
-    box-shadow:
-        0 5px 18px rgba(0, 0, 0, 0.06);
-
-    transition: 0.3s ease;
-
-    /* Heading aur icon ke liye center */
     text-align: center;
 }
 
-.expertise-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.12);
-
-    border-color: #2563eb;
-}
-
-/* ICON */
-
+/* Icon center */
 .expertise-card .expertise-icon {
     text-align: center;
 }
 
-.expertise-card .expertise-icon i {
-    font-size: 40px;
-    color: #2563eb;
-    margin-bottom: 18px;
-}
-
-/* HEADING - CENTER */
-
+/* Heading center */
 .expertise-card h3 {
-    font-size: 21px;
-    color: #111827;
-    margin-bottom: 12px;
     text-align: center;
 }
 
-/* PARAGRAPH - LEFT */
-
+/* Paragraph left */
 .expertise-card p {
-    color: #6b7280;
-    line-height: 1.7;
     text-align: left;
 }
 
-/* BULLET LIST - LEFT */
-
+/* Bullet list left */
 .expertise-card ul {
     text-align: left;
     padding-left: 22px;
-    margin-top: 15px;
 }
 
-.expertise-card ul li {
-    margin-bottom: 8px;
+/* Bullet text left */
+.expertise-card li {
     text-align: left;
 }
-
 /* =====================================================
    PROJECTS PAGE
 ===================================================== */
