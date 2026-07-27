@@ -433,41 +433,240 @@ nav {
     margin-top: 25px;
 }
 
+/* =====================================================
+   EXPERTISE SECTION
+===================================================== */
 
 /* ===============================
-   EXPERTISE CARD TEXT ALIGNMENT
+   EXPERTISE GRID
 =============================== */
 
-/* Card ki existing width/layout same rahegi */
+.expertise-grid {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* ===============================
+   EXPERTISE CARD
+=============================== */
 
 .expertise-card {
+
+    background: #ffffff;
+
+    padding: 30px 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s ease;
+
     text-align: center;
+
 }
 
-/* Icon center */
-.expertise-card .expertise-icon {
-    text-align: center;
+
+/* ===============================
+   CARD HOVER
+=============================== */
+
+.expertise-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12);
+
 }
 
-/* Heading center */
+
+/* ===============================
+   EXPERTISE ICON
+=============================== */
+
+.expertise-icon {
+
+    text-align: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.expertise-icon i {
+
+    font-size: 40px;
+
+    color: #2563eb;
+
+}
+
+
+/* ===============================
+   CARD HEADING
+=============================== */
+
 .expertise-card h3 {
+
+    font-size: 21px;
+
+    color: #111827;
+
+    margin-bottom: 12px;
+
     text-align: center;
+
 }
 
-/* Paragraph left */
+
+/* ===============================
+   CARD PARAGRAPH
+=============================== */
+
 .expertise-card p {
+
+    color: #6b7280;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+
     text-align: left;
+
 }
 
-/* Bullet list left */
+
+/* ===============================
+   CARD BULLET LIST
+=============================== */
+
 .expertise-card ul {
-    text-align: left;
+
+    margin: 0;
+
     padding-left: 22px;
+
+    text-align: left;
+
 }
 
-/* Bullet text left */
-.expertise-card li {
+
+.expertise-card ul li {
+
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    line-height: 1.5;
+
     text-align: left;
+
+}
+
+
+/* ===============================
+   TABLET
+   2 CARDS IN ONE ROW
+=============================== */
+
+@media (max-width: 900px) {
+
+    .expertise-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+
+    }
+
+}
+
+
+/* ===============================
+   MOBILE
+   1 CARD IN ONE ROW
+=============================== */
+
+@media (max-width: 768px) {
+
+    .expertise-grid {
+
+        grid-template-columns: 1fr;
+
+        width: 92%;
+
+        gap: 20px;
+
+    }
+
+
+    .expertise-card {
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+
+/* ===============================
+   SMALL MOBILE
+=============================== */
+
+@media (max-width: 480px) {
+
+    .expertise-grid {
+
+        width: 94%;
+
+    }
+
+
+    .expertise-card {
+
+        padding: 22px 18px;
+
+    }
+
+
+    .expertise-card h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .expertise-card p {
+
+        font-size: 15px;
+
+    }
+
+
+    .expertise-card ul li {
+
+        font-size: 14px;
+
+    }
+
 }
 /* =====================================================
    PROJECTS PAGE
