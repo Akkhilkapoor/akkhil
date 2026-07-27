@@ -1878,7 +1878,7 @@ select {
 
     height: auto;
 
-    overflow: visible;
+    overflow: hidden;
 
     transition: 0.3s ease;
 
@@ -1897,6 +1897,17 @@ select {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     overflow: hidden;
+}
+.review-text.collapsed {
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 10;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
 }
 
 .read-review-btn {
