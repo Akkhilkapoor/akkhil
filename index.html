@@ -13,12 +13,12 @@
 
     <meta
         name="description"
-        content="Akkhil Kapoor is a professional Accounts & IT trainer | Educator in Ambala with 20+ years of experience in Tally, Web Development, Graphic Design, and Accounting Systems."
+        content="Akkhil Kapoor is a professional Accounts & IT trainer and Educator in Ambala with 20+ years of experience in Tally, Web Development, Graphic Design, and Accounting Systems."
     >
 
     <meta
         name="keywords"
-        content="Akkhil Kapoor, Professional Accounts & IT Trainer Ambala, Tally Trainer Ambala, Web Development Course Ambala, HIIT Ambala, Computer Institute Ambala"
+        content="Akkhil Kapoor, Professional Accounts IT Trainer Ambala, Tally Trainer Ambala, Web Development Course Ambala, HIIT Ambala, Computer Institute Ambala"
     >
 
     <meta
@@ -36,19 +36,15 @@
         href="https://akkhilkapoor.github.io/akkhil/"
     >
 
-    <!-- COMMON CSS -->
     <link
         rel="stylesheet"
         href="style.css"
     >
 
-    <!-- FONT AWESOME -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     >
-
-    <!-- OPEN GRAPH -->
 
     <meta
         property="og:type"
@@ -62,7 +58,7 @@
 
     <meta
         property="og:description"
-        content="Over 20+ years of experience training thousands of students in IT, Accounting (Tally), and Web Development in Ambala."
+        content="Over 20+ years of experience training thousands of students in IT, Accounting, Tally, and Web Development in Ambala."
     >
 
     <meta
@@ -70,50 +66,14 @@
         content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg"
     >
 
-    <!-- GOOGLE VERIFICATION -->
-
     <meta
         name="google-site-verification"
         content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM"
     >
 
-    <!-- STRUCTURED DATA -->
-
-    <script type="application/ld+json">
-
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Akkhil Kapoor",
-        "jobTitle": "Professional Accounts & IT Trainer | Educator",
-        "worksFor": {
-            "@type": "EducationalOrganization",
-            "name": "HIIT Ambala City"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ambala",
-            "addressRegion": "Haryana",
-            "addressCountry": "IN"
-        },
-        "description": "Professional Accounts Educator and IT trainer in Ambala with 20+ years of experience specializing in Tally, Web Development, and Multimedia.",
-        "knowsAbout": [
-            "Tally",
-            "Web Development",
-            "Graphic Design",
-            "Accounting Management Systems",
-            "Payroll Systems"
-        ]
-    }
-
-    </script>
-
-
     <!-- REVIEW CSS -->
 
     <style>
-
-        /* REVIEWS GRID */
 
         .reviews-grid {
 
@@ -122,17 +82,12 @@
             grid-template-columns:
                 repeat(
                     auto-fit,
-                    minmax(
-                        220px,
-                        1fr
-                    )
+                    minmax(220px, 1fr)
                 );
 
             gap: 20px;
 
-            text-align: left;
-
-            margin-top: 10px;
+            margin-top: 20px;
 
             align-items: stretch;
 
@@ -144,27 +99,14 @@
             .reviews-grid {
 
                 grid-template-columns:
-                    repeat(
-                        4,
-                        1fr
-                    );
+                    repeat(4, 1fr);
 
             }
 
         }
 
 
-        /* REVIEW CARD */
-
         .review-card {
-
-            background: #f9f9f9;
-
-            border: 1px solid #e0e0e0;
-
-            padding: 15px 18px;
-
-            border-radius: 8px;
 
             display: flex;
 
@@ -174,6 +116,14 @@
 
             min-height: 260px;
 
+            padding: 18px;
+
+            background: #f9f9f9;
+
+            border: 1px solid #e0e0e0;
+
+            border-radius: 8px;
+
             transition: 0.3s ease;
 
         }
@@ -181,30 +131,14 @@
 
         .review-card:hover {
 
+            transform: translateY(-4px);
+
             box-shadow:
-                0 4px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.12
-                );
-
-            transform: translateY(-3px);
+                0 8px 20px
+                rgba(0, 0, 0, 0.08);
 
         }
 
-
-        /* REVIEW TEXT WRAPPER */
-
-        .review-text-wrapper {
-
-            position: relative;
-
-        }
-
-
-        /* REVIEW TEXT */
 
         .review-text {
 
@@ -219,34 +153,36 @@
         }
 
 
-        /* MAXIMUM 10 LINES */
+        /*
+            IMPORTANT:
+            Sirf collapsed class hone par
+            10 lines tak text show hoga.
+        */
 
         .review-text.collapsed {
 
             display: -webkit-box;
 
-            -webkit-line-clamp: 10;
-
             -webkit-box-orient: vertical;
+
+            -webkit-line-clamp: 10;
 
             overflow: hidden;
 
         }
 
 
-        /* READ MORE BUTTON */
-
         .read-more-review {
 
             display: inline-block;
 
-            margin-top: 8px;
-
-            border: none;
-
-            background: none;
+            margin-top: 10px;
 
             padding: 0;
+
+            background: transparent;
+
+            border: none;
 
             color: #007bff;
 
@@ -276,19 +212,7 @@
 
             inset: 0;
 
-            width: 100%;
-
-            height: 100%;
-
-            background:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.6
-                );
-
-            z-index: 1000;
+            z-index: 2000;
 
             justify-content: center;
 
@@ -296,35 +220,34 @@
 
             padding: 20px;
 
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.65
+                );
+
         }
 
 
         .review-modal-box {
 
-            background: white;
-
-            padding: 25px;
-
-            border-radius: 10px;
+            position: relative;
 
             width: 90%;
 
             max-width: 500px;
 
-            position: relative;
-
-            box-shadow:
-                0 4px 10px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.3
-                );
-
             max-height: 90vh;
 
             overflow-y: auto;
+
+            padding: 25px;
+
+            background: #ffffff;
+
+            border-radius: 12px;
 
         }
 
@@ -335,20 +258,16 @@
 
             top: 10px;
 
-            right: 15px;
-
-            font-size: 28px;
-
-            font-weight: bold;
-
-            cursor: pointer;
+            right: 18px;
 
             color: #333;
 
+            font-size: 28px;
+
+            cursor: pointer;
+
         }
 
-
-        /* FORM */
 
         .review-form-group {
 
@@ -366,8 +285,6 @@
             margin-bottom: 6px;
 
             font-weight: bold;
-
-            color: #333;
 
         }
 
@@ -388,16 +305,14 @@
 
             font-size: 15px;
 
-            box-sizing: border-box;
-
         }
 
 
         .review-form-group textarea {
 
-            resize: vertical;
-
             min-height: 100px;
+
+            resize: vertical;
 
         }
 
@@ -408,13 +323,13 @@
 
             padding: 12px;
 
+            background: #2563eb;
+
+            color: white;
+
             border: none;
 
             border-radius: 6px;
-
-            background: #007bff;
-
-            color: white;
 
             font-size: 16px;
 
@@ -427,7 +342,7 @@
 
         #submitReviewBtn:hover {
 
-            background: #0056b3;
+            background: #1d4ed8;
 
         }
 
@@ -465,6 +380,7 @@
 
         <div class="nav-container">
 
+
             <div class="logo">
 
                 <svg
@@ -479,6 +395,7 @@
                     />
 
                 </svg>
+
 
                 <span>
                     Akkhil Portfolio
@@ -499,8 +416,8 @@
 
 
             <nav
-                aria-label="Main Navigation"
                 id="mainNav"
+                aria-label="Main Navigation"
             >
 
                 <ul class="nav-links">
@@ -514,11 +431,13 @@
                         </a>
                     </li>
 
+
                     <li>
                         <a href="about.html">
                             About
                         </a>
                     </li>
+
 
                     <li>
                         <a href="expertise.html">
@@ -526,17 +445,20 @@
                         </a>
                     </li>
 
+
                     <li>
                         <a href="projects.html">
                             Projects
                         </a>
                     </li>
 
+
                     <li>
                         <a href="blog.html">
                             Blog
                         </a>
                     </li>
+
 
                     <li>
                         <a href="contact.html">
@@ -558,7 +480,7 @@
     <main>
 
 
-        <!-- HERO SECTION -->
+        <!-- HERO -->
 
         <section
             id="home-hero"
@@ -572,7 +494,7 @@
 
                     <img
                         src="akkhil.jpg"
-                        alt="Akkhil Kapoor - Professional Accounts & IT Trainer | Educator in Ambala"
+                        alt="Akkhil Kapoor - Professional Accounts and IT Trainer in Ambala"
                         class="profile-img"
                         loading="eager"
                     >
@@ -634,7 +556,7 @@
         </section>
 
 
-        <!-- STUDENT REVIEWS -->
+        <!-- REVIEWS -->
 
         <section
             class="reviews-section"
@@ -645,6 +567,7 @@
                 text-align: center;
             "
         >
+
 
             <h2>
                 Student Reviews & Feedback
@@ -661,8 +584,7 @@
                     border-radius: 5px;
                     font-weight: bold;
                     cursor: pointer;
-                    margin-bottom: 25px;
-                    transition: 0.3s;
+                    margin: 20px 0 25px;
                 "
             >
 
@@ -694,12 +616,18 @@
 
     <!-- REVIEW MODAL -->
 
-    <div id="reviewModal">
+    <div
+        id="reviewModal"
+    >
 
-        <div class="review-modal-box">
+        <div
+            class="review-modal-box"
+        >
 
 
-            <span id="closeReviewBtn">
+            <span
+                id="closeReviewBtn"
+            >
 
                 &times;
 
@@ -711,14 +639,21 @@
             </h3>
 
 
-            <form id="reviewForm">
+            <form
+                id="reviewForm"
+            >
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewName">
+                    <label
+                        for="reviewName"
+                    >
                         Your Name
                     </label>
+
 
                     <input
                         type="text"
@@ -729,11 +664,16 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewEmail">
+                    <label
+                        for="reviewEmail"
+                    >
                         Email Address
                     </label>
+
 
                     <input
                         type="email"
@@ -744,11 +684,16 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewPhone">
+                    <label
+                        for="reviewPhone"
+                    >
                         Phone Number
                     </label>
+
 
                     <input
                         type="tel"
@@ -759,11 +704,16 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewRating">
+                    <label
+                        for="reviewRating"
+                    >
                         Rating
                     </label>
+
 
                     <select
                         id="reviewRating"
@@ -774,21 +724,26 @@
                             Select Rating
                         </option>
 
+
                         <option value="5">
                             ⭐⭐⭐⭐⭐ Excellent
                         </option>
+
 
                         <option value="4">
                             ⭐⭐⭐⭐ Very Good
                         </option>
 
+
                         <option value="3">
                             ⭐⭐⭐ Good
                         </option>
 
+
                         <option value="2">
                             ⭐⭐ Needs Improvement
                         </option>
+
 
                         <option value="1">
                             ⭐ Poor
@@ -799,11 +754,16 @@
                 </div>
 
 
-                <div class="review-form-group">
+                <div
+                    class="review-form-group"
+                >
 
-                    <label for="reviewText">
+                    <label
+                        for="reviewText"
+                    >
                         Your Feedback
                     </label>
+
 
                     <textarea
                         id="reviewText"
@@ -822,7 +782,9 @@
                 </button>
 
 
-                <p id="reviewMessage"></p>
+                <p
+                    id="reviewMessage"
+                ></p>
 
             </form>
 
@@ -833,13 +795,19 @@
 
     <!-- FOOTER -->
 
-    <footer class="site-footer">
+    <footer
+        class="site-footer"
+    >
 
-        <div class="footer-container">
+        <div
+            class="footer-container"
+        >
 
             <p>
+
                 &copy; 2026 Akkhil Kapoor.
                 All Rights Reserved.
+
             </p>
 
         </div>
@@ -852,8 +820,7 @@
     <script>
 
 
-        /* SUPABASE CONFIGURATION */
-
+        /* SUPABASE */
 
         const SUPABASE_URL =
             "https://lmkvtvmkbvpzgsrutheu.supabase.co";
@@ -863,8 +830,7 @@
             "sb_publishable_SsDcoVpYs44Q99CRyS2Wmw_GTCxubIE";
 
 
-        /* DOM ELEMENTS */
-
+        /* ELEMENTS */
 
         const reviewsContainer =
             document.getElementById(
@@ -910,29 +876,34 @@
 
         /* OPEN MODAL */
 
-
-        openReviewBtn.onclick =
+        openReviewBtn.addEventListener(
+            "click",
             function () {
 
                 reviewModal.style.display =
                     "flex";
 
-            };
+            }
+        );
 
 
         /* CLOSE MODAL */
 
-
-        closeReviewBtn.onclick =
+        closeReviewBtn.addEventListener(
+            "click",
             function () {
 
                 reviewModal.style.display =
                     "none";
 
-            };
+            }
+        );
 
 
-        window.onclick =
+        /* CLOSE MODAL OUTSIDE */
+
+        reviewModal.addEventListener(
+            "click",
             function (event) {
 
                 if (
@@ -945,11 +916,31 @@
 
                 }
 
-            };
+            }
+        );
 
 
-        /* LOAD APPROVED REVIEWS */
+        /* ESCAPE KEY */
 
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    reviewModal.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        /* LOAD REVIEWS */
 
         async function fetchReviews() {
 
@@ -980,7 +971,9 @@
                     );
 
 
-                if (!response.ok) {
+                if (
+                    !response.ok
+                ) {
 
                     throw new Error(
                         "Failed to load reviews"
@@ -1010,9 +1003,7 @@
                                 text-align: center;
                             "
                         >
-
                             No reviews available yet.
-
                         </p>
 
                     `;
@@ -1023,7 +1014,6 @@
 
 
                 data.forEach(
-
                     function (item) {
 
 
@@ -1054,77 +1044,64 @@
                             "";
 
 
-                        /*
-                            IMPORTANT:
-                            CSS 10 lines determine karega
-                            ki review kitna dikhana hai.
-                            JavaScript length se cut nahi karega.
-                        */
-
-
                         reviewCard.innerHTML = `
 
-    <div>
+                            <div>
 
-        <div
-            style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 8px;
-                flex-wrap: wrap;
-                gap: 5px;
-            "
-        >
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        margin-bottom: 8px;
+                                        gap: 5px;
+                                        flex-wrap: wrap;
+                                    "
+                                >
 
-            <strong
-                style="
-                    font-size: 1em;
-                    color: #333;
-                "
-            >
+                                    <strong
+                                        style="
+                                            color: #333;
+                                        "
+                                    >
 
-                ${escapeHTML(item.Name)}
+                                        ${escapeHTML(item.Name)}
 
-            </strong>
-
-
-            <span
-                style="
-                    font-size: 0.9em;
-                "
-            >
-
-                ${ratingStars}
-
-            </span>
-
-        </div>
+                                    </strong>
 
 
-        <div class="review-text-wrapper">
+                                    <span>
 
-            <p class="review-text collapsed">
+                                        ${ratingStars}
 
-                "${escapeHTML(reviewText)}"
+                                    </span>
 
-            </p>
+                                </div>
 
 
-            <button
-                class="read-more-review"
-                type="button"
-            >
+                                <p
+                                    class="review-text collapsed"
+                                >
 
-                Read More
+                                    "${escapeHTML(reviewText)}"
 
-            </button>
+                                </p>
 
-        </div>
 
-    </div>
+                                <button
+                                    class="read-more-review"
+                                    type="button"
+                                >
 
-`;
+                                    Read More
+
+                                </button>
+
+                            </div>
+
+                        `;
+
+
                         const textElement =
                             reviewCard.querySelector(
                                 ".review-text"
@@ -1138,18 +1115,18 @@
 
 
                         /*
-                            Check karenge ki text
-                            actually 10 lines se zyada hai ya nahi.
+                            IMPORTANT FIX
+
+                            Browser ko thoda time dene ke baad
+                            height check karenge.
                         */
 
-
-                        setTimeout(
-
+                        requestAnimationFrame(
                             function () {
 
                                 if (
                                     textElement.scrollHeight <=
-                                    textElement.clientHeight
+                                    textElement.clientHeight + 2
                                 ) {
 
                                     readMoreBtn.style.display =
@@ -1157,34 +1134,31 @@
 
                                 }
 
-                            },
-
-                            0
-
+                            }
                         );
 
 
+                        /*
+                            READ MORE / READ LESS
+                        */
+
                         readMoreBtn.addEventListener(
-
                             "click",
-
                             function () {
 
 
-                                if (
+                                const isCollapsed =
                                     textElement.classList.contains(
-                                        "collapsed"
-                                    )
-                                ) {
-
-
-                                    textElement.classList.remove(
                                         "collapsed"
                                     );
 
 
-                                    reviewCard.classList.add(
-                                        "expanded"
+                                if (
+                                    isCollapsed
+                                ) {
+
+                                    textElement.classList.remove(
+                                        "collapsed"
                                     );
 
 
@@ -1193,17 +1167,10 @@
 
                                 }
 
-
                                 else {
-
 
                                     textElement.classList.add(
                                         "collapsed"
-                                    );
-
-
-                                    reviewCard.classList.remove(
-                                        "expanded"
                                     );
 
 
@@ -1213,7 +1180,6 @@
                                 }
 
                             }
-
                         );
 
 
@@ -1222,7 +1188,6 @@
                         );
 
                     }
-
                 );
 
             }
@@ -1260,11 +1225,8 @@
 
         /* SUBMIT REVIEW */
 
-
         reviewForm.addEventListener(
-
             "submit",
-
             async function (event) {
 
 
@@ -1356,37 +1318,39 @@
                                 },
 
 
-                                body: JSON.stringify({
+                                body:
+                                    JSON.stringify({
 
-                                    Name:
-                                        name,
+                                        Name:
+                                            name,
 
-                                    Email:
-                                        email,
+                                        Email:
+                                            email,
 
-                                    "Phone No":
-                                        phone,
+                                        "Phone No":
+                                            phone,
 
-                                    Rating:
-                                        parseInt(
-                                            rating
-                                        ),
+                                        Rating:
+                                            parseInt(
+                                                rating
+                                            ),
 
-                                    Review:
-                                        review,
+                                        Review:
+                                            review,
 
-                                    Approved:
-                                        false
+                                        Approved:
+                                            false
 
-                                })
+                                    })
 
                             }
 
                         );
 
 
-                    if (!response.ok) {
-
+                    if (
+                        !response.ok
+                    ) {
 
                         const errorData =
                             await response.text();
@@ -1416,9 +1380,7 @@
 
 
                     setTimeout(
-
                         function () {
-
 
                             reviewModal.style.display =
                                 "none";
@@ -1428,9 +1390,7 @@
                                 "";
 
                         },
-
                         2500
-
                     );
 
                 }
@@ -1468,19 +1428,12 @@
                 }
 
             }
-
         );
 
 
         /* ESCAPE HTML */
 
-
-        function escapeHTML(
-
-            text
-
-        ) {
-
+        function escapeHTML(text) {
 
             const div =
                 document.createElement(
@@ -1489,8 +1442,7 @@
 
 
             div.textContent =
-                text ||
-                "";
+                text || "";
 
 
             return div.innerHTML;
@@ -1499,7 +1451,6 @@
 
 
         /* MOBILE MENU */
-
 
         const mobileMenuBtn =
             document.getElementById(
@@ -1514,9 +1465,7 @@
 
 
         mobileMenuBtn.addEventListener(
-
             "click",
-
             function () {
 
 
@@ -1532,13 +1481,10 @@
 
 
                 if (
-
                     mainNav.classList.contains(
                         "open"
                     )
-
                 ) {
-
 
                     icon.classList.remove(
                         "fa-bars"
@@ -1551,9 +1497,7 @@
 
                 }
 
-
                 else {
-
 
                     icon.classList.remove(
                         "fa-times"
@@ -1567,18 +1511,15 @@
                 }
 
             }
-
         );
 
 
         /* LOAD REVIEWS */
 
-
         fetchReviews();
 
 
     </script>
-
 
 </body>
 
