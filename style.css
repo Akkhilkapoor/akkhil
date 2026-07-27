@@ -644,6 +644,8 @@ nav {
     gap: 20px;
 
     text-align: left;
+
+    align-items: start;
 }
 
 .review-card {
@@ -659,8 +661,6 @@ nav {
 
     flex-direction: column;
 
-    justify-content: space-between;
-
     min-height: 260px;
 
     overflow: hidden;
@@ -668,11 +668,25 @@ nav {
     transition: 0.3s ease;
 }
 
-.review-card-content {
-    flex-grow: 1;
+.review-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   REVIEW TEXT
+===================================================== */
+
+.review-text-wrapper {
+    position: relative;
 }
 
 .review-text {
+    margin: 0;
+
     color: #555;
 
     line-height: 1.5;
@@ -683,66 +697,60 @@ nav {
 
     -webkit-box-orient: vertical;
 
-    -webkit-line-clamp: 5;
-
     overflow: hidden;
 }
 
 
-/* =====================================================
-   READ MORE / READ LESS REVIEW BUTTON
-===================================================== */
+/* COLLAPSED REVIEW */
 
-.read-review-btn {
-    display: inline-block;
+.review-text.collapsed {
+    -webkit-line-clamp: 5;
 
-    width: fit-content;
-
-    margin-top: 15px;
-
-    padding: 7px 14px;
-
-    background: #007bff;
-
-    color: #ffffff;
-
-    border: none;
-
-    border-radius: 5px;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    align-self: flex-start;
-
-    transition: all 0.3s ease;
-}
-
-.read-review-btn:hover {
-    background: #0056b3;
-
-    transform: translateY(-2px);
+    line-clamp: 5;
 }
 
 
-/* REVIEW EXPANDED STATE */
+/* EXPANDED REVIEW */
 
 .review-text.expanded {
     display: block;
 
     -webkit-line-clamp: unset;
 
+    line-clamp: unset;
+
     overflow: visible;
+
+    max-height: none;
 }
 
-.review-card:hover {
-    transform: translateY(-4px);
 
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08);
+/* =====================================================
+   READ MORE BUTTON
+===================================================== */
+
+.read-more-review {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #007bff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.read-more-review:hover {
+    text-decoration: underline;
 }
 
 
