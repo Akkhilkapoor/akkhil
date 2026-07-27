@@ -520,16 +520,8 @@ nav {
     line-height: 1.7;
 }
 
-.expertise-card ul {
-    padding-left: 20px;
-
-    text-align: left;
-}
-
-.expertise-card li {
-    margin-bottom: 8px;
-
-    color: #374151;
+.expertise-card {
+    text-align: center;
 }
 
 
