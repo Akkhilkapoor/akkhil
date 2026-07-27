@@ -218,84 +218,40 @@
         /* REVIEW TEXT AREA */
 
         .review-text-wrapper {
+    position: relative;
+}
 
-            position: relative;
+.review-text {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
 
-        }
+/* Maximum 10 lines */
+.review-text.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
+/* Read More Button */
+.read-more-review {
+    display: inline-block;
+    margin-top: 8px;
+    border: none;
+    background: none;
+    padding: 0;
+    color: #007bff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .review-text {
-
-            margin: 0;
-
-            color: #555;
-
-            line-height: 1.5;
-
-            font-size: 0.95em;
-
-            display: -webkit-box;
-
-            -webkit-line-clamp: 4;
-
-            -webkit-box-orient: vertical;
-
-            overflow: hidden;
-
-        }
-
-
-        /* EXPANDED REVIEW */
-
-        .review-card.expanded {
-
-            height: auto;
-
-            min-height: 260px;
-
-        }
-
-
-        .review-card.expanded .review-text {
-
-            display: block;
-
-            overflow: visible;
-
-        }
-
-
-        /* READ MORE BUTTON */
-
-        .read-more-review {
-
-            display: inline-block;
-
-            margin-top: 8px;
-
-            border: none;
-
-            background: none;
-
-            padding: 0;
-
-            color: #007bff;
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-        }
-
-
-        .read-more-review:hover {
-
-            text-decoration: underline;
-
-        }
-
+.read-more-review:hover {
+    text-decoration: underline;
+}
 
         /* REVIEW MODAL */
 
