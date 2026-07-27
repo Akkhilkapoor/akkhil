@@ -1859,15 +1859,58 @@ select {
 }
 
 .review-card {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
     padding: 18px;
+    border-radius: 8px;
 
-    background: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    border: 1px solid #e5e7eb;
+    min-height: 220px;
+    height: 100%;
 
-    border-radius: 10px;
+    overflow: hidden;
+}
 
-    transition: 0.3s;
+.review-card-content {
+    flex-grow: 1;
+}
+
+.review-text {
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.95em;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+
+.read-review-btn {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 7px 14px;
+
+    background: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    align-self: flex-start;
+}
+
+.read-review-btn:hover {
+    background: #0056b3;
 }
 
 .review-card:hover {
