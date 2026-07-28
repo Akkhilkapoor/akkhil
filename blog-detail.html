@@ -256,6 +256,111 @@
 
 
         /* ===============================
+           LIKE / DISLIKE REACTIONS
+        =============================== */
+
+        .blog-reactions {
+
+            margin-top: 40px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #e5e7eb;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .blog-reactions-label {
+
+            font-size: 14px;
+
+            color: #6b7280;
+
+            font-weight: 600;
+
+            margin-right: 5px;
+
+        }
+
+
+        .reaction-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 9px 18px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 30px;
+
+            background: #ffffff;
+
+            color: #374151;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+        }
+
+
+        .reaction-btn:hover {
+
+            border-color: #007bff;
+
+            color: #007bff;
+
+        }
+
+
+        .reaction-btn.active-like {
+
+            background: #e7f1ff;
+
+            border-color: #007bff;
+
+            color: #007bff;
+
+        }
+
+
+        .reaction-btn.active-dislike {
+
+            background: #fee2e2;
+
+            border-color: #dc2626;
+
+            color: #dc2626;
+
+        }
+
+
+        .reaction-btn:disabled {
+
+            cursor: not-allowed;
+
+            opacity: 0.7;
+
+        }
+
+
+        /* ===============================
            LOADING / ERROR
         =============================== */
 
@@ -864,6 +969,9 @@
 
                     ${videoHTML}
 
+
+                    <div id="blogReactions"></div>
+
                 `;
 
 
@@ -871,6 +979,11 @@
                     blog.title
                     +
                     " | Akkhil Kapoor";
+
+
+                renderReactions(
+                    blog
+                );
 
 
             }
@@ -889,6 +1002,276 @@
                 );
 
             }
+
+        }
+
+
+        /*
+        =====================================
+        LIKE / DISLIKE REACTIONS
+        =====================================
+        */
+
+
+        function renderReactions(
+            blog
+        ) {
+
+
+            const reactionsBox =
+                document.getElementById(
+                    "blogReactions"
+                );
+
+
+            let likes =
+                blog.likes || 0;
+
+
+            let dislikes =
+                blog.dislikes || 0;
+
+
+            const voteKey =
+                "vote_" + blog.slug;
+
+
+            let currentVote =
+                localStorage.getItem(
+                    voteKey
+                );
+
+
+            function draw() {
+
+
+                reactionsBox.innerHTML = `
+
+                    <div class="blog-reactions">
+
+                        <span class="blog-reactions-label">
+
+                            Was this helpful?
+
+                        </span>
+
+
+                        <button
+                            id="likeBtn"
+                            class="reaction-btn ${
+
+                                currentVote === "like"
+                                    ? "active-like"
+                                    : ""
+
+                            }"
+                        >
+
+                            <i class="fas fa-thumbs-up"></i>
+
+                            <span id="likeCount">${likes}</span>
+
+                        </button>
+
+
+                        <button
+                            id="dislikeBtn"
+                            class="reaction-btn ${
+
+                                currentVote === "dislike"
+                                    ? "active-dislike"
+                                    : ""
+
+                            }"
+                        >
+
+                            <i class="fas fa-thumbs-down"></i>
+
+                            <span id="dislikeCount">${dislikes}</span>
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                document
+                    .getElementById(
+                        "likeBtn"
+                    )
+                    .addEventListener(
+                        "click",
+                        function () {
+
+                            handleVote(
+                                "like"
+                            );
+
+                        }
+                    );
+
+
+                document
+                    .getElementById(
+                        "dislikeBtn"
+                    )
+                    .addEventListener(
+                        "click",
+                        function () {
+
+                            handleVote(
+                                "dislike"
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            async function handleVote(
+                type
+            ) {
+
+
+                let likeDelta = 0;
+
+                let dislikeDelta = 0;
+
+
+                if (
+                    currentVote === type
+                ) {
+
+
+                    /* USER CLICKED THE SAME BUTTON AGAIN -> REMOVE VOTE */
+
+
+                    if (type === "like") {
+
+                        likeDelta = -1;
+                        likes -= 1;
+
+                    } else {
+
+                        dislikeDelta = -1;
+                        dislikes -= 1;
+
+                    }
+
+
+                    currentVote = null;
+
+
+                    localStorage.removeItem(
+                        voteKey
+                    );
+
+
+                }
+
+                else if (
+                    currentVote === null
+                ) {
+
+
+                    /* NO PREVIOUS VOTE */
+
+
+                    if (type === "like") {
+
+                        likeDelta = 1;
+                        likes += 1;
+
+                    } else {
+
+                        dislikeDelta = 1;
+                        dislikes += 1;
+
+                    }
+
+
+                    currentVote = type;
+
+
+                    localStorage.setItem(
+                        voteKey,
+                        type
+                    );
+
+
+                }
+
+                else {
+
+
+                    /* SWITCHING VOTE */
+
+
+                    if (type === "like") {
+
+                        likeDelta = 1;
+                        dislikeDelta = -1;
+                        likes += 1;
+                        dislikes -= 1;
+
+                    } else {
+
+                        likeDelta = -1;
+                        dislikeDelta = 1;
+                        likes -= 1;
+                        dislikes += 1;
+
+                    }
+
+
+                    currentVote = type;
+
+
+                    localStorage.setItem(
+                        voteKey,
+                        type
+                    );
+
+
+                }
+
+
+                draw();
+
+
+                const { error } =
+                    await supabaseClient.rpc(
+                        "adjust_blog_reaction",
+                        {
+
+                            blog_id:
+                                blog.id,
+
+                            like_delta:
+                                likeDelta,
+
+                            dislike_delta:
+                                dislikeDelta
+
+                        }
+                    );
+
+
+                if (error) {
+
+                    console.error(
+                        "Error updating reaction:",
+                        error
+                    );
+
+                }
+
+            }
+
+
+            draw();
 
         }
 
