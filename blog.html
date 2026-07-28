@@ -408,6 +408,10 @@
                 const blogCard = document.createElement("div");
                 blogCard.className = "blog-card";
 
+            blogCard.addEventListener("click", function () {
+            window.location.href = "blog-detail.html?slug=" + encodeURIComponent(blog.slug);
+            });
+              
                 const imageHTML = blog.image_url
                     ? `
                         <img
