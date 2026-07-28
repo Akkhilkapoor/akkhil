@@ -525,6 +525,28 @@ nav {
 .read-review-btn:hover{
     text-decoration:underline;
 }
+.review-modal-box{
+    background:#fff;
+    width:90%;
+    max-width:500px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:12px;
+    padding:25px;
+    position:relative;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.9);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
 
 .blog-page-header {
     width: 100%;
