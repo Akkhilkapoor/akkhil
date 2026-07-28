@@ -10,9 +10,10 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Blog | Akkhil Kapoor</title>
+    <title id="pageTitle">Blog | Akkhil Kapoor</title>
 
     <meta
+        id="metaDescription"
         name="description"
         content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator."
     >
@@ -26,6 +27,70 @@
         name="robots"
         content="index, follow"
     >
+
+    <link
+        id="canonicalLink"
+        rel="canonical"
+        href="https://akkhilkapoor.github.io/akkhil/blog-detail.html"
+    >
+
+    <!-- OPEN GRAPH -->
+
+    <meta
+        id="ogType"
+        property="og:type"
+        content="article"
+    >
+
+    <meta
+        id="ogTitle"
+        property="og:title"
+        content="Blog | Akkhil Kapoor"
+    >
+
+    <meta
+        id="ogDescription"
+        property="og:description"
+        content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator."
+    >
+
+    <meta
+        id="ogUrl"
+        property="og:url"
+        content="https://akkhilkapoor.github.io/akkhil/blog-detail.html"
+    >
+
+    <meta
+        id="ogImage"
+        property="og:image"
+        content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg"
+    >
+
+    <!-- TWITTER CARD -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        id="twitterTitle"
+        name="twitter:title"
+        content="Blog | Akkhil Kapoor"
+    >
+
+    <meta
+        id="twitterDescription"
+        name="twitter:description"
+        content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator."
+    >
+
+    <!-- ARTICLE SCHEMA (FILLED DYNAMICALLY) -->
+
+    <script
+        id="articleSchema"
+        type="application/ld+json"
+    ></script>
 
     <link
         rel="stylesheet"
@@ -975,10 +1040,10 @@
                 `;
 
 
-                document.title =
-                    blog.title
-                    +
-                    " | Akkhil Kapoor";
+                updateSEO(
+                    blog,
+                    slug
+                );
 
 
                 renderReactions(
@@ -1002,6 +1067,208 @@
                 );
 
             }
+
+        }
+
+
+        /*
+        =====================================
+        UPDATE SEO TAGS DYNAMICALLY
+        =====================================
+        */
+
+
+        function updateSEO(
+            blog,
+            slug
+        ) {
+
+
+            const plainDescription =
+                stripHTML(
+                    blog.content
+                )
+                .trim()
+                .substring(
+                    0,
+                    160
+                );
+
+
+            const pageUrl =
+                "https://akkhilkapoor.github.io/akkhil/blog-detail.html?slug="
+                + encodeURIComponent(
+                    slug
+                );
+
+
+            const imageUrl =
+                blog.image_url
+                ||
+                "https://akkhilkapoor.github.io/akkhil/akkhil.jpg";
+
+
+            const fullTitle =
+                blog.title
+                +
+                " | Akkhil Kapoor";
+
+
+            document.title =
+                fullTitle;
+
+
+            document
+                .getElementById(
+                    "pageTitle"
+                )
+                .textContent =
+                    fullTitle;
+
+
+            document
+                .getElementById(
+                    "metaDescription"
+                )
+                .setAttribute(
+                    "content",
+                    plainDescription
+                );
+
+
+            document
+                .getElementById(
+                    "canonicalLink"
+                )
+                .setAttribute(
+                    "href",
+                    pageUrl
+                );
+
+
+            document
+                .getElementById(
+                    "ogTitle"
+                )
+                .setAttribute(
+                    "content",
+                    fullTitle
+                );
+
+
+            document
+                .getElementById(
+                    "ogDescription"
+                )
+                .setAttribute(
+                    "content",
+                    plainDescription
+                );
+
+
+            document
+                .getElementById(
+                    "ogUrl"
+                )
+                .setAttribute(
+                    "content",
+                    pageUrl
+                );
+
+
+            document
+                .getElementById(
+                    "ogImage"
+                )
+                .setAttribute(
+                    "content",
+                    imageUrl
+                );
+
+
+            document
+                .getElementById(
+                    "twitterTitle"
+                )
+                .setAttribute(
+                    "content",
+                    fullTitle
+                );
+
+
+            document
+                .getElementById(
+                    "twitterDescription"
+                )
+                .setAttribute(
+                    "content",
+                    plainDescription
+                );
+
+
+            const schema = {
+
+                "@context":
+                    "https://schema.org",
+
+                "@type":
+                    "Article",
+
+                "headline":
+                    blog.title,
+
+                "description":
+                    plainDescription,
+
+                "image":
+                    imageUrl,
+
+                "author": {
+
+                    "@type":
+                        "Person",
+
+                    "name":
+                        "Akkhil Kapoor"
+
+                },
+
+                "publisher": {
+
+                    "@type":
+                        "Organization",
+
+                    "name":
+                        "Akkhil Kapoor"
+
+                },
+
+                "datePublished":
+                    blog.created_at
+                    ||
+                    "",
+
+                "mainEntityOfPage": {
+
+                    "@type":
+                        "WebPage",
+
+                    "@id":
+                        pageUrl
+
+                }
+
+            };
+
+
+            document
+                .getElementById(
+                    "articleSchema"
+                )
+                .textContent =
+                    JSON.stringify(
+                        schema
+                    );
 
         }
 
@@ -1427,6 +1694,41 @@
 
 
             return div.innerHTML;
+
+        }
+
+
+        /*
+        =====================================
+        STRIP HTML (FOR META DESCRIPTION)
+        =====================================
+        */
+
+
+        function stripHTML(
+            html
+        ) {
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.innerHTML =
+                html
+                ||
+                "";
+
+
+            return (
+                div.textContent
+                ||
+                div.innerText
+                ||
+                ""
+            );
 
         }
 
