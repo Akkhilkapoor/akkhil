@@ -556,14 +556,15 @@ nav {
 }
 
 .blog-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
 .blog-card:hover {
