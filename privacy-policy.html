@@ -308,14 +308,18 @@
 
     <!-- ================= FOOTER ================= -->
 
-   <footer class="site-footer">
+  <footer class="site-footer">
     <div class="footer-container">
-        <p>&copy; 2026 Akkhil Kapoor. All Rights Reserved.</p>
+        <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
         <p style="margin-top: 8px; font-size: 13px;">
             <a href="privacy-policy.html" style="color: #9ca3af; text-decoration: underline;">Privacy Policy</a>
         </p>
     </div>
 </footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
     <script>
 
