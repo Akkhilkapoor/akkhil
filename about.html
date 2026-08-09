@@ -1,169 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Akkhil Kapoor - 20+ Years Experience IT & Accounts Educator</title>
-    <meta name="description" content="Learn more about Akkhil Kapoor (also known as Akhil Kapoor), a passionate IT Trainer and Accounts Educator in Ambala with over 20 years of teaching and corporate experience.">
-    <meta name="keywords" content="About Akkhil Kapoor, Akhil Kapoor, Accounts & IT Faculty Ambala, Tally Teacher Experience, IT Trainer Ambala, Corporate Trainer Ambala">
-    <meta name="author" content="Akkhil Kapoor">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://Akkhilkapoor.github.io/Akkhil/about.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Akkhil Kapoor - 20+ Years Experience IT & Accounts Educator</title>
+<meta name="description" content="Learn more about Akkhil Kapoor (also known as Akhil Kapoor), a passionate IT Trainer and Accounts Educator in Ambala with over 20 years of teaching and corporate experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070B;
+    --surface:rgba(255,255,255,0.045);
+    --border:rgba(255,255,255,0.10);
+    --text:#F3F2F8;
+    --dim:rgba(243,242,248,0.62);
+    --dimmer:rgba(243,242,248,0.4);
+    --c1:#7C5CFF;
+    --c2:#37E0C8;
+    --c3:#FF5B94;
+    --max:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; position:relative;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3,h4{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
+  @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
 
-    <!-- Open Graph tags -->
-    <meta property="og:type" content="profile">
-    <meta property="og:title" content="About Akkhil Kapoor | 20+ Years IT & Accounts Educator in Ambala">
-    <meta property="og:description" content="Passionate IT Trainer and Accounts Educator in Ambala with over 20 years of teaching and corporate experience in Tally, Web Development, and Accounting Systems.">
-    <meta property="og:url" content="https://Akkhilkapoor.github.io/Akkhil/about.html">
-    <meta property="og:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
-    <meta property="og:site_name" content="Akkhil Kapoor Portfolio">
+  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
+  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.4;}
+  .b1{width:560px; height:560px; background:var(--c1); top:-200px; left:-140px; animation:float1 16s ease-in-out infinite;}
+  .b2{width:480px; height:480px; background:var(--c3); top:20%; right:-180px; opacity:0.28; animation:float2 20s ease-in-out infinite;}
+  .b3{width:460px; height:460px; background:var(--c2); bottom:-200px; left:25%; opacity:0.2; animation:float3 18s ease-in-out infinite;}
+  @keyframes float1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(60px,80px);} }
+  @keyframes float2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-70px,50px);} }
+  @keyframes float3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,-60px);} }
 
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Akkhil Kapoor | IT & Accounts Educator in Ambala">
-    <meta name="twitter:description" content="Passionate IT Trainer and Accounts Educator in Ambala with over 20 years of teaching and corporate experience.">
-    <meta name="twitter:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
+  header, main, footer{position:relative; z-index:3;}
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"
-         crossorigin="anonymous"></script>
+  header{position:sticky; top:0; z-index:50; padding:18px 0;}
+  nav{
+    max-width:var(--max); margin:0 auto; padding:12px 22px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px;
+    backdrop-filter:blur(18px);
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
+  .brand-mark{
+    width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3));
+    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;
+  }
+  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
+  .navlinks a{position:relative;}
+  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
+  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
+  .navlinks a:hover, .navlinks a.active{color:var(--text);}
+  .nav-cta{
+    background:var(--text); color:#07070B; font-weight:600; font-size:13.5px;
+    padding:10px 20px; border-radius:100px; transition:transform .2s;
+  }
+  .nav-cta:hover{transform:scale(1.05);}
 
-    <!-- Structured Data (JSON-LD) for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Akkhil Kapoor",
-      "alternateName": "Akhil Kapoor",
-      "jobTitle": "IT Trainer & Accounts Educator",
-      "url": "https://Akkhilkapoor.github.io/Akkhil/about.html",
-      "image": "https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Akkhil Kapoor"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ambala",
-        "addressRegion": "Haryana",
-        "addressCountry": "IN"
-      },
-      "description": "Passionate IT Trainer and Accounts Educator in Ambala with over 20 years of teaching and corporate experience in Tally, Web Development, and Accounting Systems."
-    }
-    </script>
+  /* page hero */
+  .page-hero{padding:80px 0 50px; text-align:center;}
+  .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--surface); border:1px solid var(--border); border-radius:100px;
+    padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim);
+    margin-bottom:22px;
+  }
+  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
+  .page-hero h1{font-size:clamp(34px,5.4vw,56px); font-weight:700; line-height:1.1;}
+
+  main{padding-bottom:100px;}
+
+  .intro-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:24px;
+    padding:44px; max-width:820px; margin:0 auto 50px;
+  }
+  .intro-card .namaste{font-family:'Sora',sans-serif; font-size:20px; font-weight:700; margin-bottom:16px;}
+  .intro-card p{font-size:15.5px; line-height:1.8; color:var(--dim); margin-bottom:16px;}
+  .intro-card p:last-child{margin-bottom:0;}
+  .intro-card strong{color:var(--text); font-weight:600;}
+
+  .info-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1040px; margin:0 auto 20px;}
+  .info-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:22px; padding:36px;
+  }
+  .info-card h3{font-size:19px; font-weight:600; display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+  .info-card h3 .ic{
+    width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--c1),var(--c3));
+    display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0;
+  }
+  .info-card > p{font-size:14.5px; line-height:1.7; color:var(--dim); margin-bottom:16px;}
+  .info-card h4{font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dimmer); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
+  .styled-list{list-style:none;}
+  .styled-list li{
+    font-size:14px; padding:10px 0 10px 22px; position:relative;
+    border-bottom:1px solid var(--border); color:var(--dim);
+  }
+  .styled-list li:last-child{border-bottom:none;}
+  .styled-list li::before{content:"◆"; position:absolute; left:0; top:10px; font-size:8px; color:var(--c2);}
+  .corporate-list li strong{color:var(--text); font-weight:600;}
+  .philosophy-title{margin-top:26px;}
+
+  .full-width-block{
+    max-width:1040px; margin:0 auto; background:var(--surface); border:1px solid var(--border);
+    border-radius:22px; padding:40px 44px;
+  }
+  .full-width-block h3{font-size:19px; font-weight:600; display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+  .full-width-block h3 .ic{
+    width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--c2),var(--c1));
+    display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0;
+  }
+  .full-width-block p{font-size:15px; line-height:1.75; color:var(--dim); margin-bottom:12px;}
+  .full-width-block p:last-child{margin-bottom:0;}
+  .full-width-block strong{color:var(--text); font-weight:600;}
+
+  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
+  footer a{text-decoration:underline; color:var(--dimmer);}
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .info-grid{grid-template-columns:1fr;}
+    .intro-card, .full-width-block{padding:30px 26px;}
+  }
+
+  [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in{opacity:1; transform:translateY(0);}
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="nav-container">
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z" />
-                </svg>
-                <span>Akkhil Kapoor</span>
-            </div>
 
-            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+<div class="aurora">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
 
-            <nav aria-label="Main Navigation" id="mainNav">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main-content-padding">
-        <section id="about" class="about-section-wrapper">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                    <div class="underline"></div>
-                </div>
-
-                <div class="about-content">
-                    <p class="intro-text">Namaste, I'm Akkhil Kapoor.</p>
-                    <p>I am a passionate educator, trainer, and management professional with <strong class="highlight-text">more than 20 years of experience</strong> in the fields of education, information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve their goals through quality education, practical knowledge, and continuous learning.</p>
-                    <p>I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners so that they can successfully apply their knowledge in real-world situations.</p>
-                    <p>My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects.</p>
-
-                    <div class="info-grid">
-                        <div class="info-block">
-                            <h3><i class="fas fa-book-reader icon-gap"></i> Teaching Experience</h3>
-                            <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City, serving diverse student batches.</p>
-                            <h4>Prestigious institutes include:</h4>
-                            <ul class="styled-list">
-                                <li>HIIT Ambala City <!--<i class="fas fa-check-circle list-icon"></i>--></li>
-                                <li>Helpline Computer Institute, Ambala Cantt</li>
-                                <li>Excel Net, Ambala Cantt</li>
-                                <li>NIIT, Ambala Cantt</li>
-                                <li>Computer Junction, Ambala Cantt</li>
-                                <li>Xtreme Technologies, Ambala Cantt</li>
-                                <li>Techno Creativity, Ambala Cantt</li>
-                            </ul>
-                        </div>
-
-                        <div class="info-block">
-                            <h3><i class="fas fa-briefcase icon-gap"></i> Corporate Experience</h3>
-                            <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This bridges the gap between academics and industry standards.</p>
-                            <ul class="styled-list corporate-list">
-                                <li><strong>Milestone Apparel</strong> – Manager</li>
-                                <li><strong>Vchau Voyage LLP</strong> – Accounts Manager</li>
-                                <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
-                                <li><strong>Ecosure Pharma</strong> – Territory Manager</li>
-                            </ul>
-
-                            <h3 class="philosophy-title"><i class="fas fa-lightbulb icon-gap"></i> Teaching Philosophy</h3>
-                            <p>I encourage students to learn through practical exercises, develop critical thinking, focus on continuous self-improvement, and build corporate ethics.</p>
-                        </div>
-                    </div>
-
-                    <div class="info-block full-width-block">
-                        <h3><i class="fas fa-trophy icon-gap"></i> Achievements & Vision</h3>
-                        <p><strong>Impact:</strong> Successfully trained thousands of students who are currently leading successful careers in IT, accounting, core design fields, and entrepreneurship.</p>
-                        <p><strong>Vision:</strong> Technology and education continue to evolve rapidly. My vision is to remain committed to lifelong learning while empowering the youth with high-demand modern skills.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-    <div class="footer-container">
-        <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-        <p style="margin-top: 8px; font-size: 13px;">
-            <a href="privacy-policy.html" style="color: #9ca3af; text-decoration: underline;">Privacy Policy</a>
-        </p>
+<header>
+  <nav>
+    <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <a href="contact.html" class="nav-cta">Enroll Now</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="dot"></span> About</div>
+      <h1>About <span class="grad-text">Me</span></h1>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="intro-card" data-reveal>
+      <p class="namaste">Namaste, I'm Akkhil Kapoor.</p>
+      <p>I am a passionate educator, trainer, and management professional with <strong>more than 20 years of experience</strong> in the fields of education, information technology, business management, and corporate training. Throughout my career, I have dedicated myself to helping students, professionals, and organizations achieve their goals through quality education, practical knowledge, and continuous learning.</p>
+      <p>I strongly believe that education is one of the most powerful tools for personal and professional growth. Over the years, I have trained thousands of students from different educational backgrounds and age groups. My teaching philosophy focuses on simplifying complex concepts, encouraging practical learning, and building confidence among learners so that they can successfully apply their knowledge in real-world situations.</p>
+      <p>My journey in the education sector began more than two decades ago. Since then, I have worked with several reputed institutes in Ambala and have gained extensive experience in teaching computer applications, accounting software, information technology, web development, graphic designing, and multimedia-related subjects.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card" data-reveal>
+        <h3><span class="ic">📚</span> Teaching Experience</h3>
+        <p>I have worked as a faculty member in several well-known educational institutions across Ambala Cantt and Ambala City, serving diverse student batches.</p>
+        <h4>Prestigious institutes include:</h4>
+        <ul class="styled-list">
+          <li>HIIT Ambala City</li>
+          <li>Helpline Computer Institute, Ambala Cantt</li>
+          <li>Excel Net, Ambala Cantt</li>
+          <li>NIIT, Ambala Cantt</li>
+          <li>Computer Junction, Ambala Cantt</li>
+          <li>Xtreme Technologies, Ambala Cantt</li>
+          <li>Techno Creativity, Ambala Cantt</li>
+        </ul>
+      </div>
+
+      <div class="info-card" data-reveal>
+        <h3><span class="ic">💼</span> Corporate Experience</h3>
+        <p>In addition to my educational career, I have gained valuable experience in the corporate sector by serving in managerial positions across different industries. This bridges the gap between academics and industry standards.</p>
+        <ul class="styled-list corporate-list">
+          <li><strong>Milestone Apparel</strong> – Manager</li>
+          <li><strong>Vchau Voyage LLP</strong> – Accounts Manager</li>
+          <li><strong>Munjal Enterprises</strong> – Sales Manager</li>
+          <li><strong>Ecosure Pharma</strong> – Territory Manager</li>
+        </ul>
+
+        <h3 class="philosophy-title"><span class="ic">💡</span> Teaching Philosophy</h3>
+        <p style="margin-bottom:0;">I encourage students to learn through practical exercises, develop critical thinking, focus on continuous self-improvement, and build corporate ethics.</p>
+      </div>
+    </div>
+
+    <div class="full-width-block" data-reveal>
+      <h3><span class="ic">🏆</span> Achievements & Vision</h3>
+      <p><strong>Impact:</strong> Successfully trained thousands of students who are currently leading successful careers in IT, accounting, core design fields, and entrepreneurship.</p>
+      <p><strong>Vision:</strong> Technology and education continue to evolve rapidly. My vision is to remain committed to lifelong learning while empowering the youth with high-demand modern skills.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
+    <p style="margin-top:8px; font-size:13px;"><a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const els = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  }, {threshold:0.1});
+  els.forEach(el=>io.observe(el));
 </script>
 
-    <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('open');
-            const icon = mobileMenuBtn.querySelector('i');
-
-            if (mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-    </script>
 </body>
 </html>
