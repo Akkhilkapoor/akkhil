@@ -1,1850 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title id="pageTitle">Blog | Akkhil Kapoor</title>
-
-    <meta
-        id="metaDescription"
-        name="description"
-        content="Read detailed educational blogs and articles by Akkhil Kapoor (also known as Akhil Kapoor), Professional Accounts & IT Trainer and Educator."
-    >
-
-    <meta
-        name="author"
-        content="Akkhil Kapoor"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <link
-        id="canonicalLink"
-        rel="canonical"
-        href="https://Akkhilkapoor.github.io/Akkhil/blog-detail.html"
-    >
-
-    <!-- OPEN GRAPH -->
-
-    <meta
-        id="ogType"
-        property="og:type"
-        content="article"
-    >
-
-    <meta
-        id="ogTitle"
-        property="og:title"
-        content="Blog | Akkhil Kapoor"
-    >
-
-    <meta
-        id="ogDescription"
-        property="og:description"
-        content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator."
-    >
-
-    <meta
-        id="ogUrl"
-        property="og:url"
-        content="https://Akkhilkapoor.github.io/Akkhil/blog-detail.html"
-    >
-
-    <meta
-        id="ogImage"
-        property="og:image"
-        content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg"
-    >
-
-    <meta
-        property="og:site_name"
-        content="Akkhil Kapoor Portfolio"
-    >
-
-    <!-- TWITTER CARD -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
-    <meta
-        id="twitterTitle"
-        name="twitter:title"
-        content="Blog | Akkhil Kapoor"
-    >
-
-    <meta
-        id="twitterDescription"
-        name="twitter:description"
-        content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator."
-    >
-
-    <meta
-        id="twitterImage"
-        name="twitter:image"
-        content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg"
-    >
-
-    <!-- ARTICLE SCHEMA (FILLED DYNAMICALLY) -->
-
-    <script
-        id="articleSchema"
-        type="application/ld+json"
-    ></script>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    >
-
-
-    <style>
-
-        /* ===============================
-           BLOG DETAIL PAGE
-        =============================== */
-
-        .blog-detail-section {
-
-            padding: 50px 20px;
-
-            max-width: 1000px;
-
-            margin: 0 auto;
-
-        }
-
-
-        .blog-detail-container {
-
-            background: #ffffff;
-
-            padding: 35px;
-
-            border-radius: 12px;
-
-            box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.08);
-
-        }
-
-
-        /* ===============================
-           BACK BUTTON
-        =============================== */
-
-        .back-to-blogs {
-
-            display: inline-block;
-
-            margin-bottom: 25px;
-
-            padding: 10px 18px;
-
-            background: #007bff;
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 6px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-
-        }
-
-
-        .back-to-blogs:hover {
-
-            background: #0056b3;
-
-        }
-
-
-        /* ===============================
-           BLOG TITLE
-        =============================== */
-
-        .blog-detail-title {
-
-            font-size: 42px;
-
-            line-height: 1.25;
-
-            margin-top: 0;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        /* ===============================
-           BLOG DATE
-        =============================== */
-
-        .blog-date {
-
-            color: #777;
-
-            font-size: 14px;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        /* ===============================
-           BLOG IMAGE
-        =============================== */
-
-        .blog-detail-image {
-
-            width: 100%;
-
-            max-height: 550px;
-
-            object-fit: contain;
-
-            background-color: #f8fafc;
-
-            border-radius: 10px;
-
-            display: block;
-
-            margin-bottom: 30px;
-
-        }
-
-
-        /* ===============================
-           BLOG CONTENT
-        =============================== */
-
-        .blog-detail-content {
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-            color: #333;
-
-            overflow-wrap: break-word;
-
-        }
-
-
-        .blog-detail-content h1,
-        .blog-detail-content h2,
-        .blog-detail-content h3 {
-
-            margin-top: 30px;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        .blog-detail-content p {
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .blog-detail-content ul,
-        .blog-detail-content ol {
-
-            margin-bottom: 20px;
-
-            padding-left: 30px;
-
-        }
-
-
-        .blog-detail-content a {
-
-            color: #007bff;
-
-            text-decoration: underline;
-
-        }
-
-
-        .blog-detail-content img {
-
-            max-width: 100%;
-
-            height: auto;
-
-            border-radius: 8px;
-
-            margin: 20px 0;
-
-        }
-
-
-        /* ===============================
-           VIDEO
-        =============================== */
-
-        .blog-video {
-
-            margin-top: 35px;
-
-        }
-
-
-        .blog-video h3 {
-
-            margin-bottom: 15px;
-
-        }
-
-
-        .blog-video iframe {
-
-            width: 100%;
-
-            height: 500px;
-
-            border: none;
-
-            border-radius: 10px;
-
-        }
-
-
-        /* ===============================
-           LIKE / DISLIKE REACTIONS
-        =============================== */
-
-        .blog-reactions {
-
-            margin-top: 40px;
-
-            padding-top: 25px;
-
-            border-top: 1px solid #e5e7eb;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-        .blog-reactions-label {
-
-            font-size: 14px;
-
-            color: #6b7280;
-
-            font-weight: 600;
-
-            margin-right: 5px;
-
-        }
-
-
-        .reaction-btn {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            padding: 9px 18px;
-
-            border: 1px solid #d1d5db;
-
-            border-radius: 30px;
-
-            background: #ffffff;
-
-            color: #374151;
-
-            font-size: 15px;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition: 0.25s;
-
-        }
-
-
-        .reaction-btn:hover {
-
-            border-color: #007bff;
-
-            color: #007bff;
-
-        }
-
-
-        .reaction-btn.active-like {
-
-            background: #e7f1ff;
-
-            border-color: #007bff;
-
-            color: #007bff;
-
-        }
-
-
-        .reaction-btn.active-dislike {
-
-            background: #fee2e2;
-
-            border-color: #dc2626;
-
-            color: #dc2626;
-
-        }
-
-
-        .reaction-btn:disabled {
-
-            cursor: not-allowed;
-
-            opacity: 0.7;
-
-        }
-
-
-        /* ===============================
-           LOADING / ERROR
-        =============================== */
-
-        .blog-loading,
-        .blog-error {
-
-            text-align: center;
-
-            padding: 60px 20px;
-
-        }
-
-
-        .blog-error {
-
-            color: red;
-
-        }
-
-
-        /* ===============================
-           RESPONSIVE
-        =============================== */
-
-        @media (max-width: 768px) {
-
-            .blog-detail-section {
-
-                padding: 30px 15px;
-
-            }
-
-
-            .blog-detail-container {
-
-                padding: 22px;
-
-            }
-
-
-            .blog-detail-title {
-
-                font-size: 30px;
-
-            }
-
-
-            .blog-detail-content {
-
-                font-size: 16px;
-
-            }
-
-
-            .blog-video iframe {
-
-                height: 260px;
-
-            }
-
-        }
-
-    </style>
-
-
-    <!-- SUPABASE LIBRARY -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-    ></script>
-
-
-    <!-- SUPABASE CONFIG -->
-
-    <script
-        src="js/supabase-config.js"
-    ></script>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"
-     crossorigin="anonymous"></script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="KNULA7yENFc3kMSxXO2QIA" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Blog | Akkhil Kapoor</title>
+<meta id="metaDescription" name="description" content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator.">
+<link id="canonicalLink" rel="canonical" href="https://Akkhilkapoor.github.io/Akkhil/blog-detail.html">
+<meta id="ogType" property="og:type" content="article">
+<meta id="ogTitle" property="og:title" content="Blog | Akkhil Kapoor">
+<meta id="ogDescription" property="og:description" content="Read detailed educational blogs and articles by Akkhil Kapoor.">
+<meta id="ogUrl" property="og:url" content="https://Akkhilkapoor.github.io/Akkhil/blog-detail.html">
+<meta id="ogImage" property="og:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta id="twitterTitle" name="twitter:title" content="Blog | Akkhil Kapoor">
+<meta id="twitterDescription" name="twitter:description" content="Read detailed educational blogs and articles by Akkhil Kapoor.">
+<meta id="twitterImage" name="twitter:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
+<script id="articleSchema" type="application/ld+json"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070B; --surface:rgba(255,255,255,0.045); --border:rgba(255,255,255,0.10);
+    --text:#F3F2F8; --dim:rgba(243,242,248,0.62); --dimmer:rgba(243,242,248,0.4);
+    --c1:#7C5CFF; --c2:#37E0C8; --c3:#FF5B94; --max:1000px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;}
+  a{color:var(--c2);}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
+  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.35;}
+  .b1{width:500px; height:500px; background:var(--c1); top:-180px; left:-140px;}
+  .b2{width:420px; height:420px; background:var(--c3); top:20%; right:-160px; opacity:0.25;}
+  header, main, footer{position:relative; z-index:3;}
+  header{position:sticky; top:0; z-index:50; padding:18px 0;}
+  nav{max-width:1160px; margin:0 auto; padding:12px 22px; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px; backdrop-filter:blur(18px);}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
+  .brand-mark{width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;}
+  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
+  .navlinks a{position:relative; text-decoration:none; color:inherit;}
+  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
+  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
+  .navlinks a:hover, .navlinks a.active{color:var(--text);}
+  .nav-cta{background:var(--text); color:#07070B; font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:100px; text-decoration:none;}
+
+  main{padding:60px 0 100px;}
+  .blog-detail-container{background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:44px;}
+  .back-to-blogs{display:inline-flex; align-items:center; gap:6px; margin-bottom:24px; padding:9px 18px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; border-radius:100px; font-weight:600; font-size:13.5px;}
+  .blog-detail-title{font-size:clamp(26px,4vw,38px); line-height:1.25; margin-bottom:12px;}
+  .blog-date{color:var(--dimmer); font-size:13px; font-family:'JetBrains Mono',monospace; margin-bottom:24px;}
+  .blog-detail-image{width:100%; max-height:480px; object-fit:contain; background:var(--surface); border:1px solid var(--border); border-radius:16px; margin-bottom:28px;}
+  .blog-detail-content{font-size:16px; line-height:1.85; color:var(--dim);}
+  .blog-detail-content h1, .blog-detail-content h2, .blog-detail-content h3{margin-top:28px; margin-bottom:14px; color:var(--text);}
+  .blog-detail-content p{margin-bottom:16px;}
+  .blog-detail-content ul, .blog-detail-content ol{margin-bottom:18px; padding-left:28px;}
+  .blog-detail-content img{max-width:100%; border-radius:10px; margin:18px 0;}
+  .blog-video{margin-top:32px;}
+  .blog-video h3{margin-bottom:14px; font-size:17px;}
+  .blog-video iframe{width:100%; height:460px; border:none; border-radius:14px;}
+  .blog-reactions{margin-top:36px; padding-top:24px; border-top:1px solid var(--border); display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  .blog-reactions-label{font-size:13.5px; color:var(--dimmer); font-weight:600;}
+  .reaction-btn{display:inline-flex; align-items:center; gap:8px; padding:9px 18px; border:1px solid var(--border); border-radius:100px; background:var(--surface); color:var(--dim); font-size:14px; font-weight:600; cursor:pointer; transition:.2s;}
+  .reaction-btn:hover{border-color:var(--c2); color:var(--c2);}
+  .reaction-btn.active-like{background:rgba(55,224,200,0.14); border-color:var(--c2); color:var(--c2);}
+  .reaction-btn.active-dislike{background:rgba(255,91,148,0.14); border-color:var(--c3); color:var(--c3);}
+  .blog-loading, .blog-error{text-align:center; padding:60px 20px; color:var(--dim);}
+  .blog-error{color:var(--c3);}
+  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
+  footer a{text-decoration:underline; color:var(--dimmer);}
+  @media (max-width:860px){ .navlinks{display:none;} .blog-detail-container{padding:26px;} .blog-video iframe{height:240px;} }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
 </head>
-
-
 <body>
 
-
-    <!-- ===============================
-         HEADER
-    =============================== -->
-
-    <header class="site-header">
-
-        <div class="nav-container">
-
-
-            <!-- LOGO -->
-
-            <div class="logo">
-
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="30"
-                    height="30"
-                >
-
-                    <path
-                        d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"
-                    />
-
-                </svg>
-
-
-                <span>
-
-                    Akkhil Kapoor
-
-                </span>
-
-            </div>
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="menu-toggle"
-                id="mobileMenuBtn"
-                aria-label="Toggle Navigation"
-            >
-
-                <i class="fas fa-bars"></i>
-
-            </button>
-
-
-            <!-- NAVIGATION -->
-
-            <nav
-                aria-label="Main Navigation"
-                id="mainNav"
-            >
-
-                <ul class="nav-links">
-
-
-                    <li>
-
-                        <a href="index.html">
-
-                            Home
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="about.html">
-
-                            About
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="expertise.html">
-
-                            Expertise
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="projects.html">
-
-                            Projects
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a
-                            href="blog.html"
-                            class="active"
-                        >
-
-                            Blog
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="contact.html">
-
-                            Contact
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
-            </nav>
-
-
-        </div>
-
-    </header>
-
-
-    <!-- ===============================
-         MAIN
-    =============================== -->
-
-    <main>
-
-
-        <section
-            class="blog-detail-section"
-        >
-
-
-            <div
-                id="blogContainer"
-                class="blog-detail-container"
-            >
-
-
-                <div
-                    class="blog-loading"
-                >
-
-                    <i
-                        class="fas fa-spinner fa-spin"
-                    ></i>
-
-
-                    <p>
-
-                        Loading blog...
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ===============================
-         FOOTER
-    =============================== -->
-
-   <footer class="site-footer">
-    <div class="footer-container">
-        <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-        <p style="margin-top: 8px; font-size: 13px;">
-            <a href="privacy-policy.html" style="color: #9ca3af; text-decoration: underline;">Privacy Policy</a>
-        </p>
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div></div>
+
+<header>
+  <nav>
+    <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <a href="contact.html" class="nav-cta">Enroll Now</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div id="blogContainer" class="blog-detail-container">
+      <div class="blog-loading"><p>Loading blog...</p></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
+    <p style="margin-top:8px; font-size:13px;"><a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const blogContainer = document.getElementById("blogContainer");
+
+  async function loadBlog() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
+    if (!slug) { showError("Blog not found."); return; }
+
+    try {
+      const { data: blogs, error } = await supabaseClient
+        .from("blogs").select("*").eq("slug", slug).eq("is_published", true).limit(1);
+
+      if (error) throw error;
+      if (!blogs || blogs.length === 0) { showError("Blog not found."); return; }
+
+      const blog = blogs[0];
+
+      let imageHTML = "";
+      if (blog.image_url) {
+        imageHTML = `<img src="${escapeHTML(blog.image_url)}" alt="${escapeHTML(blog.title)}" class="blog-detail-image">`;
+      }
+
+      let dateHTML = "";
+      if (blog.created_at) {
+        const date = new Date(blog.created_at);
+        dateHTML = `<div class="blog-date">${date.toLocaleDateString("en-IN", { day:"numeric", month:"long", year:"numeric" })}</div>`;
+      }
+
+      let videoHTML = "";
+      if (blog.video_url) {
+        const videoId = getYouTubeVideoId(blog.video_url);
+        if (videoId) {
+          videoHTML = `<div class="blog-video"><h3>Related Video</h3><iframe src="https://www.youtube.com/embed/${videoId}" title="${escapeHTML(blog.title)}" allowfullscreen></iframe></div>`;
+        }
+      }
+
+      blogContainer.innerHTML = `
+        <a href="blog.html" class="back-to-blogs">← Back to Blogs</a>
+        <h1 class="blog-detail-title">${escapeHTML(blog.title)}</h1>
+        ${dateHTML}
+        ${imageHTML}
+        <div class="blog-detail-content">${blog.content}</div>
+        ${videoHTML}
+        <div id="blogReactions"></div>
+      `;
+
+      updateSEO(blog, slug);
+      renderReactions(blog);
+    } catch (error) {
+      console.error("Error loading blog:", error);
+      showError("Failed to load blog. Please try again later.");
+    }
+  }
+
+  function updateSEO(blog, slug) {
+    const plainDescription = stripHTML(blog.content).trim().substring(0, 160);
+    const pageUrl = "https://Akkhilkapoor.github.io/Akkhil/blog-detail.html?slug=" + encodeURIComponent(slug);
+    const imageUrl = blog.image_url || "https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg";
+    const fullTitle = blog.title + " | Akkhil Kapoor";
+
+    document.title = fullTitle;
+    document.getElementById("pageTitle").textContent = fullTitle;
+    document.getElementById("metaDescription").setAttribute("content", plainDescription);
+    document.getElementById("canonicalLink").setAttribute("href", pageUrl);
+    document.getElementById("ogTitle").setAttribute("content", fullTitle);
+    document.getElementById("ogDescription").setAttribute("content", plainDescription);
+    document.getElementById("ogUrl").setAttribute("content", pageUrl);
+    document.getElementById("ogImage").setAttribute("content", imageUrl);
+    document.getElementById("twitterTitle").setAttribute("content", fullTitle);
+    document.getElementById("twitterDescription").setAttribute("content", plainDescription);
+    document.getElementById("twitterImage").setAttribute("content", imageUrl);
+
+    const schema = {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": blog.title, "description": plainDescription, "image": imageUrl,
+      "author": { "@type": "Person", "name": "Akkhil Kapoor", "alternateName": "Akhil Kapoor" },
+      "publisher": { "@type": "Organization", "name": "Akkhil Kapoor" },
+      "datePublished": blog.created_at || "",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
+    };
+    document.getElementById("articleSchema").textContent = JSON.stringify(schema);
+  }
+
+  function renderReactions(blog) {
+    const reactionsBox = document.getElementById("blogReactions");
+    let likes = blog.likes || 0;
+    let dislikes = blog.dislikes || 0;
+    const voteKey = "vote_" + blog.slug;
+    let currentVote = localStorage.getItem(voteKey);
+
+    function draw() {
+      reactionsBox.innerHTML = `
+        <div class="blog-reactions">
+          <span class="blog-reactions-label">Was this helpful?</span>
+          <button id="likeBtn" class="reaction-btn ${currentVote === "like" ? "active-like" : ""}">👍 <span id="likeCount">${likes}</span></button>
+          <button id="dislikeBtn" class="reaction-btn ${currentVote === "dislike" ? "active-dislike" : ""}">👎 <span id="dislikeCount">${dislikes}</span></button>
+        </div>
+      `;
+      document.getElementById("likeBtn").addEventListener("click", function () { handleVote("like"); });
+      document.getElementById("dislikeBtn").addEventListener("click", function () { handleVote("dislike"); });
+    }
+
+    async function handleVote(type) {
+      let likeDelta = 0, dislikeDelta = 0;
+      if (currentVote === type) {
+        if (type === "like") { likeDelta = -1; likes -= 1; } else { dislikeDelta = -1; dislikes -= 1; }
+        currentVote = null; localStorage.removeItem(voteKey);
+      } else if (currentVote === null) {
+        if (type === "like") { likeDelta = 1; likes += 1; } else { dislikeDelta = 1; dislikes += 1; }
+        currentVote = type; localStorage.setItem(voteKey, type);
+      } else {
+        if (type === "like") { likeDelta = 1; dislikeDelta = -1; likes += 1; dislikes -= 1; }
+        else { likeDelta = -1; dislikeDelta = 1; likes -= 1; dislikes += 1; }
+        currentVote = type; localStorage.setItem(voteKey, type);
+      }
+      draw();
+      const { error } = await supabaseClient.rpc("adjust_blog_reaction", { blog_id: blog.id, like_delta: likeDelta, dislike_delta: dislikeDelta });
+      if (error) console.error("Error updating reaction:", error);
+    }
+
+    draw();
+  }
+
+  function getYouTubeVideoId(url) {
+    let videoId = "";
+    try {
+      const urlObject = new URL(url);
+      if (urlObject.hostname.includes("youtube.com")) videoId = urlObject.searchParams.get("v");
+      else if (urlObject.hostname.includes("youtu.be")) videoId = urlObject.pathname.substring(1);
+    } catch (error) { console.error("Invalid YouTube URL"); }
+    return videoId;
+  }
+
+  function showError(message) {
+    blogContainer.innerHTML = `
+      <div class="blog-error">
+        <h2>${message}</h2>
+        <a href="blog.html" class="back-to-blogs">Back to Blogs</a>
+      </div>
+    `;
+  }
+
+  function escapeHTML(text) {
+    const div = document.createElement("div");
+    div.textContent = text || "";
+    return div.innerHTML;
+  }
+
+  function stripHTML(html) {
+    const div = document.createElement("div");
+    div.innerHTML = html || "";
+    return div.textContent || div.innerText || "";
+  }
+
+  loadBlog();
 </script>
 
-
-    <!-- ===============================
-         BLOG DETAIL JAVASCRIPT
-    =============================== -->
-
-    <script>
-
-
-        /*
-        =====================================
-        DOM ELEMENT
-        =====================================
-        */
-
-
-        const blogContainer =
-            document.getElementById(
-                "blogContainer"
-            );
-
-
-        /*
-        =====================================
-        LOAD BLOG
-        =====================================
-        */
-
-
-        async function loadBlog() {
-
-
-            const urlParams =
-                new URLSearchParams(
-                    window.location.search
-                );
-
-
-            const slug =
-                urlParams.get(
-                    "slug"
-                );
-
-
-            console.log(
-                "Blog Slug:",
-                slug
-            );
-
-
-            if (!slug) {
-
-
-                showError(
-                    "Blog not found."
-                );
-
-
-                return;
-
-            }
-
-
-            try {
-
-
-                const {
-
-                    data: blogs,
-
-                    error
-
-                } = await supabaseClient
-
-                    .from("blogs")
-
-                    .select("*")
-
-                    .eq(
-                        "slug",
-                        slug
-                    )
-
-                    .eq(
-                        "is_published",
-                        true
-                    )
-
-                    .limit(1);
-
-
-                console.log(
-                    "Blog Data:",
-                    blogs
-                );
-
-
-                console.log(
-                    "Supabase Error:",
-                    error
-                );
-
-
-                if (error) {
-
-
-                    throw error;
-
-                }
-
-
-                if (
-                    !blogs
-                    ||
-                    blogs.length === 0
-                ) {
-
-
-                    showError(
-                        "Blog not found."
-                    );
-
-
-                    return;
-
-                }
-
-
-                const blog =
-                    blogs[0];
-
-
-                let imageHTML =
-                    "";
-
-
-                if (
-                    blog.image_url
-                ) {
-
-
-                    imageHTML = `
-
-                        <img
-
-                            src="${escapeHTML(
-                                blog.image_url
-                            )}"
-
-                            alt="${escapeHTML(
-                                blog.title
-                            )}"
-
-                            class="blog-detail-image"
-
-                        >
-
-                    `;
-
-                }
-
-
-                let dateHTML =
-                    "";
-
-
-                if (
-                    blog.created_at
-                ) {
-
-
-                    const date =
-                        new Date(
-                            blog.created_at
-                        );
-
-
-                    dateHTML = `
-
-                        <div
-                            class="blog-date"
-                        >
-
-                            <i
-                                class="far fa-calendar-alt"
-                            ></i>
-
-                            ${date.toLocaleDateString(
-
-                                "en-IN",
-
-                                {
-
-                                    day:
-                                        "numeric",
-
-                                    month:
-                                        "long",
-
-                                    year:
-                                        "numeric"
-
-                                }
-
-                            )}
-
-                        </div>
-
-                    `;
-
-                }
-
-
-                let videoHTML =
-                    "";
-
-
-                if (
-                    blog.video_url
-                ) {
-
-
-                    const videoId =
-                        getYouTubeVideoId(
-                            blog.video_url
-                        );
-
-
-                    if (
-                        videoId
-                    ) {
-
-
-                        videoHTML = `
-
-                            <div
-                                class="blog-video"
-                            >
-
-                                <h3>
-
-                                    <i
-                                        class="fab fa-youtube"
-                                    ></i>
-
-                                    Related Video
-
-                                </h3>
-
-
-                                <iframe
-
-                                    src="https://www.youtube.com/embed/${videoId}"
-
-                                    title="${escapeHTML(
-                                        blog.title
-                                    )}"
-
-                                    allowfullscreen
-
-                                ></iframe>
-
-                            </div>
-
-                        `;
-
-                    }
-
-                }
-
-
-                blogContainer.innerHTML = `
-
-
-                    <a
-
-                        href="blog.html"
-
-                        class="back-to-blogs"
-
-                    >
-
-                        <i
-                            class="fas fa-arrow-left"
-                        ></i>
-
-                        Back to Blogs
-
-                    </a>
-
-
-                    <h1
-                        class="blog-detail-title"
-                    >
-
-                        ${escapeHTML(
-                            blog.title
-                        )}
-
-                    </h1>
-
-
-                    ${dateHTML}
-
-
-                    ${imageHTML}
-
-
-                    <div
-                        class="blog-detail-content"
-                    >
-
-                        ${blog.content}
-
-                    </div>
-
-
-                    ${videoHTML}
-
-
-                    <div id="blogReactions"></div>
-
-                `;
-
-
-                updateSEO(
-                    blog,
-                    slug
-                );
-
-
-                renderReactions(
-                    blog
-                );
-
-
-            }
-
-            catch (error) {
-
-
-                console.error(
-                    "Error loading blog:",
-                    error
-                );
-
-
-                showError(
-                    "Failed to load blog. Please try again later."
-                );
-
-            }
-
-        }
-
-
-        /*
-        =====================================
-        UPDATE SEO TAGS DYNAMICALLY
-        =====================================
-        */
-
-
-        function updateSEO(
-            blog,
-            slug
-        ) {
-
-
-            const plainDescription =
-                stripHTML(
-                    blog.content
-                )
-                .trim()
-                .substring(
-                    0,
-                    160
-                );
-
-
-            const pageUrl =
-                "https://Akkhilkapoor.github.io/Akkhil/blog-detail.html?slug="
-                + encodeURIComponent(
-                    slug
-                );
-
-
-            const imageUrl =
-                blog.image_url
-                ||
-                "https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg";
-
-
-            const fullTitle =
-                blog.title
-                +
-                " | Akkhil Kapoor";
-
-
-            document.title =
-                fullTitle;
-
-
-            document
-                .getElementById(
-                    "pageTitle"
-                )
-                .textContent =
-                    fullTitle;
-
-
-            document
-                .getElementById(
-                    "metaDescription"
-                )
-                .setAttribute(
-                    "content",
-                    plainDescription
-                );
-
-
-            document
-                .getElementById(
-                    "canonicalLink"
-                )
-                .setAttribute(
-                    "href",
-                    pageUrl
-                );
-
-
-            document
-                .getElementById(
-                    "ogTitle"
-                )
-                .setAttribute(
-                    "content",
-                    fullTitle
-                );
-
-
-            document
-                .getElementById(
-                    "ogDescription"
-                )
-                .setAttribute(
-                    "content",
-                    plainDescription
-                );
-
-
-            document
-                .getElementById(
-                    "ogUrl"
-                )
-                .setAttribute(
-                    "content",
-                    pageUrl
-                );
-
-
-            document
-                .getElementById(
-                    "ogImage"
-                )
-                .setAttribute(
-                    "content",
-                    imageUrl
-                );
-
-
-            document
-                .getElementById(
-                    "twitterTitle"
-                )
-                .setAttribute(
-                    "content",
-                    fullTitle
-                );
-
-
-            document
-                .getElementById(
-                    "twitterDescription"
-                )
-                .setAttribute(
-                    "content",
-                    plainDescription
-                );
-
-
-            document
-                .getElementById(
-                    "twitterImage"
-                )
-                .setAttribute(
-                    "content",
-                    imageUrl
-                );
-
-
-            const schema = {
-
-                "@context":
-                    "https://schema.org",
-
-                "@type":
-                    "Article",
-
-                "headline":
-                    blog.title,
-
-                "description":
-                    plainDescription,
-
-                "image":
-                    imageUrl,
-
-                "author": {
-
-                    "@type":
-                        "Person",
-
-                    "name":
-                        "Akkhil Kapoor",
-
-                    "alternateName":
-                        "Akhil Kapoor"
-
-                },
-
-                "publisher": {
-
-                    "@type":
-                        "Organization",
-
-                    "name":
-                        "Akkhil Kapoor"
-
-                },
-
-                "datePublished":
-                    blog.created_at
-                    ||
-                    "",
-
-                "mainEntityOfPage": {
-
-                    "@type":
-                        "WebPage",
-
-                    "@id":
-                        pageUrl
-
-                }
-
-            };
-
-
-            document
-                .getElementById(
-                    "articleSchema"
-                )
-                .textContent =
-                    JSON.stringify(
-                        schema
-                    );
-
-        }
-
-
-        /*
-        =====================================
-        LIKE / DISLIKE REACTIONS
-        =====================================
-        */
-
-
-        function renderReactions(
-            blog
-        ) {
-
-
-            const reactionsBox =
-                document.getElementById(
-                    "blogReactions"
-                );
-
-
-            let likes =
-                blog.likes || 0;
-
-
-            let dislikes =
-                blog.dislikes || 0;
-
-
-            const voteKey =
-                "vote_" + blog.slug;
-
-
-            let currentVote =
-                localStorage.getItem(
-                    voteKey
-                );
-
-
-            function draw() {
-
-
-                reactionsBox.innerHTML = `
-
-                    <div class="blog-reactions">
-
-                        <span class="blog-reactions-label">
-
-                            Was this helpful?
-
-                        </span>
-
-
-                        <button
-                            id="likeBtn"
-                            class="reaction-btn ${
-
-                                currentVote === "like"
-                                    ? "active-like"
-                                    : ""
-
-                            }"
-                        >
-
-                            <i class="fas fa-thumbs-up"></i>
-
-                            <span id="likeCount">${likes}</span>
-
-                        </button>
-
-
-                        <button
-                            id="dislikeBtn"
-                            class="reaction-btn ${
-
-                                currentVote === "dislike"
-                                    ? "active-dislike"
-                                    : ""
-
-                            }"
-                        >
-
-                            <i class="fas fa-thumbs-down"></i>
-
-                            <span id="dislikeCount">${dislikes}</span>
-
-                        </button>
-
-                    </div>
-
-                `;
-
-
-                document
-                    .getElementById(
-                        "likeBtn"
-                    )
-                    .addEventListener(
-                        "click",
-                        function () {
-
-                            handleVote(
-                                "like"
-                            );
-
-                        }
-                    );
-
-
-                document
-                    .getElementById(
-                        "dislikeBtn"
-                    )
-                    .addEventListener(
-                        "click",
-                        function () {
-
-                            handleVote(
-                                "dislike"
-                            );
-
-                        }
-                    );
-
-            }
-
-
-            async function handleVote(
-                type
-            ) {
-
-
-                let likeDelta = 0;
-
-                let dislikeDelta = 0;
-
-
-                if (
-                    currentVote === type
-                ) {
-
-
-                    /* USER CLICKED THE SAME BUTTON AGAIN -> REMOVE VOTE */
-
-
-                    if (type === "like") {
-
-                        likeDelta = -1;
-                        likes -= 1;
-
-                    } else {
-
-                        dislikeDelta = -1;
-                        dislikes -= 1;
-
-                    }
-
-
-                    currentVote = null;
-
-
-                    localStorage.removeItem(
-                        voteKey
-                    );
-
-
-                }
-
-                else if (
-                    currentVote === null
-                ) {
-
-
-                    /* NO PREVIOUS VOTE */
-
-
-                    if (type === "like") {
-
-                        likeDelta = 1;
-                        likes += 1;
-
-                    } else {
-
-                        dislikeDelta = 1;
-                        dislikes += 1;
-
-                    }
-
-
-                    currentVote = type;
-
-
-                    localStorage.setItem(
-                        voteKey,
-                        type
-                    );
-
-
-                }
-
-                else {
-
-
-                    /* SWITCHING VOTE */
-
-
-                    if (type === "like") {
-
-                        likeDelta = 1;
-                        dislikeDelta = -1;
-                        likes += 1;
-                        dislikes -= 1;
-
-                    } else {
-
-                        likeDelta = -1;
-                        dislikeDelta = 1;
-                        likes -= 1;
-                        dislikes += 1;
-
-                    }
-
-
-                    currentVote = type;
-
-
-                    localStorage.setItem(
-                        voteKey,
-                        type
-                    );
-
-
-                }
-
-
-                draw();
-
-
-                const { error } =
-                    await supabaseClient.rpc(
-                        "adjust_blog_reaction",
-                        {
-
-                            blog_id:
-                                blog.id,
-
-                            like_delta:
-                                likeDelta,
-
-                            dislike_delta:
-                                dislikeDelta
-
-                        }
-                    );
-
-
-                if (error) {
-
-                    console.error(
-                        "Error updating reaction:",
-                        error
-                    );
-
-                }
-
-            }
-
-
-            draw();
-
-        }
-
-
-        /*
-        =====================================
-        YOUTUBE VIDEO ID
-        =====================================
-        */
-
-
-        function getYouTubeVideoId(
-            url
-        ) {
-
-
-            let videoId =
-                "";
-
-
-            try {
-
-
-                const urlObject =
-                    new URL(
-                        url
-                    );
-
-
-                if (
-
-                    urlObject.hostname.includes(
-                        "youtube.com"
-                    )
-
-                ) {
-
-
-                    videoId =
-                        urlObject.searchParams.get(
-                            "v"
-                        );
-
-                }
-
-
-                else if (
-
-                    urlObject.hostname.includes(
-                        "youtu.be"
-                    )
-
-                ) {
-
-
-                    videoId =
-                        urlObject.pathname.substring(
-                            1
-                        );
-
-                }
-
-
-            }
-
-            catch (error) {
-
-
-                console.error(
-                    "Invalid YouTube URL"
-                );
-
-            }
-
-
-            return videoId;
-
-        }
-
-
-        /*
-        =====================================
-        SHOW ERROR
-        =====================================
-        */
-
-
-        function showError(
-            message
-        ) {
-
-
-            blogContainer.innerHTML = `
-
-
-                <div
-                    class="blog-error"
-                >
-
-                    <i
-                        class="fas fa-exclamation-triangle"
-                    ></i>
-
-
-                    <h2>
-
-                        ${message}
-
-                    </h2>
-
-
-                    <a
-
-                        href="blog.html"
-
-                        class="back-to-blogs"
-
-                    >
-
-                        Back to Blogs
-
-                    </a>
-
-                </div>
-
-            `;
-
-        }
-
-
-        /*
-        =====================================
-        ESCAPE HTML
-        =====================================
-        */
-
-
-        function escapeHTML(
-            text
-        ) {
-
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-
-            div.textContent =
-                text
-                ||
-                "";
-
-
-            return div.innerHTML;
-
-        }
-
-
-        /*
-        =====================================
-        STRIP HTML (FOR META DESCRIPTION)
-        =====================================
-        */
-
-
-        function stripHTML(
-            html
-        ) {
-
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-
-            div.innerHTML =
-                html
-                ||
-                "";
-
-
-            return (
-                div.textContent
-                ||
-                div.innerText
-                ||
-                ""
-            );
-
-        }
-
-
-        /*
-        =====================================
-        MOBILE MENU
-        =====================================
-        */
-
-
-        const mobileMenuBtn =
-            document.getElementById(
-                "mobileMenuBtn"
-            );
-
-
-        const mainNav =
-            document.getElementById(
-                "mainNav"
-            );
-
-
-        mobileMenuBtn.addEventListener(
-
-            "click",
-
-            function() {
-
-
-                mainNav.classList.toggle(
-                    "open"
-                );
-
-
-                const icon =
-                    mobileMenuBtn.querySelector(
-                        "i"
-                    );
-
-
-                if (
-
-                    mainNav.classList.contains(
-                        "open"
-                    )
-
-                ) {
-
-
-                    icon.classList.remove(
-                        "fa-bars"
-                    );
-
-
-                    icon.classList.add(
-                        "fa-times"
-                    );
-
-                }
-
-                else {
-
-
-                    icon.classList.remove(
-                        "fa-times"
-                    );
-
-
-                    icon.classList.add(
-                        "fa-bars"
-                    );
-
-                }
-
-            }
-
-        );
-
-
-        /*
-        =====================================
-        START
-        =====================================
-        */
-
-
-        loadBlog();
-
-
-    </script>
-
-
 </body>
-
 </html>
