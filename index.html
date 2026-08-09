@@ -78,7 +78,8 @@
   .navlinks a{position:relative;}
   .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
   .navlinks a:hover::after{width:100%;}
-  .navlinks a:hover{color:var(--text);}
+  .navlinks a:hover, .navlinks a.active{color:var(--text);}
+  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
   .nav-cta{
     background:var(--text); color:#07070B; font-weight:600; font-size:13.5px;
     padding:10px 20px; border-radius:100px; transition:transform .2s;
@@ -225,13 +226,14 @@
   <nav>
     <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
     <div class="navlinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <a href="#contact" class="nav-cta">Enroll Now</a>
+    <a href="contact.html" class="nav-cta">Enroll Now</a>
   </nav>
 </header>
 
@@ -241,8 +243,8 @@
     <div class="typeline">I teach <span id="typed">Tally Prime</span><span class="cursor"></span></div>
     <p class="lede">Accounts & IT trainer in Ambala — 20+ years turning students into hires through hands-on, project-first learning.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Start Learning →</a>
-      <a href="#about" class="btn-ghost">My Story</a>
+      <a href="contact.html" class="btn-primary">Start Learning →</a>
+      <a href="about.html" class="btn-ghost">My Story</a>
     </div>
   </div>
 </section>
@@ -289,7 +291,7 @@
         <h2 style="margin-top:16px;">Education is the most powerful tool for real change.</h2>
         <p>Throughout my career I've dedicated myself to helping students, professionals and organizations reach their goals through practical, applied learning rather than theory for its own sake.</p>
         <p>My approach: simplify the complex, build with real projects, and make sure every learner leaves with the confidence to apply what they know in an actual job or business.</p>
-        <a href="#" class="btn-ghost" style="display:inline-flex; margin-top:10px;">More about my journey →</a>
+        <a href="about.html" class="btn-ghost" style="display:inline-flex; margin-top:10px;">More about my journey →</a>
       </div>
     </div>
   </div>
@@ -319,7 +321,7 @@
       <div class="aurora-inner"></div>
       <div class="kicker" style="position:relative; margin:0 auto 20px; width:fit-content;"><span class="dot"></span> Get In Touch</div>
       <h2>Ready to build a skill that actually gets you <span class="grad-text">hired?</span></h2>
-      <a href="#" class="btn-primary">Book a Free Consultation →</a>
+      <a href="contact.html" class="btn-primary">Book a Free Consultation →</a>
     </div>
   </div>
 </section>
@@ -328,7 +330,7 @@
   <div class="wrap foot-row">
     <div>© Akkhil Kapoor. All Rights Reserved.</div>
     <div class="foot-links">
-      <a href="#">Privacy Policy</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
       <a href="#">Instagram</a>
       <a href="#">WhatsApp</a>
     </div>
