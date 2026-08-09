@@ -1,373 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expertise | Akkhil Kapoor - Accounts & IT Trainer</title>
-    <meta name="description" content="Explore the professional expertise of Akkhil Kapoor (also known as Akhil Kapoor) in Accounts, Tally, Web Development, AI Tools, Graphic Design, and Computer Education.">
-    <meta name="keywords" content="Akkhil Kapoor Expertise, Akhil Kapoor, Tally Prime Training Ambala, Web Development Course Ambala, Accounts Training Ambala, AI Tools Training, Graphic Design Course Ambala, Office Automation Ambala, Computer Education Ambala">
-    <meta name="author" content="Akkhil Kapoor">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://Akkhilkapoor.github.io/Akkhil/expertise.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertise | Akkhil Kapoor - Accounts & IT Trainer</title>
+<meta name="description" content="Explore the professional expertise of Akkhil Kapoor (also known as Akhil Kapoor) in Accounts, Tally, Web Development, AI Tools, Graphic Design, and Computer Education.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070B;
+    --surface:rgba(255,255,255,0.045);
+    --border:rgba(255,255,255,0.10);
+    --text:#F3F2F8;
+    --dim:rgba(243,242,248,0.62);
+    --dimmer:rgba(243,242,248,0.4);
+    --c1:#7C5CFF;
+    --c2:#37E0C8;
+    --c3:#FF5B94;
+    --max:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; position:relative;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3,h4{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
+  @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
 
-    <!-- Open Graph tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Expertise | Akkhil Kapoor - Accounts & IT Trainer in Ambala">
-    <meta property="og:description" content="Professional expertise in Accounts, Tally, Web Development, AI Tools, Graphic Design, and Computer Education by Akkhil Kapoor, Ambala.">
-    <meta property="og:url" content="https://Akkhilkapoor.github.io/Akkhil/expertise.html">
-    <meta property="og:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
-    <meta property="og:site_name" content="Akkhil Kapoor Portfolio">
+  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
+  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.4;}
+  .b1{width:560px; height:560px; background:var(--c1); top:-200px; left:-140px; animation:float1 16s ease-in-out infinite;}
+  .b2{width:480px; height:480px; background:var(--c3); top:20%; right:-180px; opacity:0.28; animation:float2 20s ease-in-out infinite;}
+  .b3{width:460px; height:460px; background:var(--c2); bottom:-200px; left:25%; opacity:0.2; animation:float3 18s ease-in-out infinite;}
+  @keyframes float1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(60px,80px);} }
+  @keyframes float2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-70px,50px);} }
+  @keyframes float3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,-60px);} }
 
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Expertise | Akkhil Kapoor - Accounts & IT Trainer">
-    <meta name="twitter:description" content="Explore the professional expertise of Akkhil Kapoor in Accounts, Tally, Web Development, AI Tools, and Graphic Design.">
-    <meta name="twitter:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
+  header, main, footer{position:relative; z-index:3;}
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  header{position:sticky; top:0; z-index:50; padding:18px 0;}
+  nav{
+    max-width:var(--max); margin:0 auto; padding:12px 22px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px;
+    backdrop-filter:blur(18px);
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
+  .brand-mark{
+    width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3));
+    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;
+  }
+  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
+  .navlinks a{position:relative;}
+  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
+  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
+  .navlinks a:hover, .navlinks a.active{color:var(--text);}
+  .nav-cta{
+    background:var(--text); color:#07070B; font-weight:600; font-size:13.5px;
+    padding:10px 20px; border-radius:100px; transition:transform .2s;
+  }
+  .nav-cta:hover{transform:scale(1.05);}
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"
-     crossorigin="anonymous"></script>
+  .page-hero{padding:80px 0 20px; text-align:center;}
+  .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--surface); border:1px solid var(--border); border-radius:100px;
+    padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim);
+    margin-bottom:22px;
+  }
+  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
+  .page-hero h1{font-size:clamp(34px,5.4vw,56px); font-weight:700; line-height:1.1; margin-bottom:16px;}
+  .page-hero p{font-size:16px; color:var(--dim); max-width:560px; margin:0 auto; line-height:1.65;}
 
-    <!-- Structured Data (JSON-LD) for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Akkhil Kapoor - Accounts, Tally, IT & Web Development Training",
-      "provider": {
-        "@type": "Person",
-        "name": "Akkhil Kapoor",
-        "alternateName": "Akhil Kapoor"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Ambala"
-      },
-      "url": "https://Akkhilkapoor.github.io/Akkhil/expertise.html",
-      "description": "Professional training expertise in Accounts, Tally Prime, Web Development, AI Tools, Graphic Design, Office Automation, and Computer Education."
-    }
-    </script>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="KNULA7yENFc3kMSxXO2QIA" async></script>
+  main{padding:60px 0 100px;}
+
+  .exp-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; perspective:900px;}
+  .exp-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:30px;
+    transition:transform .15s ease, border-color .3s; will-change:transform;
+  }
+  .exp-card:hover{border-color:rgba(255,255,255,0.25);}
+  .exp-card .icon{
+    width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,var(--c1),var(--c3));
+    display:flex; align-items:center; justify-content:center; font-size:19px; margin-bottom:16px;
+  }
+  .exp-card h3{font-size:18px; font-weight:600; margin-bottom:10px;}
+  .exp-card > p{font-size:13.5px; color:var(--dim); line-height:1.6; margin-bottom:14px;}
+  .exp-card .styled-list{list-style:none;}
+  .exp-card .styled-list li{
+    font-size:13px; padding:7px 0 7px 18px; position:relative; color:var(--dim);
+    border-bottom:1px solid var(--border);
+  }
+  .exp-card .styled-list li:last-child{border-bottom:none;}
+  .exp-card .styled-list li::before{content:"◆"; position:absolute; left:0; top:9px; font-size:7px; color:var(--c2);}
+  .exp-card.learning{background:linear-gradient(145deg, rgba(124,92,255,0.10), rgba(255,91,148,0.06)); border-color:rgba(124,92,255,0.3);}
+  .exp-card.learning .tag{
+    display:inline-block; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em;
+    color:var(--c2); background:rgba(55,224,200,0.12); border:1px solid rgba(55,224,200,0.3);
+    padding:4px 10px; border-radius:100px; margin-bottom:12px; text-transform:uppercase;
+  }
+
+  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
+  footer a{text-decoration:underline; color:var(--dimmer);}
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .exp-grid{grid-template-columns:1fr;}
+  }
+
+  [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in{opacity:1; transform:translateY(0);}
+</style>
 </head>
-
 <body>
 
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z" />
-                </svg>
-                <span>Akkhil Kapoor</span>
-            </a>
+<div class="aurora">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
 
-            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav id="mainNav" aria-label="Main Navigation">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="expertise.html" class="active">Expertise</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main-content-padding">
-
-        <section class="section-header">
-            <h2>My Expertise</h2>
-            <div class="underline"></div>
-            <p>
-                Professional skills and areas of expertise developed
-                through more than 20 years of experience.
-            </p>
-        </section>
-
-        <section class="container">
-            <div class="expertise-grid">
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-
-                    <h3>Accounts & Accounting</h3>
-
-                    <p>
-                        Practical knowledge of accounting concepts,
-                        business accounting, financial transactions,
-                        and accounting management systems.
-                    </p>
-
-                    <ul>
-                        <li>Basic & Advanced Accounting</li>
-                        <li>Business Accounting</li>
-                        <li>Financial Transactions</li>
-                        <li>Accounting Management Systems</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-
-                    <h3>Tally Prime</h3>
-
-                    <p>
-                        Complete practical training in Tally Prime
-                        for accounting, taxation, inventory, and
-                        business management.
-                    </p>
-
-                    <ul>
-                        <li>Company Creation</li>
-                        <li>Ledger & Voucher Entry</li>
-                        <li>GST Accounting</li>
-                        <li>Inventory Management</li>
-                        <li>Payroll Management</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-file-invoice"></i>
-                    </div>
-
-                    <h3>Busy Accounting Software</h3>
-
-                    <p>
-                        Practical knowledge of Busy Accounting Software
-                        for maintaining accounts, taxation, inventory,
-                        and day-to-day business operations.
-                    </p>
-
-                    <ul>
-                        <li>Company Setup & Configuration</li>
-                        <li>Voucher & Transaction Entry</li>
-                        <li>GST & Tax Compliance</li>
-                        <li>Stock & Inventory Management</li>
-                        <li>Financial Reports & MIS</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-
-                    <h3>Computer Education</h3>
-
-                    <p>
-                        Practical computer education designed to help
-                        students develop essential digital and
-                        professional skills.
-                    </p>
-
-                    <ul>
-                        <li>Computer Fundamentals</li>
-                        <li>Windows & File Management</li>
-                        <li>Microsoft Office</li>
-                        <li>Internet & Digital Skills</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-
-                    <h3>Web Development</h3>
-
-                    <p>
-                        Development of modern, responsive, and
-                        user-friendly websites using modern web
-                        technologies.
-                    </p>
-
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>PHP & Database Concepts</li>
-                        <li>GitHub Pages</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-
-                    <h3>AI Tools & Modern Technology</h3>
-
-                    <p>
-                        Practical training in modern AI tools that
-                        help students improve productivity, creativity,
-                        and digital skills.
-                    </p>
-
-                    <ul>
-                        <li>AI Tools</li>
-                        <li>AI Content Creation</li>
-                        <li>AI for Education</li>
-                        <li>AI for Web Development</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-
-                    <h3>Graphic Design</h3>
-
-                    <p>
-                        Creative design skills for digital content,
-                        branding, social media, and professional
-                        visual communication.
-                    </p>
-
-                    <ul>
-                        <li>Graphic Designing</li>
-                        <li>Digital Designing</li>
-                        <li>Social Media Graphics</li>
-                        <li>Creative Visual Content</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-
-                    <h3>Office Automation</h3>
-
-                    <p>
-                        Professional office productivity and
-                        automation skills for students and working
-                        professionals.
-                    </p>
-
-                    <ul>
-                        <li>Microsoft Word</li>
-                        <li>Microsoft Excel</li>
-                        <li>Microsoft PowerPoint</li>
-                        <li>Office Productivity</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-
-                    <h3>Digital & Practical Education</h3>
-
-                    <p>
-                        Focus on practical, job-oriented education
-                        that helps students apply their knowledge
-                        in real-world situations.
-                    </p>
-
-                    <ul>
-                        <li>Practical Learning</li>
-                        <li>Job-Oriented Skills</li>
-                        <li>Digital Awareness</li>
-                        <li>Career Development</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-
-                    <h3>GeM Portal</h3>
-
-                    <p>
-                        Currently learning the GeM Portal (Government
-                        e-Marketplace) — India's official platform for
-                        filing and managing government tenders and
-                        procurement.
-                    </p>
-
-                    <ul>
-                        <li>GeM Registration Process</li>
-                        <li>Tender Filing & Bidding</li>
-                        <li>Government Procurement Basics</li>
-                        <li>Portal Navigation & Documentation</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-
-                    <h3>SAP (FI, PP, MM, SD, CO)</h3>
-
-                    <p>
-                        Currently learning SAP's core ERP modules —
-                        used across organizations for finance, manufacturing,
-                        procurement, and sales operations.
-                    </p>
-
-                    <ul>
-                        <li>Financial Accounting (FI)</li>
-                        <li>Production Planning (PP) </li>
-                        <li>Materials Management (MM) </li>
-                        <li>Sales & Distribution (SD) </li>
-                        <li>Controlling (CO) </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-  <footer class="site-footer">
-    <div class="footer-container">
-        <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-        <p style="margin-top: 8px; font-size: 13px;">
-            <a href="privacy-policy.html" style="color: #9ca3af; text-decoration: underline;">Privacy Policy</a>
-        </p>
+<header>
+  <nav>
+    <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="expertise.html" class="active">Expertise</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <a href="contact.html" class="nav-cta">Enroll Now</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="dot"></span> Expertise</div>
+      <h1>My <span class="grad-text">Expertise</span></h1>
+      <p>Professional skills and areas of expertise developed through more than 20 years of experience.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="exp-grid">
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">🧮</div>
+        <h3>Accounts & Accounting</h3>
+        <p>Practical knowledge of accounting concepts, business accounting, financial transactions, and accounting management systems.</p>
+        <ul class="styled-list">
+          <li>Basic & Advanced Accounting</li>
+          <li>Business Accounting</li>
+          <li>Financial Transactions</li>
+          <li>Accounting Management Systems</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">🧾</div>
+        <h3>Tally Prime</h3>
+        <p>Complete practical training in Tally Prime for accounting, taxation, inventory, and business management.</p>
+        <ul class="styled-list">
+          <li>Company Creation</li>
+          <li>Ledger & Voucher Entry</li>
+          <li>GST Accounting</li>
+          <li>Inventory Management</li>
+          <li>Payroll Management</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">📄</div>
+        <h3>Busy Accounting Software</h3>
+        <p>Practical knowledge of Busy Accounting Software for maintaining accounts, taxation, inventory, and day-to-day business operations.</p>
+        <ul class="styled-list">
+          <li>Company Setup & Configuration</li>
+          <li>Voucher & Transaction Entry</li>
+          <li>GST & Tax Compliance</li>
+          <li>Stock & Inventory Management</li>
+          <li>Financial Reports & MIS</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">🖥️</div>
+        <h3>Computer Education</h3>
+        <p>Practical computer education designed to help students develop essential digital and professional skills.</p>
+        <ul class="styled-list">
+          <li>Computer Fundamentals</li>
+          <li>Windows & File Management</li>
+          <li>Microsoft Office</li>
+          <li>Internet & Digital Skills</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">💻</div>
+        <h3>Web Development</h3>
+        <p>Development of modern, responsive, and user-friendly websites using modern web technologies.</p>
+        <ul class="styled-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>PHP & Database Concepts</li>
+          <li>GitHub Pages</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">🤖</div>
+        <h3>AI Tools & Modern Technology</h3>
+        <p>Practical training in modern AI tools that help students improve productivity, creativity, and digital skills.</p>
+        <ul class="styled-list">
+          <li>AI Tools</li>
+          <li>AI Content Creation</li>
+          <li>AI for Education</li>
+          <li>AI for Web Development</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>Creative design skills for digital content, branding, social media, and professional visual communication.</p>
+        <ul class="styled-list">
+          <li>Graphic Designing</li>
+          <li>Digital Designing</li>
+          <li>Social Media Graphics</li>
+          <li>Creative Visual Content</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">📝</div>
+        <h3>Office Automation</h3>
+        <p>Professional office productivity and automation skills for students and working professionals.</p>
+        <ul class="styled-list">
+          <li>Microsoft Word</li>
+          <li>Microsoft Excel</li>
+          <li>Microsoft PowerPoint</li>
+          <li>Office Productivity</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-reveal>
+        <div class="icon">🎓</div>
+        <h3>Digital & Practical Education</h3>
+        <p>Focus on practical, job-oriented education that helps students apply their knowledge in real-world situations.</p>
+        <ul class="styled-list">
+          <li>Practical Learning</li>
+          <li>Job-Oriented Skills</li>
+          <li>Digital Awareness</li>
+          <li>Career Development</li>
+        </ul>
+      </div>
+
+      <div class="exp-card learning" data-reveal>
+        <span class="tag">Currently Learning</span>
+        <div class="icon">🏛️</div>
+        <h3>GeM Portal</h3>
+        <p>Currently learning the GeM Portal (Government e-Marketplace) — India's official platform for filing and managing government tenders and procurement.</p>
+        <ul class="styled-list">
+          <li>GeM Registration Process</li>
+          <li>Tender Filing & Bidding</li>
+          <li>Government Procurement Basics</li>
+          <li>Portal Navigation & Documentation</li>
+        </ul>
+      </div>
+
+      <div class="exp-card learning" data-reveal>
+        <span class="tag">Currently Learning</span>
+        <div class="icon">🪙</div>
+        <h3>SAP (FI, PP, MM, SD, CO)</h3>
+        <p>Currently learning SAP's core ERP modules — used across organizations for finance, manufacturing, procurement, and sales operations.</p>
+        <ul class="styled-list">
+          <li>Financial Accounting (FI)</li>
+          <li>Production Planning (PP)</li>
+          <li>Materials Management (MM)</li>
+          <li>Sales & Distribution (SD)</li>
+          <li>Controlling (CO)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
+    <p style="margin-top:8px; font-size:13px;"><a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const els = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  }, {threshold:0.1});
+  els.forEach(el=>io.observe(el));
 </script>
 
-    <script>
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const mainNav = document.getElementById("mainNav");
-
-        mobileMenuBtn.addEventListener("click", function () {
-            mainNav.classList.toggle("open");
-
-            const icon = mobileMenuBtn.querySelector("i");
-
-            if (mainNav.classList.contains("open")) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-times");
-            } else {
-                icon.classList.remove("fa-times");
-                icon.classList.add("fa-bars");
-            }
-        });
-    </script>
-
 </body>
-
 </html>
