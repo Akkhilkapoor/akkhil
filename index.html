@@ -264,22 +264,6 @@
   </div>
 </section>
 
-<section class="expertise" id="expertise">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Five domains, taught like real jobs</h2>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-card tilt" data-reveal><div class="num">01</div><h3>Tally Prime & Busy</h3><p>GST billing, inventory, payroll and real company books — not sample data.</p></div>
-      <div class="exp-card tilt" data-reveal><div class="num">02</div><h3>Web Development</h3><p>HTML, CSS, JS fundamentals through to shipping a live site.</p></div>
-      <div class="exp-card tilt" data-reveal><div class="num">03</div><h3>Office Automation</h3><p>Excel, reporting and workflow tools used daily in real offices.</p></div>
-      <div class="exp-card tilt" data-reveal><div class="num">04</div><h3>Graphic Design</h3><p>Visual fundamentals plus the tools studios and agencies expect.</p></div>
-      <div class="exp-card tilt" data-reveal><div class="num">05</div><h3>AI Tools</h3><p>Practical AI workflows for accounting, design and everyday work.</p></div>
-      <div class="exp-card tilt" data-reveal><div class="num">06</div><h3>Placement Support</h3><p>Portfolio review, interview prep and hiring-partner introductions.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-card" data-reveal>
@@ -303,16 +287,691 @@
       <h2>What students say</h2>
     </div>
   </div>
-  <div class="review-track-wrap">
-    <div class="review-track">
-      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Real, practical Tally training — I was billing live company data within the first two weeks.</p><div><div class="review-name">Student Review</div><div class="review-role">ACCOUNTING BATCH</div></div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Sir explains everything step by step, and doesn't move on until you can actually do it yourself.</p><div><div class="review-name">Student Review</div><div class="review-role">WEB DEV BATCH</div></div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Best institute in Ambala for hands-on computer training. Got placed within a month of finishing.</p><div><div class="review-name">Student Review</div><div class="review-role">OFFICE AUTOMATION</div></div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Real, practical Tally training — I was billing live company data within the first two weeks.</p><div><div class="review-name">Student Review</div><div class="review-role">ACCOUNTING BATCH</div></div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Sir explains everything step by step, and doesn't move on until you can actually do it yourself.</p><div><div class="review-name">Student Review</div><div class="review-role">WEB DEV BATCH</div></div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Best institute in Ambala for hands-on computer training. Got placed within a month of finishing.</p><div><div class="review-name">Student Review</div><div class="review-role">OFFICE AUTOMATION</div></div></div>
-    </div>
-  </div>
+  
+        /* =====================================================
+           SUPABASE CONFIGURATION
+        ===================================================== */
+
+
+        const SUPABASE_URL =
+            "https://lmkvtvmkbvpzgsrutheu.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_SsDcoVpYs44Q99CRyS2Wmw_GTCxubIE";
+
+
+        /* =====================================================
+           DOM ELEMENTS
+        ===================================================== */
+
+
+        const reviewsContainer =
+            document.getElementById(
+                "reviews-container"
+            );
+
+
+        const reviewModal =
+            document.getElementById(
+                "reviewModal"
+            );
+
+
+        const openReviewBtn =
+            document.getElementById(
+                "openReviewBtn"
+            );
+
+
+        const closeReviewBtn =
+            document.getElementById(
+                "closeReviewBtn"
+            );
+
+
+        const reviewForm =
+            document.getElementById(
+                "reviewForm"
+            );
+
+
+        const submitReviewBtn =
+            document.getElementById(
+                "submitReviewBtn"
+            );
+
+
+        const reviewMessage =
+            document.getElementById(
+                "reviewMessage"
+            );
+
+
+        /* =====================================================
+           OPEN REVIEW MODAL
+        ===================================================== */
+
+
+        openReviewBtn.addEventListener(
+
+            "click",
+
+            function () {
+
+                reviewModal.style.display =
+                    "flex";
+
+            }
+
+        );
+
+
+        /* =====================================================
+           CLOSE REVIEW MODAL
+        ===================================================== */
+
+
+        closeReviewBtn.addEventListener(
+
+            "click",
+
+            function () {
+
+                reviewModal.style.display =
+                    "none";
+
+            }
+
+        );
+
+
+        window.addEventListener(
+
+            "click",
+
+            function (event) {
+
+                if (
+                    event.target ===
+                    reviewModal
+                ) {
+
+                    reviewModal.style.display =
+                        "none";
+
+                }
+
+            }
+
+        );
+
+
+        /* =====================================================
+           LOAD APPROVED REVIEWS
+        ===================================================== */
+
+
+        async function fetchReviews() {
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+
+                        `${SUPABASE_URL}/rest/v1/student_reviews?Approved=eq.true&select=Name,Rating,Review&order=Created_at.desc`,
+
+                        {
+
+                            method:
+                                "GET",
+
+                            headers: {
+
+                                "apikey":
+                                    SUPABASE_KEY,
+
+                                "Authorization":
+                                    `Bearer ${SUPABASE_KEY}`
+
+                            }
+
+                        }
+
+                    );
+
+
+                if (
+                    !response.ok
+                ) {
+
+                    throw new Error(
+                        "Failed to load reviews"
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                reviewsContainer.innerHTML =
+                    "";
+
+
+                if (
+                    !data ||
+                    data.length === 0
+                ) {
+
+                    reviewsContainer.innerHTML = `
+
+                        <p
+                            style="
+                                grid-column: 1/-1;
+                                text-align: center;
+                            "
+                        >
+
+                            No reviews available yet.
+
+                        </p>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                data.forEach(
+
+                    function (item) {
+
+
+                        const reviewCard =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        reviewCard.className =
+                            "review-card";
+
+
+                        const rating =
+                            parseInt(
+                                item.Rating
+                            ) || 5;
+
+
+                        const ratingStars =
+                            "⭐".repeat(
+                                rating
+                            );
+
+
+                        const reviewText =
+                            item.Review ||
+                            "";
+
+
+                        /*
+                            REVIEW CARD HTML
+                        */
+
+
+                        reviewCard.innerHTML = `
+
+                            <div class="review-card-content">
+
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        margin-bottom: 8px;
+                                        flex-wrap: wrap;
+                                        gap: 5px;
+                                    "
+                                >
+
+                                    <strong
+                                        style="
+                                            font-size: 1em;
+                                            color: #333;
+                                        "
+                                    >
+
+                                        ${escapeHTML(item.Name)}
+
+                                    </strong>
+
+
+                                    <span
+                                        style="
+                                            font-size: 0.9em;
+                                        "
+                                    >
+
+                                        ${ratingStars}
+
+                                    </span>
+
+                                </div>
+
+
+                                <p
+                                    class="review-text"
+                                >
+
+                                    "${escapeHTML(reviewText)}"
+
+                                </p>
+
+
+                                <button
+                                    class="read-review-btn"
+                                    type="button"
+                                >
+
+                                    Read More
+
+                                </button>
+
+
+                            </div>
+
+                        `;
+
+
+                        const textElement =
+                            reviewCard.querySelector(
+                                ".review-text"
+                            );
+
+
+                        const readMoreBtn =
+                            reviewCard.querySelector(
+                                ".read-review-btn"
+                            );
+
+
+                        /*
+                            CHECK IF REVIEW IS ACTUALLY LONG
+                        */
+
+
+                        setTimeout(
+
+                            function () {
+
+
+                                if (
+
+                                    textElement.scrollHeight <=
+                                    textElement.clientHeight
+
+                                ) {
+
+                                    readMoreBtn.style.display =
+                                        "none";
+
+                                }
+
+                            },
+
+                            100
+
+                        );
+
+
+                        /*
+                            READ MORE / READ LESS
+                        */
+
+
+                        readMoreBtn.addEventListener(
+
+                            "click",
+
+                            function () {
+
+
+                                if (
+
+                                    textElement.classList.contains(
+                                        "expanded"
+                                    )
+
+                                ) {
+
+
+                                    textElement.classList.remove(
+                                        "expanded"
+                                    );
+
+
+                                    readMoreBtn.textContent =
+                                        "Read More";
+
+
+                                }
+
+
+                                else {
+
+
+                                    textElement.classList.add(
+                                        "expanded"
+                                    );
+
+
+                                    readMoreBtn.textContent =
+                                        "Read Less";
+
+
+                                }
+
+                            }
+
+                        );
+
+
+                        reviewsContainer.appendChild(
+                            reviewCard
+                        );
+
+
+                    }
+
+                );
+
+
+            }
+
+
+            catch (error) {
+
+
+                console.error(
+                    "Error loading reviews:",
+                    error
+                );
+
+
+                reviewsContainer.innerHTML = `
+
+                    <p
+                        style="
+                            grid-column: 1/-1;
+                            text-align: center;
+                            color: red;
+                        "
+                    >
+
+                        Failed to load reviews.
+
+                    </p>
+
+                `;
+
+            }
+
+
+        }
+
+
+        /* =====================================================
+           SUBMIT REVIEW
+        ===================================================== */
+
+
+        reviewForm.addEventListener(
+
+            "submit",
+
+            async function (event) {
+
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .getElementById(
+                            "reviewName"
+                        )
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById(
+                            "reviewEmail"
+                        )
+                        .value
+                        .trim();
+
+
+                const phone =
+                    document
+                        .getElementById(
+                            "reviewPhone"
+                        )
+                        .value
+                        .trim();
+
+
+                const rating =
+                    document
+                        .getElementById(
+                            "reviewRating"
+                        )
+                        .value;
+
+
+                const review =
+                    document
+                        .getElementById(
+                            "reviewText"
+                        )
+                        .value
+                        .trim();
+
+
+                submitReviewBtn.disabled =
+                    true;
+
+
+                submitReviewBtn.textContent =
+                    "Submitting...";
+
+
+                reviewMessage.textContent =
+                    "";
+
+
+                try {
+
+
+                    const response =
+                        await fetch(
+
+                            `${SUPABASE_URL}/rest/v1/student_reviews`,
+
+                            {
+
+                                method:
+                                    "POST",
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "application/json",
+
+                                    "apikey":
+                                        SUPABASE_KEY,
+
+                                    "Authorization":
+                                        `Bearer ${SUPABASE_KEY}`,
+
+                                    "Prefer":
+                                        "return=minimal"
+
+                                },
+
+
+                                body:
+                                    JSON.stringify({
+
+                                        Name:
+                                            name,
+
+                                        Email:
+                                            email,
+
+                                        "Phone No":
+                                            phone,
+
+                                        Rating:
+                                            parseInt(
+                                                rating
+                                            ),
+
+                                        Review:
+                                            review,
+
+                                        Approved:
+                                            false
+
+                                    })
+
+                            }
+
+                        );
+
+
+                    if (
+                        !response.ok
+                    ) {
+
+
+                        const errorData =
+                            await response.text();
+
+
+                        console.error(
+                            errorData
+                        );
+
+
+                        throw new Error(
+                            "Review submission failed"
+                        );
+
+                    }
+
+
+                    reviewMessage.style.color =
+                        "green";
+
+
+                    reviewMessage.textContent =
+                        "Thank you! Your review has been submitted successfully.";
+
+
+                    reviewForm.reset();
+
+
+                    setTimeout(
+
+                        function () {
+
+
+                            reviewModal.style.display =
+                                "none";
+
+
+                            reviewMessage.textContent =
+                                "";
+
+                        },
+
+                        2500
+
+                    );
+
+
+                }
+
+
+                catch (error) {
+
+
+                    console.error(
+                        "Error submitting review:",
+                        error
+                    );
+
+
+                    reviewMessage.style.color =
+                        "red";
+
+
+                    reviewMessage.textContent =
+                        "Something went wrong. Please try again.";
+
+                }
+
+
+                finally {
+
+
+                    submitReviewBtn.disabled =
+                        false;
+
+
+                    submitReviewBtn.textContent =
+                        "Submit Review";
+
+                }
+
+
+            }
+
+        );
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ===================================================== */
+
+
+        function escapeHTML(
+            text
+        ) {
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                text ||
+                "";
+
+
+            return div.innerHTML;
+
+        }
+
 </section>
 
 <section class="cta" id="contact">
