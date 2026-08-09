@@ -73,8 +73,9 @@
   /* HERO */
   .hero{padding:80px 0 60px;}
   .hero-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;}
-  .portrait-ring{border-radius:28px; padding:3px; background:linear-gradient(135deg,var(--c1),var(--c3)); max-width:340px;}
-  .portrait-ring img{border-radius:25px; width:100%; display:block;}
+  .portrait-ring{border-radius:28px; padding:3px; background:linear-gradient(135deg,var(--c1),var(--c3)); max-width:340px; box-shadow:0 25px 60px -20px rgba(124,92,255,0.45); animation:floatPortrait 5s ease-in-out infinite;}
+  .portrait-ring img{border-radius:25px; width:100%; height:400px; object-fit:cover; object-position:top center; display:block;}
+  @keyframes floatPortrait{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
   .kicker{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim); margin-bottom:20px;}
   .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
   .hero h1{font-size:clamp(36px,5.4vw,58px); font-weight:700; line-height:1.05; margin-bottom:6px;}
@@ -128,6 +129,12 @@
     .portrait-ring{margin:0 auto;}
     .reviews-grid{grid-template-columns:1fr;}
   }
+
+  [data-reveal]{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in{opacity:1; transform:translateY(0);}
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  .portrait-ring{animation:fadeUp .8s ease both, floatPortrait 5s ease-in-out .8s infinite;}
+  .hero-grid > div:last-child{animation:fadeUp .8s ease .1s both;}
 </style>
 </head>
 <body>
@@ -159,7 +166,7 @@
       <div>
         <div class="kicker"><span class="dot"></span> Ambala, Haryana</div>
         <h1>Akkhil Kapoor</h1>
-        <div class="role">Professional Accounts &amp; IT Trainer</div>
+        <div class="role">Professional Accounts &amp; IT Trainer <span style="color:var(--dimmer); font-weight:400; font-size:0.7em;">(also known as Akhil Kapoor)</span></div>
         <p class="lede">For 20+ years, I've trained students in Ambala to build real, job-ready skills — Tally Prime, Busy, Office Automation, Web Development, Graphic Design, and AI Tools. My focus isn't just teaching software — it's helping students walk out with skills that actually get them hired.</p>
 
         <div class="hero-stats">
@@ -176,7 +183,7 @@
     </div>
   </section>
 
-  <section class="reviews wrap" id="reviews-section">
+  <section class="reviews wrap" id="reviews-section" data-reveal>
     <h2>Student Reviews & Feedback</h2>
     <button id="openReviewBtn" class="write-review-btn">✍️ Write a Review</button>
     <div id="reviews-container" class="reviews-grid">
@@ -269,6 +276,7 @@
       data.forEach(function (item) {
         const reviewCard = document.createElement("div");
         reviewCard.className = "review-card";
+        reviewCard.style.animation = "fadeUp .6s ease both";
 
         const rating = parseInt(item.Rating) || 5;
         const ratingStars = "⭐".repeat(rating);
@@ -398,6 +406,15 @@
   }, { threshold: 0.5 });
 
   statNumbers.forEach(function (el) { statObserver.observe(el); });
+
+  /* SCROLL REVEAL */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(function (el) { revealObserver.observe(el); });
 
   fetchReviews();
 </script>
