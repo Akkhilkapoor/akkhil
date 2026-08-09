@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">Blog | Akkhil Kapoor</title>
 <meta id="metaDescription" name="description" content="Read detailed educational blogs and articles by Akkhil Kapoor, Professional Accounts & IT Trainer and Educator.">
-<link id="canonicalLink" rel="canonical" href="https://Akkhilkapoor.github.io/Akkhil/blog-detail.html">
+<link id="canonicalLink" rel="canonical" href="https://akkhilkapoor.github.io/akkhil/blog-detail.html">
 <meta id="ogType" property="og:type" content="article">
 <meta id="ogTitle" property="og:title" content="Blog | Akkhil Kapoor">
 <meta id="ogDescription" property="og:description" content="Read detailed educational blogs and articles by Akkhil Kapoor.">
-<meta id="ogUrl" property="og:url" content="https://Akkhilkapoor.github.io/Akkhil/blog-detail.html">
-<meta id="ogImage" property="og:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
+<meta id="ogUrl" property="og:url" content="https://akkhilkapoor.github.io/akkhil/blog-detail.html">
+<meta id="ogImage" property="og:image" content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta id="twitterTitle" name="twitter:title" content="Blog | Akkhil Kapoor">
 <meta id="twitterDescription" name="twitter:description" content="Read detailed educational blogs and articles by Akkhil Kapoor.">
-<meta id="twitterImage" name="twitter:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
+<meta id="twitterImage" name="twitter:image" content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg">
 <script id="articleSchema" type="application/ld+json"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,8 +168,8 @@
 
   function updateSEO(blog, slug) {
     const plainDescription = stripHTML(blog.content).trim().substring(0, 160);
-    const pageUrl = "https://Akkhilkapoor.github.io/Akkhil/blog-detail.html?slug=" + encodeURIComponent(slug);
-    const imageUrl = blog.image_url || "https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg";
+    const pageUrl = "https://akkhilkapoor.github.io/akkhil/blog-detail.html?slug=" + encodeURIComponent(slug);
+    const imageUrl = blog.image_url || "https://akkhilkapoor.github.io/akkhil/Akkhil.jpg";
     const fullTitle = blog.title + " | Akkhil Kapoor";
 
     document.title = fullTitle;
@@ -187,7 +187,7 @@
     const schema = {
       "@context": "https://schema.org", "@type": "Article",
       "headline": blog.title, "description": plainDescription, "image": imageUrl,
-      "author": { "@type": "Person", "name": "Akkhil Kapoor", "alternateName": "Akhil Kapoor" },
+      "author": { "@type": "Person", "name": "Akkhil Kapoor", "url": "https://akkhilkapoor.github.io/akkhil/about.html" },
       "publisher": { "@type": "Organization", "name": "Akkhil Kapoor" },
       "datePublished": blog.created_at || "",
       "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
