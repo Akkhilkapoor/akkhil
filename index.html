@@ -1,1497 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akkhil Kapoor | Professional Accounts & IT Trainer | Ambala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070B;
+    --surface:rgba(255,255,255,0.045);
+    --border:rgba(255,255,255,0.10);
+    --text:#F3F2F8;
+    --dim:rgba(243,242,248,0.62);
+    --dimmer:rgba(243,242,248,0.4);
+    --c1:#7C5CFF;
+    --c2:#37E0C8;
+    --c3:#FF5B94;
+    --max:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; position:relative; cursor:default;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
+  @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
 
-    <meta charset="UTF-8">
+  /* cursor spotlight */
+  #spotlight{
+    position:fixed; inset:0; z-index:2; pointer-events:none; mix-blend-mode:screen;
+    background: radial-gradient(360px circle at var(--mx,50%) var(--my,50%), rgba(124,92,255,0.14), transparent 70%);
+    transition:background .05s;
+  }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  /* aurora background */
+  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
+  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.4;}
+  .b1{width:560px; height:560px; background:var(--c1); top:-200px; left:-140px; animation:float1 16s ease-in-out infinite;}
+  .b2{width:480px; height:480px; background:var(--c3); top:20%; right:-180px; opacity:0.32; animation:float2 20s ease-in-out infinite;}
+  .b3{width:460px; height:460px; background:var(--c2); bottom:-200px; left:25%; opacity:0.22; animation:float3 18s ease-in-out infinite;}
+  @keyframes float1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(60px,80px);} }
+  @keyframes float2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-70px,50px);} }
+  @keyframes float3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,-60px);} }
 
-    <title>
-        Akkhil Kapoor | Professional Accounts, IT Trainer | Educator in Ambala
-    </title>
+  .noise{position:fixed; inset:0; z-index:1; opacity:0.03; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-    <meta
-        name="description"
-        content="Akkhil Kapoor (also known as Akhil Kapoor) is a professional Accounts & IT trainer | Educator in Ambala with 20+ years of experience in Tally, Web Development, Graphic Design, and Accounting Systems."
-    >
+  header, section, footer{position:relative; z-index:3;}
 
-    <meta
-        name="keywords"
-        content="Akkhil Kapoor, Akhil Kapoor, Professional Accounts & IT Trainer Ambala, Tally Trainer Ambala, Web Development Course Ambala"
-    >
+  /* ---- NAV ---- */
+  header{position:sticky; top:0; z-index:50; padding:18px 0;}
+  nav{
+    max-width:var(--max); margin:0 auto; padding:12px 22px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px;
+    backdrop-filter:blur(18px);
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
+  .brand-mark{
+    width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3));
+    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;
+    animation:spin-slight 8s ease-in-out infinite;
+  }
+  @keyframes spin-slight{ 0%,100%{transform:rotate(-4deg);} 50%{transform:rotate(4deg);} }
+  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
+  .navlinks a{position:relative;}
+  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
+  .navlinks a:hover::after{width:100%;}
+  .navlinks a:hover{color:var(--text);}
+  .nav-cta{
+    background:var(--text); color:#07070B; font-weight:600; font-size:13.5px;
+    padding:10px 20px; border-radius:100px; transition:transform .2s;
+  }
+  .nav-cta:hover{transform:scale(1.05);}
 
-    <meta
-        name="author"
-        content="Akkhil Kapoor"
-    >
+  /* ---- HERO ---- */
+  .hero{padding:110px 0 70px; text-align:center;}
+  .hero-inner{max-width:800px; margin:0 auto;}
+  .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--surface); border:1px solid var(--border); border-radius:100px;
+    padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim);
+    margin-bottom:26px; animation:fadeup .7s ease both;
+  }
+  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2); animation:pulse 1.6s ease-in-out infinite;}
+  @keyframes pulse{ 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.4; transform:scale(0.7);} }
+  .hero h1{font-size:clamp(38px,6.2vw,68px); line-height:1.06; font-weight:700; margin-bottom:20px; animation:fadeup .8s ease .1s both;}
+  .typeline{
+    font-family:'JetBrains Mono',monospace; font-size:clamp(15px,2vw,19px); color:var(--c2);
+    min-height:28px; margin-bottom:26px; animation:fadeup .8s ease .2s both;
+  }
+  .typeline .cursor{display:inline-block; width:2px; height:1em; background:var(--c2); vertical-align:middle; margin-left:2px; animation:blink 0.9s step-end infinite;}
+  @keyframes blink{ 50%{opacity:0;} }
+  .hero p.lede{font-size:17px; line-height:1.65; color:var(--dim); max-width:560px; margin:0 auto 36px; animation:fadeup .8s ease .3s both;}
+  .hero-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; animation:fadeup .8s ease .4s both;}
+  @keyframes fadeup{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+  .btn-primary{
+    position:relative; background:linear-gradient(135deg,var(--c1),var(--c3)); color:#08080B; font-weight:700; font-size:14.5px;
+    padding:15px 30px; border-radius:100px; display:inline-flex; align-items:center; gap:8px;
+    box-shadow:0 10px 34px -10px rgba(124,92,255,0.6); transition:transform .25s; overflow:hidden;
+  }
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02);}
+  .btn-ghost{
+    background:var(--surface); border:1px solid var(--border); color:var(--text);
+    font-weight:600; font-size:14.5px; padding:15px 26px; border-radius:100px; transition:background .2s, transform .2s;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.09); transform:translateY(-2px);}
 
-    <link
-        rel="canonical"
-        href="https://Akkhilkapoor.github.io/Akkhil/"
-    >
+  /* marquee */
+  .marquee{padding:34px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden;}
+  .m-track{display:flex; gap:50px; width:max-content; animation:scroll 24s linear infinite;}
+  .m-track span{font-family:'Sora',sans-serif; font-weight:700; font-size:19px; color:var(--dimmer); display:flex; align-items:center; gap:50px; white-space:nowrap;}
+  .m-track span.hl{color:var(--text);}
+  .m-track span::after{content:"✦"; color:var(--c1); margin-left:50px; font-size:14px;}
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
-    <!-- COMMON CSS -->
+  /* ---- STATS with animated counters ---- */
+  .stats{padding:90px 0 40px;}
+  .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .stat-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:22px; padding:34px 28px;
+    transition:transform .35s, border-color .35s; transform-style:preserve-3d;
+  }
+  .stat-card:hover{border-color:rgba(124,92,255,0.5); transform:translateY(-6px);}
+  .stat-card .figure{font-family:'Sora',sans-serif; font-size:44px; font-weight:800;}
+  .stat-card .label{font-size:13.5px; color:var(--dim); margin-top:6px;}
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+  /* ---- EXPERTISE tilt cards ---- */
+  .expertise{padding:70px 0 100px;}
+  .section-head{margin-bottom:44px; max-width:540px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px); font-weight:700; line-height:1.15;}
+  .exp-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; perspective:900px;}
+  .exp-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:30px;
+    transition:transform .15s ease, border-color .3s; will-change:transform;
+  }
+  .exp-card:hover{border-color:rgba(255,255,255,0.25);}
+  .exp-card .num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--dimmer);}
+  .exp-card h3{font-size:19px; font-weight:600; margin:14px 0 8px;}
+  .exp-card p{font-size:13.5px; color:var(--dim); line-height:1.6;}
 
-    <!-- FONT AWESOME -->
+  /* ---- ABOUT ---- */
+  .about{padding:20px 0 100px;}
+  .about-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:28px;
+    padding:56px; display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; align-items:center;
+  }
+  .about-photo{position:relative; border-radius:20px; overflow:hidden;}
+  .about-photo img{width:100%; display:block;}
+  .about-photo::after{
+    content:""; position:absolute; inset:0; border-radius:20px;
+    background:linear-gradient(160deg, rgba(124,92,255,0.35), transparent 60%); mix-blend-mode:overlay;
+  }
+  .about-card h2{font-size:clamp(26px,3.2vw,36px); font-weight:700; line-height:1.2; margin-bottom:16px;}
+  .about-card p{font-size:15.5px; line-height:1.75; color:var(--dim); margin-bottom:14px;}
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    >
+  /* ---- REVIEWS carousel ---- */
+  .reviews{padding:0 0 100px;}
+  .review-track-wrap{overflow:hidden; position:relative;}
+  .review-track{display:flex; gap:18px; width:max-content; animation:reviewscroll 30s linear infinite;}
+  .review-track:hover{animation-play-state:paused;}
+  .review-card{
+    width:340px; flex-shrink:0;
+    background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:28px;
+    display:flex; flex-direction:column; gap:16px;
+  }
+  @keyframes reviewscroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .stars{color:var(--c2); font-size:14px; letter-spacing:2px;}
+  .review-card p.quote{font-size:14.5px; line-height:1.65; color:var(--dim);}
+  .review-name{font-weight:600; font-size:14px;}
+  .review-role{font-size:11.5px; font-family:'JetBrains Mono',monospace; color:var(--dimmer);}
 
-    <!-- OPEN GRAPH -->
+  /* ---- CTA ---- */
+  .cta{padding:20px 0 120px;}
+  .cta-box{
+    position:relative; border-radius:32px; padding:80px 40px; text-align:center;
+    background:var(--surface); border:1px solid var(--border); overflow:hidden;
+  }
+  .cta-box .aurora-inner{position:absolute; inset:0; background:radial-gradient(circle at 30% 20%, rgba(124,92,255,0.3), transparent 60%), radial-gradient(circle at 80% 80%, rgba(255,91,148,0.22), transparent 55%); animation:hueshift 10s ease-in-out infinite alternate;}
+  @keyframes hueshift{ from{filter:hue-rotate(0deg);} to{filter:hue-rotate(40deg);} }
+  .cta-box h2{position:relative; font-size:clamp(30px,4.6vw,50px); font-weight:700; max-width:620px; margin:0 auto 30px; line-height:1.15;}
+  .cta-box .btn-primary{position:relative;}
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer);}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .foot-links{display:flex; gap:24px;}
+  .foot-links a:hover{color:var(--text);}
 
-    <meta
-        property="og:title"
-        content="Akkhil Kapoor | Professional Accounts, IT Trainer | Educator"
-    >
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .stats-grid{grid-template-columns:1fr;}
+    .exp-grid{grid-template-columns:1fr;}
+    .about-card{grid-template-columns:1fr; padding:36px 26px;}
+    #spotlight{display:none;}
+  }
 
-    <meta
-        property="og:description"
-        content="Over 20+ years of experience training thousands of students in IT, Accounting (Tally), and Web Development in Ambala."
-    >
-
-    <meta
-        property="og:image"
-        content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg"
-    >
-
-    <!-- GOOGLE VERIFICATION -->
-
-    <meta
-        name="google-site-verification"
-        content="HfTf7wW7UuvaOrIZAvykXO-qT9xRmgVU3_E_BcdjLgM"
-    >
-
-    <!-- STRUCTURED DATA -->
-
-    <script type="application/ld+json">
-
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Akkhil Kapoor",
-        "alternateName": "Akhil Kapoor",
-        "jobTitle": "Professional Accounts & IT Trainer | Educator",
-        "worksFor": {
-            "@type": "EducationalOrganization",
-            "name": "Akkhil Kapoor"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ambala",
-            "addressRegion": "Haryana",
-            "addressCountry": "IN"
-        },
-        "description": "Professional Accounts Educator and IT trainer in Ambala with 20+ years of experience specializing in Tally, Web Development, and Multimedia.",
-        "knowsAbout": [
-            "Tally",
-            "Web Development",
-            "Graphic Design",
-            "Accounting Management Systems",
-            "Payroll Systems"
-        ]
-    }
-
-    </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"
-     crossorigin="anonymous"></script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="KNULA7yENFc3kMSxXO2QIA" async></script>
+  [data-reveal]{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in{opacity:1; transform:translateY(0);}
+</style>
 </head>
-
-
 <body>
 
-
-    <!-- ================= HEADER ================= -->
-
-    <header class="site-header">
-
-        <div class="nav-container">
-
-
-            <div class="logo">
-
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="30"
-                    height="30"
-                >
-
-                    <path
-                        d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z"
-                    />
-
-                </svg>
-
-
-                <span>
-                    Akkhil Kapoor
-                </span>
-
-            </div>
-
-
-            <button
-                class="menu-toggle"
-                id="mobileMenuBtn"
-                aria-label="Toggle Navigation"
-            >
-
-                <i class="fas fa-bars"></i>
-
-            </button>
-
-
-            <nav
-                id="mainNav"
-                aria-label="Main Navigation"
-            >
-
-                <ul class="nav-links">
-
-
-                    <li>
-
-                        <a
-                            href="index.html"
-                            class="active"
-                        >
-
-                            Home
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="about.html">
-
-                            About
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="expertise.html">
-
-                            Expertise
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="projects.html">
-
-                            Projects
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="blog.html">
-
-                            Blog
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="contact.html">
-
-                            Contact
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
-            </nav>
-
-
-        </div>
-
-    </header>
-
-
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-
-        <!-- ================= HERO SECTION ================= -->
-
-        <section id="home-hero" class="hero-section">
-            <div class="hero-container">
-
-                <div class="hero-image-wrapper">
-                    <img
-                        src="akkhil.jpg"
-                        alt="Akkhil Kapoor - Professional Accounts & IT Trainer | Educator in Ambala"
-                        class="profile-img"
-                        loading="eager"
-                    >
-                </div>
-
-                <div class="hero-text-wrapper">
-
-                    <h1>Akkhil Kapoor</h1>
-
-                    <p>
-                        <b>Professional Accounts &amp; IT Trainer |</b>
-                    </p>
-
-                    <p>
-                        For 20+ years, I've trained students in Ambala to build real, job-ready skills —
-                        Tally Prime, Busy, Office Automation, Web Development, Graphic Design, and AI Tools.
-                        My focus isn't just teaching software — it's helping students walk out with skills
-                        that actually get them hired.
-                    </p>
-
-                    <div class="hero-stats" style="display:flex; gap:30px; flex-wrap:wrap; margin:20px 0;">
-                        <div>
-                            <strong class="stat-number" data-target="20" style="font-size:1.4em; color:#007bff;">0+</strong>
-                            <p style="margin:0; font-size:0.9em;">Years Experience</p>
-                        </div>
-                        <div>
-                            <strong class="stat-number" data-target="5000" style="font-size:1.4em; color:#007bff;">0+</strong>
-                            <p style="margin:0; font-size:0.9em;">Students Trained</p>
-                        </div>
-                        <div>
-                            <strong class="stat-number" data-target="10" style="font-size:1.4em; color:#007bff;">0+</strong>
-                            <p style="margin:0; font-size:0.9em;">Skill Domains Taught</p>
-                        </div>
-                    </div>
-
-                    <div class="btn-container">
-                        <a href="projects.html" class="cta-btn btn-primary">View My Work</a>
-                        <a href="contact.html" class="cta-btn btn-primary">Contact</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ================= STUDENT REVIEWS ================= -->
-
-        <section
-            class="reviews-section"
-            style="
-                padding: 40px 20px;
-                max-width: 1100px;
-                margin: 0 auto;
-                text-align: center;
-            "
-        >
-
-
-            <h2>
-
-                Student Reviews & Feedback
-
-            </h2>
-
-
-            <button
-                id="openReviewBtn"
-                style="
-                    padding: 12px 24px;
-                    background-color: #007bff;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    margin-bottom: 25px;
-                    transition: 0.3s;
-                "
-            >
-
-                ✍️ Write a Review
-
-            </button>
-
-
-            <div
-                id="reviews-container"
-                class="reviews-grid"
-            >
-
-                <p
-                    style="
-                        grid-column: 1/-1;
-                        text-align: center;
-                    "
-                >
-
-                    Loading reviews...
-
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ================= REVIEW MODAL ================= -->
-
-    <div
-        id="reviewModal"
-    >
-
-
-        <div
-            class="review-modal-box"
-        >
-
-
-            <span
-                id="closeReviewBtn"
-            >
-
-                &times;
-
-            </span>
-
-
-            <h3>
-
-                Submit Your Review
-
-            </h3>
-
-
-            <form
-                id="reviewForm"
-            >
-
-
-                <div
-                    class="review-form-group"
-                >
-
-                    <label
-                        for="reviewName"
-                    >
-
-                        Your Name
-
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="reviewName"
-                        required
-                    >
-
-                </div>
-
-
-                <div
-                    class="review-form-group"
-                >
-
-                    <label
-                        for="reviewEmail"
-                    >
-
-                        Email Address
-
-                    </label>
-
-
-                    <input
-                        type="email"
-                        id="reviewEmail"
-                        required
-                    >
-
-                </div>
-
-
-                <div
-                    class="review-form-group"
-                >
-
-                    <label
-                        for="reviewPhone"
-                    >
-
-                        Phone Number
-
-                    </label>
-
-
-                    <input
-                        type="tel"
-                        id="reviewPhone"
-                        required
-                    >
-
-                </div>
-
-
-                <div
-                    class="review-form-group"
-                >
-
-                    <label
-                        for="reviewRating"
-                    >
-
-                        Rating
-
-                    </label>
-
-
-                    <select
-                        id="reviewRating"
-                        required
-                    >
-
-                        <option value="">
-
-                            Select Rating
-
-                        </option>
-
-
-                        <option value="5">
-
-                            ⭐⭐⭐⭐⭐ Excellent
-
-                        </option>
-
-
-                        <option value="4">
-
-                            ⭐⭐⭐⭐ Very Good
-
-                        </option>
-
-
-                        <option value="3">
-
-                            ⭐⭐⭐ Good
-
-                        </option>
-
-
-                        <option value="2">
-
-                            ⭐⭐ Needs Improvement
-
-                        </option>
-
-
-                        <option value="1">
-
-                            ⭐ Poor
-
-                        </option>
-
-
-                    </select>
-
-                </div>
-
-
-                <div
-                    class="review-form-group"
-                >
-
-                    <label
-                        for="reviewText"
-                    >
-
-                        Your Feedback
-
-                    </label>
-
-
-                    <textarea
-                        id="reviewText"
-                        rows="5"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    id="submitReviewBtn"
-                >
-
-                    Submit Review
-
-                </button>
-
-
-                <p
-                    id="reviewMessage"
-                ></p>
-
-
-            </form>
-
-
-        </div>
-
-
+<div id="spotlight"></div>
+<div class="noise"></div>
+<div class="aurora">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<header>
+  <nav>
+    <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
     </div>
+    <a href="#contact" class="nav-cta">Enroll Now</a>
+  </nav>
+</header>
 
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="site-footer">
-    <div class="footer-container">
-        <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-        <p style="margin-top: 8px; font-size: 13px;">
-            <a href="privacy-policy.html" style="color: #9ca3af; text-decoration: underline;">Privacy Policy</a>
-        </p>
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <h1>Skills training that<br>actually gets you <span class="grad-text">hired.</span></h1>
+    <div class="typeline">I teach <span id="typed">Tally Prime</span><span class="cursor"></span></div>
+    <p class="lede">Accounts & IT trainer in Ambala — 20+ years turning students into hires through hands-on, project-first learning.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start Learning →</a>
+      <a href="#about" class="btn-ghost">My Story</a>
     </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="m-track">
+    <span class="hl">TALLY PRIME</span><span>BUSY</span><span class="hl">WEB DEVELOPMENT</span><span>OFFICE AUTOMATION</span><span class="hl">GRAPHIC DESIGN</span><span>AI TOOLS</span>
+    <span class="hl">TALLY PRIME</span><span>BUSY</span><span class="hl">WEB DEVELOPMENT</span><span>OFFICE AUTOMATION</span><span class="hl">GRAPHIC DESIGN</span><span>AI TOOLS</span>
+  </div>
+</div>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat-card" data-reveal><div class="figure grad-text" data-count="20" data-suffix="+">0</div><div class="label">Years of teaching experience</div></div>
+    <div class="stat-card" data-reveal><div class="figure grad-text" data-count="1000" data-suffix="s+">0</div><div class="label">Students trained across batches</div></div>
+    <div class="stat-card" data-reveal><div class="figure grad-text" data-count="5" data-suffix="+">0</div><div class="label">Skill domains taught end-to-end</div></div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Five domains, taught like real jobs</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card tilt" data-reveal><div class="num">01</div><h3>Tally Prime & Busy</h3><p>GST billing, inventory, payroll and real company books — not sample data.</p></div>
+      <div class="exp-card tilt" data-reveal><div class="num">02</div><h3>Web Development</h3><p>HTML, CSS, JS fundamentals through to shipping a live site.</p></div>
+      <div class="exp-card tilt" data-reveal><div class="num">03</div><h3>Office Automation</h3><p>Excel, reporting and workflow tools used daily in real offices.</p></div>
+      <div class="exp-card tilt" data-reveal><div class="num">04</div><h3>Graphic Design</h3><p>Visual fundamentals plus the tools studios and agencies expect.</p></div>
+      <div class="exp-card tilt" data-reveal><div class="num">05</div><h3>AI Tools</h3><p>Practical AI workflows for accounting, design and everyday work.</p></div>
+      <div class="exp-card tilt" data-reveal><div class="num">06</div><h3>Placement Support</h3><p>Portfolio review, interview prep and hiring-partner introductions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-card" data-reveal>
+      <div class="about-photo">
+        <img src="https://akkhilkapoor.github.io/akkhil/akkhil.jpg" alt="Akkhil Kapoor">
+      </div>
+      <div>
+        <div class="kicker"><span class="dot"></span> About Me</div>
+        <h2 style="margin-top:16px;">Education is the most powerful tool for real change.</h2>
+        <p>Throughout my career I've dedicated myself to helping students, professionals and organizations reach their goals through practical, applied learning rather than theory for its own sake.</p>
+        <p>My approach: simplify the complex, build with real projects, and make sure every learner leaves with the confidence to apply what they know in an actual job or business.</p>
+        <a href="#" class="btn-ghost" style="display:inline-flex; margin-top:10px;">More about my journey →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What students say</h2>
+    </div>
+  </div>
+  <div class="review-track-wrap">
+    <div class="review-track">
+      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Real, practical Tally training — I was billing live company data within the first two weeks.</p><div><div class="review-name">Student Review</div><div class="review-role">ACCOUNTING BATCH</div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Sir explains everything step by step, and doesn't move on until you can actually do it yourself.</p><div><div class="review-name">Student Review</div><div class="review-role">WEB DEV BATCH</div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Best institute in Ambala for hands-on computer training. Got placed within a month of finishing.</p><div><div class="review-name">Student Review</div><div class="review-role">OFFICE AUTOMATION</div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Real, practical Tally training — I was billing live company data within the first two weeks.</p><div><div class="review-name">Student Review</div><div class="review-role">ACCOUNTING BATCH</div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Sir explains everything step by step, and doesn't move on until you can actually do it yourself.</p><div><div class="review-name">Student Review</div><div class="review-role">WEB DEV BATCH</div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="quote">Best institute in Ambala for hands-on computer training. Got placed within a month of finishing.</p><div><div class="review-name">Student Review</div><div class="review-role">OFFICE AUTOMATION</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="aurora-inner"></div>
+      <div class="kicker" style="position:relative; margin:0 auto 20px; width:fit-content;"><span class="dot"></span> Get In Touch</div>
+      <h2>Ready to build a skill that actually gets you <span class="grad-text">hired?</span></h2>
+      <a href="#" class="btn-primary">Book a Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>© Akkhil Kapoor. All Rights Reserved.</div>
+    <div class="foot-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  // cursor spotlight
+  const spot = document.getElementById('spotlight');
+  document.addEventListener('mousemove', (e)=>{
+    spot.style.setProperty('--mx', e.clientX + 'px');
+    spot.style.setProperty('--my', e.clientY + 'px');
+  });
+
+  // scroll reveal
+  const els = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+
+  // typewriter
+  const words = ["Tally Prime", "Web Development", "Graphic Design", "Office Automation", "AI Tools"];
+  const typed = document.getElementById('typed');
+  let wi=0, ci=0, deleting=false;
+  function tick(){
+    const w = words[wi];
+    if(!deleting){
+      ci++;
+      typed.textContent = w.slice(0,ci);
+      if(ci === w.length){ deleting=true; setTimeout(tick, 1200); return; }
+    } else {
+      ci--;
+      typed.textContent = w.slice(0,ci);
+      if(ci === 0){ deleting=false; wi=(wi+1)%words.length; }
+    }
+    setTimeout(tick, deleting ? 40 : 70);
+  }
+  tick();
+
+  // animated counters
+  const counters = document.querySelectorAll('[data-count]');
+  const cio = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        const el = en.target;
+        const target = parseInt(el.getAttribute('data-count'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        let cur = 0;
+        const step = Math.max(1, Math.round(target/40));
+        const iv = setInterval(()=>{
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(iv); }
+          el.textContent = cur + suffix;
+        }, 30);
+        cio.unobserve(el);
+      }
+    });
+  }, {threshold:0.5});
+  counters.forEach(c=>cio.observe(c));
+
+  // tilt cards
+  document.querySelectorAll('.exp-card.tilt').forEach(card=>{
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - 0.5;
+      const y = (e.clientY - r.top)/r.height - 0.5;
+      card.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-2px)`;
+    });
+    card.addEventListener('mouseleave', ()=>{ card.style.transform = 'rotateY(0) rotateX(0)'; });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const id = this.getAttribute('href');
+      if(id.length>1){
+        const target = document.querySelector(id);
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    });
+  });
 </script>
 
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script>
-
-
-        /* =====================================================
-           SUPABASE CONFIGURATION
-        ===================================================== */
-
-
-        const SUPABASE_URL =
-            "https://lmkvtvmkbvpzgsrutheu.supabase.co";
-
-
-        const SUPABASE_KEY =
-            "sb_publishable_SsDcoVpYs44Q99CRyS2Wmw_GTCxubIE";
-
-
-        /* =====================================================
-           DOM ELEMENTS
-        ===================================================== */
-
-
-        const reviewsContainer =
-            document.getElementById(
-                "reviews-container"
-            );
-
-
-        const reviewModal =
-            document.getElementById(
-                "reviewModal"
-            );
-
-
-        const openReviewBtn =
-            document.getElementById(
-                "openReviewBtn"
-            );
-
-
-        const closeReviewBtn =
-            document.getElementById(
-                "closeReviewBtn"
-            );
-
-
-        const reviewForm =
-            document.getElementById(
-                "reviewForm"
-            );
-
-
-        const submitReviewBtn =
-            document.getElementById(
-                "submitReviewBtn"
-            );
-
-
-        const reviewMessage =
-            document.getElementById(
-                "reviewMessage"
-            );
-
-
-        /* =====================================================
-           OPEN REVIEW MODAL
-        ===================================================== */
-
-
-        openReviewBtn.addEventListener(
-
-            "click",
-
-            function () {
-
-                reviewModal.style.display =
-                    "flex";
-
-            }
-
-        );
-
-
-        /* =====================================================
-           CLOSE REVIEW MODAL
-        ===================================================== */
-
-
-        closeReviewBtn.addEventListener(
-
-            "click",
-
-            function () {
-
-                reviewModal.style.display =
-                    "none";
-
-            }
-
-        );
-
-
-        window.addEventListener(
-
-            "click",
-
-            function (event) {
-
-                if (
-                    event.target ===
-                    reviewModal
-                ) {
-
-                    reviewModal.style.display =
-                        "none";
-
-                }
-
-            }
-
-        );
-
-
-        /* =====================================================
-           LOAD APPROVED REVIEWS
-        ===================================================== */
-
-
-        async function fetchReviews() {
-
-
-            try {
-
-
-                const response =
-                    await fetch(
-
-                        `${SUPABASE_URL}/rest/v1/student_reviews?Approved=eq.true&select=Name,Rating,Review&order=Created_at.desc`,
-
-                        {
-
-                            method:
-                                "GET",
-
-                            headers: {
-
-                                "apikey":
-                                    SUPABASE_KEY,
-
-                                "Authorization":
-                                    `Bearer ${SUPABASE_KEY}`
-
-                            }
-
-                        }
-
-                    );
-
-
-                if (
-                    !response.ok
-                ) {
-
-                    throw new Error(
-                        "Failed to load reviews"
-                    );
-
-                }
-
-
-                const data =
-                    await response.json();
-
-
-                reviewsContainer.innerHTML =
-                    "";
-
-
-                if (
-                    !data ||
-                    data.length === 0
-                ) {
-
-                    reviewsContainer.innerHTML = `
-
-                        <p
-                            style="
-                                grid-column: 1/-1;
-                                text-align: center;
-                            "
-                        >
-
-                            No reviews available yet.
-
-                        </p>
-
-                    `;
-
-                    return;
-
-                }
-
-
-                data.forEach(
-
-                    function (item) {
-
-
-                        const reviewCard =
-                            document.createElement(
-                                "div"
-                            );
-
-
-                        reviewCard.className =
-                            "review-card";
-
-
-                        const rating =
-                            parseInt(
-                                item.Rating
-                            ) || 5;
-
-
-                        const ratingStars =
-                            "⭐".repeat(
-                                rating
-                            );
-
-
-                        const reviewText =
-                            item.Review ||
-                            "";
-
-
-                        /*
-                            REVIEW CARD HTML
-                        */
-
-
-                        reviewCard.innerHTML = `
-
-                            <div class="review-card-content">
-
-                                <div
-                                    style="
-                                        display: flex;
-                                        justify-content: space-between;
-                                        align-items: center;
-                                        margin-bottom: 8px;
-                                        flex-wrap: wrap;
-                                        gap: 5px;
-                                    "
-                                >
-
-                                    <strong
-                                        style="
-                                            font-size: 1em;
-                                            color: #333;
-                                        "
-                                    >
-
-                                        ${escapeHTML(item.Name)}
-
-                                    </strong>
-
-
-                                    <span
-                                        style="
-                                            font-size: 0.9em;
-                                        "
-                                    >
-
-                                        ${ratingStars}
-
-                                    </span>
-
-                                </div>
-
-
-                                <p
-                                    class="review-text"
-                                >
-
-                                    "${escapeHTML(reviewText)}"
-
-                                </p>
-
-
-                                <button
-                                    class="read-review-btn"
-                                    type="button"
-                                >
-
-                                    Read More
-
-                                </button>
-
-
-                            </div>
-
-                        `;
-
-
-                        const textElement =
-                            reviewCard.querySelector(
-                                ".review-text"
-                            );
-
-
-                        const readMoreBtn =
-                            reviewCard.querySelector(
-                                ".read-review-btn"
-                            );
-
-
-                        /*
-                            CHECK IF REVIEW IS ACTUALLY LONG
-                        */
-
-
-                        setTimeout(
-
-                            function () {
-
-
-                                if (
-
-                                    textElement.scrollHeight <=
-                                    textElement.clientHeight
-
-                                ) {
-
-                                    readMoreBtn.style.display =
-                                        "none";
-
-                                }
-
-                            },
-
-                            100
-
-                        );
-
-
-                        /*
-                            READ MORE / READ LESS
-                        */
-
-
-                        readMoreBtn.addEventListener(
-
-                            "click",
-
-                            function () {
-
-
-                                if (
-
-                                    textElement.classList.contains(
-                                        "expanded"
-                                    )
-
-                                ) {
-
-
-                                    textElement.classList.remove(
-                                        "expanded"
-                                    );
-
-
-                                    readMoreBtn.textContent =
-                                        "Read More";
-
-
-                                }
-
-
-                                else {
-
-
-                                    textElement.classList.add(
-                                        "expanded"
-                                    );
-
-
-                                    readMoreBtn.textContent =
-                                        "Read Less";
-
-
-                                }
-
-                            }
-
-                        );
-
-
-                        reviewsContainer.appendChild(
-                            reviewCard
-                        );
-
-
-                    }
-
-                );
-
-
-            }
-
-
-            catch (error) {
-
-
-                console.error(
-                    "Error loading reviews:",
-                    error
-                );
-
-
-                reviewsContainer.innerHTML = `
-
-                    <p
-                        style="
-                            grid-column: 1/-1;
-                            text-align: center;
-                            color: red;
-                        "
-                    >
-
-                        Failed to load reviews.
-
-                    </p>
-
-                `;
-
-            }
-
-
-        }
-
-
-        /* =====================================================
-           SUBMIT REVIEW
-        ===================================================== */
-
-
-        reviewForm.addEventListener(
-
-            "submit",
-
-            async function (event) {
-
-
-                event.preventDefault();
-
-
-                const name =
-                    document
-                        .getElementById(
-                            "reviewName"
-                        )
-                        .value
-                        .trim();
-
-
-                const email =
-                    document
-                        .getElementById(
-                            "reviewEmail"
-                        )
-                        .value
-                        .trim();
-
-
-                const phone =
-                    document
-                        .getElementById(
-                            "reviewPhone"
-                        )
-                        .value
-                        .trim();
-
-
-                const rating =
-                    document
-                        .getElementById(
-                            "reviewRating"
-                        )
-                        .value;
-
-
-                const review =
-                    document
-                        .getElementById(
-                            "reviewText"
-                        )
-                        .value
-                        .trim();
-
-
-                submitReviewBtn.disabled =
-                    true;
-
-
-                submitReviewBtn.textContent =
-                    "Submitting...";
-
-
-                reviewMessage.textContent =
-                    "";
-
-
-                try {
-
-
-                    const response =
-                        await fetch(
-
-                            `${SUPABASE_URL}/rest/v1/student_reviews`,
-
-                            {
-
-                                method:
-                                    "POST",
-
-                                headers: {
-
-                                    "Content-Type":
-                                        "application/json",
-
-                                    "apikey":
-                                        SUPABASE_KEY,
-
-                                    "Authorization":
-                                        `Bearer ${SUPABASE_KEY}`,
-
-                                    "Prefer":
-                                        "return=minimal"
-
-                                },
-
-
-                                body:
-                                    JSON.stringify({
-
-                                        Name:
-                                            name,
-
-                                        Email:
-                                            email,
-
-                                        "Phone No":
-                                            phone,
-
-                                        Rating:
-                                            parseInt(
-                                                rating
-                                            ),
-
-                                        Review:
-                                            review,
-
-                                        Approved:
-                                            false
-
-                                    })
-
-                            }
-
-                        );
-
-
-                    if (
-                        !response.ok
-                    ) {
-
-
-                        const errorData =
-                            await response.text();
-
-
-                        console.error(
-                            errorData
-                        );
-
-
-                        throw new Error(
-                            "Review submission failed"
-                        );
-
-                    }
-
-
-                    reviewMessage.style.color =
-                        "green";
-
-
-                    reviewMessage.textContent =
-                        "Thank you! Your review has been submitted successfully.";
-
-
-                    reviewForm.reset();
-
-
-                    setTimeout(
-
-                        function () {
-
-
-                            reviewModal.style.display =
-                                "none";
-
-
-                            reviewMessage.textContent =
-                                "";
-
-                        },
-
-                        2500
-
-                    );
-
-
-                }
-
-
-                catch (error) {
-
-
-                    console.error(
-                        "Error submitting review:",
-                        error
-                    );
-
-
-                    reviewMessage.style.color =
-                        "red";
-
-
-                    reviewMessage.textContent =
-                        "Something went wrong. Please try again.";
-
-                }
-
-
-                finally {
-
-
-                    submitReviewBtn.disabled =
-                        false;
-
-
-                    submitReviewBtn.textContent =
-                        "Submit Review";
-
-                }
-
-
-            }
-
-        );
-
-
-        /* =====================================================
-           ESCAPE HTML
-        ===================================================== */
-
-
-        function escapeHTML(
-            text
-        ) {
-
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-
-            div.textContent =
-                text ||
-                "";
-
-
-            return div.innerHTML;
-
-        }
-
-
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
-
-
-        const mobileMenuBtn =
-            document.getElementById(
-                "mobileMenuBtn"
-            );
-
-
-        const mainNav =
-            document.getElementById(
-                "mainNav"
-            );
-
-
-        mobileMenuBtn.addEventListener(
-
-            "click",
-
-            function () {
-
-
-                mainNav.classList.toggle(
-                    "open"
-                );
-
-
-                const icon =
-                    mobileMenuBtn.querySelector(
-                        "i"
-                    );
-
-
-                if (
-
-                    mainNav.classList.contains(
-                        "open"
-                    )
-
-                ) {
-
-
-                    icon.classList.remove(
-                        "fa-bars"
-                    );
-
-
-                    icon.classList.add(
-                        "fa-times"
-                    );
-
-
-                }
-
-
-                else {
-
-
-                    icon.classList.remove(
-                        "fa-times"
-                    );
-
-
-                    icon.classList.add(
-                        "fa-bars"
-                    );
-
-                }
-
-            }
-
-        );
-
-
-        /* =====================================================
-           STAT NUMBER COUNT-UP ANIMATION
-        ===================================================== */
-
-
-        const statNumbers =
-            document.querySelectorAll(
-                ".stat-number"
-            );
-
-
-        function animateStat(el) {
-
-            const target =
-                parseInt(
-                    el.getAttribute(
-                        "data-target"
-                    )
-                );
-
-            const duration =
-                1500;
-
-            const startTime =
-                performance.now();
-
-            function update(now) {
-
-                const progress =
-                    Math.min(
-                        (now - startTime) / duration,
-                        1
-                    );
-
-                const current =
-                    Math.floor(
-                        progress * target
-                    );
-
-                el.textContent =
-                    current + "+";
-
-                if (
-                    progress < 1
-                ) {
-
-                    requestAnimationFrame(
-                        update
-                    );
-
-                }
-
-                else {
-
-                    el.textContent =
-                        target + "+";
-
-                }
-
-            }
-
-            requestAnimationFrame(
-                update
-            );
-
-        }
-
-
-        const statObserver =
-            new IntersectionObserver(
-
-                function (entries) {
-
-                    entries.forEach(
-
-                        function (entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                animateStat(
-                                    entry.target
-                                );
-
-                                statObserver.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-                    threshold: 0.5
-                }
-
-            );
-
-
-        statNumbers.forEach(
-
-            function (el) {
-
-                statObserver.observe(
-                    el
-                );
-
-            }
-
-        );
-
-
-        /* =====================================================
-           LOAD REVIEWS
-        ===================================================== */
-
-
-        fetchReviews();
-
-
-    </script>
-
-
 </body>
-
 </html>
