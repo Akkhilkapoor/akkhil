@@ -1,265 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects | Akkhil Kapoor - Accounting, Web Development & Software Projects</title>
-    <meta name="description" content="Explore projects by Akkhil Kapoor (also known as Akhil Kapoor) including Accounting Management System, GST Billing Software, Payroll System, Inventory Management, and Web Development projects.">
-    <meta name="keywords" content="Akkhil Kapoor Projects, Akhil Kapoor, Accounting Software Ambala, GST Billing System, Payroll Management System, Inventory Management Software, Web Development Projects Ambala, Student Management System">
-    <meta name="author" content="Akkhil Kapoor">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://Akkhilkapoor.github.io/Akkhil/projects.html">
-
-    <!-- Open Graph tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="My Projects | Akkhil Kapoor - Accounting & Web Development Projects">
-    <meta property="og:description" content="Explore projects including Accounting Management System, GST Billing Software, Payroll System, Inventory Management, and Web Development projects by Akkhil Kapoor.">
-    <meta property="og:url" content="https://Akkhilkapoor.github.io/Akkhil/projects.html">
-    <meta property="og:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
-    <meta property="og:site_name" content="Akkhil Kapoor Portfolio">
-
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="My Projects | Akkhil Kapoor">
-    <meta name="twitter:description" content="Explore Accounting, GST Billing, Payroll, Inventory Management and Web Development projects by Akkhil Kapoor.">
-    <meta name="twitter:image" content="https://Akkhilkapoor.github.io/Akkhil/Akkhil.jpg">
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"
-     crossorigin="anonymous"></script>
-
-    <!-- Structured Data (JSON-LD) for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "My Projects | Akkhil Kapoor",
-      "url": "https://Akkhilkapoor.github.io/Akkhil/projects.html",
-      "description": "Collection of software and web development projects by Akkhil Kapoor including Accounting Management System, GST Billing, Payroll, and Inventory Management Systems.",
-      "author": {
-        "@type": "Person",
-        "name": "Akkhil Kapoor",
-        "alternateName": "Akhil Kapoor"
-      }
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Projects | Akkhil Kapoor - Accounting, Web Development & Software Projects</title>
+<meta name="description" content="Explore projects by Akkhil Kapoor including Accounting Management System, GST Billing Software, Payroll System, Inventory Management, and Web Development projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070B; --surface:rgba(255,255,255,0.045); --border:rgba(255,255,255,0.10);
+    --text:#F3F2F8; --dim:rgba(243,242,248,0.62); --dimmer:rgba(243,242,248,0.4);
+    --c1:#7C5CFF; --c2:#37E0C8; --c3:#FF5B94; --max:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
+  @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
+  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
+  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.4;}
+  .b1{width:560px; height:560px; background:var(--c1); top:-200px; left:-140px; animation:float1 16s ease-in-out infinite;}
+  .b2{width:480px; height:480px; background:var(--c3); top:20%; right:-180px; opacity:0.28; animation:float2 20s ease-in-out infinite;}
+  .b3{width:460px; height:460px; background:var(--c2); bottom:-200px; left:25%; opacity:0.2; animation:float3 18s ease-in-out infinite;}
+  @keyframes float1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(60px,80px);} }
+  @keyframes float2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-70px,50px);} }
+  @keyframes float3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,-60px);} }
+  header, main, footer{position:relative; z-index:3;}
+  header{position:sticky; top:0; z-index:50; padding:18px 0;}
+  nav{max-width:var(--max); margin:0 auto; padding:12px 22px; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px; backdrop-filter:blur(18px);}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
+  .brand-mark{width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;}
+  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
+  .navlinks a{position:relative;}
+  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
+  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
+  .navlinks a:hover, .navlinks a.active{color:var(--text);}
+  .nav-cta{background:var(--text); color:#07070B; font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:100px; transition:transform .2s;}
+  .nav-cta:hover{transform:scale(1.05);}
+  .page-hero{padding:80px 0 20px; text-align:center;}
+  .kicker{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim); margin-bottom:22px;}
+  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
+  .page-hero h1{font-size:clamp(34px,5.4vw,56px); font-weight:700; line-height:1.1;}
+  main{padding:60px 0 100px;}
+  .proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .proj-card{background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:30px; transition:transform .2s, border-color .3s;}
+  .proj-card:hover{border-color:rgba(255,255,255,0.25); transform:translateY(-4px);}
+  .proj-card h3{font-size:18px; font-weight:600; margin-bottom:10px;}
+  .proj-card > p{font-size:13.5px; color:var(--dim); line-height:1.6; margin-bottom:16px;}
+  .features-title{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--dimmer); text-transform:uppercase; letter-spacing:0.06em;}
+  .proj-card ul{list-style:none; margin-top:10px;}
+  .proj-card ul li{font-size:13px; padding:7px 0 7px 18px; position:relative; color:var(--dim); border-bottom:1px solid var(--border);}
+  .proj-card ul li:last-child{border-bottom:none;}
+  .proj-card ul li::before{content:"◆"; position:absolute; left:0; top:9px; font-size:7px; color:var(--c2);}
+  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
+  footer a{text-decoration:underline; color:var(--dimmer);}
+  @media (max-width:860px){ .navlinks{display:none;} .proj-grid{grid-template-columns:1fr;} }
+  [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in{opacity:1; transform:translateY(0);}
+</style>
 </head>
-
 <body>
 
-    <header class="site-header">
-        <div class="nav-container">
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.15 13.51C5.9 15.61 8.71 17 12 17s6.1-1.39 7.85-3.49L12 17.82l-7.85-4.31z" />
-                </svg>
-                <span>Akkhil Kapoor</span>
-            </div>
-
-            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav aria-label="Main Navigation" id="mainNav">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-
-        </div>
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="KNULA7yENFc3kMSxXO2QIA" async></script>
-    </header>
-
-    <main class="main-content-padding">
-
-        <section id="projects">
-            <h2>My Projects</h2>
-
-            <div class="project-container">
-
-                <div class="project-card">
-                    <h3>📊 Accounting Management System</h3>
-                    <p>A complete accounting software for managing business transactions and financial records.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Chart of Accounts</li>
-                        <li>Journal Entries</li>
-                        <li>Ledger Management</li>
-                        <li>Trial Balance</li>
-                        <li>Profit & Loss Account</li>
-                        <li>Balance Sheet</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>🧾 GST Billing & Inventory System</h3>
-                    <p>Billing software for GST invoice generation and inventory management.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>GST Invoice</li>
-                        <li>Customer Management</li>
-                        <li>Product Management</li>
-                        <li>Purchase & Sales</li>
-                        <li>Stock Reports</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>💰 Payroll Management System</h3>
-                    <p>Payroll software for employee salary calculation and payslip generation.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Employee Records</li>
-                        <li>Salary Calculation</li>
-                        <li>Attendance</li>
-                        <li>Payslip</li>
-                        <li>Reports</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>📦 Inventory Management System</h3>
-                    <p>Inventory software to manage stock, suppliers and products.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Product Management</li>
-                        <li>Supplier Records</li>
-                        <li>Purchase & Sales</li>
-                        <li>Stock Reports</li>
-                        <li>Inventory Tracking</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>🎨 Graphic Design Asset Gallery</h3>
-                    <p>A specialized gallery project showcasing various graphic design works created using Photoshop and CorelDraw.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Logo Design Portfolio</li>
-                        <li>Brochure & Flyer Samples</li>
-                        <li>Vector Illustrations</li>
-                        <li>Social Media Creative Kits</li>
-                        <li>Image Editing Portfolio</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>🌐 Personal Portfolio Template</h3>
-                    <p>A clean, modern, and SEO-optimized website template for professionals to showcase their work.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Mobile Responsive Design</li>
-                        <li>Smooth Scrolling Navigation</li>
-                        <li>Downloadable Resume Section</li>
-                        <li>Contact & Social Links</li>
-                        <li>SEO Meta Tags Integrated</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>🎓 Student Management System</h3>
-                    <p>A database-oriented software designed for institutes to keep track of student records and course progress.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Student Admission Portal</li>
-                        <li>Course & Batch Mapping</li>
-                        <li>Fee Payment Tracking</li>
-                        <li>Attendance Register</li>
-                        <li>Performance Reports</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>🛒 E-Commerce Web Interface</h3>
-                    <p>A responsive shopping website front-end designed for a seamless user experience across devices.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Product Grid Layout</li>
-                        <li>Category Filters</li>
-                        <li>Shopping Cart Interface</li>
-                        <li>User Login/Signup Form</li>
-                        <li>Search Functionality</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3>📋 Task & Project Tracker</h3>
-                    <p>A web-based tool for individuals and small teams to organize daily tasks and track project deadlines effectively.</p>
-
-                    <span class="features-title"><strong>Key Features</strong></span>
-
-                    <ul style="text-align:left; margin-top:10px; padding-left:20px; color:#64748b; font-size:14px;">
-                        <li>Task Priority Setting</li>
-                        <li>Deadline Reminders</li>
-                        <li>Project Status Dashboard</li>
-                        <li>Progress Visualization</li>
-                        <li>Archive Completed Tasks</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-    <div class="footer-container">
-        <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-        <p style="margin-top: 8px; font-size: 13px;">
-            <a href="privacy-policy.html" style="color: #9ca3af; text-decoration: underline;">Privacy Policy</a>
-        </p>
+<header>
+  <nav>
+    <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <a href="contact.html" class="nav-cta">Enroll Now</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="dot"></span> Projects</div>
+      <h1>My <span class="grad-text">Projects</span></h1>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="proj-grid">
+      <div class="proj-card" data-reveal>
+        <h3>📊 Accounting Management System</h3>
+        <p>A complete accounting software for managing business transactions and financial records.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Chart of Accounts</li><li>Journal Entries</li><li>Ledger Management</li><li>Trial Balance</li><li>Profit & Loss Account</li><li>Balance Sheet</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>🧾 GST Billing & Inventory System</h3>
+        <p>Billing software for GST invoice generation and inventory management.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>GST Invoice</li><li>Customer Management</li><li>Product Management</li><li>Purchase & Sales</li><li>Stock Reports</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>💰 Payroll Management System</h3>
+        <p>Payroll software for employee salary calculation and payslip generation.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Employee Records</li><li>Salary Calculation</li><li>Attendance</li><li>Payslip</li><li>Reports</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>📦 Inventory Management System</h3>
+        <p>Inventory software to manage stock, suppliers and products.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Product Management</li><li>Supplier Records</li><li>Purchase & Sales</li><li>Stock Reports</li><li>Inventory Tracking</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>🎨 Graphic Design Asset Gallery</h3>
+        <p>A specialized gallery project showcasing various graphic design works created using Photoshop and CorelDraw.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Logo Design Portfolio</li><li>Brochure & Flyer Samples</li><li>Vector Illustrations</li><li>Social Media Creative Kits</li><li>Image Editing Portfolio</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>🌐 Personal Portfolio Template</h3>
+        <p>A clean, modern, and SEO-optimized website template for professionals to showcase their work.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Mobile Responsive Design</li><li>Smooth Scrolling Navigation</li><li>Downloadable Resume Section</li><li>Contact & Social Links</li><li>SEO Meta Tags Integrated</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>🎓 Student Management System</h3>
+        <p>A database-oriented software designed for institutes to keep track of student records and course progress.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Student Admission Portal</li><li>Course & Batch Mapping</li><li>Fee Payment Tracking</li><li>Attendance Register</li><li>Performance Reports</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>🛒 E-Commerce Web Interface</h3>
+        <p>A responsive shopping website front-end designed for a seamless user experience across devices.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Product Grid Layout</li><li>Category Filters</li><li>Shopping Cart Interface</li><li>User Login/Signup Form</li><li>Search Functionality</li></ul>
+      </div>
+      <div class="proj-card" data-reveal>
+        <h3>📋 Task & Project Tracker</h3>
+        <p>A web-based tool for individuals and small teams to organize daily tasks and track project deadlines effectively.</p>
+        <span class="features-title">Key Features</span>
+        <ul><li>Task Priority Setting</li><li>Deadline Reminders</li><li>Project Status Dashboard</li><li>Progress Visualization</li><li>Archive Completed Tasks</li></ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
+    <p style="margin-top:8px; font-size:13px;"><a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const els = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} }); }, {threshold:0.1});
+  els.forEach(el=>io.observe(el));
 </script>
 
-    <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('open');
-
-            const icon = mobileMenuBtn.querySelector('i');
-
-            if (mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-    </script>
-
 </body>
-
 </html>
