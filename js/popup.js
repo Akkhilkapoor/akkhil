@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <span id="consultPopupClose" style="position:absolute; top:10px; right:16px; cursor:pointer; font-size:22px; color:#999;">&times;</span>
       <h2 style="margin:10px 0; color:#1a1a1a; font-size:22px;">🎉 1st Consultation is FREE!</h2>
       <p style="color:#555; margin:10px 0 20px;">Get expert advice at no cost. Limited time offer — book your free consultation now.</p>
-      <a href="/contact.html" style="display:inline-block; background:#2563eb; color:#fff; padding:12px 28px; border-radius:6px; text-decoration:none; font-weight:bold;">Book Now</a>
+      <a href="contact.html" style="display:inline-block; background:#2563eb; color:#fff; padding:12px 28px; border-radius:6px; text-decoration:none; font-weight:bold;">Book Now</a>
     </div>
   `;
   document.body.insertAdjacentHTML('beforeend', popupHTML);
