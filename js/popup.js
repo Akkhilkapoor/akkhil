@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Popup HTML insert karo
   var popupHTML = `
     <div id="consultPopupOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9998;"></div>
     <div id="consultPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; border-radius:12px; padding:30px; width:90%; max-width:400px; z-index:9999; box-shadow:0 10px 40px rgba(0,0,0,0.3); text-align:center; font-family:Arial, sans-serif;">
@@ -15,16 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var overlay = document.getElementById('consultPopupOverlay');
   var closeBtn = document.getElementById('consultPopupClose');
 
-  var showDelay = 3000; // 3 second baad popup dikhega
-  var alreadyShown = sessionStorage.getItem('consultPopupShown');
+  var showDelay = 3000; // 3 second baad popup dikhega — har page par
 
-  if (!alreadyShown) {
-    setTimeout(function () {
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
-      sessionStorage.setItem('consultPopupShown', 'true');
-    }, showDelay);
-  }
+  setTimeout(function () {
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+  }, showDelay);
 
   function closePopup() {
     popup.style.display = 'none';
