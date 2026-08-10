@@ -24,16 +24,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#07070B; --surface:rgba(255,255,255,0.045); --border:rgba(255,255,255,0.10);
+    --bg:#07070B; --surface:rgba(255,255,255,0.045); --surface2:rgba(255,255,255,0.07); --border:rgba(255,255,255,0.10);
     --text:#F3F2F8; --dim:rgba(243,242,248,0.62); --dimmer:rgba(243,242,248,0.4);
     --c1:#7C5CFF; --c2:#37E0C8; --c3:#FF5B94; --max:1160px;
+    --err:#FF6B6B;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;}
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
-  h1,h2{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
+  h1,h2,h3{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
   .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
   @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
   .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
@@ -60,29 +61,72 @@
   .kicker{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim); margin-bottom:22px;}
   .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
   .page-hero h1{font-size:clamp(34px,5.4vw,56px); font-weight:700; line-height:1.1;}
+  .page-hero p{max-width:520px; margin:16px auto 0; color:var(--dim); font-size:15.5px; line-height:1.6;}
   main{padding:60px 0 100px;}
-  .contact-card{max-width:640px; margin:0 auto; background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:44px;}
-  .contact-form{display:flex; flex-direction:column; gap:16px;}
+
+  .contact-grid{display:grid; grid-template-columns:1fr 1.25fr; gap:24px; max-width:980px; margin:0 auto; align-items:start;}
+
+  /* Info column */
+  .info-stack{display:flex; flex-direction:column; gap:14px;}
+  .info-card{background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:22px; display:flex; gap:14px; align-items:flex-start; transition:border-color .2s, background .2s;}
+  .info-card:hover{border-color:rgba(255,255,255,0.2); background:var(--surface2);}
+  .info-icon{width:40px; height:40px; flex:none; border-radius:12px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,92,255,0.25),rgba(255,91,148,0.2)); border:1px solid var(--border);}
+  .info-icon svg{width:18px; height:18px; stroke:var(--c2);}
+  .info-card h3{font-size:14.5px; font-weight:600; margin-bottom:4px;}
+  .info-card p, .info-card a{display:block; font-size:13.5px; color:var(--dim); line-height:1.55;}
+  .info-card a:hover{color:var(--c2);}
+
+  .avail-card{background:linear-gradient(135deg, rgba(124,92,255,0.12), rgba(55,224,200,0.06)); border:1px solid var(--border); border-radius:20px; padding:22px;}
+  .avail-card h3{font-size:14.5px; font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .avail-card h3 .dot{width:7px; height:7px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
+  .avail-card p{font-size:13.5px; color:var(--dim); line-height:1.6;}
+
+  /* Form column */
+  .contact-card{background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:40px;}
+  .contact-card > h2{font-size:20px; margin-bottom:4px;}
+  .contact-card > .sub{font-size:13.5px; color:var(--dimmer); margin-bottom:26px;}
+  .contact-form{display:flex; flex-direction:column; gap:18px;}
+  .field{display:flex; flex-direction:column; gap:7px;}
+  .field label{font-size:12.5px; font-weight:500; color:var(--dim); font-family:'JetBrains Mono',monospace; letter-spacing:0.01em;}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   .contact-form input, .contact-form textarea{
     background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:12px;
-    padding:14px 16px; color:var(--text); font-family:'Inter',sans-serif; font-size:14.5px;
-    outline:none; transition:border-color .2s;
+    padding:13px 15px; color:var(--text); font-family:'Inter',sans-serif; font-size:14.5px;
+    outline:none; transition:border-color .2s, background .2s;
   }
   .contact-form input::placeholder, .contact-form textarea::placeholder{color:var(--dimmer);}
-  .contact-form input:focus, .contact-form textarea:focus{border-color:var(--c1);}
-  .contact-form textarea{resize:vertical;}
+  .contact-form input:focus, .contact-form textarea:focus{border-color:var(--c1); background:rgba(255,255,255,0.05);}
+  .contact-form input:focus-visible, .contact-form textarea:focus-visible{outline:2px solid var(--c2); outline-offset:1px;}
+  .contact-form input.invalid, .contact-form textarea.invalid{border-color:var(--err);}
+  .field small{font-size:11.5px; color:var(--err); min-height:14px; display:block;}
+  .contact-form textarea{resize:vertical; min-height:110px;}
   .contact-form button{
     background:linear-gradient(135deg,var(--c1),var(--c3)); color:#08080B; font-weight:700; font-size:14.5px;
-    padding:15px; border:none; border-radius:100px; cursor:pointer; margin-top:6px; transition:transform .2s;
+    padding:15px; border:none; border-radius:100px; cursor:pointer; margin-top:4px; transition:transform .2s, opacity .2s;
+    display:flex; align-items:center; justify-content:center; gap:8px;
   }
   .contact-form button:hover{transform:translateY(-2px);}
-  #contactStatus{text-align:center; margin-top:10px; font-weight:600; font-size:13.5px; color:var(--c2);}
+  .contact-form button:active{transform:translateY(0);}
+  .contact-form button:disabled{opacity:0.6; cursor:not-allowed; transform:none;}
+  #contactStatus{text-align:center; margin-top:4px; font-weight:600; font-size:13.5px; color:var(--c2); min-height:18px;}
+
   footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
   footer a{text-decoration:underline; color:var(--dimmer);}
-  @media (max-width:860px){ .navlinks{display:none;} .contact-card{padding:28px;} }
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .contact-grid{grid-template-columns:1fr;}
+    .contact-card{padding:28px;}
+    .two-col{grid-template-columns:1fr;}
+  }
   @keyframes fadeUp{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
   .page-hero{animation:fadeUp .7s ease both;}
+  .info-stack{animation:fadeUp .8s ease .05s both;}
   .contact-card{animation:fadeUp .8s ease .1s both;}
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -163,20 +207,88 @@
   <section class="page-hero">
     <div class="wrap">
       <div class="kicker"><span class="dot"></span> Get In Touch</div>
-      <h1>Contact <span class="grad-text">Me</span></h1>
+      <h1>Let's talk <span class="grad-text">training</span></h1>
+      <p>Questions about Tally Prime, Advanced Excel, Web Development, or Graphic Design courses in Ambala? Send a message below — it opens straight into WhatsApp.</p>
     </div>
   </section>
 
   <div class="wrap">
-    <div class="contact-card">
-      <form id="contactForm" class="contact-form">
-        <input type="text" id="contactName" name="Name" placeholder="Your Name" required>
-        <input type="email" id="contactEmail" name="Email" placeholder="Your Email" required>
-        <input type="text" id="contactPhone" name="Phone" placeholder="Phone Number" required>
-        <textarea id="contactMessage" name="Message" rows="6" placeholder="Write your message here..." required></textarea>
-        <button type="submit" id="sendMessageBtn">Send Message →</button>
-        <p id="contactStatus"></p>
-      </form>
+    <div class="contact-grid">
+
+      <div class="info-stack">
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h3>Call or WhatsApp</h3>
+            <a href="tel:+919729590777">+91 97295 90777</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:contact@akkhilkapoor.in">contact@akkhilkapoor.in</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>Ambala, Haryana, India</p>
+          </div>
+        </div>
+
+        <div class="avail-card">
+          <h3><span class="dot"></span> Currently taking enquiries</h3>
+          <p>Reply time is usually under a few hours. For urgent queries, WhatsApp is fastest.</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h2>Send a message</h2>
+        <p class="sub">Fill this in and it'll open pre-filled in WhatsApp for you to hit send.</p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="two-col">
+            <div class="field">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" name="Name" placeholder="Your full name" required>
+              <small data-error-for="contactName"></small>
+            </div>
+            <div class="field">
+              <label for="contactPhone">Phone</label>
+              <input type="tel" id="contactPhone" name="Phone" placeholder="10-digit number" required>
+              <small data-error-for="contactPhone"></small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="Email" placeholder="you@example.com" required>
+            <small data-error-for="contactEmail"></small>
+          </div>
+
+          <div class="field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="Message" rows="5" placeholder="Which course are you interested in?" required></textarea>
+            <small data-error-for="contactMessage"></small>
+          </div>
+
+          <button type="submit" id="sendMessageBtn">
+            <span id="btnLabel">Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
     </div>
   </div>
 </main>
@@ -193,9 +305,51 @@
 
   const contactForm = document.getElementById("contactForm");
   const contactStatus = document.getElementById("contactStatus");
+  const sendBtn = document.getElementById("sendMessageBtn");
+  const btnLabel = document.getElementById("btnLabel");
+
+  const fields = {
+    contactName:    { validate: v => v.trim().length >= 2, msg: "Please enter your name" },
+    contactEmail:   { validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()), msg: "Enter a valid email address" },
+    contactPhone:   { validate: v => /^\+?\d[\d\s-]{7,14}$/.test(v.trim()), msg: "Enter a valid phone number" },
+    contactMessage: { validate: v => v.trim().length >= 5, msg: "Tell us a little about your enquiry" }
+  };
+
+  function showError(id, message){
+    const input = document.getElementById(id);
+    const err = document.querySelector(`[data-error-for="${id}"]`);
+    input.classList.toggle("invalid", !!message);
+    if (err) err.textContent = message || "";
+  }
+
+  Object.keys(fields).forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener("input", () => {
+      if (input.classList.contains("invalid") && fields[id].validate(input.value)) {
+        showError(id, "");
+      }
+    });
+  });
 
   contactForm.addEventListener("submit", function(event) {
     event.preventDefault();
+
+    let valid = true;
+    Object.entries(fields).forEach(([id, rule]) => {
+      const value = document.getElementById(id).value;
+      if (!rule.validate(value)) {
+        showError(id, rule.msg);
+        valid = false;
+      } else {
+        showError(id, "");
+      }
+    });
+
+    if (!valid) {
+      contactStatus.style.color = "var(--err)";
+      contactStatus.textContent = "Please fix the highlighted fields.";
+      return;
+    }
 
     const name = document.getElementById("contactName").value.trim();
     const email = document.getElementById("contactEmail").value.trim();
@@ -205,8 +359,17 @@
     const whatsappMessage = `New Contact Message\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
     const whatsappURL = "https://wa.me/919729590777?text=" + encodeURIComponent(whatsappMessage);
 
-    contactStatus.textContent = "Opening WhatsApp...";
+    sendBtn.disabled = true;
+    btnLabel.textContent = "Opening WhatsApp...";
+    contactStatus.style.color = "var(--c2)";
+    contactStatus.textContent = "Redirecting you to WhatsApp...";
+
     window.location.href = whatsappURL;
+
+    setTimeout(() => {
+      sendBtn.disabled = false;
+      btnLabel.textContent = "Send Message";
+    }, 2500);
   });
 </script>
 
