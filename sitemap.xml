@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://akkhilkapoor.github.io/akkhil/</loc><lastmod>2026-08-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://akkhilkapoor.github.io/akkhil/about.html</loc><lastmod>2026-08-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://akkhilkapoor.github.io/akkhil/expertise.html</loc><lastmod>2026-08-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://akkhilkapoor.github.io/akkhil/projects.html</loc><lastmod>2026-08-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://akkhilkapoor.github.io/akkhil/blog.html</loc><lastmod>2026-08-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://akkhilkapoor.github.io/akkhil/contact.html</loc><lastmod>2026-08-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://akkhilkapoor.github.io/akkhil/privacy-policy.html</loc><lastmod>2026-08-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/about.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/expertise.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/projects.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/contact.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/privacy-policy.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/terms.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/disclaimer.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog/ai-tools-digital-skills-students.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog/tally-prime-for-beginners.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog/advanced-excel-skills.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog/gst-accounting-basics.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog/learn-web-development-step-by-step.html</loc><lastmod>2026-08-11</lastmod></url>
+  <url><loc>https://akkhilkapoor.github.io/akkhil/blog/job-ready-digital-skills.html</loc><lastmod>2026-08-11</lastmod></url>
 </urlset>
