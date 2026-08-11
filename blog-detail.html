@@ -10,11 +10,11 @@
 <meta id="ogTitle" property="og:title" content="Blog | Akkhil Kapoor">
 <meta id="ogDescription" property="og:description" content="Read detailed educational blogs and articles by Akkhil Kapoor.">
 <meta id="ogUrl" property="og:url" content="https://akkhilkapoor.github.io/akkhil/blog-detail.html">
-<meta id="ogImage" property="og:image" content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg">
+<meta id="ogImage" property="og:image" content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta id="twitterTitle" name="twitter:title" content="Blog | Akkhil Kapoor">
 <meta id="twitterDescription" name="twitter:description" content="Read detailed educational blogs and articles by Akkhil Kapoor.">
-<meta id="twitterImage" name="twitter:image" content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg">
+<meta id="twitterImage" name="twitter:image" content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg">
 <script id="articleSchema" type="application/ld+json"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,7 +170,7 @@
   function updateSEO(blog, slug) {
     const plainDescription = stripHTML(blog.content).trim().substring(0, 160);
     const pageUrl = "https://akkhilkapoor.github.io/akkhil/blog-detail.html?slug=" + encodeURIComponent(slug);
-    const imageUrl = blog.image_url || "https://akkhilkapoor.github.io/akkhil/Akkhil.jpg";
+    const imageUrl = blog.image_url || "https://akkhilkapoor.github.io/akkhil/akkhil.jpg";
     const fullTitle = blog.title + " | Akkhil Kapoor";
 
     document.title = fullTitle;
