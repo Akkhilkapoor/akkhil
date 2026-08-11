@@ -13,12 +13,12 @@
 <meta content="Blog | Akkhil Kapoor - Tally, Accounting &amp; Web Development Articles" property="og:title"/>
 <meta content="Latest articles and updates from Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, and Computer Education." property="og:description"/>
 <meta content="https://akkhilkapoor.github.io/akkhil/blog.html" property="og:url"/>
-<meta content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg" property="og:image"/>
+<meta content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg" property="og:image"/>
 <meta content="Akkhil Kapoor Portfolio" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Blog | Akkhil Kapoor" name="twitter:title"/>
 <meta content="Latest articles on Tally Prime, Accounting, GST, Web Development, and Computer Education." name="twitter:description"/>
-<meta content="https://akkhilkapoor.github.io/akkhil/akkhil.jpg" name="twitter:image"/>
+<meta content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg" name="twitter:image"/>
 <meta content="Read practical articles by Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, Computer Education, and digital skills." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -174,7 +174,7 @@
 <span></span><span></span><span></span>
 </button>
 <div class="navlinks">
-<a href="index.html">Home</a>
+<a href="blog-detail.html">Home</a>
 <a href="about.html">About</a>
 <a href="expertise.html">Expertise</a>
 <a href="projects.html">Projects</a>
@@ -278,5 +278,26 @@
 </script>
 <script src="js/popup.js"></script>
 <script src="js/nav.js"></script>
+
+<script>
+/* Blog detail navigation safety */
+document.addEventListener('click', function (event) {
+  const link = event.target.closest('a');
+  if (!link) return;
+  const label = (link.textContent || '').trim().toLowerCase();
+  if (!label.includes('read article')) return;
+
+  const href = link.getAttribute('href') || '';
+  if (href.includes('blog-detail.html')) return;
+
+  // Preserve an existing slug/query if one is present.
+  const match = href.match(/[?&]slug=([^&#]+)/i);
+  if (match) {
+    event.preventDefault();
+    window.location.href = 'blog-detail.html?slug=' + match[1];
+  }
+});
+</script>
+
 </body>
 </html>
