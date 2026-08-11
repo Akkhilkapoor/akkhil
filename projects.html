@@ -132,6 +132,7 @@
   "inLanguage": "en-IN"
 }
 </script>
+<link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
 
@@ -140,6 +141,9 @@
 <header>
   <nav>
     <div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="navlinks">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -234,5 +238,6 @@
   els.forEach(el=>io.observe(el));
 </script>
 
+<script src="js/nav.js"></script>
 </body>
 </html>
