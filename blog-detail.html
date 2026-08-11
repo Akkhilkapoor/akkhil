@@ -50,7 +50,8 @@
 
   main{padding:60px 0 100px;}
   .blog-detail-container{background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:44px;}
-  .back-to-blogs{display:inline-flex; align-items:center; gap:6px; margin-bottom:24px; padding:9px 18px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; border-radius:100px; font-weight:600; font-size:13.5px;}
+  .back-to-blogs{display:inline-flex; align-items:center; gap:6px; margin-bottom:24px; padding:9px 18px; background:rgba(10,10,14,0.75); backdrop-filter:blur(14px); border:1px solid var(--border); color:var(--text); text-decoration:none; border-radius:100px; font-weight:600; font-size:13.5px; position:fixed; top:90px; left:28px; z-index:60; transition:.2s;}
+  .back-to-blogs:hover{border-color:var(--c2); color:var(--c2);}
   .blog-detail-title{font-size:clamp(26px,4vw,38px); line-height:1.25; margin-bottom:12px;}
   .blog-date{color:var(--dimmer); font-size:13px; font-family:'JetBrains Mono',monospace; margin-bottom:24px;}
   .blog-detail-image{width:100%; max-height:480px; object-fit:contain; background:var(--surface); border:1px solid var(--border); border-radius:16px; margin-bottom:28px;}
@@ -72,7 +73,7 @@
   .blog-error{color:var(--c3);}
   footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
   footer a{text-decoration:underline; color:var(--dimmer);}
-  @media (max-width:860px){ .navlinks{display:none;} .blog-detail-container{padding:26px;} .blog-video iframe{height:240px;} }
+  @media (max-width:860px){ .navlinks{display:none;} .blog-detail-container{padding:26px;} .blog-video iframe{height:240px;} .back-to-blogs{top:16px; left:16px; padding:8px 14px; font-size:12.5px;} }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
