@@ -99,17 +99,15 @@
 
 <main>
   <div class="wrap">
-    <div id="blogContainer" class="blog-detail-container">
-      <div class="blog-loading"><p>Loading blog...</p></div>
+    <div class="blog-detail-container" id="blogContainer">
+      <a href="blog.html" class="back-to-blogs">← Back to Blogs</a>
+      <div class="blog-kicker" id="blogKicker"></div>
+      <h1 class="blog-detail-title" id="blogTitle">Loading blog...</h1>
+      <div class="blog-date" id="blogDate"></div>
+      <div class="blog-detail-content" id="blogContent"></div>
+      <div id="blogReactions"></div>
     </div>
   </div>
-
-<div id="blog-not-found" style="display:none; text-align:center; padding:40px 20px;">
-  <h2>Blog not found</h2>
-  <p>The requested article could not be found. Please return to the Blog page and select an article.</p>
-  <a href="blog.html">Back to Blog</a>
-</div>
-
 </main>
 
 <footer>
@@ -120,173 +118,82 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  const blogContainer = document.getElementById("blogContainer");
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  async function loadBlog() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get("slug");
-    if (!slug) { showError("Blog not found."); return; }
+const ARTICLES = {"ai-tools-digital-skills-students": {"title": "AI Tools & Digital Skills for Students and Beginners", "kicker": "AI & Digital Skills", "date": "12 August 2026", "intro": "Students today do not need to learn every new technology at once. A better approach is to understand a few useful AI tools and combine them with strong digital skills such as research, writing, spreadsheets, presentations, online collaboration and basic web skills.", "sections": [["Why AI and digital skills matter", "AI is becoming part of everyday study and office work. Students can use AI to brainstorm ideas, simplify difficult topics, prepare practice questions, improve a first draft and organise information. Digital skills make those AI abilities more useful because a student still needs to know how to check information, work with files, create a professional document and communicate clearly."], ["Useful AI skills for beginners", "A beginner should first learn how to write a clear prompt. Explain the task, give the necessary context, mention the required format and then review the answer. AI can help with summaries, study plans, examples, practice questions and first drafts, but the final work should be checked by the student. Learning to verify information is just as important as learning to generate it."], ["Core digital skills to build alongside AI", "Start with everyday computer skills: file and folder management, typing, email, cloud storage, document formatting and safe internet use. Then move to practical tools such as spreadsheets, presentations and online forms. Students interested in office jobs can add Excel, accounting software and basic data handling. Students interested in technology can continue with HTML, CSS, JavaScript and simple web projects."], ["How to practise instead of only watching tutorials", "The fastest way to improve is to build small projects. Create a monthly budget in Excel, make a presentation on a topic you know, write a simple webpage, organise a sample customer list or prepare a professional resume. AI can be used as a learning assistant, but the student should do the actual practice and understand the steps."], ["A simple learning routine", "Spend a little time each day learning one concept and then use it in a practical task. Keep a folder of your projects and update them as your skills improve. At the end of each week, review what you can do without help. This turns scattered tool knowledge into a useful digital skill set."], ["Final thoughts", "AI tools are most valuable when they support real skills rather than replace learning. Students who combine AI awareness with communication, spreadsheets, research, problem solving and practical computer skills can become more confident and adaptable. Start with a few tools, practise regularly and build evidence of what you can actually do."]]}, "tally-prime-for-beginners": {"title": "Tally Prime for Beginners: A Practical Learning Guide", "kicker": "Tally Prime", "date": "12 August 2026", "intro": "Tally Prime is widely used for accounting, invoicing, inventory and business reporting. Beginners do not need to learn every feature on the first day. A step-by-step approach helps them understand the accounting logic behind the software and then apply it to realistic transactions.", "sections": [["Start with accounting basics", "Before opening Tally Prime, understand a few basic ideas: assets, liabilities, income, expenses, purchases, sales, capital and drawings. A learner should know why a transaction is recorded before learning which voucher to use. This makes the software much easier to understand."], ["Create a company carefully", "The first practical step is creating a company and entering the basic business information. Check the financial year, books beginning date, company name and other settings before recording transactions. Keeping the sample company organised from the beginning makes later reports easier to understand."], ["Learn ledgers and groups", "Ledgers are used to record individual accounts such as cash, bank, sales, purchases, customers, suppliers, rent and salaries. Groups help organise those ledgers into meaningful accounting categories. Beginners should practise creating a small set of ledgers and understand why each one belongs to a particular group."], ["Understand common vouchers", "Payment vouchers record money paid, receipt vouchers record money received, sales vouchers record sales and purchase vouchers record purchases. Journal vouchers are used for adjustment entries and other accounting situations. Practise each voucher with simple examples before moving to complex transactions."], ["Inventory and GST", "Businesses that maintain stock need to understand stock items, units, godowns and inventory transactions. For GST-enabled businesses, learners should also understand the basic idea of taxable value, GST rates, tax ledgers and invoices. GST settings should always be configured according to the business requirements and current rules."], ["Reports and daily practice", "A good Tally learner should not stop after entering vouchers. Open reports such as the Day Book, Ledger, Trial Balance, Profit & Loss and Balance Sheet and understand what changed after each transaction. This connects software practice with accounting concepts."], ["How to become job-ready", "Create a complete practice company and enter transactions for several days. Include purchases, sales, expenses, receipts, payments, bank entries and stock movements. Then prepare reports and correct errors. This kind of project gives a learner much stronger practical confidence than memorising menus alone."]]}, "advanced-excel-skills": {"title": "Advanced Excel Skills That Help in Office Work", "kicker": "Advanced Excel", "date": "12 August 2026", "intro": "Excel is more than a place to type numbers. In office work, it is often used to clean data, calculate results, prepare summaries, track activities and create reports. Learning a focused set of practical Excel skills can make everyday work faster and more accurate.", "sections": [["Start with clean data", "Good Excel work begins with organised data. Keep one clear header row, avoid unnecessary blank rows and use consistent formats for dates, names and numbers. Clean data makes formulas, filters, PivotTables and charts much easier to use."], ["Formulas that save time", "Functions such as SUM, AVERAGE, COUNT, COUNTA, MIN and MAX are useful starting points. As you progress, learn IF, SUMIF, SUMIFS, COUNTIF, COUNTIFS and lookup functions such as XLOOKUP where available. The goal is not to memorise hundreds of functions but to understand which function solves a particular business problem."], ["Sorting, filtering and tables", "Filters help you quickly view only the records that meet a condition, such as a particular department or month. Converting a data range into an Excel Table can make formulas, formatting and filtering more manageable. Always check the source data before making conclusions from a filtered list."], ["Data cleaning", "Office datasets often contain extra spaces, inconsistent spelling, duplicate records or text stored in the wrong format. Tools and functions such as TRIM, CLEAN, Find and Replace, Remove Duplicates and Text to Columns can help. Cleaning should be done carefully so that genuine records are not accidentally removed."], ["PivotTables and charts", "PivotTables can summarise large lists into useful totals by category, month, employee or product. Charts can then communicate the main trend visually. A good report does not use a chart simply because it looks attractive; the chart should answer a clear question and use understandable labels."], ["Practical reporting", "A simple office dashboard might show total sales, number of orders, monthly performance and category-wise results. Use consistent headings and make important figures easy to find. Protect formulas where appropriate and keep a separate raw-data sheet so the report can be updated safely."], ["Practice project", "Take a sample sales dataset and calculate total sales, average order value, monthly sales, top products and salesperson performance. Clean the data, create a PivotTable and then build a simple report. Repeating this process with different datasets builds the confidence needed for real office work."]]}, "gst-accounting-basics": {"title": "GST and Accounting Basics for New Learners", "kicker": "GST & Accounting", "date": "12 August 2026", "intro": "GST and accounting can look complicated when a learner sees many terms at once. The easier approach is to first understand how a business transaction moves from source document to accounting entry and then to reports. GST concepts can be learned alongside this process.", "sections": [["Understand a business transaction", "Every transaction should have a clear business meaning. A purchase, sale, expense, receipt or payment changes one or more accounts. Source documents such as invoices, bills, receipts and bank records provide evidence for the transaction and help maintain accurate books."], ["Basic accounting concepts", "New learners should understand assets, liabilities, capital, income and expenses. They should also become comfortable with debit and credit rules. Once these concepts are clear, accounting software becomes easier because the learner is recording a transaction rather than simply clicking a voucher type."], ["What GST means", "GST is a tax system applied to supplies of goods and services in India. Depending on the nature and location of a transaction, different GST components may apply. Learners should understand the difference between taxable value, GST amount and total invoice value and should use current official guidance for compliance decisions."], ["GST invoices", "A GST invoice normally contains business and customer details, invoice number and date, description of goods or services, quantity where applicable, taxable value and tax details. Accurate invoices help businesses maintain records and support reporting. The exact requirements can depend on the transaction and taxpayer situation."], ["Accounting software and GST", "Software such as Tally Prime can connect invoice entries with accounting ledgers and reports. A learner should first configure the company correctly and then practise sales, purchases, payments and receipts. After entering transactions, check ledgers and reports to see whether the expected accounting effect has been recorded."], ["Common beginner mistakes", "Typical mistakes include selecting the wrong ledger, entering an incorrect tax rate, duplicating an invoice, using inconsistent dates or failing to reconcile bank transactions. Regularly checking the Day Book, ledgers and supporting documents can catch errors early."], ["Learn responsibly", "GST rules and compliance requirements can change. Training examples are useful for learning concepts, but actual business filings should be based on current official rules and, where necessary, professional advice. A good learner develops both software skills and the habit of checking the source of important compliance information."]]}, "learn-web-development-step-by-step": {"title": "How to Start Learning Web Development Step by Step", "kicker": "Web Development", "date": "12 August 2026", "intro": "Web development becomes much easier when learners follow a sequence instead of jumping between frameworks. Beginners can start with HTML, move to CSS, learn JavaScript and then build small projects before exploring more advanced tools.", "sections": [["Step 1: Learn HTML", "HTML gives a webpage its structure. Learn headings, paragraphs, links, images, lists, tables, forms, semantic elements and basic document structure. Practise by creating a simple profile page or a small information website."], ["Step 2: Learn CSS", "CSS controls presentation and layout. Focus on selectors, the box model, spacing, typography, colours, Flexbox, Grid and responsive design. A beginner should practise turning a plain HTML page into a clean page that works on both desktop and mobile screens."], ["Step 3: Learn JavaScript", "JavaScript adds behaviour. Start with variables, conditions, loops, functions, arrays and objects. Then learn how to select elements, respond to events and change page content. Small projects such as a calculator, to-do list or form validation tool are excellent practice."], ["Step 4: Understand how websites work", "Learn the difference between a browser, server, domain, hosting and database. Understand basic HTTP concepts and why websites use requests and responses. This knowledge helps learners understand what happens when a form is submitted or data is loaded from a service."], ["Step 5: Build practical projects", "Projects turn lessons into usable skills. Create a personal portfolio, student registration form, expense tracker, product page or simple blog. Keep the code organised and write short notes about what each project does and which technologies were used."], ["Step 6: Learn Git and deployment", "Once a learner has a few projects, learning Git and GitHub is useful for version control and sharing work. Static websites can be deployed using services such as GitHub Pages. Learn how to update files, check a deployment and troubleshoot common broken-link or path problems."], ["Step 7: Continue gradually", "After the basics, learners can explore a framework, backend development, APIs, databases or a specialised area. Do not rush into advanced tools before understanding the fundamentals. A strong foundation makes new technologies much easier to learn."]]}, "job-ready-digital-skills": {"title": "How Students Can Build Job-Ready Digital Skills", "kicker": "Career & Digital Skills", "date": "12 August 2026", "intro": "Being job-ready is not about collecting certificates alone. Employers also need people who can complete practical tasks, communicate clearly, solve routine problems and learn new tools. Students can build these abilities through small projects and consistent practice.", "sections": [["Choose a practical skill path", "Start by choosing a direction based on interest and the type of work you want to explore. Office-focused learners can study Excel, accounting software, documentation and data handling. Creative learners can add graphic design and presentation skills. Technology-focused learners can start with web development and basic programming."], ["Build a strong computer foundation", "File management, typing, email, online research, document formatting, spreadsheets and presentations are useful across many jobs. These basic abilities often save time and make it easier to learn specialised software later."], ["Practise with realistic tasks", "Instead of only watching lessons, create work that resembles an office assignment. Prepare an invoice, organise a customer list, create a sales report, design a presentation, build a simple webpage or write a professional email. Keep the completed work in a portfolio folder."], ["Improve communication", "Digital skills are more useful when a person can explain their work. Practise writing clear emails, describing a problem, presenting a report and asking a useful question when something is unclear. Communication is an important part of professional confidence."], ["Create a simple portfolio", "A portfolio does not have to be complicated. Include a short introduction and a few genuine projects. For each project, explain the purpose, tools used and what you learned. Do not claim work that you did not create yourself."], ["Prepare for interviews", "Revise the practical tasks you have completed and be ready to explain your process. Interviewers may ask how you handled an error, organised data or completed a project. Honest answers supported by real practice are stronger than memorised definitions."], ["Keep learning after getting started", "Technology changes quickly, so job readiness is an ongoing process. Continue improving one skill at a time and keep your portfolio updated. The combination of practical ability, communication and willingness to learn can help students adapt to changing workplace requirements."]]}};
 
-    try {
-      const { data: blogs, error } = await supabaseClient
-        .from("blogs").select("*").eq("slug", slug).eq("is_published", true).limit(1);
+function escapeHTML(text) {
+  const div = document.createElement("div");
+  div.textContent = text || "";
+  return div.innerHTML;
+}
 
-      if (error) throw error;
-      if (!blogs || blogs.length === 0) { showError("Blog not found."); return; }
+function updateSEO(article, slug) {
+  const description = article.intro.substring(0, 160);
+  const pageUrl = "https://akkhilkapoor.github.io/akkhil/blog-detail.html?slug=" + encodeURIComponent(slug);
+  document.title = article.title + " | Akkhil Kapoor";
+  document.getElementById("metaDescription").setAttribute("content", description);
+  document.getElementById("canonicalLink").setAttribute("href", pageUrl);
+  document.getElementById("ogTitle").setAttribute("content", article.title + " | Akkhil Kapoor");
+  document.getElementById("ogDescription").setAttribute("content", description);
+  document.getElementById("ogUrl").setAttribute("content", pageUrl);
+  document.getElementById("twitterTitle").setAttribute("content", article.title + " | Akkhil Kapoor");
+  document.getElementById("twitterDescription").setAttribute("content", description);
 
-      const blog = blogs[0];
+  const schema = {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":article.title,
+    "description":description,
+    "author":{"@type":"Person","name":"Akkhil Kapoor","url":"https://akkhilkapoor.github.io/akkhil/about.html"},
+    "publisher":{"@type":"Person","name":"Akkhil Kapoor"},
+    "datePublished":"2026-08-12",
+    "mainEntityOfPage":{"@type":"WebPage","@id":pageUrl}
+  };
+  document.getElementById("articleSchema").textContent = JSON.stringify(schema);
+}
 
-      let imageHTML = "";
-      if (blog.image_url) {
-        imageHTML = `<img src="${escapeHTML(blog.image_url)}" alt="${escapeHTML(blog.title)}" class="blog-detail-image">`;
-      }
+function showArticle(article, slug) {
+  document.getElementById("blogKicker").innerHTML =
+    '<span style="display:inline-flex;align-items:center;gap:8px;color:var(--c2);font-size:13px;font-weight:600;margin-bottom:16px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--c2);display:inline-block;"></span>' +
+    escapeHTML(article.kicker) + '</span>';
 
-      let dateHTML = "";
-      if (blog.created_at) {
-        const date = new Date(blog.created_at);
-        dateHTML = `<div class="blog-date">${date.toLocaleDateString("en-IN", { day:"numeric", month:"long", year:"numeric" })}</div>`;
-      }
+  document.getElementById("blogTitle").textContent = article.title;
+  document.getElementById("blogDate").textContent = article.date;
 
-      let videoHTML = "";
-      if (blog.video_url) {
-        const videoId = getYouTubeVideoId(blog.video_url);
-        if (videoId) {
-          videoHTML = `<div class="blog-video"><h3>Related Video</h3><iframe src="https://www.youtube.com/embed/${videoId}" title="${escapeHTML(blog.title)}" allowfullscreen></iframe></div>`;
-        }
-      }
+  let html = '<p style="font-size:18px;line-height:1.8;color:var(--text);margin-bottom:30px;">' +
+             escapeHTML(article.intro) + '</p>';
 
-      blogContainer.innerHTML = `
-        <a href="blog.html" class="back-to-blogs">← Back to Blogs</a>
-        <h1 class="blog-detail-title">${escapeHTML(blog.title)}</h1>
-        ${dateHTML}
-        ${imageHTML}
-        <div class="blog-detail-content">${blog.content}</div>
-        ${videoHTML}
-        <div id="blogReactions"></div>
-      `;
+  article.sections.forEach(function(section) {
+    html += '<section style="margin-bottom:30px;">' +
+      '<h2 style="font-size:24px;line-height:1.35;margin-bottom:12px;color:var(--text);">' +
+      escapeHTML(section[0]) + '</h2>' +
+      '<p>' + escapeHTML(section[1]) + '</p>' +
+      '</section>';
+  });
 
-      updateSEO(blog, slug);
-      renderReactions(blog);
-    } catch (error) {
-      console.error("Error loading blog:", error);
-      showError("Failed to load blog. Please try again later.");
-    }
-  }
+  html += '<div style="margin-top:38px;padding-top:24px;border-top:1px solid var(--border);">' +
+          '<p><strong>About the author:</strong> Akkhil Kapoor is a Professional Accounts &amp; IT Trainer and Educator who focuses on practical computer education, accounting software, Excel, web development and digital skills.</p>' +
+          '</div>';
 
-  function updateSEO(blog, slug) {
-    const plainDescription = stripHTML(blog.content).trim().substring(0, 160);
-    const pageUrl = "https://akkhilkapoor.github.io/akkhil/blog-detail.html?slug=" + encodeURIComponent(slug);
-    const imageUrl = blog.image_url || "https://akkhilkapoor.github.io/akkhil/Akkhil.jpg";
-    const fullTitle = blog.title + " | Akkhil Kapoor";
+  document.getElementById("blogContent").innerHTML = html;
+  updateSEO(article, slug);
+}
 
-    document.title = fullTitle;
-    document.getElementById("pageTitle").textContent = fullTitle;
-    document.getElementById("metaDescription").setAttribute("content", plainDescription);
-    document.getElementById("canonicalLink").setAttribute("href", pageUrl);
-    document.getElementById("ogTitle").setAttribute("content", fullTitle);
-    document.getElementById("ogDescription").setAttribute("content", plainDescription);
-    document.getElementById("ogUrl").setAttribute("content", pageUrl);
-    document.getElementById("ogImage").setAttribute("content", imageUrl);
-    document.getElementById("twitterTitle").setAttribute("content", fullTitle);
-    document.getElementById("twitterDescription").setAttribute("content", plainDescription);
-    document.getElementById("twitterImage").setAttribute("content", imageUrl);
+function showError() {
+  document.getElementById("blogTitle").textContent = "Blog not found";
+  document.getElementById("blogDate").textContent = "";
+  document.getElementById("blogContent").innerHTML =
+    '<p>The requested article could not be found. Please return to the Blog page and select an article.</p>';
+}
 
-    const schema = {
-      "@context": "https://schema.org", "@type": "Article",
-      "headline": blog.title, "description": plainDescription, "image": imageUrl,
-      "author": { "@type": "Person", "name": "Akkhil Kapoor", "url": "https://akkhilkapoor.github.io/akkhil/about.html" },
-      "publisher": { "@type": "Organization", "name": "Akkhil Kapoor" },
-      "datePublished": blog.created_at || "",
-      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
-    };
-    document.getElementById("articleSchema").textContent = JSON.stringify(schema);
-  }
-
-  function renderReactions(blog) {
-    const reactionsBox = document.getElementById("blogReactions");
-    let likes = blog.likes || 0;
-    let dislikes = blog.dislikes || 0;
-    const voteKey = "vote_" + blog.slug;
-    let currentVote = localStorage.getItem(voteKey);
-
-    function draw() {
-      reactionsBox.innerHTML = `
-        <div class="blog-reactions">
-          <span class="blog-reactions-label">Was this helpful?</span>
-          <button id="likeBtn" class="reaction-btn ${currentVote === "like" ? "active-like" : ""}">👍 <span id="likeCount">${likes}</span></button>
-          <button id="dislikeBtn" class="reaction-btn ${currentVote === "dislike" ? "active-dislike" : ""}">👎 <span id="dislikeCount">${dislikes}</span></button>
-        </div>
-      `;
-      document.getElementById("likeBtn").addEventListener("click", function () { handleVote("like"); });
-      document.getElementById("dislikeBtn").addEventListener("click", function () { handleVote("dislike"); });
-    }
-
-    async function handleVote(type) {
-      let likeDelta = 0, dislikeDelta = 0;
-      if (currentVote === type) {
-        if (type === "like") { likeDelta = -1; likes -= 1; } else { dislikeDelta = -1; dislikes -= 1; }
-        currentVote = null; localStorage.removeItem(voteKey);
-      } else if (currentVote === null) {
-        if (type === "like") { likeDelta = 1; likes += 1; } else { dislikeDelta = 1; dislikes += 1; }
-        currentVote = type; localStorage.setItem(voteKey, type);
-      } else {
-        if (type === "like") { likeDelta = 1; dislikeDelta = -1; likes += 1; dislikes -= 1; }
-        else { likeDelta = -1; dislikeDelta = 1; likes -= 1; dislikes += 1; }
-        currentVote = type; localStorage.setItem(voteKey, type);
-      }
-      draw();
-      const { error } = await supabaseClient.rpc("adjust_blog_reaction", { blog_id: blog.id, like_delta: likeDelta, dislike_delta: dislikeDelta });
-      if (error) console.error("Error updating reaction:", error);
-    }
-
-    draw();
-  }
-
-  function getYouTubeVideoId(url) {
-    let videoId = "";
-    try {
-      const urlObject = new URL(url);
-      if (urlObject.hostname.includes("youtube.com")) videoId = urlObject.searchParams.get("v");
-      else if (urlObject.hostname.includes("youtu.be")) videoId = urlObject.pathname.substring(1);
-    } catch (error) { console.error("Invalid YouTube URL"); }
-    return videoId;
-  }
-
-  function showError(message) {
-    blogContainer.innerHTML = `
-      <div class="blog-error">
-        <h2>${message}</h2>
-        <a href="blog.html" class="back-to-blogs">Back to Blogs</a>
-      </div>
-    `;
-  }
-
-  function escapeHTML(text) {
-    const div = document.createElement("div");
-    div.textContent = text || "";
-    return div.innerHTML;
-  }
-
-  function stripHTML(html) {
-    const div = document.createElement("div");
-    div.innerHTML = html || "";
-    return div.textContent || div.innerText || "";
-  }
-
-  loadBlog();
-</script>
-<script src="js/popup.js"></script>
-
-<script>
-(function () {
-  function getBlogSlug() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('slug') || params.get('id') || '';
-  }
-  window.getBlogSlugForDetail = getBlogSlug;
+(function loadBlog() {
+  const slug = new URLSearchParams(window.location.search).get("slug");
+  const article = slug ? ARTICLES[slug] : null;
+  if (article) showArticle(article, slug);
+  else showError();
 })();
 </script>
-
+<script src="js/popup.js"></script>
 </body>
 </html>
