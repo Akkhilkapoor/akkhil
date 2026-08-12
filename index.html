@@ -402,15 +402,10 @@
   window.addEventListener("click", function (event) { if (event.target === reviewModal) { reviewModal.style.display = "none"; } });
 
   async function fetchReviews() {
-    try {
-      const response = await fetch(
-        `${SUPABASE_URL}/rest/v1/student_reviews?Approved=eq.true&select=Name,Rating,Review&order=Created_at.desc`,
-        { method: "GET", headers: { "apikey": SUPABASE_KEY, "Authorization": `Bearer ${SUPABASE_KEY}` } }
-      );
+    const cacheKey = "akkhil_reviews_cache_v1";
+    const cacheTtl = 5 * 60 * 1000;
 
-      if (!response.ok) { throw new Error("Failed to load reviews"); }
-
-      const data = await response.json();
+    function renderReviews(data) {
       reviewsContainer.innerHTML = "";
 
       if (!data || data.length === 0) {
@@ -445,7 +440,7 @@
           if (textElement.scrollHeight <= textElement.clientHeight) {
             readMoreBtn.style.display = "none";
           }
-        }, 100);
+        }, 50);
 
         readMoreBtn.addEventListener("click", function () {
           if (textElement.classList.contains("expanded")) {
@@ -459,9 +454,38 @@
 
         reviewsContainer.appendChild(reviewCard);
       });
+    }
+
+    try {
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Date.now() - parsed.time < cacheTtl && Array.isArray(parsed.data)) {
+          renderReviews(parsed.data);
+        }
+      }
+
+      const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/student_reviews?Approved=eq.true&select=Name,Rating,Review&order=Created_at.desc`,
+        {
+          method: "GET",
+          headers: {
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`
+          }
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to load reviews");
+
+      const data = await response.json();
+      renderReviews(data);
+      sessionStorage.setItem(cacheKey, JSON.stringify({ time: Date.now(), data: data }));
     } catch (error) {
       console.error("Error loading reviews:", error);
-      reviewsContainer.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--c3);">Failed to load reviews.</p>`;
+      if (!reviewsContainer.children.length) {
+        reviewsContainer.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--c3);">Failed to load reviews.</p>`;
+      }
     }
   }
 
