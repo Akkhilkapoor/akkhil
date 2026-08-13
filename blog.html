@@ -72,7 +72,7 @@
   .blog-content h2{font-size:18px; font-weight:600; margin-bottom:10px;}
   .blog-content p{color:var(--dim); font-size:14px; line-height:1.6; flex-grow:1;}
   .read-more{display:inline-flex; align-items:center; margin-top:16px; padding:10px 18px; background:linear-gradient(135deg,var(--c1),var(--c3)); color:#08080B; text-decoration:none; border-radius:100px; font-weight:700; font-size:13px; align-self:flex-start;}
-  .no-blogs, .loading{grid-column:1/-1; text-align:center; color:var(--dim); padding:50px 0; font-size:15px;}
+  .no-blogs, .loading{grid-column:1/-1; text-align:center; color:var(--dim); padding:50px 0; font-size:15px;} .loading{min-height:80px;display:flex;align-items:center;justify-content:center;}
   footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
   footer a{text-decoration:underline; color:var(--dimmer);}
   @media (max-width:860px){ .navlinks{display:none;} }
@@ -214,52 +214,59 @@
   async function loadPublishedBlogs() {
     const blogsGrid = document.getElementById("dynamicBlogsGrid");
 
-    const { data: blogs, error } = await supabaseClient
-      .from("blogs")
-      .select("*")
-      .eq("is_published", true)
-      .order("created_at", { ascending: false });
+    try {
+      // Fetch only the fields required for the blog cards.
+      // This keeps Supabase as the source of truth while reducing payload size.
+      const { data: blogs, error } = await supabaseClient
+        .from("blogs")
+        .select("id,title,slug,content,image_url,created_at")
+        .eq("is_published", true)
+        .order("created_at", { ascending: false });
 
-    if (error) {
-      blogsGrid.innerHTML = `<p class="no-blogs">Error loading blogs: ${error.message}</p>`;
-      return;
+      if (error) {
+        blogsGrid.innerHTML = `<p class="no-blogs">Error loading blogs: ${escapeHTML(error.message)}</p>`;
+        return;
+      }
+
+      if (!blogs || blogs.length === 0) {
+        blogsGrid.innerHTML = `<p class="no-blogs">No published blogs available.</p>`;
+        return;
+      }
+
+      // Build cards in one operation instead of repeatedly updating the DOM.
+      const cardsHTML = blogs.map(function(blog) {
+        const imageHTML = blog.image_url
+          ? `<img src="${escapeHTML(blog.image_url)}"
+                 alt="${escapeHTML(blog.title)} by Akkhil Kapoor"
+                 loading="lazy"
+                 decoding="async"
+                 width="1160"
+                 height="200">`
+          : "";
+
+        const shortContent = blog.content
+          ? stripHTML(blog.content).substring(0, 150) + "..."
+          : "";
+
+        const detailURL = "blog-detail.html?slug=" + encodeURIComponent(blog.slug);
+
+        return `
+          <article class="blog-card" style="animation:fadeUp .6s ease both">
+            ${imageHTML}
+            <div class="blog-content">
+              <h2>${escapeHTML(blog.title)}</h2>
+              <p>${escapeHTML(shortContent)}</p>
+              <a class="read-more" href="${detailURL}">Read More →</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      blogsGrid.innerHTML = cardsHTML;
+    } catch (err) {
+      blogsGrid.innerHTML = `<p class="no-blogs">Error loading blogs. Please try again later.</p>`;
+      console.error("Blog loading error:", err);
     }
-
-    if (!blogs || blogs.length === 0) {
-      blogsGrid.innerHTML = `<p class="no-blogs">No published blogs available.</p>`;
-      return;
-    }
-
-    blogsGrid.innerHTML = "";
-
-    blogs.forEach(function(blog) {
-      const blogCard = document.createElement("div");
-      blogCard.className = "blog-card";
-      blogCard.style.animation = "fadeUp .6s ease both";
-
-      blogCard.addEventListener("click", function () {
-        window.location.href = "blog-detail.html?slug=" + encodeURIComponent(blog.slug);
-      });
-
-      const imageHTML = blog.image_url
-        ? `<img src="${escapeHTML(blog.image_url)}" alt="${escapeHTML(blog.title)} by Akkhil Kapoor">`
-        : "";
-
-      const shortContent = blog.content
-        ? stripHTML(blog.content).substring(0, 150) + "..."
-        : "";
-
-      blogCard.innerHTML = `
-        ${imageHTML}
-        <div class="blog-content">
-          <h2>${escapeHTML(blog.title)}</h2>
-          <p>${escapeHTML(shortContent)}</p>
-          <a class="read-more" href="blog-detail.html?slug=${encodeURIComponent(blog.slug)}">Read More →</a>
-        </div>
-      `;
-
-      blogsGrid.appendChild(blogCard);
-    });
   }
 
   function stripHTML(html) {
