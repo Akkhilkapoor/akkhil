@@ -1,17 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54NCXMXZ44"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-54NCXMXZ44');
-</script>
-<!-- End Google Analytics -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact Akkhil Kapoor | Accounts &amp; IT Trainer in Ambala</title>
@@ -32,294 +21,215 @@
 <meta content="Contact Akkhil Kapoor for practical training and enquiries about Tally Prime, Accounting, GST, Advanced Excel, Web Development, Graphic Design, AI Tools, and computer education in Ambala." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/style.css"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Akkhil Kapoor",
+  "url": "https://akkhilkapoor.github.io/akkhil/contact.html",
+  "about": { "@id": "https://akkhilkapoor.github.io/akkhil/#person" }
+}
+</script>
+
+<!-- Contact-page-only additions: everything here reuses the tokens from css/style.css -->
 <style>
-  :root{
-    --bg:#07070B; --surface:rgba(255,255,255,0.045); --surface2:rgba(255,255,255,0.07); --border:rgba(255,255,255,0.10);
-    --text:#F3F2F8; --dim:rgba(243,242,248,0.62); --dimmer:rgba(243,242,248,0.4);
-    --c1:#7C5CFF; --c2:#37E0C8; --c3:#FF5B94; --max:1160px;
-    --err:#FF6B6B;
+  .page-hero{ text-align:center; padding:70px 20px 10px; position:relative; z-index:1; }
+  .page-kicker{
+    display:inline-flex; align-items:center; gap:8px; background:var(--surface);
+    border:1px solid var(--border); border-radius:100px; padding:8px 16px;
+    font-size:12.5px; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:22px;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;}
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
-  h1,h2,h3{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
-  .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
-  @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
-  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
-  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.4;}
-  .b1{width:560px; height:560px; background:var(--c1); top:-200px; left:-140px; animation:float1 16s ease-in-out infinite;}
-  .b2{width:480px; height:480px; background:var(--c3); top:20%; right:-180px; opacity:0.28; animation:float2 20s ease-in-out infinite;}
-  .b3{width:460px; height:460px; background:var(--c2); bottom:-200px; left:25%; opacity:0.2; animation:float3 18s ease-in-out infinite;}
-  @keyframes float1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(60px,80px);} }
-  @keyframes float2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-70px,50px);} }
-  @keyframes float3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,-60px);} }
-  header, main, footer{position:relative; z-index:3;}
-  header{position:sticky; top:0; z-index:50; padding:18px 0;}
-  nav{max-width:var(--max); margin:0 auto; padding:12px 22px; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px; backdrop-filter:blur(18px);}
-  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
-  .brand-mark{width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;}
-  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
-  .navlinks a{position:relative;}
-  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
-  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
-  .navlinks a:hover, .navlinks a.active{color:var(--text);}
-  .nav-cta{background:var(--text); color:#07070B; font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:100px; transition:transform .2s;}
-  .nav-cta:hover{transform:scale(1.05);}
-  .page-hero{padding:80px 0 20px; text-align:center;}
-  .kicker{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim); margin-bottom:22px;}
-  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
-  .page-hero h1{font-size:clamp(34px,5.4vw,56px); font-weight:700; line-height:1.1;}
-  .page-hero p{max-width:520px; margin:16px auto 0; color:var(--dim); font-size:15.5px; line-height:1.6;}
-  main{padding:60px 0 100px;}
-
-  .contact-grid{display:grid; grid-template-columns:1fr 1.25fr; gap:24px; max-width:980px; margin:0 auto; align-items:start;}
-
-  /* Info column */
-  .info-stack{display:flex; flex-direction:column; gap:14px;}
-  .info-card{background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:22px; display:flex; gap:14px; align-items:flex-start; transition:border-color .2s, background .2s;}
-  .info-card:hover{border-color:rgba(255,255,255,0.2); background:var(--surface2);}
-  .info-icon{width:40px; height:40px; flex:none; border-radius:12px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,92,255,0.25),rgba(255,91,148,0.2)); border:1px solid var(--border);}
-  .info-icon svg{width:18px; height:18px; stroke:var(--c2);}
-  .info-card h3{font-size:14.5px; font-weight:600; margin-bottom:4px;}
-  .info-card p, .info-card a{display:block; font-size:13.5px; color:var(--dim); line-height:1.55;}
-  .info-card a:hover{color:var(--c2);}
-
-  .avail-card{background:linear-gradient(135deg, rgba(124,92,255,0.12), rgba(55,224,200,0.06)); border:1px solid var(--border); border-radius:20px; padding:22px;}
-  .avail-card h3{font-size:14.5px; font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
-  .avail-card h3 .dot{width:7px; height:7px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
-  .avail-card p{font-size:13.5px; color:var(--dim); line-height:1.6;}
-
-  /* Form column */
-  .contact-card{background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:40px;}
-  .contact-card > h2{font-size:20px; margin-bottom:4px;}
-  .contact-card > .sub{font-size:13.5px; color:var(--dimmer); margin-bottom:26px;}
-  .contact-form{display:flex; flex-direction:column; gap:18px;}
-  .field{display:flex; flex-direction:column; gap:7px;}
-  .field label{font-size:12.5px; font-weight:500; color:var(--dim); font-family:'JetBrains Mono',monospace; letter-spacing:0.01em;}
-  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  .contact-form input, .contact-form textarea{
-    background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:12px;
-    padding:13px 15px; color:var(--text); font-family:'Inter',sans-serif; font-size:14.5px;
-    outline:none; transition:border-color .2s, background .2s;
+  .page-kicker .dot{ width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2); animation:pulseDot 2s ease-in-out infinite; }
+  .page-hero h1{
+    font-size:clamp(34px,5.4vw,52px); font-weight:700; line-height:1.15;
+    background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent;
+    background-size:200% auto; animation:gradientShift 6s ease-in-out infinite alternate; display:inline-block;
   }
-  .contact-form input::placeholder, .contact-form textarea::placeholder{color:var(--dimmer);}
-  .contact-form input:focus, .contact-form textarea:focus{border-color:var(--c1); background:rgba(255,255,255,0.05);}
-  .contact-form input:focus-visible, .contact-form textarea:focus-visible{outline:2px solid var(--c2); outline-offset:1px;}
-  .contact-form input.invalid, .contact-form textarea.invalid{border-color:var(--err);}
-  .field small{font-size:11.5px; color:var(--err); min-height:14px; display:block;}
-  .contact-form textarea{resize:vertical; min-height:110px;}
-  .contact-form button{
-    background:linear-gradient(135deg,var(--c1),var(--c3)); color:#08080B; font-weight:700; font-size:14.5px;
-    padding:15px; border:none; border-radius:100px; cursor:pointer; margin-top:4px; transition:transform .2s, opacity .2s;
-    display:flex; align-items:center; justify-content:center; gap:8px;
-  }
-  .contact-form button:hover{transform:translateY(-2px);}
-  .contact-form button:active{transform:translateY(0);}
-  .contact-form button:disabled{opacity:0.6; cursor:not-allowed; transform:none;}
-  #contactStatus{text-align:center; margin-top:4px; font-weight:600; font-size:13.5px; color:var(--c2); min-height:18px;}
+  .page-hero p{ max-width:540px; margin:16px auto 0; color:var(--text-muted); font-size:15.5px; line-height:1.7; }
 
-  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
-  footer a{text-decoration:underline; color:var(--dimmer);}
-
-  @media (max-width:860px){
-    .navlinks{display:none;}
-    .contact-grid{grid-template-columns:1fr;}
-    .contact-card{padding:28px;}
-    .two-col{grid-template-columns:1fr;}
-  }
-  @keyframes fadeUp{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-  .page-hero{animation:fadeUp .7s ease both;}
-  .info-stack{animation:fadeUp .8s ease .05s both;}
-  .contact-card{animation:fadeUp .8s ease .1s both;}
-
-  @media (prefers-reduced-motion: reduce){
-    *, *::before, *::after{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1.2fr; gap:24px;
+    max-width:1000px; margin:0 auto; align-items:start;
   }
 
-  /* ================= MOBILE NAV TOGGLE ================= */
-  .nav-toggle{display:none; width:38px; height:38px; background:transparent; border:none; cursor:pointer; align-items:center; justify-content:center; position:relative; z-index:60;}
-  .nav-toggle span{display:block; position:absolute; width:20px; height:2px; background:var(--text); border-radius:2px; transition:transform .25s ease, opacity .25s ease, top .25s ease;}
-  .nav-toggle span:nth-child(1){top:13px;}
-  .nav-toggle span:nth-child(2){top:19px;}
-  .nav-toggle span:nth-child(3){top:25px;}
-  .nav-toggle.open span:nth-child(1){top:19px; transform:rotate(45deg);}
-  .nav-toggle.open span:nth-child(2){opacity:0;}
-  .nav-toggle.open span:nth-child(3){top:19px; transform:rotate(-45deg);}
-  @media (max-width:860px){
-    .nav-toggle{display:flex; order:3;}
-    nav{flex-wrap:wrap;}
-    .navlinks{display:flex !important; flex-direction:column; align-items:flex-start; gap:16px; width:100%; max-height:0; overflow:hidden; opacity:0; padding:0 4px; margin-top:0; transition:max-height .3s ease, opacity .25s ease, margin-top .3s ease, padding .3s ease; order:4;}
-    .navlinks.open{max-height:400px; opacity:1; margin-top:14px; padding:14px 4px 4px; border-top:1px solid var(--border);}
-    .nav-cta{order:2;}
+  .contact-info-stack{ display:flex; flex-direction:column; gap:14px; }
+
+  .contact-info-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+    padding:22px; display:flex; gap:14px; align-items:flex-start; transition:var(--transition);
+  }
+  .contact-info-card:hover{ border-color:rgba(255,255,255,0.22); background:var(--surface-2); transform:translateY(-3px); }
+  .contact-info-icon{
+    width:42px; height:42px; flex:none; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, rgba(124,92,255,0.25), rgba(255,91,148,0.18)); border:1px solid var(--border);
+  }
+  .contact-info-icon svg{ width:18px; height:18px; stroke:var(--c2); }
+  .contact-info-card h3{ font-family:var(--font-display); font-size:14.5px; font-weight:600; margin-bottom:4px; color:var(--text-main); }
+  .contact-info-card p, .contact-info-card a{ display:block; font-size:13.5px; color:var(--text-muted); line-height:1.6; }
+  .contact-info-card a:hover{ color:var(--c2); }
+
+  .avail-card{
+    background:linear-gradient(135deg, rgba(124,92,255,0.12), rgba(55,224,200,0.06));
+    border:1px solid var(--border); border-radius:var(--radius-md); padding:22px;
+  }
+  .avail-card h3{ font-family:var(--font-display); font-size:14.5px; font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px; color:var(--text-main); }
+  .avail-card h3 .dot{ width:7px; height:7px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2); animation:pulseDot 2s ease-in-out infinite; }
+  .avail-card p{ font-size:13.5px; color:var(--text-muted); line-height:1.7; }
+
+  .contact-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:40px;
+  }
+  .contact-card > h2{ font-family:var(--font-display); font-size:21px; margin-bottom:4px; color:var(--text-main); }
+  .contact-card > .sub{ font-size:13.5px; color:var(--text-dim); margin-bottom:26px; }
+
+  .contact-form{ padding:0; background:none; border:none; border-radius:0; }
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+  .field label{ font-size:12.5px; font-weight:500; color:var(--text-muted); font-family:var(--font-mono); letter-spacing:0.01em; }
+  .contact-form input, .contact-form textarea{ margin-bottom:0; }
+  .contact-form input.invalid, .contact-form textarea.invalid{ border-color:var(--c3); }
+  .field small{ font-size:11.5px; color:var(--c3); min-height:14px; display:block; }
+
+  #sendMessageBtn{ display:flex; align-items:center; justify-content:center; gap:8px; }
+  #sendMessageBtn:disabled{ opacity:0.6; cursor:not-allowed; transform:none; box-shadow:none; }
+  #contactStatus{ text-align:center; margin-top:6px; font-weight:600; }
+  #contactStatus.is-error{ color:var(--c3) !important; }
+
+  @media (max-width:900px){
+    .contact-grid{ grid-template-columns:1fr; }
+    .contact-card{ padding:28px 22px; }
+    .two-col{ grid-template-columns:1fr; }
   }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://akkhilkapoor.github.io/akkhil/#person",
-  "name": "Akkhil Kapoor",
-  "alternateName": [
-    "Akhil Kapoor"
-  ],
-  "url": "https://akkhilkapoor.github.io/akkhil/",
-  "image": "https://akkhilkapoor.github.io/akkhil/akkhil.jpg",
-  "jobTitle": "Professional Accounts & IT Trainer | Educator",
-  "description": "Akkhil Kapoor, also known as Akhil Kapoor, is an Accounts and IT trainer and educator in Ambala, Haryana, with 20+ years of teaching experience.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Ambala"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ambala",
-    "addressRegion": "Haryana",
-    "addressCountry": "IN"
-  },
-  "knowsAbout": [
-    "Tally Prime",
-    "Accounting",
-    "GST Accounting",
-    "Busy Accounting Software",
-    "Microsoft Excel",
-    "Office Automation",
-    "Web Development",
-    "Graphic Design",
-    "AI Tools",
-    "Computer Education"
-  ],
-  "sameAs": [
-    "https://akkhilkapoor.github.io/akkhil/about.html",
-    "https://akkhilkapoor.github.io/akkhil/expertise.html"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://akkhilkapoor.github.io/akkhil/#website",
-  "name": "Akkhil Kapoor",
-  "alternateName": "Akhil Kapoor",
-  "url": "https://akkhilkapoor.github.io/akkhil/",
-  "publisher": {
-    "@id": "https://akkhilkapoor.github.io/akkhil/#person"
-  },
-  "inLanguage": "en-IN"
-}
-</script>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"></script></head>
+</head>
 <body>
-<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
-<header>
-<nav>
-<div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
-<button aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle">
-<span></span><span></span><span></span>
-</button>
-<div class="navlinks">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="expertise.html">Expertise</a>
-<a href="projects.html">Projects</a>
-<a href="blog.html">Blog</a>
-<a class="active" href="contact.html">Contact</a>
-</div>
-<a class="nav-cta" href="contact.html">Enroll Now</a>
-</nav>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a class="logo" href="index.html">
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Akkhil Kapoor
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="menu-toggle">&#9776;</button>
+  </div>
 </header>
+
 <main>
-<section class="page-hero">
-<div class="wrap">
-<div class="kicker"><span class="dot"></span> Get In Touch</div>
-<h1>Let's talk <span class="grad-text">training</span></h1>
-<p>Questions about Tally Prime, Advanced Excel, Web Development, or Graphic Design courses in Ambala? Send a message below — it opens straight into WhatsApp.</p>
-</div>
-</section>
-<div class="wrap">
-<div class="contact-grid">
-<div class="info-stack">
-<div class="info-card">
-<div class="info-icon">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-</div>
-<div>
-<h3>WhatsApp</h3>
-<a href="tel:+919729590777">+91 97295 90777</a>
-</div>
-</div>
-<div class="info-card">
-<div class="info-icon">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 4h16v16H4z" opacity="0"></path><path d="M22 6l-10 7L2 6"></path><rect height="16" rx="2" width="20" x="2" y="4"></rect></svg>
-</div>
-<div>
-<h3>Email</h3>
-<a href="mailto:akkhilkapoor@gmail.com">akkhilkapoor@gmail.com</a>
-</div>
-</div>
-<div class="info-card">
-<div class="info-icon">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-</div>
-<div>
-<h3>Location</h3>
-<p>Ambala, Haryana, India</p>
-</div>
-</div>
-<div class="avail-card">
-<h3><span class="dot"></span> Currently taking enquiries</h3>
-<p>Reply time is usually under a few hours. For urgent queries, WhatsApp is fastest.</p>
-</div>
-</div>
-<div class="contact-card">
-<h2>Send a message</h2>
-<p class="sub">Fill this in and it'll open pre-filled in WhatsApp for you to hit send.</p>
-<form class="contact-form" id="contactForm" novalidate="">
-<div class="two-col">
-<div class="field">
-<label for="contactName">Name</label>
-<input id="contactName" name="Name" placeholder="Your full name" required="" type="text"/>
-<small data-error-for="contactName"></small>
-</div>
-<div class="field">
-<label for="contactPhone">Phone</label>
-<input id="contactPhone" name="Phone" placeholder="10-digit number" required="" type="tel"/>
-<small data-error-for="contactPhone"></small>
-</div>
-</div>
-<div class="field">
-<label for="contactEmail">Email</label>
-<input id="contactEmail" name="Email" placeholder="you@example.com" required="" type="email"/>
-<small data-error-for="contactEmail"></small>
-</div>
-<div class="field">
-<label for="contactMessage">Message</label>
-<textarea id="contactMessage" name="Message" placeholder="Which course are you interested in?" required="" rows="5"></textarea>
-<small data-error-for="contactMessage"></small>
-</div>
-<button id="sendMessageBtn" type="submit">
-<span id="btnLabel">Send Message</span>
-<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-</button>
-<p aria-live="polite" id="contactStatus" role="status"></p>
-</form>
-</div>
-</div>
-</div>
+
+  <section class="page-hero">
+    <div class="page-kicker"><span class="dot"></span> Get In Touch</div>
+    <h1>Let's talk training</h1>
+    <p>Questions about Tally Prime, Advanced Excel, Web Development, or Graphic Design courses in Ambala? Send a message below — it opens straight into WhatsApp.</p>
+  </section>
+
+  <section class="main-content-padding">
+    <div class="contact-grid">
+
+      <div class="contact-info-stack">
+        <div class="contact-info-card">
+          <div class="contact-info-icon">
+            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/919729590777" target="_blank" rel="noopener">+91 97295 90777</a>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-icon">
+            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 6l-10 7L2 6"/><rect height="16" rx="2" width="20" x="2" y="4"/></svg>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:akkhilkapoor@gmail.com">akkhilkapoor@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-icon">
+            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>Ambala, Haryana, India</p>
+          </div>
+        </div>
+
+        <div class="avail-card">
+          <h3><span class="dot"></span> Currently taking enquiries</h3>
+          <p>Reply time is usually under a few hours. For urgent queries, WhatsApp is fastest.</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h2>Send a message</h2>
+        <p class="sub">Fill this in and it'll open pre-filled in WhatsApp for you to hit send.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="two-col">
+            <div class="field">
+              <label for="contactName">Name</label>
+              <input id="contactName" name="Name" placeholder="Your full name" required type="text"/>
+              <small data-error-for="contactName"></small>
+            </div>
+            <div class="field">
+              <label for="contactPhone">Phone</label>
+              <input id="contactPhone" name="Phone" placeholder="10-digit number" required type="tel"/>
+              <small data-error-for="contactPhone"></small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="Email" placeholder="you@example.com" required type="email"/>
+            <small data-error-for="contactEmail"></small>
+          </div>
+
+          <div class="field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="Message" placeholder="Which course are you interested in?" required rows="5"></textarea>
+            <small data-error-for="contactMessage"></small>
+          </div>
+
+          <button id="sendMessageBtn" type="submit">
+            <span id="btnLabel">Send Message</span>
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+
+          <p aria-live="polite" id="contactStatus" role="status"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
 </main>
-<footer>
-<div class="wrap">
-<p>© <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-<p style="margin-top:8px; font-size:13px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-<a href="privacy-policy.html">Privacy Policy</a>
-<a href="terms.html">Terms &amp; Conditions</a>
-<a href="disclaimer.html">Disclaimer</a>
-</p>
-</div>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
+    <p style="margin-top:8px; font-size:13px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </p>
+  </div>
 </footer>
+
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -331,11 +241,11 @@
   const fields = {
     contactName:    { validate: v => v.trim().length >= 2, msg: "Please enter your name" },
     contactEmail:   { validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()), msg: "Enter a valid email address" },
-    contactPhone:   { validate: v => /^\+?\d[\d\s-]{7,14}$/.test(v.trim()), msg: "Enter a valid phone number" },
+    contactPhone:   { validate: v => /^[6-9]\d{9}$/.test(v.trim().replace(/[\s-]/g, "")), msg: "Enter a valid 10-digit Indian mobile number" },
     contactMessage: { validate: v => v.trim().length >= 5, msg: "Tell us a little about your enquiry" }
   };
 
-  function showError(id, message){
+  function showError(id, message) {
     const input = document.getElementById(id);
     const err = document.querySelector(`[data-error-for="${id}"]`);
     input.classList.toggle("invalid", !!message);
@@ -351,7 +261,7 @@
     });
   });
 
-  contactForm.addEventListener("submit", function(event) {
+  contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     let valid = true;
@@ -366,7 +276,7 @@
     });
 
     if (!valid) {
-      contactStatus.style.color = "var(--err)";
+      contactStatus.classList.add("is-error");
       contactStatus.textContent = "Please fix the highlighted fields.";
       return;
     }
@@ -381,15 +291,22 @@
 
     sendBtn.disabled = true;
     btnLabel.textContent = "Opening WhatsApp...";
-    contactStatus.style.color = "var(--c2)";
+    contactStatus.classList.remove("is-error");
     contactStatus.textContent = "Redirecting you to WhatsApp...";
 
-    window.location.href = whatsappURL;
+    const opened = window.open(whatsappURL, "_blank");
 
     setTimeout(() => {
       sendBtn.disabled = false;
       btnLabel.textContent = "Send Message";
-    }, 2500);
+      if (!opened) {
+        contactStatus.classList.add("is-error");
+        contactStatus.textContent = "Couldn't open WhatsApp automatically — tap the WhatsApp number above instead.";
+      } else {
+        contactStatus.classList.remove("is-error");
+        contactStatus.textContent = "WhatsApp opened in a new tab — just hit send there.";
+      }
+    }, 1200);
   });
 </script>
 <script src="js/nav.js"></script>
