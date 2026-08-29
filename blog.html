@@ -1,299 +1,819 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54NCXMXZ44"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-54NCXMXZ44"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-54NCXMXZ44');
+  </script>
+  <!-- End Google Analytics -->
 
-  gtag('config', 'G-54NCXMXZ44');
-</script>
-<!-- End Google Analytics -->
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Akkhil Kapoor Blog | Tally, Accounting, GST, IT &amp; AI Articles</title>
-<meta content="Akkhil Kapoor Blog, Akhil Kapoor, Tally Prime Blog, Accounting Blog Ambala, GST Articles, Web Development Blog, Computer Education Blog Ambala" name="keywords"/>
-<meta content="Akkhil Kapoor" name="author"/>
-<meta content="index, follow" name="robots"/>
-<link href="https://akkhilkapoor.github.io/akkhil/blog.html" rel="canonical"/>
-<meta content="blog" property="og:type"/>
-<meta content="Blog | Akkhil Kapoor - Tally, Accounting &amp; Web Development Articles" property="og:title"/>
-<meta content="Latest articles and updates from Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, and Computer Education." property="og:description"/>
-<meta content="https://akkhilkapoor.github.io/akkhil/blog.html" property="og:url"/>
-<meta content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg" property="og:image"/>
-<meta content="Akkhil Kapoor Portfolio" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Blog | Akkhil Kapoor" name="twitter:title"/>
-<meta content="Latest articles on Tally Prime, Accounting, GST, Web Development, and Computer Education." name="twitter:description"/>
-<meta content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg" name="twitter:image"/>
-<meta content="Read practical articles by Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, Computer Education, and digital skills." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<style>
-  :root{
-    --bg:#07070B; --surface:rgba(255,255,255,0.045); --border:rgba(255,255,255,0.10);
-    --text:#F3F2F8; --dim:rgba(243,242,248,0.62); --dimmer:rgba(243,242,248,0.4);
-    --c1:#7C5CFF; --c2:#37E0C8; --c3:#FF5B94; --max:1160px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;}
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
-  h1,h2,h3{font-family:'Sora', sans-serif; letter-spacing:-0.02em;}
-  .grad-text{background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:hue 6s ease-in-out infinite alternate;}
-  @keyframes hue{ from{background-position:0% center;} to{background-position:100% center;} }
-  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
-  .blob{position:absolute; border-radius:50%; filter:blur(120px); opacity:0.4;}
-  .b1{width:560px; height:560px; background:var(--c1); top:-200px; left:-140px; animation:float1 16s ease-in-out infinite;}
-  .b2{width:480px; height:480px; background:var(--c3); top:20%; right:-180px; opacity:0.28; animation:float2 20s ease-in-out infinite;}
-  .b3{width:460px; height:460px; background:var(--c2); bottom:-200px; left:25%; opacity:0.2; animation:float3 18s ease-in-out infinite;}
-  @keyframes float1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(60px,80px);} }
-  @keyframes float2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-70px,50px);} }
-  @keyframes float3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,-60px);} }
-  header, main, footer{position:relative; z-index:3;}
-  header{position:sticky; top:0; z-index:50; padding:18px 0;}
-  nav{max-width:var(--max); margin:0 auto; padding:12px 22px; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,14,0.6); border:1px solid var(--border); border-radius:100px; backdrop-filter:blur(18px);}
-  .brand{display:flex; align-items:center; gap:10px; font-family:'Sora',sans-serif; font-weight:700; font-size:16px;}
-  .brand-mark{width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--c1),var(--c3)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; font-family:'JetBrains Mono',monospace;}
-  .navlinks{display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dim);}
-  .navlinks a{position:relative;}
-  .navlinks a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--c2); transition:width .25s;}
-  .navlinks a:hover::after, .navlinks a.active::after{width:100%;}
-  .navlinks a:hover, .navlinks a.active{color:var(--text);}
-  .nav-cta{background:var(--text); color:#07070B; font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:100px; transition:transform .2s;}
-  .nav-cta:hover{transform:scale(1.05);}
-  .page-hero{padding:80px 0 20px; text-align:center;}
-  .kicker{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:8px 16px; font-size:12.5px; font-family:'JetBrains Mono',monospace; color:var(--dim); margin-bottom:22px;}
-  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--c2); box-shadow:0 0 10px var(--c2);}
-  .page-hero h1{font-size:clamp(34px,5.4vw,56px); font-weight:700; line-height:1.1; margin-bottom:14px;}
-  .page-hero p{color:var(--dim); font-size:16px;}
-  main{padding:60px 0 100px;}
-  .blogs-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;}
-  .blog-card{background:var(--surface); border:1px solid var(--border); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; transition:transform .2s, border-color .3s; cursor:pointer;}
-  .blog-card:hover{transform:translateY(-5px); border-color:rgba(255,255,255,0.25);}
-  .blog-card img{width:100%; height:200px; object-fit:cover; background:var(--surface);}
-  .blog-content{padding:22px; display:flex; flex-direction:column; flex-grow:1;}
-  .blog-content h2{font-size:18px; font-weight:600; margin-bottom:10px;}
-  .blog-content p{color:var(--dim); font-size:14px; line-height:1.6; flex-grow:1;}
-  .read-more{display:inline-flex; align-items:center; margin-top:16px; padding:10px 18px; background:linear-gradient(135deg,var(--c1),var(--c3)); color:#08080B; text-decoration:none; border-radius:100px; font-weight:700; font-size:13px; align-self:flex-start;}
-  .no-blogs, .loading{grid-column:1/-1; text-align:center; color:var(--dim); padding:50px 0; font-size:15px;} .loading{min-height:80px;display:flex;align-items:center;justify-content:center;}
-  footer{padding:34px 0; border-top:1px solid var(--border); font-size:13px; color:var(--dimmer); text-align:center;}
-  footer a{text-decoration:underline; color:var(--dimmer);}
-  @media (max-width:860px){ .navlinks{display:none;} }
-  @keyframes fadeUp{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-  .page-hero{animation:fadeUp .8s ease both;}
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Akkhil Kapoor Blog | Tally, Accounting, GST, IT &amp; AI Articles</title>
+  <meta content="Akkhil Kapoor Blog, Akhil Kapoor, Tally Prime Blog, Accounting Blog Ambala, GST Articles, Web Development Blog, Computer Education Blog Ambala" name="keywords"/>
+  <meta content="Akkhil Kapoor" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://akkhilkapoor.github.io/akkhil/blog.html" rel="canonical"/>
 
-  /* ================= MOBILE NAV TOGGLE ================= */
-  .nav-toggle{display:none; width:38px; height:38px; background:transparent; border:none; cursor:pointer; align-items:center; justify-content:center; position:relative; z-index:60;}
-  .nav-toggle span{display:block; position:absolute; width:20px; height:2px; background:var(--text); border-radius:2px; transition:transform .25s ease, opacity .25s ease, top .25s ease;}
-  .nav-toggle span:nth-child(1){top:13px;}
-  .nav-toggle span:nth-child(2){top:19px;}
-  .nav-toggle span:nth-child(3){top:25px;}
-  .nav-toggle.open span:nth-child(1){top:19px; transform:rotate(45deg);}
-  .nav-toggle.open span:nth-child(2){opacity:0;}
-  .nav-toggle.open span:nth-child(3){top:19px; transform:rotate(-45deg);}
-  @media (max-width:860px){
-    .nav-toggle{display:flex; order:3;}
-    nav{flex-wrap:wrap;}
-    .navlinks{display:flex !important; flex-direction:column; align-items:flex-start; gap:16px; width:100%; max-height:0; overflow:hidden; opacity:0; padding:0 4px; margin-top:0; transition:max-height .3s ease, opacity .25s ease, margin-top .3s ease, padding .3s ease; order:4;}
-    .navlinks.open{max-height:400px; opacity:1; margin-top:14px; padding:14px 4px 4px; border-top:1px solid var(--border);}
-    .nav-cta{order:2;}
-  }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://akkhilkapoor.github.io/akkhil/#person",
-  "name": "Akkhil Kapoor",
-  "alternateName": [
-    "Akhil Kapoor"
-  ],
-  "url": "https://akkhilkapoor.github.io/akkhil/",
-  "image": "https://akkhilkapoor.github.io/akkhil/akkhil.jpg",
-  "jobTitle": "Professional Accounts & IT Trainer | Educator",
-  "description": "Akkhil Kapoor, also known as Akhil Kapoor, is an Accounts and IT trainer and educator in Ambala, Haryana, with 20+ years of teaching experience.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Ambala"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ambala",
-    "addressRegion": "Haryana",
-    "addressCountry": "IN"
-  },
-  "knowsAbout": [
-    "Tally Prime",
-    "Accounting",
-    "GST Accounting",
-    "Busy Accounting Software",
-    "Microsoft Excel",
-    "Office Automation",
-    "Web Development",
-    "Graphic Design",
-    "AI Tools",
-    "Computer Education"
-  ],
-  "sameAs": [
-    "https://akkhilkapoor.github.io/akkhil/about.html",
-    "https://akkhilkapoor.github.io/akkhil/expertise.html"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://akkhilkapoor.github.io/akkhil/#website",
-  "name": "Akkhil Kapoor",
-  "alternateName": "Akhil Kapoor",
-  "url": "https://akkhilkapoor.github.io/akkhil/",
-  "publisher": {
-    "@id": "https://akkhilkapoor.github.io/akkhil/#person"
-  },
-  "inLanguage": "en-IN"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Akkhil Kapoor Blog",
-  "url": "https://akkhilkapoor.github.io/akkhil/blog.html",
-  "description": "Read practical articles by Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, Computer Education, and digital skills.",
-  "author": {
-    "@id": "https://akkhilkapoor.github.io/akkhil/#person"
-  },
-  "inLanguage": "en-IN"
-}
-</script>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"></script><style>.dynamic-blog-section{margin-top:70px;padding-top:50px;border-top:1px solid var(--border);}.dynamic-blog-section h2{font-size:clamp(26px,4vw,38px);margin:8px 0 10px}.dynamic-intro{color:var(--dim);line-height:1.7;max-width:780px;margin-bottom:26px}.static-note{color:var(--dim);line-height:1.7;margin-top:20px}</style></head>
-<body>
-<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
-<header>
-<nav>
-<div class="brand"><span class="brand-mark">AK</span> Akkhil Kapoor</div>
-<button aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle">
-<span></span><span></span><span></span>
-</button>
-<div class="navlinks">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="expertise.html">Expertise</a>
-<a href="projects.html">Projects</a>
-<a class="active" href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-</div>
-<a class="nav-cta" href="contact.html">Enroll Now</a>
-</nav>
-</header>
-<main>
-<section class="page-hero">
-<div class="wrap">
-<div class="kicker"><span class="dot"></span> Blog</div>
-<h1>My <span class="grad-text">Blogs</span></h1>
-<p>Latest articles and updates</p>
-</div>
-</section>
-<div class="wrap">
-<section class="dynamic-blog-section"><div class="kicker"><span class="dot"></span> <div class="blogs-grid" id="dynamicBlogsGrid"><p class="loading">Loading latest posts...</p></div></section>
-</div>
-</main>
-<footer>
-<div class="wrap">
-<p>© <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
-<p style="margin-top:8px; font-size:13px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-<a href="privacy-policy.html">Privacy Policy</a>
-<a href="terms.html">Terms &amp; Conditions</a>
-<a href="disclaimer.html">Disclaimer</a>
-</p>
-</div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  <meta content="blog" property="og:type"/>
+  <meta content="Blog | Akkhil Kapoor - Tally, Accounting &amp; Web Development Articles" property="og:title"/>
+  <meta content="Latest articles and updates from Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, and Computer Education." property="og:description"/>
+  <meta content="https://akkhilkapoor.github.io/akkhil/blog.html" property="og:url"/>
+  <meta content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg" property="og:image"/>
+  <meta content="Akkhil Kapoor Portfolio" property="og:site_name"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Blog | Akkhil Kapoor" name="twitter:title"/>
+  <meta content="Latest articles on Tally Prime, Accounting, GST, Web Development, and Computer Education." name="twitter:description"/>
+  <meta content="https://akkhilkapoor.github.io/akkhil/Akkhil.jpg" name="twitter:image"/>
+  <meta content="Read practical articles by Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, Computer Education, and digital skills." name="description"/>
 
-  async function loadPublishedBlogs() {
-    const blogsGrid = document.getElementById("dynamicBlogsGrid");
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 
-    try {
-      // Fetch only the fields required for the blog cards.
-      // This keeps Supabase as the source of truth while reducing payload size.
-      const { data: blogs, error } = await supabaseClient
-        .from("blogs")
-        .select("id,title,slug,content,image_url,created_at")
-        .eq("is_published", true)
-        .order("created_at", { ascending: false });
-
-      if (error) {
-        blogsGrid.innerHTML = `<p class="no-blogs">Error loading blogs: ${escapeHTML(error.message)}</p>`;
-        return;
-      }
-
-      if (!blogs || blogs.length === 0) {
-        blogsGrid.innerHTML = `<p class="no-blogs">No published blogs available.</p>`;
-        return;
-      }
-
-      // Build cards in one operation instead of repeatedly updating the DOM.
-      const cardsHTML = blogs.map(function(blog) {
-        const imageHTML = blog.image_url
-          ? `<img src="${escapeHTML(blog.image_url)}"
-                 alt="${escapeHTML(blog.title)} by Akkhil Kapoor"
-                 loading="lazy"
-                 decoding="async"
-                 width="1160"
-                 height="200">`
-          : "";
-
-        const shortContent = blog.content
-          ? stripHTML(blog.content).substring(0, 150) + "..."
-          : "";
-
-        const detailURL = "blog-detail.html?slug=" + encodeURIComponent(blog.slug);
-
-        return `
-          <article class="blog-card" style="animation:fadeUp .6s ease both">
-            ${imageHTML}
-            <div class="blog-content">
-              <h2>${escapeHTML(blog.title)}</h2>
-              <p>${escapeHTML(shortContent)}</p>
-              <a class="read-more" href="${detailURL}">Read More →</a>
-            </div>
-          </article>
-        `;
-      }).join("");
-
-      blogsGrid.innerHTML = cardsHTML;
-    } catch (err) {
-      blogsGrid.innerHTML = `<p class="no-blogs">Error loading blogs. Please try again later.</p>`;
-      console.error("Blog loading error:", err);
+  <style>
+    :root{
+      --bg:#07070B;
+      --surface:rgba(255,255,255,0.045);
+      --border:rgba(255,255,255,0.10);
+      --text:#F3F2F8;
+      --dim:rgba(243,242,248,0.62);
+      --dimmer:rgba(243,242,248,0.4);
+      --c1:#7C5CFF;
+      --c2:#37E0C8;
+      --c3:#FF5B94;
+      --max:1160px;
     }
-  }
 
-  function stripHTML(html) {
-    const div = document.createElement("div");
-    div.innerHTML = html || "";
-    return div.textContent || div.innerText || "";
-  }
+    *{box-sizing:border-box;margin:0;padding:0;}
 
-  function escapeHTML(text) {
-    const div = document.createElement("div");
-    div.textContent = text || "";
-    return div.innerHTML;
-  }
+    html{scroll-behavior:smooth;}
 
-  loadPublishedBlogs();
-</script>
-<script src="js/popup.js"></script>
-<script src="js/nav.js"></script>
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 28px;
+    }
+
+    h1,h2,h3{
+      font-family:'Sora',sans-serif;
+      letter-spacing:-0.02em;
+    }
+
+    .grad-text{
+      background:linear-gradient(100deg,var(--c1),var(--c3) 60%,var(--c2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      background-size:200% auto;
+      animation:hue 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes hue{
+      from{background-position:0% center;}
+      to{background-position:100% center;}
+    }
+
+    .aurora{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+
+    .blob{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(120px);
+      opacity:0.4;
+    }
+
+    .b1{
+      width:560px;
+      height:560px;
+      background:var(--c1);
+      top:-200px;
+      left:-140px;
+      animation:float1 16s ease-in-out infinite;
+    }
+
+    .b2{
+      width:480px;
+      height:480px;
+      background:var(--c3);
+      top:20%;
+      right:-180px;
+      opacity:0.28;
+      animation:float2 20s ease-in-out infinite;
+    }
+
+    .b3{
+      width:460px;
+      height:460px;
+      background:var(--c2);
+      bottom:-200px;
+      left:25%;
+      opacity:0.2;
+      animation:float3 18s ease-in-out infinite;
+    }
+
+    @keyframes float1{
+      0%,100%{transform:translate(0,0);}
+      50%{transform:translate(60px,80px);}
+    }
+
+    @keyframes float2{
+      0%,100%{transform:translate(0,0);}
+      50%{transform:translate(-70px,50px);}
+    }
+
+    @keyframes float3{
+      0%,100%{transform:translate(0,0);}
+      50%{transform:translate(40px,-60px);}
+    }
+
+    header,main,footer{
+      position:relative;
+      z-index:3;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      padding:18px 0;
+    }
+
+    nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(10,10,14,0.6);
+      border:1px solid var(--border);
+      border-radius:100px;
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-family:'Sora',sans-serif;
+      font-weight:700;
+      font-size:16px;
+    }
+
+    .brand-mark{
+      width:32px;
+      height:32px;
+      border-radius:9px;
+      background:linear-gradient(135deg,var(--c1),var(--c3));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:700;
+      font-family:'JetBrains Mono',monospace;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:30px;
+      font-size:14px;
+      font-weight:500;
+      color:var(--dim);
+    }
+
+    .navlinks a{
+      position:relative;
+    }
+
+    .navlinks a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:1px;
+      background:var(--c2);
+      transition:width .25s;
+    }
+
+    .navlinks a:hover::after,
+    .navlinks a.active::after{
+      width:100%;
+    }
+
+    .navlinks a:hover,
+    .navlinks a.active{
+      color:var(--text);
+    }
+
+    .nav-cta{
+      background:var(--text);
+      color:#07070B;
+      font-weight:600;
+      font-size:13.5px;
+      padding:10px 20px;
+      border-radius:100px;
+      transition:transform .2s;
+    }
+
+    .nav-cta:hover{
+      transform:scale(1.05);
+    }
+
+    .page-hero{
+      padding:80px 0 20px;
+      text-align:center;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:100px;
+      padding:8px 16px;
+      font-size:12.5px;
+      font-family:'JetBrains Mono',monospace;
+      color:var(--dim);
+      margin-bottom:22px;
+    }
+
+    .kicker .dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--c2);
+      box-shadow:0 0 10px var(--c2);
+      flex:0 0 auto;
+    }
+
+    .page-hero h1{
+      font-size:clamp(34px,5.4vw,56px);
+      font-weight:700;
+      line-height:1.1;
+      margin-bottom:14px;
+    }
+
+    .page-hero p{
+      color:var(--dim);
+      font-size:16px;
+    }
+
+    main{
+      padding:60px 0 100px;
+    }
+
+    .dynamic-blog-section{
+      margin-top:70px;
+      padding-top:50px;
+      border-top:1px solid var(--border);
+    }
+
+    .dynamic-blog-section > .section-heading{
+      margin-bottom:28px;
+    }
+
+    .dynamic-blog-section h2{
+      font-size:clamp(26px,4vw,38px);
+      margin:8px 0 10px;
+    }
+
+    .dynamic-intro{
+      color:var(--dim);
+      line-height:1.7;
+      max-width:780px;
+      margin-bottom:26px;
+    }
+
+    .blogs-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .blog-card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:20px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .2s,border-color .3s;
+    }
+
+    .blog-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(255,255,255,0.25);
+    }
+
+    .blog-card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      background:var(--surface);
+    }
+
+    .blog-content{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      flex-grow:1;
+    }
+
+    .blog-content h2{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .blog-content p{
+      color:var(--dim);
+      font-size:14px;
+      line-height:1.6;
+      flex-grow:1;
+    }
+
+    .read-more{
+      display:inline-flex;
+      align-items:center;
+      margin-top:16px;
+      padding:10px 18px;
+      background:linear-gradient(135deg,var(--c1),var(--c3));
+      color:#08080B;
+      text-decoration:none;
+      border-radius:100px;
+      font-weight:700;
+      font-size:13px;
+      align-self:flex-start;
+    }
+
+    .no-blogs,
+    .loading{
+      grid-column:1/-1;
+      text-align:center;
+      color:var(--dim);
+      padding:50px 0;
+      font-size:15px;
+    }
+
+    .loading{
+      min-height:80px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    footer{
+      padding:34px 0;
+      border-top:1px solid var(--border);
+      font-size:13px;
+      color:var(--dimmer);
+      text-align:center;
+    }
+
+    footer a{
+      text-decoration:underline;
+      color:var(--dimmer);
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .page-hero{
+      animation:fadeUp .8s ease both;
+    }
+
+    /* ================= MOBILE NAV TOGGLE ================= */
+
+    .nav-toggle{
+      display:none;
+      width:38px;
+      height:38px;
+      background:transparent;
+      border:none;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      z-index:60;
+    }
+
+    .nav-toggle span{
+      display:block;
+      position:absolute;
+      width:20px;
+      height:2px;
+      background:var(--text);
+      border-radius:2px;
+      transition:transform .25s ease,opacity .25s ease,top .25s ease;
+    }
+
+    .nav-toggle span:nth-child(1){top:13px;}
+    .nav-toggle span:nth-child(2){top:19px;}
+    .nav-toggle span:nth-child(3){top:25px;}
+
+    .nav-toggle.open span:nth-child(1){
+      top:19px;
+      transform:rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2){
+      opacity:0;
+    }
+
+    .nav-toggle.open span:nth-child(3){
+      top:19px;
+      transform:rotate(-45deg);
+    }
+
+    @media (max-width:860px){
+      .nav-toggle{
+        display:flex;
+        order:3;
+      }
+
+      nav{
+        flex-wrap:wrap;
+      }
+
+      .navlinks{
+        display:flex !important;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+        width:100%;
+        max-height:0;
+        overflow:hidden;
+        opacity:0;
+        padding:0 4px;
+        margin-top:0;
+        transition:max-height .3s ease,opacity .25s ease,margin-top .3s ease,padding .3s ease;
+        order:4;
+      }
+
+      .navlinks.open{
+        max-height:400px;
+        opacity:1;
+        margin-top:14px;
+        padding:14px 4px 4px;
+        border-top:1px solid var(--border);
+      }
+
+      .nav-cta{
+        order:2;
+      }
+    }
+
+    @media (max-width:600px){
+      .wrap{
+        padding:0 18px;
+      }
+
+      header{
+        padding:10px 0;
+      }
+
+      nav{
+        padding:10px 14px;
+      }
+
+      .brand{
+        font-size:14px;
+      }
+
+      .page-hero{
+        padding:60px 0 10px;
+      }
+
+      main{
+        padding:40px 0 70px;
+      }
+
+      .dynamic-blog-section{
+        margin-top:50px;
+        padding-top:35px;
+      }
+
+      .blogs-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
+  <!-- Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "@id":"https://akkhilkapoor.github.io/akkhil/#person",
+    "name":"Akkhil Kapoor",
+    "alternateName":["Akhil Kapoor"],
+    "url":"https://akkhilkapoor.github.io/akkhil/",
+    "image":"https://akkhilkapoor.github.io/akkhil/akkhil.jpg",
+    "jobTitle":"Professional Accounts & IT Trainer | Educator",
+    "description":"Akkhil Kapoor, also known as Akhil Kapoor, is an Accounts and IT trainer and educator in Ambala, Haryana, with 20+ years of teaching experience.",
+    "areaServed":{
+      "@type":"City",
+      "name":"Ambala"
+    },
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Ambala",
+      "addressRegion":"Haryana",
+      "addressCountry":"IN"
+    },
+    "knowsAbout":[
+      "Tally Prime",
+      "Accounting",
+      "GST Accounting",
+      "Busy Accounting Software",
+      "Microsoft Excel",
+      "Office Automation",
+      "Web Development",
+      "Graphic Design",
+      "AI Tools",
+      "Computer Education"
+    ],
+    "sameAs":[
+      "https://akkhilkapoor.github.io/akkhil/about.html",
+      "https://akkhilkapoor.github.io/akkhil/expertise.html"
+    ]
+  }
+  </script>
+
+  <!-- Website Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "@id":"https://akkhilkapoor.github.io/akkhil/#website",
+    "name":"Akkhil Kapoor",
+    "alternateName":"Akhil Kapoor",
+    "url":"https://akkhilkapoor.github.io/akkhil/",
+    "publisher":{
+      "@id":"https://akkhilkapoor.github.io/akkhil/#person"
+    },
+    "inLanguage":"en-IN"
+  }
+  </script>
+
+  <!-- Blog Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Akkhil Kapoor Blog",
+    "url":"https://akkhilkapoor.github.io/akkhil/blog.html",
+    "description":"Read practical articles by Akkhil Kapoor on Tally Prime, Accounting, GST, Web Development, AI Tools, Computer Education, and digital skills.",
+    "author":{
+      "@id":"https://akkhilkapoor.github.io/akkhil/#person"
+    },
+    "inLanguage":"en-IN"
+  }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087554295777646"></script>
+</head>
+
+<body>
+  <div class="aurora">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <header>
+    <nav>
+      <div class="brand">
+        <span class="brand-mark">AK</span>
+        Akkhil Kapoor
+      </div>
+
+      <button
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="nav-toggle"
+        type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="contact.html">Enroll Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="kicker">
+          <span class="dot"></span>
+          Blog
+        </div>
+        <h1>My <span class="grad-text">Blogs</span></h1>
+        <p>Latest articles and updates</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="dynamic-blog-section">
+        <div class="section-heading">
+          <div class="kicker">
+            <span class="dot"></span>
+            Latest Posts
+          </div>
+        </div>
+
+        <div class="blogs-grid" id="dynamicBlogsGrid">
+          <p class="loading">Loading latest posts...</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> Akkhil Kapoor. All Rights Reserved.</p>
+
+      <p style="margin-top:8px;font-size:13px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /*
+      BLOG LOADER
+      ---------------------------------------------------------
+      Requires js/supabase-config.js to create:
+      const supabaseClient = supabase.createClient(URL, ANON_KEY);
+    */
+
+    async function loadPublishedBlogs() {
+      const blogsGrid = document.getElementById("dynamicBlogsGrid");
+
+      if (!blogsGrid) {
+        console.error("dynamicBlogsGrid element not found.");
+        return;
+      }
+
+      try {
+        // Check whether Supabase configuration has loaded.
+        if (
+          typeof supabaseClient === "undefined" ||
+          !supabaseClient ||
+          typeof supabaseClient.from !== "function"
+        ) {
+          blogsGrid.innerHTML = `
+            <p class="no-blogs">
+              Blog service is not configured. Please check
+              <strong>js/supabase-config.js</strong>.
+            </p>
+          `;
+          console.error(
+            "supabaseClient is not available. Check js/supabase-config.js."
+          );
+          return;
+        }
+
+        const { data: blogs, error } = await supabaseClient
+          .from("blogs")
+          .select("id,title,slug,content,image_url,created_at")
+          .eq("is_published", true)
+          .order("created_at", { ascending: false });
+
+        if (error) {
+          console.error("Supabase blog error:", error);
+
+          blogsGrid.innerHTML = `
+            <p class="no-blogs">
+              Unable to load blogs right now.
+            </p>
+          `;
+          return;
+        }
+
+        if (!blogs || blogs.length === 0) {
+          blogsGrid.innerHTML = `
+            <p class="no-blogs">
+              No published blogs available.
+            </p>
+          `;
+          return;
+        }
+
+        const cardsHTML = blogs.map(function(blog) {
+          const safeTitle = escapeHTML(blog.title || "Untitled Blog");
+          const safeSlug = encodeURIComponent(blog.slug || "");
+          const shortContent = blog.content
+            ? escapeHTML(stripHTML(blog.content).substring(0, 150)) + "..."
+            : "Read this article to learn more.";
+
+          const imageHTML = blog.image_url
+            ? `
+              <img
+                src="${escapeHTML(blog.image_url)}"
+                alt="${safeTitle} by Akkhil Kapoor"
+                loading="lazy"
+                decoding="async"
+                width="1160"
+                height="200"
+                onerror="this.style.display='none';"
+              >
+            `
+            : "";
+
+          const detailURL = "blog-detail.html?slug=" + safeSlug;
+
+          return `
+            <article class="blog-card" style="animation:fadeUp .6s ease both">
+              ${imageHTML}
+              <div class="blog-content">
+                <h2>${safeTitle}</h2>
+                <p>${shortContent}</p>
+                <a class="read-more" href="${detailURL}">
+                  Read More →
+                </a>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        blogsGrid.innerHTML = cardsHTML;
+
+      } catch (err) {
+        console.error("Blog loading error:", err);
+
+        blogsGrid.innerHTML = `
+          <p class="no-blogs">
+            Error loading blogs. Please try again later.
+          </p>
+        `;
+      }
+    }
+
+    function stripHTML(html) {
+      const div = document.createElement("div");
+      div.innerHTML = html || "";
+      return div.textContent || div.innerText || "";
+    }
+
+    function escapeHTML(text) {
+      const div = document.createElement("div");
+      div.textContent = text || "";
+      return div.innerHTML;
+    }
+
+    loadPublishedBlogs();
+  </script>
+
+  <script src="js/popup.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>
